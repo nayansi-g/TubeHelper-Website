@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 */}
-          <div className="pl-10">
+          <div>
             <h4 className="font-semibold mb-4">Features</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>24/7 Support</li>

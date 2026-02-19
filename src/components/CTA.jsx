@@ -50,6 +50,7 @@
 
 "use client"
 
+import { MoveUpRight } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
 export default function CTASection() {
@@ -77,7 +78,7 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-6 bg-gradient-to-b from-[#0a0b1e] via-[#1a1533] to-[#2a1f3d] text-white text-center overflow-hidden"
+      className="relative py-32 px-2 md:px-4 lg:px-6  bg-gradient-to-b from-[#0a0b1e] via-[#1a1533] to-[#2a1f3d] text-white text-center overflow-hidden"
     >
       {/* Animated Top Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600 opacity-20 blur-[150px] rounded-full animate-pulse"></div>
@@ -108,9 +109,11 @@ export default function CTASection() {
           {/* Shine Effect */}
           <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></span>
 
-          <span className="relative z-10">
-            Get Started- It's Free ↗
-          </span>
+          <div className="w-full px-5 py-2 rounded-full 
+                bg-gradient-to-r from-purple-600 to-pink-600 
+                text-white text-sm font-medium flex items-center ">
+                  Get Started <span className="text-gray-200 flex items-center justify-center "> - it's free <MoveUpRight className="w-4 h-4" /></span>
+                </div>
         </button>
       </div>
 

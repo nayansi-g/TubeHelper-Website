@@ -75,13 +75,13 @@
 
 "use client"
 
-import { Sparkle } from "lucide-react"
+import { MoveUpRight, Sparkle } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
 import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center py-20 text-center px-6 overflow-hidden bg-[#080B1A] text-white">
+    <section className="relative h-[90vh] flex flex-col items-center py-20 text-center px-2 md:px-4 lg:px-6 overflow-hidden bg-[#080B1A] text-white">
 
       {/* ================= Background Effects ================= */}
 
@@ -132,9 +132,9 @@ export default function Hero() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
+          className="text-2xl md:text-3xl lg:text-4xl  max-w-4xl font-semibold leading-tight"
         >
-          WordPress Excellence for Your Business <br />
+          WordPress Excellence for Your Business 
           – Custom Solutions, Faster Results!
         </motion.h1>
 
@@ -179,9 +179,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="px-6 py-3 rounded-full cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg"
+            className="px-6 py-3 rounded-full cursor-pointer flex items-center justify-center  bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg"
           >
-            Get Started ↗
+            Get Started <MoveUpRight className="w-4 h-4" />
           </motion.button>
         </motion.div>
 

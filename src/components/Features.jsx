@@ -171,7 +171,7 @@ export default function Features() {
   };
 
   return (
-    <section className="relative bg-[#070816] text-white py-24 overflow-hidden">
+    <section className="relative bg-[#070816] text-white px-2 md:px-4 lg:px-6  py-24 overflow-hidden">
 
       <motion.div
         initial="hidden"
@@ -191,9 +191,9 @@ export default function Features() {
         {/* Heading */}
         <motion.h2
           variants={fadeUp}
-          className="text-center text-4xl md:text-4xl font-semibold leading-tight mb-16"
+          className="text-center text-3xl md:text-3xl max-w-3xl mx-auto text-center lg:text-4xl font-semibold leading-tight mb-16"
         >
-          Delivering Excellence: Features & Benefits <br />
+          Delivering Excellence: Features & Benefits 
           That Drive Success
         </motion.h2>
 

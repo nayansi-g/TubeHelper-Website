@@ -170,7 +170,7 @@ export default function Faq() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-6 bg-[#070816] text-white overflow-hidden"
+      className="relative py-32 px-2 md:px-4 lg:px-6  bg-[#070816] text-white overflow-hidden"
     >
       <div
         className={`relative z-10 max-w-4xl mx-auto text-center transition-all duration-1000 ease-out

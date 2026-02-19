@@ -189,7 +189,7 @@ export default function Testimonials() {
       >
 
         {/* Badge */}
-        <motion.div variants={fadeUp} className="mb-6 text-center py-10">
+        <motion.div variants={fadeUp} className=" text-center py-10">
           <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
             ✨ Testimonals
           </span>
@@ -198,7 +198,7 @@ export default function Testimonials() {
         {/* Heading */}
         <motion.h2
           variants={fadeUp}
-          className="text-4xl md:text-5xl font-semibold text-center mb-16"
+          className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center mb-10"
         >
           What our client are saying
         </motion.h2>
@@ -279,7 +279,7 @@ export default function Testimonials() {
         {/* Why Choose Section */}
         <motion.div
           variants={container}
-          className="grid md:grid-cols-2 gap-12 items-center py-12"
+          className="grid md:grid-cols-2 gap-12 items-center md:py-10 py-5 lg:py-12"
         >
 
           <motion.div variants={fadeUp}>
@@ -287,12 +287,12 @@ export default function Testimonials() {
               ✨ Why Choose Us
             </span>
 
-            <h3 className="text-4xl font-semibold mt-6 mb-6 leading-snug">
+            <h3 className="text-2xl  md:text-4xl font-semibold mt-10  leading-snug">
               help you find the best analysis for your business
             </h3>
           </motion.div>
 
-          <motion.p variants={fadeUp} className="text-gray-400">
+          <motion.p variants={fadeUp} className="text-gray-400 mb-6 md:mb-0">
             Create stunning, professional-quality websites in record time
             with our powerful UI kit. Elevate your SAAS game today!
           </motion.p>

@@ -2,12 +2,12 @@
 
 export default function Pricing() {
   return (
-    <section className="relative pb-3 px-6 bg-[#070816] text-white overflow-hidden">
+    <section className="relative pb-3 px-2 md:px-4 lg:px-6 bg-[#070816] text-white overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-purple-600 opacity-10 blur-[150px] rounded-full"></div>
 
-      <div className="relative z-10 px-20 mx-auto text-center">
+      <div className="relative z-10 px-5 text-center">
 
         {/* Badge */}
         <div className="mb-6">
@@ -17,8 +17,8 @@ export default function Pricing() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-semibold mb-16">
-          Choose the Right Plan for Your <br /> Business
+        <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto text-center font-semibold mb-16">
+          Choose the Right Plan for Your Business
         </h2>
 
         {/* Pricing Cards */}

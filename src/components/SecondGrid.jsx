@@ -123,7 +123,7 @@ export default function SecondGrid() {
   }
 
   return (
-    <section className="relative py-20 px-6 bg-[#070816] text-white overflow-hidden">
+    <section className="relative py-20 px-2 md:px-4 lg:px-6 bg-[#070816] text-white overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-500 opacity-10 blur-[200px] rounded-full"></div>
@@ -147,9 +147,9 @@ export default function SecondGrid() {
         {/* Heading */}
         <motion.h2
           variants={fadeUp}
-          className="text-4xl md:text-5xl text-center font-semibold mb-20"
+          className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto text-center  font-semibold mb-20"
         >
-          help you find the best analysis <br />
+          help you find the best analysis 
           for your business
         </motion.h2>
 
