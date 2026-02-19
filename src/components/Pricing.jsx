@@ -2,7 +2,7 @@
 
 export default function Pricing() {
   return (
-    <section className="relative py-28 px-6 bg-[#070816] text-white overflow-hidden">
+    <section className="relative pb-3 px-6 bg-[#070816] text-white overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-purple-600 opacity-10 blur-[150px] rounded-full"></div>

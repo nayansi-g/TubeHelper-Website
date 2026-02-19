@@ -1,18 +1,30 @@
 "use client"
 
 import { FaWhatsapp } from "react-icons/fa"
+import { motion } from "framer-motion"
 
 export default function Navbar() {
   return (
-    <div className="relative flex bg-[#080B1A]  justify-center pt-6">
-      
-      {/* Glow Background */}
-      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-purple-600 opacity-20 blur-[120px] rounded-full"></div>
-        {/* <div className="absolute -top-20 left-0 -translate-x-1/2 w-[800px] h-[200px] bg-purple-600 opacity-20 blur-[120px] rounded-full"></div> */}
+    <section className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#080B1A] text-white">
 
-      {/* Navbar */}
-      <nav className="relative z-10 w-[90%] max-w-6xl flex items-center justify-between px-6 py-3 
-      bg-white/10 backdrop-blur-xl border border-white/10 
+      {/* ================= Background Effects ================= */}
+
+      {/* Left Purple Glow */}
+      <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.3, scale: 1 }}
+        transition={{ duration: 2 }}
+       className="absolute top-[-100px] left-[-200px] w-[600px] h-[600px] bg-purple-600 opacity-30 blur-[200px] rounded-full"></motion.div>
+
+      {/* Right Pink Glow */}
+      {/* <div className="absolute bottom-[-200px] right-[-200px] w-[600px] h-[600px] bg-pink-600 opacity-30 blur-[200px] rounded-full"></div> */}
+
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+
+      {/* ================= Content ================= */}
+       <nav className="relative z-10 w-[90%] max-w-6xl  flex items-center justify-between px-6 py-3 my-8 
+      bg-black/10 backdrop-blur-xl border border-white/30 
       rounded-full shadow-lg">
 
         {/* Logo */}
@@ -51,6 +63,6 @@ export default function Navbar() {
 
         </div>
       </nav>
-    </div>
+    </section>
   )
 }

@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="absolute left-0 bottom-0 w-[300px] h-[300px] bg-pink-500 opacity-20 blur-[150px] rounded-full"></div>
 
   
-          <div className="relative z-10 mx-1 md:mx-10">
+          <div className="relative z-10 mx-1 md:mx-1 lg:mx-2 xl:mx-4 2xl:mx-10">
               <div >
 
         {/* Top Heading */}
@@ -19,7 +19,7 @@ export default function Footer() {
           Let’s Connect with us
         </h2>
 
-        <div className="border-t border-white/10 pt-12 grid md:grid-cols-4 gap-20">
+        <div className="border-t border-white/10 pt-12 grid md:grid-cols-4   gap-10">
 
           {/* Column 1 */}
           <div>
@@ -38,20 +38,11 @@ export default function Footer() {
             </p>
 
             {/* Email Input + Button */}
-            <div className="flex items-center bg-white/5 border border-white/10 rounded-full p-1">
-              <input
-                type="email"
-                placeholder="Enter you email address..."
-                className="bg-transparent outline-none px-4 py-2 text-sm flex-1 text-gray-300"
-              />
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 px-5 py-2 rounded-full text-sm hover:scale-105 transition">
-                Book a Demo
-              </button>
-            </div>
+
           </div>
 
           {/* Column 2 */}
-          <div>
+          <div className="pl-10">
             <h4 className="font-semibold mb-4">Features</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>24/7 Support</li>
@@ -79,14 +70,25 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>People platform</li>
-              <li>Full-service payroll</li>
-              <li>Employee Benefits</li>
-              <li>Hiring and onboarding</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>Refund Policy</li>
+              <li>Cookie Policy</li>
             </ul>
           </div>
 
         </div>
+
+           <div className="flex items-start w-[350px] mt-5 bg-white/5 border border-white/10 rounded-full p-1">
+              <input
+                type="email"
+                placeholder="Enter you email address..."
+                className="bg-transparent outline-none px-4 py-2 text-sm flex-1 text-gray-300"
+              />
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 px-5 py-2 rounded-full text-sm hover:scale-105 transition">
+                Book a Demo
+              </button>
+            </div>
 
         {/* Bottom Section */}
         <div className="border-t border-white/10 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
