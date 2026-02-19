@@ -1,0 +1,118 @@
+    "use client"
+
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes } from "react-icons/fa"
+
+export default function Footer() {
+  return (
+    <footer className="relative bg-[#070816] text-white pt-10 md:pt-24 pb-5 md:pb-10 px-6 overflow-hidden">
+
+      {/* Glow Effects */}
+      <div className="absolute right-0 bottom-0 w-[400px] h-[400px] bg-purple-600 opacity-20 blur-[200px] rounded-full"></div>
+      <div className="absolute left-0 bottom-0 w-[300px] h-[300px] bg-pink-500 opacity-20 blur-[150px] rounded-full"></div>
+
+  
+          <div className="relative z-10 mx-1 md:mx-10">
+              <div >
+
+        {/* Top Heading */}
+        <h2 className="text-3xl md:text-4xl font-semibold mb-10">
+          Let’s Connect with us
+        </h2>
+
+        <div className="border-t border-white/10 pt-12 grid md:grid-cols-4 gap-20">
+
+          {/* Column 1 */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">TubeHelper</h3>
+            <p className="text-gray-400 mb-6">
+              We build secure, SEO-friendly, and high-performing
+              WordPress websites tailored to your goals.
+            </p>
+
+            <h4 className="font-medium mb-2">Contact:</h4>
+            <p className="text-gray-400 text-sm">
+              hello@nichegeeky@gmail.com
+            </p>
+            <p className="text-gray-400 text-sm mb-6">
+              +8807683674747
+            </p>
+
+            {/* Email Input + Button */}
+            <div className="flex items-center bg-white/5 border border-white/10 rounded-full p-1">
+              <input
+                type="email"
+                placeholder="Enter you email address..."
+                className="bg-transparent outline-none px-4 py-2 text-sm flex-1 text-gray-300"
+              />
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 px-5 py-2 rounded-full text-sm hover:scale-105 transition">
+                Book a Demo
+              </button>
+            </div>
+          </div>
+
+          {/* Column 2 */}
+          <div>
+            <h4 className="font-semibold mb-4">Features</h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li>24/7 Support</li>
+              <li>Recurring billing</li>
+              <li>Invoice management</li>
+              <li>Checkout</li>
+              <li>Integrations</li>
+              <li>Pricing</li>
+            </ul>
+          </div>
+
+          {/* Column 3 */}
+          <div>
+            <h4 className="font-semibold mb-4">Solutions</h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li>E-commerce</li>
+              <li>WordPress Development</li>
+              <li>Woo-commerce</li>
+              <li>Global Business</li>
+              <li>Marketplaces</li>
+            </ul>
+          </div>
+
+          {/* Column 4 */}
+          <div>
+            <h4 className="font-semibold mb-4">Company</h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li>People platform</li>
+              <li>Full-service payroll</li>
+              <li>Employee Benefits</li>
+              <li>Hiring and onboarding</li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-white/10 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
+
+          <p className="text-gray-500 text-sm">
+            Niche Geeky © 2025 all rights reserved.
+          </p>
+
+          {/* Social Icons */}
+          <div className="flex gap-4">
+            {[FaFacebookF, FaInstagram, FaTimes, FaLinkedinIn].map((Icon, i) => (
+              <div
+                key={i}
+                className="w-10 h-10 flex items-center justify-center 
+                rounded-full border border-white/20 bg-white/5 
+                hover:bg-white/10 transition cursor-pointer"
+              >
+                <Icon className="text-sm" />
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </footer>
+  )
+}
