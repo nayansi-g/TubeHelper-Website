@@ -111,7 +111,7 @@ export default function Navbar() {
           </li>
           <li className="hover:text-white cursor-pointer transition">Services</li>
           <li className="hover:text-white cursor-pointer transition">Our Work</li>
-          <li className="hover:text-white cursor-pointer transition">Reviews</li>
+          <li className="hover:text-white cursor-pointer transition"><a href="blog">Blogs</a></li>
           <li className="hover:text-white cursor-pointer transition"><a href="contact">Contact us</a></li>
         </ul>
 
@@ -157,7 +157,7 @@ export default function Navbar() {
                 <li className="text-white border-b border-white/30 pb-2"><a href="/">Home</a></li>
                 <li className="hover:text-white transition">Services</li>
                 <li className="hover:text-white transition">Our Work</li>
-                <li className="hover:text-white transition">Reviews</li>
+                <li className="hover:text-white transition"><a href="blog">Blogs</a></li>
                 <li className="hover:text-white transition"><a href="contact">Contact us</a></li>
               </ul>
 
