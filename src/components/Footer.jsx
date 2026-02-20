@@ -76,8 +76,7 @@ export default function Footer() {
               <li>WooCommerce Store Development</li>
               <li>Custom E-commerce Website</li>
               <li>Maintenance & Support</li>
-              <li>Speed Optimization</li>
-              <li>Conversion Rate Optimization</li>
+              <li>Speed & Conversion Rate Optimization</li>
             </ul>
           </div>
 

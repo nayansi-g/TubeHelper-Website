@@ -109,7 +109,7 @@ export default function Navbar() {
           <li className="text-white border-b-2 cursor-pointer border-white pb-1"><a href="/">
             Home </a>
           </li>
-          <li className="hover:text-white cursor-pointer transition">Services</li>
+          <li className="hover:text-white cursor-pointer transition"><a href="services">Services</a></li>
           <li className="hover:text-white cursor-pointer transition">Our Work</li>
           <li className="hover:text-white cursor-pointer transition"><a href="blog">Blogs</a></li>
           <li className="hover:text-white cursor-pointer transition"><a href="contact">Contact us</a></li>
@@ -155,7 +155,7 @@ export default function Navbar() {
 
               <ul className="space-y-4 text-gray-300">
                 <li className="text-white border-b border-white/30 pb-2"><a href="/">Home</a></li>
-                <li className="hover:text-white transition">Services</li>
+                <li className="hover:text-white transition"> <a href="services">Services</a></li>
                 <li className="hover:text-white transition">Our Work</li>
                 <li className="hover:text-white transition"><a href="blog">Blogs</a></li>
                 <li className="hover:text-white transition"><a href="contact">Contact us</a></li>
