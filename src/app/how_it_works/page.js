@@ -3,7 +3,7 @@
 export default function HowItWorks() {
   return (
     <>
-    <div>this is </div>
+    <div>this is HowItWorks</div>
     </>
   )
 }

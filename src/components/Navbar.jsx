@@ -106,13 +106,13 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 text-gray-300 text-sm">
-          <li className="text-white border-b-2 cursor-pointer border-white pb-1">
-            Home
+          <li className="text-white border-b-2 cursor-pointer border-white pb-1"><a href="/">
+            Home </a>
           </li>
           <li className="hover:text-white cursor-pointer transition">Services</li>
           <li className="hover:text-white cursor-pointer transition">Our Work</li>
           <li className="hover:text-white cursor-pointer transition">Reviews</li>
-          <li className="hover:text-white cursor-pointer transition">Contact us</li>
+          <li className="hover:text-white cursor-pointer transition"><a href="contact">Contact us</a></li>
         </ul>
 
         {/* Right Section */}
@@ -154,11 +154,11 @@ export default function Navbar() {
             <div className="bg-black/20 backdrop-blur-xl border border-white/20 rounded-2xl p-6 space-y-6 text-left">
 
               <ul className="space-y-4 text-gray-300">
-                <li className="text-white border-b border-white/30 pb-2">Home</li>
+                <li className="text-white border-b border-white/30 pb-2"><a href="/">Home</a></li>
                 <li className="hover:text-white transition">Services</li>
                 <li className="hover:text-white transition">Our Work</li>
                 <li className="hover:text-white transition">Reviews</li>
-                <li className="hover:text-white transition">Contact us</li>
+                <li className="hover:text-white transition"><a href="contact">Contact us</a></li>
               </ul>
 
               <div className="flex items-center gap-3 pt-4">

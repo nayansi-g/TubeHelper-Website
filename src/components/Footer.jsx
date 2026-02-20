@@ -1,5 +1,6 @@
     "use client"
 
+import Link from "next/link"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes } from "react-icons/fa"
 
 export default function Footer() {
@@ -70,10 +71,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>Privacy Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Refund Policy</li>
-              <li>Cookie Policy</li>
+              <li><a href="/privacy_policy">Privacy Policy</a></li>
+              <li><a href="/terms_of_use">Terms & Conditions </a></li>
+              <li><a href="/refund_policy">Refund Policy</a></li>
             </ul>
           </div>
 
