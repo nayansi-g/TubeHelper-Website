@@ -63,9 +63,9 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><a href="blog">Blogs</a></li>
               <li><a href="e-commerce_tips">E-commerce Tips</a></li>
-              <li>Free Resources</li>
+              <li><a href="free_resources">Free Resources</a></li>
               <li><a href="faq">FAQs</a></li>
-              <li>Guides</li>
+              <li><a href="guides">Guides</a></li>
             </ul>
           </div>
 
