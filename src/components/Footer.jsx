@@ -62,7 +62,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><a href="blog">Blogs</a></li>
-              <li>E-commerce Tips</li>
+              <li><a href="e-commerce_tips">E-commerce Tips</a></li>
               <li>Free Resources</li>
               <li><a href="faq">FAQs</a></li>
               <li>Guides</li>
