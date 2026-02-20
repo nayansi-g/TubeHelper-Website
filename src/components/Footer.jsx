@@ -20,7 +20,7 @@ export default function Footer() {
           Let’s Connect with us
         </h2>
 
-        <div className="border-t border-white/10 pt-12 grid md:grid-cols-4   gap-10">
+        <div className="border-t border-white/10 pt-12 grid md:grid-cols-5   gap-10">
 
           {/* Column 1 */}
           <div>
@@ -44,38 +44,54 @@ export default function Footer() {
 
           {/* Column 2 */}
           <div>
-            <h4 className="font-semibold mb-4">Features</h4>
+            <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>24/7 Support</li>
-              <li>Recurring billing</li>
-              <li>Invoice management</li>
-              <li>Checkout</li>
-              <li>Integrations</li>
+              <li>About Us</li>
+              <li>Our Work</li>
+              <li>24/7 Support</li>              
+              <li>Reviews</li>
               <li>Pricing</li>
+              <li>Contact Us</li>
+              
             </ul>
           </div>
 
           {/* Column 3 */}
-          <div>
-            <h4 className="font-semibold mb-4">Solutions</h4>
+
+              <div>
+            <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>E-commerce</li>
-              <li>WordPress Development</li>
-              <li>Woo-commerce</li>
-              <li>Global Business</li>
-              <li>Marketplaces</li>
+              <li>Blogs</li>
+              <li>E-commerce Tips</li>
+              <li>Free Resources</li>
+              <li>FAQs</li>
+              <li>Guides</li>
+            </ul>
+          </div>
+
+           <div>
+            <h4 className="font-semibold mb-4">Services</h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li>Shopify Store Development</li>
+              <li>WooCommerce Store Development</li>
+              <li>Custom E-commerce Website</li>
+              <li>Maintenance & Support</li>
+              <li>Speed Optimization</li>
+              <li>Conversion Rate Optimization</li>
             </ul>
           </div>
 
           {/* Column 4 */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><a href="/privacy_policy">Privacy Policy</a></li>
               <li><a href="/terms_of_use">Terms & Conditions </a></li>
               <li><a href="/refund_policy">Refund Policy</a></li>
             </ul>
           </div>
+
+          
 
         </div>
 
