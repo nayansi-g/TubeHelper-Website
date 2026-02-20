@@ -47,11 +47,11 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>About Us</li>
-              <li>Our Work</li>
+              <li><a href="how_it_works">Our Work</a></li>
               <li>24/7 Support</li>              
               <li>Reviews</li>
               <li>Pricing</li>
-              <li>Contact Us</li>
+              <li><a href="contact">Contact Us</a></li>
               
             </ul>
           </div>
@@ -61,7 +61,7 @@ export default function Footer() {
               <div>
             <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>Blogs</li>
+              <li><a href="blog">Blogs</a></li>
               <li>E-commerce Tips</li>
               <li>Free Resources</li>
               <li>FAQs</li>
@@ -72,11 +72,11 @@ export default function Footer() {
            <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>Shopify Store Development</li>
-              <li>WooCommerce Store Development</li>
-              <li>Custom E-commerce Website</li>
-              <li>Maintenance & Support</li>
-              <li>Speed & Conversion Rate Optimization</li>
+              <li><a href="services">Shopify Store Development</a></li>
+              <li><a href="services">WooCommerce Store Development</a></li>
+              <li><a href="services">Custom E-commerce Website</a></li>
+              <li><a href="services">Maintenance & Support</a></li>
+              <li><a href="services">Speed & Conversion Rate Optimization</a></li>
             </ul>
           </div>
 
