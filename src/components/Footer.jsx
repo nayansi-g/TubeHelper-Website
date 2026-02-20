@@ -64,7 +64,7 @@ export default function Footer() {
               <li><a href="blog">Blogs</a></li>
               <li>E-commerce Tips</li>
               <li>Free Resources</li>
-              <li>FAQs</li>
+              <li><a href="faq">FAQs</a></li>
               <li>Guides</li>
             </ul>
           </div>
