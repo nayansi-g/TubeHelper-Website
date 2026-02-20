@@ -46,10 +46,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>About Us</li>
+              <li><a href="about_us">About Us</a></li>
               <li><a href="how_it_works">Our Work</a></li>
-              <li>24/7 Support</li>              
-              <li>Reviews</li>
+              <li><a href="support">24/7 Support</a></li>              
+              <li><a href="reviews">Reviews</a></li>
               <li>Pricing</li>
               <li><a href="contact">Contact Us</a></li>
               
