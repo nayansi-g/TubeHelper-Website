@@ -77,10 +77,10 @@ const blogs = [
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-[#080B1A] text-white px-6 py-20">
+    <main className="min-h-screen bg-[#070816] flex flex-col justify-center items-center text-white px-6 py-20">
 
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center pt-20 mb-16">
         <h1 className="text-4xl md:text-5xl font-semibold mb-4">
           Our Latest Blogs
         </h1>

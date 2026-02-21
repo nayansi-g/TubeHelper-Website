@@ -1,112 +1,3 @@
-// "use client"
-
-// import { useState } from "react"
-// import { Minus, Plus } from "lucide-react"
-
-// const faqs = [
-//   {
-//     question: "What Niche Geeky features are included?",
-//     answer:
-//       "Power to founders with exceptional entrepreneurs and the world's leading companies. We provide advanced tools, secure infrastructure, and scalable solutions tailored for modern businesses.",
-//   },
-//   {
-//     question: "What are the system requirements",
-//     answer:
-//       "You only need a modern web browser and stable internet connection. Our platform works across all devices seamlessly.",
-//   },
-//   {
-//     question: "Is there a free trial available?",
-//     answer:
-//       "Yes! We offer a 14-day free trial with full access to premium features.",
-//   },
-//   {
-//     question: "Is employee data secure?",
-//     answer:
-//       "Absolutely. We use industry-level encryption and strict compliance standards to protect all user data.",
-//   },
-//   {
-//     question: "How does billing work?",
-//     answer:
-//       "Billing is subscription-based and can be managed anytime from your dashboard.",
-//   },
-// ]
-
-// export default function Faq() {
-//   const [activeIndex, setActiveIndex] = useState(0)
-
-//   const toggleFAQ = (index) => {
-//     setActiveIndex(activeIndex === index ? null : index)
-//   }
-
-//   return (
-//     <section className="relative py-32 px-6 bg-[#070816] text-white overflow-hidden">
-
-//       {/* Background Glow */}
-//       {/* <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-600 opacity-10 blur-[200px] rounded-full"></div> */}
-
-//       <div className="relative z-10 max-w-4xl mx-auto text-center">
-
-//         {/* Badge */}
-//         <div className="mb-6">
-//           <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-//             ✨ FAQs
-//           </span>
-//         </div>
-
-//         {/* Heading */}
-//         <h2 className="text-4xl md:text-5xl font-semibold mb-16">
-//           Frequently Asked <br /> Questions
-//         </h2>
-
-//         {/* FAQ Items */}
-//         <div className="space-y-6 text-left">
-//           {faqs.map((faq, index) => {
-//             const isActive = activeIndex === index
-
-//             return (
-//               <div
-//                 key={index}
-//                 className={`rounded-2xl border transition-all duration-300
-//                 ${
-//                   isActive
-//                     ? "border-purple-500 bg-white/5"
-//                     : "border-white/10 bg-white/5"
-//                 }`}
-//               >
-//                 {/* Question */}
-//                 <button
-//                   onClick={() => toggleFAQ(index)}
-//                   className="w-full flex justify-between items-center px-6 py-5 text-left"
-//                 >
-//                   <span className="text-lg">{faq.question}</span>
-
-//                   <div className="w-8 h-8 flex items-center justify-center rounded-full bg-purple-600/20">
-//                     {isActive ? (
-//                       <Minus size={16} />
-//                     ) : (
-//                       <Plus size={16} />
-//                     )}
-//                   </div>
-//                 </button>
-
-//                 {/* Answer */}
-//                 <div
-//                   className={`overflow-hidden transition-all duration-300 px-6 ${
-//                     isActive ? "max-h-40 pb-6" : "max-h-0"
-//                   }`}
-//                 >
-//                   <p className="text-gray-400 text-sm">{faq.answer}</p>
-//                 </div>
-//               </div>
-//             )
-//           })}
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-
 "use client"
 
 import { useState, useEffect, useRef } from "react"
@@ -114,29 +5,29 @@ import { Minus, Plus } from "lucide-react"
 
 const faqs = [
   {
-    question: "What Niche Geeky features are included?",
+    question: "What services do you specialize in?",
     answer:
-      "Power to founders with exceptional entrepreneurs and the world's leading companies. We provide advanced tools, secure infrastructure, and scalable solutions tailored for modern businesses.",
+      "We specialize in performance marketing, ecommerce growth, conversion rate optimization (CRO), creative strategy, and analytics setup. Our focus is helping brands scale profitably — not just increase traffic.",
   },
   {
-    question: "What are the system requirements",
+    question: "Do you work with Shopify brands?",
     answer:
-      "You only need a modern web browser and stable internet connection. Our platform works across all devices seamlessly.",
+      "Yes, we work extensively with Shopify and D2C brands. From paid acquisition to retention and lifecycle marketing, we build growth systems tailored specifically for ecommerce businesses.",
   },
   {
-    question: "Is there a free trial available?",
+    question: "How do you measure success?",
     answer:
-      "Yes! We offer a 14-day free trial with full access to premium features.",
+      "We measure success using real business metrics — revenue growth, return on ad spend (ROAS), customer acquisition cost (CAC), and lifetime value (LTV). We focus on profitability, not vanity numbers.",
   },
   {
-    question: "Is employee data secure?",
+    question: "How long does it take to see results?",
     answer:
-      "Absolutely. We use industry-level encryption and strict compliance standards to protect all user data.",
+      "Most campaigns begin generating performance insights within the first few weeks. However, sustainable and scalable growth typically takes 60–90 days of structured testing and optimization.",
   },
   {
-    question: "How does billing work?",
+    question: "Do you require long-term contracts?",
     answer:
-      "Billing is subscription-based and can be managed anytime from your dashboard.",
+      "We believe in earning trust through results. While growth takes time, we focus on transparent communication and performance-driven partnerships rather than locking clients into rigid contracts.",
   },
 ]
 
@@ -167,75 +58,80 @@ export default function Faq() {
     return () => observer.disconnect()
   }, [])
 
-  return (
-    <section
-      ref={sectionRef}
-      className="relative py-32 px-2 md:px-4 lg:px-6  bg-[#070816] text-white overflow-hidden"
+ return (
+  <section
+    ref={sectionRef}
+    className="relative py-20 px-4 bg-white rounded-t-[90px] md:rounded-t-[100px] lg:rounded-t-[150px] text-gray-900 overflow-hidden"
+  >
+    <div
+      className={`relative z-10 max-w-4xl mx-auto text-center transition-all duration-1000 ease-out
+      ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
-      <div
-        className={`relative z-10 max-w-4xl mx-auto text-center transition-all duration-1000 ease-out
-        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-      >
-        {/* Badge */}
-        <div className="mb-6">
-          <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-            ✨ FAQs
-          </span>
-        </div>
+      {/* Badge */}
+      <div className="mb-6">
+        <span className="px-4 py-1 text-sm rounded-full bg-purple-50 text-purple-600 border border-purple-200">
+          ✨ FAQs
+        </span>
+      </div>
 
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-16">
-          Frequently Asked <br /> Questions
-        </h2>
+      {/* Heading */}
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-16 text-gray-900">
+        Frequently Asked <br /> Questions
+      </h2>
 
-        {/* FAQ Items */}
-        <div className="space-y-6 text-left">
-          {faqs.map((faq, index) => {
-            const isActive = activeIndex === index
+      {/* FAQ Items */}
+      <div className="space-y-3 text-left">
+        {faqs.map((faq, index) => {
+          const isActive = activeIndex === index
 
-            return (
-              <div
-                key={index}
-                className={`rounded-2xl border transition-all duration-500 delay-${index * 100}
-                ${
-                  isActive
-                    ? "border-purple-500 bg-white/5 shadow-lg shadow-purple-500/10"
-                    : "border-white/10 bg-white/5"
-                }`}
+          return (
+            <div
+              key={index}
+              className={`rounded-2xl border transition-all duration-300
+              ${
+                isActive
+                  ? "border-purple-500 bg-purple-50 shadow-md"
+                  : "border-gray-200 bg-gray-50"
+              }`}
+            >
+              {/* Question */}
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center px-6 py-2 text-left"
               >
-                {/* Question */}
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full flex justify-between items-center px-6 py-4 text-left"
-                >
-                  <span className="text-lg">{faq.question}</span>
+                <span className="text-lg font-medium text-gray-900">
+                  {faq.question}
+                </span>
 
-                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-purple-600/20 transition-transform duration-300">
-                    {isActive ? (
-                      <Minus size={16} className="rotate-180 transition-all duration-300" />
-                    ) : (
-                      <Plus size={16} className="transition-all duration-300" />
-                    )}
-                  </div>
-                </button>
-
-                {/* Answer */}
                 <div
-                  className={`grid transition-all duration-500 ease-in-out
-                  ${isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
-                  overflow-hidden`}
+                  className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300
+                  ${
+                    isActive
+                      ? "bg-purple-600 text-white"
+                      : "bg-purple-100 text-purple-600"
+                  }`}
                 >
-                  <div className="overflow-hidden px-6 pb-3">
-                    <p className="text-gray-400 text-sm">
-                      {faq.answer}
-                    </p>
-                  </div>
+                  {isActive ? <Minus size={16} /> : <Plus size={16} />}
+                </div>
+              </button>
+
+              {/* Answer */}
+              <div
+                className={`grid transition-all duration-500 ease-in-out
+                ${isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
+                overflow-hidden`}
+              >
+                <div className="overflow-hidden px-6 pb-2">
+                  <p className="text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
-            )
-          })}
-        </div>
+            </div>
+          )
+        })}
       </div>
-    </section>
-  )
+    </div>
+  </section>
+)
 }

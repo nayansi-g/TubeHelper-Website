@@ -16,7 +16,7 @@ export default function ServicesPage() {
     <div className="bg-[#070816] text-white overflow-hidden">
 
       {/* HERO SECTION */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
+      <section className="min-h-[80vh] flex flex-col items-center justify-end py-10 text-center px-6">
         <motion.h1
           variants={fadeUp}
           initial="hidden"

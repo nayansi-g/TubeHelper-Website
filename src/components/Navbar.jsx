@@ -1,184 +1,250 @@
-// "use client"
-
-// import { FaWhatsapp } from "react-icons/fa"
-// import { motion } from "framer-motion"
-
-// export default function Navbar() {
-//   return (
-//     <section className="relative flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#080B1A] text-white">
-
-//       {/* ================= Background Effects ================= */}
-
-//       {/* Left Purple Glow */}
-//       <motion.div
-//       initial={{ opacity: 0, scale: 0.8 }}
-//         animate={{ opacity: 0.3, scale: 1 }}
-//         transition={{ duration: 2 }}
-//        className="absolute top-[-100px] left-[-200px] w-[600px] h-[600px] bg-purple-600 opacity-30 blur-[200px] rounded-full"></motion.div>
-
-//       {/* Right Pink Glow */}
-//       {/* <div className="absolute bottom-[-200px] right-[-200px] w-[600px] h-[600px] bg-pink-600 opacity-30 blur-[200px] rounded-full"></div> */}
-
-//       {/* Grid Overlay */}
-//       <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-
-//       {/* ================= Content ================= */}
-//        <nav className="relative z-10 w-[90%] max-w-6xl  flex items-center justify-between px-6 py-3 my-8 
-//       bg-black/10 backdrop-blur-xl border border-white/30 
-//       rounded-full shadow-lg">
-
-//         {/* Logo */}
-//         <h1 className="text-white text-lg font-semibold tracking-wide">
-//           TubeHelper
-//         </h1>
-
-//         {/* Menu */}
-//         <ul className="hidden md:flex items-center gap-8 text-gray-300 text-sm">
-//           <li className="text-white border-b-2 cursor-pointer border-white pb-1">
-//             Home
-//           </li>
-//           <li className="hover:text-white cursor-pointer transition">Services</li>
-//           <li className="hover:text-white cursor-pointer transition">Our Work</li>
-//           <li className="hover:text-white cursor-pointer transition">Reviews</li>
-//           <li className="hover:text-white cursor-pointer transition">Contact us</li>
-//         </ul>
-
-//         {/* Right Section */}
-//         <div className="flex items-center gap-4">
-          
-//           {/* WhatsApp Icon */}
-//           <div className="w-10 h-10 flex items-center justify-center 
-//           rounded-full bg-white/10 border border-white/20 
-//           hover:bg-white/20 transition cursor-pointer">
-//             <FaWhatsapp className="text-white text-lg" />
-//           </div>
-
-//           {/* Get Started Button */}
-//           <button className="px-5 py-2 rounded-full 
-//           bg-gradient-to-r from-purple-600 to-pink-600 
-//           text-white text-sm font-medium cursor-pointer 
-//           hover:scale-105 transition-all duration-300">
-//             Get Started <span className="text-gray-200">- it's free ↗</span>
-//           </button>
-
-//         </div>
-//       </nav>
-//     </section>
-//   )
-// }
-
-
-
 "use client"
 
-import { useState } from "react"
-import { FaWhatsapp } from "react-icons/fa"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, MoveUpRight, X } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import {
+  ChartNoAxesCombined,
+  ChevronDown,
+  Cpu,
+  Megaphone,
+  PhoneOutgoing,
+  ShoppingCart,
+  Sprout
+} from "lucide-react"
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false)
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false)
+  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false)
+
+  const solutionsRef = useRef(null)
+  const resourcesRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (solutionsRef.current && !solutionsRef.current.contains(e.target)) {
+        setIsSolutionsOpen(false)
+      }
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target)) {
+        setIsResourcesOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   return (
-    <section className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 overflow-hidden bg-[#080B1A] text-white">
+    <header className="w-full bg-white rounded-b-[25px] text-black fixed top-0 left-0 z-50 shadow-sm">
 
-      {/* ================= Background Effects ================= */}
-
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.3, scale: 1 }}
-        transition={{ duration: 2 }}
-        className="absolute top-[-100px] left-[-200px] w-[600px] h-[600px] bg-purple-600 opacity-30 blur-[200px] rounded-full"
-      />
-
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-
-      {/* ================= Navbar ================= */}
-
-      <nav className="relative z-10 w-full max-w-6xl flex items-center justify-between px-4 sm:px-6 py-3 my-6
-      bg-black/10 backdrop-blur-xl border border-white/30 
-      rounded-full shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <h1 className="text-white text-lg font-semibold tracking-wide">
-          TubeHelper
-        </h1>
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-black flex justify-center items-center text-white rounded-md">TH</div>
+          <span className="text-xl font-semibold">TubeHelper</span>
+        </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-300 text-sm">
-          <li className="text-white border-b-2 cursor-pointer border-white pb-1"><a href="/">
-            Home </a>
-          </li>
-          <li className="hover:text-white cursor-pointer transition"><a href="services">Services</a></li>
-          <li className="hover:text-white cursor-pointer transition"><a href="how_it_works">Our Work</a></li>
-          <li className="hover:text-white cursor-pointer transition"><a href="blog">Blogs</a></li>
-          <li className="hover:text-white cursor-pointer transition"><a href="contact">Contact us</a></li>
-        </ul>
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium relative">
 
-        {/* Right Section */}
-        <div className="hidden md:flex items-center gap-4">
-          <div className="w-10 h-10 flex items-center justify-center 
-          rounded-full bg-white/10 border border-white/20 
-          hover:bg-white/20 transition cursor-pointer">
-            <FaWhatsapp className="text-white text-lg" />
+          <a href="#" className="hover:text-purple-600">Home</a>
+
+          {/* Services Dropdown */}
+          <div className="relative" ref={solutionsRef}>
+            <button
+              onClick={() => {
+                setIsSolutionsOpen(!isSolutionsOpen)
+                setIsResourcesOpen(false)
+              }}
+              className="flex items-center gap-1 hover:text-purple-600"
+            >
+              Services <ChevronDown size={16} />
+            </button>
+
+            {isSolutionsOpen && (
+              <div className="absolute top-12 w-[95vw] max-w-[900px] bg-white shadow-xl rounded-2xl p-8 grid lg:grid-cols-3 gap-10">
+
+                {/* Column 1 */}
+                <div>
+                  <h4 className="text-gray-400 mb-4 text-sm">Our Services</h4>
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-semibold flex items-center gap-1">
+                        <ChartNoAxesCombined className="w-5 h-5" />
+                        Performance Marketing
+                      </h3>
+                      <p className="text-sm text-gray-500">Meta & Instagram Ads</p>
+                      <p className="text-sm text-gray-500">Google Ads (Search & Shopping)</p>
+                      <p className="text-sm text-gray-500">YouTube Ads</p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold flex items-center gap-1">
+                        <ShoppingCart className="w-5 h-5" />
+                        Ecommerce Growth
+                      </h3>
+                      <p className="text-sm text-gray-500">Shopify Growth Strategy</p>
+                      <p className="text-sm text-gray-500">Conversion Rate Optimization (CRO)</p>
+                      <p className="text-sm text-gray-500">Funnel Optimization</p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold flex items-center gap-1">
+                        <Sprout className="w-5 h-5" />
+                        Organic Growth
+                      </h3>
+                      <p className="text-sm text-gray-500">SEO</p>
+                      <p className="text-sm text-gray-500">Content Marketing</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Column 2 */}
+                <div>
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-semibold flex items-center gap-1">
+                        <Cpu className="w-5 h-5" />
+                        Analytics & Automation
+                      </h3>
+                      <p className="text-sm text-gray-500">Tracking & GA4 Setup</p>
+                      <p className="text-sm text-gray-500">Marketing Automation</p>
+                      <p className="text-sm text-gray-500">Reporting & Dashboard Setup</p>
+                      <p className="text-sm text-gray-500">Landing Page Strategy</p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold flex items-center gap-1">
+                        <Megaphone className="w-5 h-5" />
+                        Amplify brand awareness
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        Maximize reach and business results
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Column 3 */}
+                <div
+                  className="relative bg-gray-100 rounded-xl p-6 overflow-hidden 
+                  bg-[url('/navbarimg.jpg')] bg-cover bg-center"
+                >
+                  <div className="absolute inset-0 bg-black/40 rounded-xl"></div>
+                  <div className="relative z-10 text-white">
+                    <h4 className="mb-4 text-sm">By service</h4>
+                    <div className="space-y-4 font-semibold">
+                      <p>Enterprise</p>
+                      <p>Professional services</p>
+                      <p>Agencies</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            )}
           </div>
 
-          <button className="px-5 py-2 rounded-full 
-          bg-gradient-to-r from-purple-600 to-pink-600 
-          text-white text-sm font-medium cursor-pointer 
-          hover:scale-105 transition-all duration-300">
-            Get Started <span className="text-gray-200">- it's free ↗</span>
+          <a href="#" className="hover:text-purple-600">Case Studies</a>
+          <a href="#" className="hover:text-purple-600">About Us</a>
+
+          {/* Resources Dropdown */}
+          <div className="relative" ref={resourcesRef}>
+            <button
+              onClick={() => {
+                setIsResourcesOpen(!isResourcesOpen)
+                setIsSolutionsOpen(false)
+              }}
+              className="flex items-center gap-1 hover:text-purple-600"
+            >
+              Resources <ChevronDown size={16} />
+            </button>
+
+            {isResourcesOpen && (
+              <div className="absolute top-12 w-44 bg-white shadow-xl border border-gray-300 rounded-xl p-6 space-y-3">
+                <p className="hover:text-purple-600 cursor-pointer">Contact</p>
+                <p className="hover:text-purple-600 cursor-pointer">Blog</p>
+                <p className="hover:text-purple-600 cursor-pointer">Case Studies</p>
+                <p className="hover:text-purple-600 cursor-pointer">Guides</p>
+                <p className="hover:text-purple-600 cursor-pointer">FAQ</p>
+              </div>
+            )}
+          </div>
+        </nav>
+
+        {/* Desktop Buttons */}
+        <div className="hidden lg:flex items-center gap-4">
+          <button className="border px-2 py-2 rounded-lg text-sm">
+            <PhoneOutgoing className="text-black w-5 h-5" />
+          </button>
+          <button className="bg-black text-white px-4 py-2 rounded-lg text-sm">
+            Get Started
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button
-          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          className="lg:hidden text-2xl"
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          ☰
         </button>
-      </nav>
+      </div>
 
-      {/* ================= Mobile Menu ================= */}
+      {/* Mobile Menu */}
+      {isMobileOpen && (
+        <div className="lg:hidden bg-white px-6 pb-6 space-y-4 shadow-md">
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden w-full max-w-6xl px-6 pb-6"
-          >
-            <div className="bg-black/20 backdrop-blur-xl border border-white/20 rounded-2xl p-6 space-y-6 text-left">
+          <a href="#" className="block">Home</a>
 
-              <ul className="space-y-4 text-gray-300">
-                <li className="text-white border-b border-white/30 pb-2"><a href="/">Home</a></li>
-                <li className="hover:text-white transition"> <a href="services">Services</a></li>
-                <li className="hover:text-white transition"><a href="how_it_works">Our Work</a></li>
-                <li className="hover:text-white transition"><a href="blog">Blogs</a></li>
-                <li className="hover:text-white transition"><a href="contact">Contact us</a></li>
-              </ul>
+          <div>
+            <button
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+              className="flex justify-between w-full"
+            >
+              Services <ChevronDown size={16} />
+            </button>
 
-              <div className="flex items-center gap-3 pt-4">
-                <div className="w-10 h-10 flex items-center justify-center 
-                rounded-full bg-white/10 border border-white/20">
-                  <FaWhatsapp className="text-white text-lg" />
-                </div>
-
-                <button className="w-full px-5 py-2 rounded-full 
-                bg-gradient-to-r from-purple-600 to-pink-600 
-                text-white text-sm font-medium flex items-center ">
-                  Get Started <span className="text-gray-200 flex items-center justify-center "> - it's free <MoveUpRight className="w-4 h-4" /></span>
-                </button>
+            {isMobileServicesOpen && (
+              <div className="mt-3 space-y-3 text-sm text-gray-600">
+                <p>Performance Marketing</p>
+                <p>Ecommerce Growth</p>
+                <p>Organic Growth</p>
+                <p>Analytics & Automation</p>
+                <p>Amplify brand awareness</p>
               </div>
+            )}
+          </div>
 
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <a href="#" className="block">Case Studies</a>
+          <a href="#" className="block">About Us</a>
 
-    </section>
+          <div>
+            <button
+              onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)}
+              className="flex justify-between w-full"
+            >
+              Resources <ChevronDown size={16} />
+            </button>
+
+            {isMobileResourcesOpen && (
+              <div className="mt-3 space-y-2 text-sm text-gray-600">
+                <p>Contact</p>
+                <p>Blog</p>
+                <p>Case Studies</p>
+                <p>Guides</p>
+                <p>FAQ</p>
+              </div>
+            )}
+          </div>
+
+          <button className="w-full bg-black text-white py-3 rounded-lg mt-4">
+            Get Started
+          </button>
+
+        </div>
+      )}
+    </header>
   )
 }

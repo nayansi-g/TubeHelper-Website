@@ -1,109 +1,209 @@
-"use client"
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion"
 
-export default function Pricing() {
+const reviews = [
+  {
+    name: "Aarav Mehta",
+    company: "EcomVibe",
+    review:
+      "Within 90 days, our ROAS increased from 2.1x to 4.8x. The team rebuilt our funnel and scaled profitably without increasing wasted spend.",
+  },
+  {
+    name: "Sophia Carter",
+    company: "GlowSkin Co.",
+    review:
+      "Their creative testing framework completely changed our ad performance. CTR improved by 63% in the first month.",
+  },
+  {
+    name: "Daniel Brooks",
+    company: "UrbanFit",
+    review:
+      "We finally understand our numbers. Tracking, reporting, attribution — everything is clean and accurate now.",
+  },
+  {
+    name: "Maya Kapoor",
+    company: "Velora Beauty",
+    review:
+      "Our conversion rate jumped from 1.7% to 3.4%. Small CRO changes made a massive revenue impact.",
+  },
+  {
+    name: "Liam Johnson",
+    company: "PeakSupps",
+    review:
+      "Not just an agency — they actually care about margins and profitability. Scaling feels controlled and sustainable.",
+  },
+  {
+    name: "Olivia Smith",
+    company: "NovaWear",
+    review:
+      "Email + retargeting flows alone increased our repeat purchases by 38%. Incredible execution.",
+  },
+  {
+    name: "Noah Williams",
+    company: "HydraLabs",
+    review:
+      "Server-side tracking fixed our attribution issues instantly. Finally we can scale confidently.",
+  },
+  {
+    name: "Emma Brown",
+    company: "Luxora",
+    review:
+      "Professional, data-driven, and proactive. Best marketing decision we’ve made.",
+  },
+];
+
+const Card = () => {
+ const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.15 } }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
   return (
-    <section className="relative pb-3 px-2 md:px-4 lg:px-6 bg-[#070816] text-white overflow-hidden">
-
-      {/* Background Glow */}
-      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-purple-600 opacity-10 blur-[150px] rounded-full"></div>
-
-      <div className="relative z-10 px-5 text-center">
-
-        {/* Badge */}
-        <div className="mb-6">
-          <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-            ✨ Pricing
+    <StyledWrapper>
+    <motion.h2
+          variants={fadeUp}
+          className="text-center   tracking-tight "
+        >
+          <span className="text-3xl md:text-4xl font-semibold lg:text-5xl bg-gradient-to-r from-purple-400 via-white to-blue-400 bg-clip-text text-transparent">
+            What Our Clients Say
           </span>
-        </div>
-
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto text-center font-semibold mb-16">
-          Choose the Right Plan for Your Business
-        </h2>
-
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-
-          {/* Card 1 */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md hover:border-purple-500 transition">
-
-            <h3 className="text-lg text-gray-300 mb-4">
-              # 3 Pages Template
-            </h3>
-
-            <div className="text-4xl font-semibold mb-1">
-              $599 <span className="text-sm text-gray-400">/Starting</span>
+          <p className="text-center text-gray-100 text-lg mt-4">Partnerships built on performance, transparency, and sustainable growth.</p>
+        </motion.h2>
+      <div className="wrapper mb-10">
+        <div
+          className="inner"
+          style={{ "--quantity": reviews.length }}
+        >
+          {reviews.map((item, index) => (
+            <div
+              key={index}
+              className="card"
+              style={{
+                "--index": index,
+                "--color-card": "140, 82, 255",
+              }}
+            >
+              <div className="content">
+                <div className="stars">★★★★★</div>
+                <p className="review">"{item.review}"</p>
+                <div className="client">
+                  <strong>{item.name}</strong>
+                  <span>{item.company}</span>
+                </div>
+              </div>
             </div>
-
-            <p className="text-gray-400 text-sm mb-6">
-              Ideal for freelancers and small businesses just starting out.
-            </p>
-
-            <button className="w-full py-3 rounded-full border border-white/20 hover:bg-white/10 transition mb-6">
-              Book a Demo
-            </button>
-
-            <div className="text-sm text-gray-400 space-y-3 text-left">
-              <p>✔ Includes a home page, about us & Contact page</p>
-              <p>✔ Fully responsive design</p>
-              <p>✔ Basic SEO setup included</p>
-            </div>
-          </div>
-
-          {/* Card 2 - Highlighted */}
-          <div className="relative rounded-2xl border border-purple-500 bg-gradient-to-b from-white/10 to-white/5 p-8 backdrop-blur-md scale-105">
-
-            <h3 className="text-lg text-gray-200 mb-4">
-              # Custom Design & Development
-            </h3>
-
-            <div className="text-4xl font-semibold mb-1">
-              $1,895 <span className="text-sm text-gray-400">/Starting</span>
-            </div>
-
-            <p className="text-gray-400 text-sm mb-6">
-              Ideal for growing businesses needing advanced features.
-            </p>
-
-            <button className="w-full py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 transition mb-6">
-              Book a Demo
-            </button>
-
-            <div className="text-sm text-gray-400 space-y-3 text-left">
-              <p>✔ Bespoke design tailored to your brand</p>
-              <p>✔ Advanced functionality and integrations</p>
-              <p>✔ Mobile-optimized and SEO-friendly</p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md hover:border-purple-500 transition">
-
-            <h3 className="text-lg text-gray-300 mb-4">
-              # WooCommerce
-            </h3>
-
-            <div className="text-4xl font-semibold mb-1">
-              $1,595 <span className="text-sm text-gray-400">/Starting</span>
-            </div>
-
-            <p className="text-gray-400 text-sm mb-6">
-              Tailored for large organizations, the Enterprise Plan.
-            </p>
-
-            <button className="w-full py-3 rounded-full border border-white/20 hover:bg-white/10 transition mb-6">
-              Book a Demo
-            </button>
-
-            <div className="text-sm text-gray-400 space-y-3 text-left">
-              <p>✔ Setup online store with up to 10 products</p>
-              <p>✔ Integration of secure payment gateways</p>
-              <p>✔ Basic training for store management</p>
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
-    </section>
-  )
-}
+    </StyledWrapper>
+  );
+};
+
+const StyledWrapper = styled.div`
+  background: black;
+
+
+  .wrapper {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .inner {
+    --w: 260px;
+    --h: 240px;
+    --translateZ: 420px;
+    --rotateX: -12deg;
+    --perspective: 1200px;
+
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    transform-style: preserve-3d;
+    transform: perspective(var(--perspective));
+    animation: rotating 25s linear infinite;
+  }
+
+  @keyframes rotating {
+    from {
+      transform: perspective(var(--perspective)) rotateX(var(--rotateX))
+        rotateY(0);
+    }
+    to {
+      transform: perspective(var(--perspective)) rotateX(var(--rotateX))
+        rotateY(1turn);
+    }
+  }
+
+  .card {
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    border-radius: 20px;
+    padding: 24px;
+    background: linear-gradient(
+      145deg,
+      rgba(var(--color-card), 0.15),
+      rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--color-card), 0.4);
+    transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+      translateZ(var(--translateZ));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .stars {
+    color: #ffd700;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .review {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .client {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .client strong {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .client span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+`;
+
+export default Card;

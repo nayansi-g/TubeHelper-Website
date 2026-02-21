@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#070816] text-white pt-10 md:pt-24 pb-5 md:pb-10 px-6 overflow-hidden">
+    <footer className="relative bg-black text-white pt-10 md:pt-24 pb-5 md:pb-10 px-6 overflow-hidden">
 
       {/* Glow Effects */}
       <div className="absolute right-0 bottom-0 w-[400px] h-[400px] bg-purple-600 opacity-20 blur-[200px] rounded-full"></div>

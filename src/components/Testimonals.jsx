@@ -1,335 +1,108 @@
-// "use client"
-
-// export default function Testimonials() {
-//   return (
-//     <section className="relative bg-[#070816] text-white px-6 md:px-10 lg:px-20 overflow-hidden">
-
-//       {/* Background Glow Effects */}
-//       <div className="absolute top-20 left-20 w-[300px] h-[300px] bg-purple-600 opacity-30 blur-[140px] rounded-full"></div>
-//       <div className="absolute bottom-20 right-20 w-[300px] h-[300px] bg-pink-500 opacity-30 blur-[140px] rounded-full"></div>
-
-//       <div className="relative z-10  mx-auto">
-//          <div className="mb-6 text-center py-10">
-//           <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-//             ✨ Testimonals
-//           </span>
-//         </div>
-
-//         {/* Heading */}
-//         <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16">
-//           What our client are saying
-//         </h2>
-
-//         {/* Testimonials Cards */}
-//         <div className="grid md:grid-cols-3 gap-8 mb-24">
-
-//           {/* Card */}
-//           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:border-purple-500 transition">
-//             <p className="text-gray-300 text-sm mb-6">
-//               “We were struggling to keep track of our customer data and
-//               effectively manage our sales pipeline before we started using
-//               Chroma. Now, everything is organized and accessible in one place.”
-//             </p>
-
-//             <div className="flex items-center gap-3">
-//               <img
-//                 src="https://randomuser.me/api/portraits/women/44.jpg"
-//                 className="w-10 h-10 rounded-full"
-//               />
-//               <div>
-//                 <h4 className="text-sm font-medium">Kristin Watson</h4>
-//                 <p className="text-xs text-gray-400">
-//                   Senior Marketing Manager
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Card */}
-//           <div className="rounded-2xl border border-purple-500 bg-white/5 backdrop-blur-md p-6 hover:border-purple-400 transition">
-//             <p className="text-gray-300 text-sm mb-6">
-//               “The analytics and reporting features in Chroma have been a
-//               game-changer for our marketing team. We can now measure the
-//               impact of our campaigns in real-time and make data-driven
-//               decisions.”
-//             </p>
-
-//             <div className="flex items-center gap-3">
-//               <img
-//                 src="https://randomuser.me/api/portraits/men/32.jpg"
-//                 className="w-10 h-10 rounded-full"
-//               />
-//               <div>
-//                 <h4 className="text-sm font-medium">Martin Muller</h4>
-//                 <p className="text-xs text-gray-400">
-//                   Web Designer at Socialbag
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Card */}
-//           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:border-pink-500 transition">
-//             <p className="text-gray-300 text-sm mb-6">
-//               “The analytics and reporting features in Chroma have been a
-//               game-changer for our marketing team. We can now measure the
-//               impact of our campaigns in real-time and make data-driven
-//               decisions.”
-//             </p>
-
-//             <div className="flex items-center gap-3">
-//               <img
-//                 src="https://randomuser.me/api/portraits/men/45.jpg"
-//                 className="w-10 h-10 rounded-full"
-//               />
-//               <div>
-//                 <h4 className="text-sm font-medium">Martin Muller</h4>
-//                 <p className="text-xs text-gray-400">
-//                   Web Designer at Socialbag
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Why Choose Section */}
-//         <div className="grid md:grid-cols-2 gap-12 items-center py-12">
-
-//           <div>
-//             <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-//               ✨ Why Choose Us
-//             </span>
-
-//             <h3 className="text-4xl font-semibold mt-6 mb-6 leading-snug">
-//               help you find the best analysis for your business
-//             </h3>
-//           </div>
-
-//           <p className="text-gray-400">
-//             Create stunning, professional-quality websites in record time
-//             with our powerful UI kit. Elevate your SAAS game today!
-//           </p>
-//         </div>
-
-//         {/* Features Cards */}
-//         <div className="grid md:grid-cols-3 gap-8">
-
-//           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-8 hover:border-purple-500 transition">
-//             <h4 className="text-lg font-medium mb-4">
-//               6+ Years of Experience in Wordpress
-//             </h4>
-//             <p className="text-gray-400 text-sm">
-//               Set up a personalized profile quickly with guided steps.
-//             </p>
-//           </div>
-
-//           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-8 hover:border-purple-500 transition">
-//             <h4 className="text-lg font-medium mb-4">
-//               SEO-Optimized for Better Ranking
-//             </h4>
-//             <p className="text-gray-400 text-sm">
-//               Streamline processes with rule-based task automation.
-//             </p>
-//           </div>
-
-//           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-8 hover:border-purple-500 transition">
-//             <h4 className="text-lg font-medium mb-4">
-//               On-Time Delivery with 100% Satisfaction
-//             </h4>
-//             <p className="text-gray-400 text-sm">
-//               Simply sharing with a single click for any file size.
-//             </p>
-//           </div>
-
-//         </div>
-
-//       </div>
-//     </section>
-//   )
-// }
-
-
 "use client"
 
 import { motion } from "framer-motion"
+import GlassImageCards from "./GlassImageCards "
 
-export default function Testimonials() {
 
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  }
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 60 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  }
-
+export default function WhyChooseUs() {
   return (
-    <section className="relative bg-[#070816] text-white px-6 md:px-10 lg:px-20 overflow-hidden">
+    <section className="w-full bg-black text-white py-10 px-4 sm:px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-      {/* Background Glow Effects */}
-      <div className="absolute top-20 left-20 w-[300px] h-[300px] bg-purple-600 opacity-30 blur-[140px] rounded-full"></div>
-      <div className="absolute bottom-20 right-20 w-[300px] h-[300px] bg-pink-500 opacity-30 blur-[140px] rounded-full"></div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={container}
-        className="relative z-10 mx-auto"
-      >
-
-        {/* Badge */}
-        <motion.div variants={fadeUp} className=" text-center py-10">
-          <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-            ✨ Testimonals
-          </span>
-        </motion.div>
-
-        {/* Heading */}
-        <motion.h2
-          variants={fadeUp}
-          className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center mb-10"
-        >
-          What our client are saying
-        </motion.h2>
-
-        {/* Testimonials Cards */}
+        {/* ================= LEFT CONTENT ================= */}
         <motion.div
-          variants={container}
-          className="grid md:grid-cols-3 gap-8 mb-24"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="space-y-1"
         >
 
-          {[1, 2, 3].map((item, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              whileHover={{ y: -8 }}
-              className={`rounded-2xl border ${
-                index === 1 ? "border-purple-500" : "border-white/10"
-              } bg-white/5 backdrop-blur-md p-6 transition`}
-            >
-              {index === 0 && (
-                <>
-                  <p className="text-gray-300 text-sm mb-6">
-                    “We were struggling to keep track of our customer data and
-                    effectively manage our sales pipeline before we started using
-                    Chroma. Now, everything is organized and accessible in one place.”
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" className="w-10 h-10 rounded-full" />
-                    <div>
-                      <h4 className="text-sm font-medium">Kristin Watson</h4>
-                      <p className="text-xs text-gray-400">Senior Marketing Manager</p>
-                    </div>
-                  </div>
-                </>
-              )}
+          {/* Section Title */}
+          <div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-white to-blue-400 bg-clip-text text-transparent">
+              Why Choose Us?
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-xl">
+              We don’t just execute campaigns — we build growth systems designed for sustainable profitability.
+            </p>
+          </div>
 
-              {index === 1 && (
-                <>
-                  <p className="text-gray-300 text-sm mb-6">
-                    “The analytics and reporting features in Chroma have been a
-                    game-changer for our marketing team. We can now measure the
-                    impact of our campaigns in real-time and make data-driven
-                    decisions.”
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" className="w-10 h-10 rounded-full" />
-                    <div>
-                      <h4 className="text-sm font-medium">Martin Muller</h4>
-                      <p className="text-xs text-gray-400">Web Designer at Socialbag</p>
-                    </div>
-                  </div>
-                </>
-              )}
+          {/* Points */}
+          <div className="space-y-1">
 
-              {index === 2 && (
-                <>
-                  <p className="text-gray-300 text-sm mb-6">
-                    “The analytics and reporting features in Chroma have been a
-                    game-changer for our marketing team. We can now measure the
-                    impact of our campaigns in real-time and make data-driven
-                    decisions.”
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <img src="https://randomuser.me/api/portraits/men/45.jpg" className="w-10 h-10 rounded-full" />
-                    <div>
-                      <h4 className="text-sm font-medium">Martin Muller</h4>
-                      <p className="text-xs text-gray-400">Web Designer at Socialbag</p>
-                    </div>
-                  </div>
-                </>
-              )}
-
-            </motion.div>
-          ))}
-
-        </motion.div>
-
-        {/* Why Choose Section */}
-        <motion.div
-          variants={container}
-          className="grid md:grid-cols-2 gap-12 items-center md:py-10 py-5 lg:py-12"
-        >
-
-          <motion.div variants={fadeUp}>
-            <span className="px-4 py-1 text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-              ✨ Why Choose Us
-            </span>
-
-            <h3 className="text-2xl  md:text-4xl font-semibold mt-10  leading-snug">
-              help you find the best analysis for your business
-            </h3>
-          </motion.div>
-
-          <motion.p variants={fadeUp} className="text-gray-400 mb-6 md:mb-0">
-            Create stunning, professional-quality websites in record time
-            with our powerful UI kit. Elevate your SAAS game today!
-          </motion.p>
-
-        </motion.div>
-
-        {/* Features Cards */}
-        <motion.div
-          variants={container}
-          className="grid md:grid-cols-3 gap-8"
-        >
-
-          {[
-            "6+ Years of Experience in Wordpress",
-            "SEO-Optimized for Better Ranking",
-            "On-Time Delivery with 100% Satisfaction"
-          ].map((title, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              whileHover={{ y: -8 }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-8 hover:border-purple-500 transition"
-            >
-              <h4 className="text-lg font-medium mb-4">
-                {title}
-              </h4>
-              <p className="text-gray-400 text-sm">
-                {index === 0 && "Set up a personalized profile quickly with guided steps."}
-                {index === 1 && "Streamline processes with rule-based task automation."}
-                {index === 2 && "Simply sharing with a single click for any file size."}
+            {/* Point 1 */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-300">
+                We Care About Profit — Not Just Performance
+              </h3>
+              <p className="mt-2 text-gray-500">
+                Anyone can get you clicks. We focus on revenue, margins, and long-term growth — 
+                because traffic without profit is just noise.
               </p>
-            </motion.div>
-          ))}
+            </div>
 
+            {/* Point 2 */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-300">
+                No Guesswork. No Vanity Metrics.
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Every decision we make is backed by data, testing, and clear reporting. 
+                You’ll always know what’s working — and why.
+              </p>
+            </div>
+
+            {/* Point 3 */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-300">
+                We Think Like Growth Partners
+              </h3>
+              <p className="mt-2 text-gray-600">
+                We don’t “run ads.” We understand your business model, your margins, 
+                your audience, and your bottlenecks — then build systems that scale sustainably.
+              </p>
+            </div>
+
+            {/* Point 4 */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-300">
+                Speed + Strategy
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Execution matters. But direction matters more. We move fast — 
+                without breaking what’s already working.
+              </p>
+            </div>
+
+            {/* Point 5 */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-300">
+                Transparent Communication
+              </h3>
+              <p className="mt-2 text-gray-600">
+                No jargon. No hidden tactics. Just clear updates, real conversations, and shared goals.
+              </p>
+            </div>
+
+          </div>
         </motion.div>
 
-      </motion.div>
+        {/* ================= RIGHT IMAGE ================= */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex justify-center lg:justify-end"
+        >
+      <GlassImageCards />
+        </motion.div>
+
+      </div>
     </section>
   )
 }
+
+
+

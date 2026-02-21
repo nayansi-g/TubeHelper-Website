@@ -130,7 +130,7 @@ export default function ContactPage() {
   }
 
    return (
-  <main className="min-h-screen bg-[#080B1A] text-white">
+  <main className="min-h-screen bg-[#070816] flex flex-col pt-20 justify-center text-white">
 
     {/* Hero */}
     <section className="py-20 text-center px-4">

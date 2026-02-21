@@ -1,249 +1,127 @@
-// "use client"
-
-// export default function SecondGrid() {
-//   return (
-//     <section className="relative py-20 px-6 bg-[#070816] text-white overflow-hidden">
-
-//       {/* Background Glow */}
-//       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-500 opacity-10 blur-[200px] rounded-full"></div>
-//       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600 opacity-10 blur-[200px] rounded-full"></div>
-
-//       <div className="relative z-10 px-20">
-
-//         {/* Top Label */}
-//         <div className="flex justify-center mb-6">
-//           <span className="px-4 py-1 text-sm rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-//             ✨ Services
-//           </span>
-//         </div>
-
-//         {/* Heading */}
-//         <h2 className="text-4xl md:text-5xl text-center font-medium mb-20">
-//           help you find the best analysis <br />
-//           for your business
-//         </h2>
-
-//         {/* Top 2 Cards */}
-//         <div className="grid md:grid-cols-2 gap-10 mb-10">
-
-//           {/* Card 1 */}
-//           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300">
-//             <h3 className="text-xl font-semibold mb-4">
-//               WordPress Website Design
-//             </h3>
-//             <p className="text-gray-400 mb-8">
-//               We replicate designs with pixel-perfect precision. Prefer assistance?
-//               Choose from 100+ professional templates or let us create a custom
-//               design tailored to your needs!
-//             </p>
-
-//             {/* Dummy UI Box */}
-//             <div className="h-40 bg-white/5 border border-white/10 rounded-xl"></div>
-//           </div>
-
-//           {/* Card 2 */}
-//           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300">
-//             <h3 className="text-xl font-semibold mb-4">
-//               WordPress Development
-//             </h3>
-//             <p className="text-gray-400 mb-8">
-//               Your website's needs may vary in complexity and functionality,
-//               but we're here to help.
-//             </p>
-
-//             {/* Code Preview Box */}
-//             <div className="h-40 bg-white/5 border border-white/10 rounded-xl"></div>
-//           </div>
-
-//         </div>
-
-//         {/* Bottom 3 Cards */}
-//         <div className="grid md:grid-cols-3 gap-10">
-
-//           {/* Card 3 */}
-//           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300">
-//             <h3 className="text-lg font-semibold mb-4">
-//               WooCommerce & E-commerce
-//             </h3>
-//             <p className="text-gray-400">
-//               With years of experience, we help businesses sell online seamlessly.
-//             </p>
-//           </div>
-
-//           {/* Card 4 */}
-//           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300">
-//             <h3 className="text-lg font-semibold mb-4">
-//               SEO- Ready Website
-//             </h3>
-//             <p className="text-gray-400">
-//               Your website is built to support professional SEO tools and AI-driven optimization.
-//             </p>
-//           </div>
-
-//           {/* Card 5 */}
-//           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300">
-//             <h3 className="text-lg font-semibold mb-4">
-//               Custom Solution
-//             </h3>
-//             <p className="text-gray-400">
-//               Harness the flexibility of WordPress to create tailored websites or solutions.
-//             </p>
-//           </div>
-
-//         </div>
-
-//       </div>
-//     </section>
-//   )
-// }
-
-
 "use client"
 
 import { motion } from "framer-motion"
 
-export default function SecondGrid() {
+const services = [
+  {
+    title: "Performance Marketing That Scales Profit — Not Just Spend",
+    description:
+      "We build full-funnel paid media systems designed to maximize ROAS and lower acquisition costs — across Meta, Google, and YouTube.",
+    image: "/performance.jpg",
+    points: [
+      "Paid Media Strategy & Funnel Mapping",
+      "Meta & Instagram Ads",
+      "Google Search, Shopping & Display",
+      "Budget Scaling & ROAS Optimization",
+      "Creative Testing Framework",
+    ],
+  },
+  {
+    title: "Turn More Visitors Into Paying Customers",
+    description:
+      "We analyze user behavior and optimize every touchpoint of your funnel to increase conversion rates and average order value.",
+    image: "/CRO.png",
+    points: [
+      "Heatmaps & Behavior Analysis",
+      "Landing Page Optimization",
+      "A/B Testing",
+      "Funnel Drop-Off Analysis",
+      "Checkout Optimization",
+    ],
+  },
+  {
+    title: "Built for Shopify Brands Ready to Scale",
+    description:
+      "We help D2C and ecommerce brands build sustainable growth engines using performance marketing, retention, and automation.",
+    image: "/Builtforshopify.jpg",
+    points: [
+      "Shopify Store Audits",
+      "Retargeting & Lifecycle Campaigns",
+      "Upsell & Cross-Sell Optimization",
+      "Subscription & Repeat Purchase Strategy",
+      "Email & SMS Automation",
+    ],
+  },
+  {
+    title: "Data-Driven Decisions. Zero Guesswork.",
+    description:
+      "We implement advanced tracking and reporting systems so you always know what’s working — and why.",
+    image: "/data_Driven.jpg",
+    points: [
+      "GA4 Setup",
+      "Conversion Tracking & Pixel Integration",
+      "Server-Side Tracking",
+      "Custom Reporting Dashboards",
+      "Marketing Automation Workflows",
+    ],
+  },
+]
 
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  }
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 60 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  }
-
+export default function ServicesCards() {
   return (
-    <section className="relative py-20 px-2 md:px-4 lg:px-6 bg-[#070816] text-white overflow-hidden">
+    <section className="w-full  px-0 md:px-5 ">
+     <div className="bg-white rounded-[70px] md:rounded-[100px] lg:rounded-[130px] py-20">
+       <div className="max-w-7xl mx-auto px-6 lg:px-16 space-y-16">
 
-      {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-500 opacity-10 blur-[200px] rounded-full"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600 opacity-10 blur-[200px] rounded-full"></div>
+         <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <h2 className="text-4xl  font-semibold tracking-tight">
+            <span className="text-black">
+              Our Services
+            </span>
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Performance-driven growth systems built to scale modern ecommerce brands.
+          </p>
+        </div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={container}
-        className="relative z-10 px-6 md:px-12 lg:px-20"
-      >
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative bg-white rounded-3xl p-4 shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] transition-all duration-500 group overflow-hidden"
+            >
+              {/* Subtle Gradient Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-transparent to-blue-100 opacity-0 group-hover:opacity-100 transition duration-500 rounded-3xl"></div>
 
-        {/* Top Label */}
-        <motion.div variants={fadeUp} className="flex justify-center mb-6">
-          <span className="px-4 py-1 text-sm rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-            ✨ Services
-          </span>
-        </motion.div>
+              {/* Image */}
+              <div className="relative mb-6 overflow-hidden rounded-2xl">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-68 md:78 object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60"></div>
+              </div>
 
-        {/* Heading */}
-        <motion.h2
-          variants={fadeUp}
-          className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto text-center  font-semibold mb-20"
-        >
-          help you find the best analysis 
-          for your business
-        </motion.h2>
+              {/* Content */}
+              <div className="relative z-10 space-y-4">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {service.title}
+                </h3>
 
-        {/* Top 2 Cards */}
-        <motion.div
-          variants={container}
-          className="grid md:grid-cols-2 gap-10 mb-10"
-        >
+                <p className="text-gray-600 text-sm">
+                  {service.description}
+                </p>
 
-          {/* Card 1 */}
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ y: -8 }}
-            className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300"
-          >
-            <h3 className="text-xl font-semibold mb-4">
-              WordPress Website Design
-            </h3>
-            <p className="text-gray-400 mb-8">
-              We replicate designs with pixel-perfect precision. Prefer assistance?
-              Choose from 100+ professional templates or let us create a custom
-              design tailored to your needs!
-            </p>
-
-            <div className="h-40 bg-white/5 border border-white/10 rounded-xl"></div>
-          </motion.div>
-
-          {/* Card 2 */}
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ y: -8 }}
-            className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300"
-          >
-            <h3 className="text-xl font-semibold mb-4">
-              WordPress Development
-            </h3>
-            <p className="text-gray-400 mb-8">
-              Your website's needs may vary in complexity and functionality,
-              but we're here to help.
-            </p>
-
-            <div className="h-40 bg-white/5 border border-white/10 rounded-xl"></div>
-          </motion.div>
-
-        </motion.div>
-
-        {/* Bottom 3 Cards */}
-        <motion.div
-          variants={container}
-          className="grid md:grid-cols-3 gap-10"
-        >
-
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ y: -8 }}
-            className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300"
-          >
-            <h3 className="text-lg font-semibold mb-4">
-              WooCommerce & E-commerce
-            </h3>
-            <p className="text-gray-400">
-              With years of experience, we help businesses sell online seamlessly.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ y: -8 }}
-            className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300"
-          >
-            <h3 className="text-lg font-semibold mb-4">
-              SEO- Ready Website
-            </h3>
-            <p className="text-gray-400">
-              Your website is built to support professional SEO tools and AI-driven optimization.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ y: -8 }}
-            className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition duration-300"
-          >
-            <h3 className="text-lg font-semibold mb-4">
-              Custom Solution
-            </h3>
-            <p className="text-gray-400">
-              Harness the flexibility of WordPress to create tailored websites or solutions.
-            </p>
-          </motion.div>
-
-        </motion.div>
-
-      </motion.div>
+                <ul className="space-y-2 text-gray-700 text-sm pt-2">
+                  {service.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-purple-600 font-bold">✓</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+     </div>
     </section>
   )
 }
