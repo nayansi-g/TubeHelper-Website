@@ -28,7 +28,7 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-2 md:px-4 lg:px-6  bg-gradient-to-b from-[#0a0b1e] via-[#1a1533] to-[#2a1f3d] text-white text-center overflow-hidden"
+      className="relative py-32 px-2 md:px-4 lg:px-6   bg-gradient-to-b from-[#0a0b1e] via-[#1a1533] to-[#2a1f3d] text-white text-center overflow-hidden"
     >
       {/* Animated Top Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600 opacity-20 blur-[150px] rounded-full animate-pulse"></div>
