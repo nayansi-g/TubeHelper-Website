@@ -1,265 +1,239 @@
-import { Shield, Eye, Lock, Database, Users, FileText, ChevronDown, ChevronRight, Mail, Phone, MapPin } from "lucide-react"
-import Link from "next/link"
-
-
-export default function PrivacyPolicy() {
-  const privacySections = [
-    {
-      id: "information-collection",
-      title: "Information We Collect",
-      icon: Database,
-      content: `We collect information you provide directly to us, such as when you create an account, enroll in courses, or contact us. This includes:
-      • Personal information (name, email, phone number)
-      • Educational background and preferences
-      • Payment information (processed securely through third-party providers)
-      • Course progress and performance data
-      • Communication preferences and feedback`,
-    },
-    {
-      id: "information-use",
-      title: "How We Use Your Information",
-      icon: Eye,
-      content: `We use the information we collect to:
-      • Provide and improve our educational services
-      • Process enrollments and payments
-      • Send course updates and educational content
-      • Provide customer support
-      • Analyze usage patterns to enhance user experience
-      • Comply with legal obligations`,
-    },
-    {
-      id: "information-sharing",
-      title: "Information Sharing",
-      icon: Users,
-      content: `We do not sell, trade, or rent your personal information. We may share information in these limited circumstances:
-      • With service providers who assist in our operations
-      • When required by law or to protect our rights
-      • In connection with a business transfer or merger
-      • With your explicit consent
-      • For placement assistance with verified hiring partners`,
-    },
-    {
-      id: "data-security",
-      title: "Data Security",
-      icon: Lock,
-      content: `We implement appropriate security measures to protect your information:
-      • SSL encryption for data transmission
-      • Secure servers and databases
-      • Regular security audits and updates
-      • Access controls and authentication
-      • Employee training on data protection
-      • Incident response procedures`,
-    },
-    {
-      id: "your-rights",
-      title: "Your Rights",
-      icon: Shield,
-      content: `You have the right to:
-      • Access your personal information
-      • Correct inaccurate information
-      • Delete your account and data
-      • Opt-out of marketing communications
-      • Data portability
-      • Lodge complaints with supervisory authorities`,
-    },
-  ]
-
+export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-[#080B1A] text-white ">
-      {/* Hero Section */}
-      <div className=" py-12 text-gray-600 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="mt-6 text-3xl font-bold text-white sm:text-4xl">
-              Privacy Policy
-            </h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    <main className="w-full bg-white text-gray-800 py-20 px-6 md:px-16">
+      <div className="max-w-4xl mx-auto">
+
+        {/* ================= HEADER ================= */}
+        <div className="mb-14">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            Privacy Policy
+          </h1>
+          <p className="text-gray-500">
+            Effective Date: [Insert Date] <br />
+            Last Updated: [Insert Date]
+          </p>
+        </div>
+
+        {/* ================= INTRO ================= */}
+        <section className="space-y-6 mb-12">
+          <p>
+            Welcome to <strong>[Your Company Name]</strong> ("Company", "we",
+            "our", or "us"). This Privacy Policy explains how we collect, use,
+            disclose, and safeguard your information when you visit our website{" "}
+            <strong>[yourwebsite.com]</strong>.
+          </p>
+          <p>
+            We are committed to protecting your personal data and your right to
+            privacy.
+          </p>
+        </section>
+
+        {/* ================= SECTION BLOCK STYLE ================= */}
+        <div className="space-y-12">
+
+          {/* 1 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              1. Information We Collect
+            </h2>
+
+            <h3 className="font-semibold mt-6 mb-2">Personal Information</h3>
+            <p className="mb-4">
+              When you fill out a contact form, book a strategy call,
+              subscribe to our newsletter, request a service, or communicate
+              with us, we may collect:
             </p>
-          </div>
 
-          <div className="prose prose-blue prose-lg mx-auto">
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
-              <p>
-                CoderCrafter ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or enroll in our courses.
-              </p>
-              <p className="mt-4">
-                By using our services, you agree to the collection and use of information in accordance with this policy.
-              </p>
-            </section>
+            <ul className="list-disc pl-6 space-y-1 text-gray-600">
+              <li>Full name</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Business name</li>
+              <li>Website URL</li>
+              <li>Any other information voluntarily provided</li>
+            </ul>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">2. Information We Collect</h2>
+            <h3 className="font-semibold mt-6 mb-2">
+              Automatically Collected Information
+            </h3>
+            <ul className="list-disc pl-6 space-y-1 text-gray-600">
+              <li>IP address</li>
+              <li>Browser type</li>
+              <li>Device information</li>
+              <li>Operating system</li>
+              <li>Pages visited</li>
+              <li>Time spent on site</li>
+              <li>Referral source</li>
+            </ul>
+          </section>
 
-              <h3 className="text-xl font-semibold text-gray-100 mb-2">2.1 Personal Information</h3>
-              <p>
-                We may collect personally identifiable information including but not limited to:
-              </p>
-              <ul className="list-disc pl-6 mt-2">
-                <li>Full name and contact details (email, phone number, address)</li>
-                <li>Demographic information (age, gender, education level)</li>
-                <li>Payment information for course enrollment</li>
-                <li>Academic records and course progress</li>
-                <li>Technical skills and employment information for placement services</li>
-              </ul>
+          {/* 2 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              2. How We Use Your Information
+            </h2>
+            <ul className="list-disc pl-6 space-y-1 text-gray-600">
+              <li>Respond to inquiries</li>
+              <li>Provide our services</li>
+              <li>Improve website functionality</li>
+              <li>Analyze traffic and marketing performance</li>
+              <li>Send updates (if opted-in)</li>
+              <li>Comply with legal obligations</li>
+            </ul>
+            <p className="mt-4 font-medium text-gray-900">
+              We do not sell your personal information.
+            </p>
+          </section>
 
-              <h3 className="text-xl font-semibold text-gray-100 mb-2 mt-4">2.2 Usage Data</h3>
-              <p>
-                We automatically collect information about how you interact with our website:
-              </p>
-              <ul className="list-disc pl-6 mt-2">
-                <li>IP address and browser type</li>
-                <li>Pages visited and time spent on site</li>
-                <li>Device information and operating system</li>
-                <li>Cookies and tracking technologies (see Section 5)</li>
-              </ul>
-            </section>
+          {/* 3 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              3. Cookies & Tracking Technologies
+            </h2>
+            <p className="mb-4">
+              Our website uses cookies and tracking tools including:
+            </p>
+            <ul className="list-disc pl-6 space-y-1 text-gray-600">
+              <li>Google Analytics</li>
+              <li>Meta Pixel</li>
+              <li>Google Ads tracking</li>
+              <li>Server-side tracking tools</li>
+            </ul>
+            <p className="mt-4">
+              You can disable cookies through your browser settings.
+            </p>
+          </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">3. How We Use Your Information</h2>
-              <p>We use the collected data for various purposes:</p>
-              <ul className="list-disc pl-6 mt-2">
-                <li>To provide and maintain our training services</li>
-                <li>To process enrollments and payments</li>
-                <li>To communicate with you about courses, updates, and offers</li>
-                <li>To improve our website and course offerings</li>
-                <li>To monitor and evaluate student progress</li>
-                <li>To provide career services and placement assistance</li>
-                <li>To detect, prevent, and address technical issues</li>
-                <li>To comply with legal obligations</li>
-              </ul>
-            </section>
+          {/* 4 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              4. Third-Party Services
+            </h2>
+            <p className="mb-4">
+              We may use trusted third-party services including:
+            </p>
+            <ul className="list-disc pl-6 space-y-1 text-gray-600">
+              <li>Google Analytics</li>
+              <li>Meta (Facebook & Instagram Ads)</li>
+              <li>Google Ads</li>
+              <li>Email marketing platforms</li>
+              <li>CRM systems</li>
+              <li>Scheduling tools</li>
+            </ul>
+          </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">4. Data Sharing and Disclosure</h2>
+          {/* 5 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              5. Data Security
+            </h2>
+            <p>
+              We implement appropriate technical and organizational security
+              measures to protect your personal data. However, no internet
+              transmission is 100% secure.
+            </p>
+          </section>
 
-              <h3 className="text-xl font-semibold text-gray-100 mb-2">4.1 Service Providers</h3>
-              <p>
-                We may employ third-party companies to facilitate our services (payment processors, hosting providers, analytics). These third parties have access to your information only to perform specific tasks on our behalf.
-              </p>
+          {/* 6 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              6. Data Retention
+            </h2>
+            <p>
+              We retain your information only as long as necessary to fulfill
+              service obligations, comply with legal requirements, or resolve
+              disputes.
+            </p>
+          </section>
 
-              <h3 className="text-xl font-semibold text-gray-100 mb-2 mt-4">4.2 Business Transfers</h3>
-              <p>
-                If CoderCrafter is involved in a merger, acquisition, or asset sale, your personal data may be transferred.
-              </p>
+          {/* 7 */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              7. Your Privacy Rights
+            </h2>
+            <p className="mb-4">
+              Depending on your location, you may have rights such as:
+            </p>
+            <ul className="list-disc pl-6 space-y-1 text-gray-600">
+              <li>Right to access your data</li>
+              <li>Right to correct inaccurate information</li>
+              <li>Right to request deletion</li>
+              <li>Right to withdraw consent</li>
+              <li>Right to restrict processing</li>
+              <li>Right to data portability</li>
+            </ul>
+            <p className="mt-4">
+              Contact us at: 📧 [your@email.com]
+            </p>
+          </section>
 
-              <h3 className="text-xl font-semibold text-gray-100 mb-2 mt-4">4.3 Legal Requirements</h3>
-              <p>
-                We may disclose your information when required by law or in response to valid requests by public authorities.
-              </p>
+          {/* 8–13 simplified structured sections */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              8. GDPR Compliance
+            </h2>
+            <p>
+              If located in the EEA, we process data under lawful bases such as
+              consent, contractual necessity, legal compliance, and legitimate
+              interest.
+            </p>
+          </section>
 
-              <h3 className="text-xl font-semibold text-gray-100 mb-2 mt-4">4.4 Placement Partners</h3>
-              <p>
-                With your explicit consent, we may share your information with potential employers as part of our placement services.
-              </p>
-            </section>
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              9. CCPA Compliance
+            </h2>
+            <p>
+              California residents may request disclosure or deletion of
+              personal data. We do not sell personal information.
+            </p>
+          </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">5. Cookies and Tracking Technologies</h2>
-              <p>
-                We use cookies and similar tracking technologies to track activity on our website and hold certain information. Cookies are files with small amounts of data which may include an anonymous unique identifier.
-              </p>
-              <p className="mt-4">
-                You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.
-              </p>
-            </section>
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              10. Children’s Privacy
+            </h2>
+            <p>
+              Our services are not directed to individuals under 18. We do not
+              knowingly collect personal data from children.
+            </p>
+          </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">6. Data Security</h2>
-              <p>
-                We implement appropriate technical and organizational measures to protect your personal data. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
-              </p>
-            </section>
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              11. External Links
+            </h2>
+            <p>
+              We are not responsible for the privacy practices of third-party
+              websites.
+            </p>
+          </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">7. Data Retention</h2>
-              <p>
-                We retain your personal information only for as long as necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
-              </p>
-            </section>
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              12. Changes to This Policy
+            </h2>
+            <p>
+              Updates will be posted on this page with a revised “Last Updated”
+              date.
+            </p>
+          </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">8. Your Data Protection Rights</h2>
-              <p>Depending on your location, you may have certain rights regarding your personal data:</p>
-              <ul className="list-disc pl-6 mt-2">
-                <li><strong>Access:</strong> Request copies of your personal data</li>
-                <li><strong>Rectification:</strong> Request correction of inaccurate data</li>
-                <li><strong>Erasure:</strong> Request deletion of your personal data</li>
-                <li><strong>Restriction:</strong> Request restriction of processing</li>
-                <li><strong>Portability:</strong> Request transfer of your data to another organization</li>
-                <li><strong>Objection:</strong> Object to our processing of your personal data</li>
-              </ul>
-              <p className="mt-4">
-                To exercise any of these rights, please contact us using the information below.
-              </p>
-            </section>
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              13. Contact Us
+            </h2>
+            <p>
+              <strong>[Your Company Name]</strong><br />
+              Email: [your@email.com] <br />
+              Website: [yourwebsite.com] <br />
+              Address: [Optional Business Address]
+            </p>
+          </section>
 
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">9. Children's Privacy</h2>
-              <p>
-                Our services are not intended for individuals under 16 years of age. We do not knowingly collect personal information from children under 16. If we become aware that we have collected personal data from a child without parental consent, we will take steps to remove that information.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">10. Changes to This Privacy Policy</h2>
-              <p>
-                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">11. Contact Us</h2>
-              <p>If you have any questions about this Privacy Policy, please contact us:</p>
-              <div className="mt-6 space-y-4">
-                <div className="flex items-start">
-                  <Mail className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Email: <Link href="mailto:privacy@codercrafter.com" className="text-blue-600 hover:text-blue-800">info@codercrafter.in</Link></span>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-gray-500 mr-3" />
-                  <span>Phone: <Link href="tel:+916203457797" className="text-blue-600 hover:text-blue-800">+91 89203 19125</Link></span>
-                </div>
-                <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Address:-Bangalore, India</span>
-                </div>
-              </div>
-            </section>
-          </div>
         </div>
+
       </div>
-
-      {/* Detailed Sections - Static version without interactivity */}
-      <section className="pb-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Privacy Policy Details</h2>
-
-          <div className="space-y-6">
-            {privacySections.map((section) => {
-              const Icon = section.icon
-              return (
-                <div key={section.id} className="overflow-hidden border border-gray-400 rounded-2xl p-4">
-                  <div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-10 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <p className="text-xl">{section.title}</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="pl-14">
-                      <p className="text-gray-600 whitespace-pre-line leading-relaxed">{section.content}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-    </div>
-  )
+    </main>
+  );
 }

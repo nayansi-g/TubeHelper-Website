@@ -1,181 +1,194 @@
-import { Shield, Eye, Lock, Database, Users, FileText, ChevronDown, ChevronRight, Mail, Phone, MapPin } from "lucide-react"
-import Link from "next/link"
-
-export default function RefundPolicy() {
-
-  const refundSections = [
-    {
-      id: "eligibility",
-      title: "Refund Eligibility",
-      icon: Shield,
-      content: `We offer refunds under specific conditions:
-      • Refund requests must be made within 7 days of enrollment
-      • Course access must not exceed 20% completion
-      • No certificate must have been issued
-      • No placement assistance process should have started`,
-    },
-    {
-      id: "non-refundable",
-      title: "Non-Refundable Situations",
-      icon: Lock,
-      content: `Refunds will not be granted if:
-      • The refund request is made after 7 days
-      • More than 20% of course content has been accessed
-      • Course materials have been downloaded
-      • Discounted or promotional enrollments (if specified as non-refundable)`,
-    },
-    {
-      id: "processing",
-      title: "Refund Processing",
-      icon: Database,
-      content: `Approved refunds will be processed within 7–10 business days.
-      • Refunds will be issued via the original payment method
-      • Processing time may vary depending on your bank or payment provider
-      • Transaction fees (if any) may be deducted`,
-    },
-    {
-      id: "cancellation",
-      title: "Course Cancellation by Us",
-      icon: Eye,
-      content: `If we cancel a course due to unforeseen circumstances:
-      • You will receive a full refund
-      • Or you may opt for transfer to another batch/course
-      • No additional charges will apply`,
-    },
-    {
-      id: "contact",
-      title: "How to Request a Refund",
-      icon: FileText,
-      content: `To request a refund:
-      • Email us with your enrollment details
-      • Include your payment receipt
-      • Mention the reason for refund
-      • Our support team will review and respond within 48 hours`,
-    },
-  ]
-
+export default function RefundPolicyPage() {
   return (
-    <div className="min-h-screen bg-[#080B1A] text-white">
-      
-      {/* Hero Section */}
-      <div className="py-12 text-gray-600 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="mt-6 text-3xl font-bold text-white sm:text-4xl">
-              Refund Policy
-            </h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    <section className="bg-white text-gray-800">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8 py-20">
+        
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Refund Policy
+          </h1>
+          <p className="mt-6 text-gray-600">
+            Effective Date: [Insert Date] <br />
+            Last Updated: [Insert Date]
+          </p>
+        </div>
+
+        {/* Introduction */}
+        <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+          <p>
+            This Refund Policy outlines the terms under which refunds may be
+            issued by <strong>[Your Company Name]</strong> (“Company”, “we”,
+            “our”, or “us”) for our digital marketing and ecommerce growth
+            services.
+          </p>
+          <p>
+            By purchasing or subscribing to our services, you agree to this
+            Refund Policy.
+          </p>
+        </div>
+
+        {/* Policy Sections */}
+        <div className="mt-16 space-y-14">
+
+          {/* 1 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              1. Overview of Services
+            </h2>
+            <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
+              <li>Performance Marketing (Meta, Instagram, Google & YouTube Ads)</li>
+              <li>Shopify Growth Strategy</li>
+              <li>Conversion Rate Optimization (CRO)</li>
+              <li>Funnel Optimization</li>
+              <li>Ecommerce Revenue Scaling Strategy</li>
+            </ul>
+            <p className="mt-4 text-gray-700">
+              Results depend on multiple factors including market conditions,
+              competition, ad spend, pricing, and customer demand.
             </p>
           </div>
 
-          <div className="prose prose-blue prose-lg mx-auto">
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
-              <p>
-                At CoderCrafter, we strive to provide high-quality training and educational services. 
-                This Refund Policy outlines the conditions under which refunds may be granted.
-              </p>
-              <p className="mt-4">
-                By enrolling in our courses, you agree to this refund policy.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">2. Refund Eligibility</h2>
-              <ul className="list-disc pl-6 mt-2">
-                <li>Refund request must be submitted within 7 days of enrollment</li>
-                <li>Less than 20% of the course content must be accessed</li>
-                <li>No completion certificate should have been issued</li>
-                <li>Placement assistance process must not have started</li>
-              </ul>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">3. Non-Refundable Cases</h2>
-              <ul className="list-disc pl-6 mt-2">
-                <li>Refund requests made after 7 days</li>
-                <li>More than 20% course completion</li>
-                <li>Downloaded materials or resources</li>
-                <li>Special discounted or promotional enrollments</li>
-              </ul>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">4. Refund Processing Time</h2>
-              <p>
-                Approved refunds will be processed within 7–10 business days via the original payment method.
-              </p>
-              <p className="mt-4">
-                Processing time may vary depending on your bank or payment provider.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">5. Course Cancellation</h2>
-              <p>
-                If CoderCrafter cancels a course for any reason, students will receive a full refund 
-                or the option to transfer to another available batch.
-              </p>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-4">6. Contact Us</h2>
-              <p>If you have any questions or wish to request a refund, please contact us:</p>
-
-              <div className="mt-6 space-y-4">
-                <div className="flex items-start">
-                  <Mail className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Email: <Link href="mailto:info@codercrafter.in" className="text-blue-600 hover:text-blue-800">info@codercrafter.in</Link></span>
-                </div>
-
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-gray-500 mr-3" />
-                  <span>Phone: <Link href="tel:+918920319125" className="text-blue-600 hover:text-blue-800">+91 89203 19125</Link></span>
-                </div>
-
-                <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Address: Bangalore, India</span>
-                </div>
-              </div>
-            </section>
-
+          {/* 2 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              2. Service Fees Are Non-Refundable
+            </h2>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Monthly retainers</li>
+              <li>Strategy fees</li>
+              <li>Setup fees</li>
+              <li>Audit fees</li>
+              <li>Consulting fees</li>
+            </ul>
+            <p className="mt-4 text-gray-700">
+              Once work has commenced, refunds will not be issued for time,
+              strategy development, or allocated resources.
+            </p>
           </div>
+
+          {/* 3 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              3. Ad Spend Is Non-Refundable
+            </h2>
+            <p className="text-gray-700">
+              Advertising budgets paid to third-party platforms such as
+              Google Ads, Meta (Facebook & Instagram), and YouTube Ads are
+              non-refundable through our company. Refunds must be requested
+              directly from the respective advertising platform.
+            </p>
+          </div>
+
+          {/* 4 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              4. Early Termination
+            </h2>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>No refund for the current billing cycle</li>
+              <li>Completed work remains billable</li>
+              <li>Outstanding payments must be cleared</li>
+            </ul>
+            <p className="mt-4 text-gray-700">
+              Terms may vary based on your signed service agreement.
+            </p>
+          </div>
+
+          {/* 5 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              5. Exceptional Circumstances
+            </h2>
+            <p className="text-gray-700">
+              Refunds may be considered in cases such as duplicate payments,
+              billing errors, or failure to deliver agreed services.
+            </p>
+            <p className="mt-4 text-gray-700">
+              Refund requests must be submitted in writing within 7 days of
+              billing. Approval is at the sole discretion of [Your Company Name].
+            </p>
+          </div>
+
+          {/* 6 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              6. No Guarantee of Results
+            </h2>
+            <p className="text-gray-700">
+              We do not guarantee specific revenue results, ROAS, lead volume,
+              or conversion rate improvements. Dissatisfaction with results
+              alone does not qualify for refunds.
+            </p>
+          </div>
+
+          {/* 7 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              7. Digital Products (If Applicable)
+            </h2>
+            <p className="text-gray-700">
+              Due to the instant access nature of digital products, all
+              purchases are final and non-refundable unless otherwise stated.
+            </p>
+          </div>
+
+          {/* 8 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              8. Chargebacks & Payment Disputes
+            </h2>
+            <p className="text-gray-700">
+              Initiating a chargeback without contacting us first may result
+              in service termination, suspension of access, or legal action.
+            </p>
+          </div>
+
+          {/* 9 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              9. How to Request a Refund
+            </h2>
+            <p className="text-gray-700">
+              To request a refund review, please contact:
+            </p>
+            <div className="mt-4 bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <p><strong>[Your Company Name]</strong></p>
+              <p>Email: [your@email.com]</p>
+              <p>Subject Line: Refund Request</p>
+            </div>
+            <p className="mt-4 text-gray-700">
+              Please include your full name, company name, invoice number, and
+              reason for the request. We respond within 5–7 business days.
+            </p>
+          </div>
+
+          {/* 10 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              10. Policy Updates
+            </h2>
+            <p className="text-gray-700">
+              We reserve the right to update this Refund Policy at any time.
+              Updates will be reflected with a revised “Last Updated” date.
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              Contact Information
+            </h2>
+            <p className="text-gray-700">
+              [Your Company Name] <br />
+              Email: [your@email.com] <br />
+              Website: [yourwebsite.com] <br />
+              Address: [Optional Business Address]
+            </p>
+          </div>
+
         </div>
       </div>
-
-      {/* Detailed Sections */}
-      <section className="pb-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Refund Policy Details</h2>
-
-          <div className="space-y-6">
-            {refundSections.map((section) => {
-              const Icon = section.icon
-              return (
-                <div key={section.id} className="overflow-hidden border border-gray-400 rounded-2xl p-4">
-                  <div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-10 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <p className="text-xl">{section.title}</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="pl-14">
-                      <p className="text-gray-600 whitespace-pre-line leading-relaxed">{section.content}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-    </div>
-  )
+    </section>
+  );
 }

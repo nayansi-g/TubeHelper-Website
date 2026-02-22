@@ -72,16 +72,19 @@ const slides = [
 
 export default function ClientSlider() {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
 
   // 🔥 Auto slide every 1 second
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 4000);
+ useEffect(() => {
+  if (isPaused) return;
 
-    return () => clearInterval(interval);
-  }, []);
+  const interval = setInterval(() => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, 8000);
+
+  return () => clearInterval(interval);
+}, [isPaused]);
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % slides.length);
@@ -103,21 +106,29 @@ export default function ClientSlider() {
 
   return (
     <div className="bg-white">
-        <div className="text-center">
+        <div className="text-center py-2">
         <span className="px-4 py-1 text-sm rounded-full bg-purple-50 text-purple-600 border border-purple-200">
           ✨ Business Case Studies
         </span>
       </div>
         <Wrapper>
-      <div className="header bg-white">
-        <h2 className="text-gray-900">Proof Over Promises</h2>
-        <p>We don’t just talk about growth — we deliver it.</p>
+      <div className=" bg-white text-center pb-5  md:pb-10">
+        <h2 className="text-gray-900 text-3xl md:text-5xl font-semibold">Proof Over Promises</h2>
+        <p className="text-gray-600">We don’t just talk about growth — we deliver it.</p>
       </div>
 
       <div
         className="slider"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+  onMouseEnter={() => setIsPaused(true)}
+  onMouseLeave={() => setIsPaused(false)}
+  onTouchStart={(e) => {
+    setIsPaused(true);
+    handleTouchStart(e);
+  }}
+  onTouchEnd={(e) => {
+    handleTouchEnd(e);
+    setIsPaused(false);
+  }}
       >
         <div
           className="slides"
@@ -125,8 +136,8 @@ export default function ClientSlider() {
         >
           {slides.map((slide, index) => (
             <div className="slide" key={index}>
-              <div className="left py-10">
-                <img src={slide.image} className="h-auto border border-gray-300 shadow-sm" alt={slide.subtitle} />
+              <div className="left ">
+                <img src={slide.image} className="h-auto px-10 border border-gray-300 shadow-sm" alt={slide.subtitle} />
               </div>
 
               <div className="right">
@@ -181,24 +192,9 @@ export default function ClientSlider() {
 
 const Wrapper = styled.section`
   background: white;
-  padding: 20px 20px;
+  padding: 40px 20px 60px;
   max-width: 1200px;
   margin: auto;
-
-  .header {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .header h2 {
-    font-size: 42px;
-    font-weight: 700;
-  }
-
-  .header p {
-    color: #666;
-    margin-top: 10px;
-  }
 
   .slider {
     overflow: hidden;
@@ -214,46 +210,66 @@ const Wrapper = styled.section`
     min-width: 100%;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   .left img {
-    width: 500px;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
     border-radius: 16px;
+    object-fit: cover;
   }
 
   .right {
-    flex: 1;
+    flex: 1.2;
   }
 
   .right h3 {
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 6px;
   }
 
   .right h4 {
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-size: 14px;
   }
 
   .section {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
+  }
+
+  .section strong {
+    font-size: 14px;
+  }
+
+  .section p,
+  .section li {
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   ul {
-    padding-left: 20px;
+    padding-left: 18px;
   }
 
   .nav {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
   }
 
   .nav button {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     border: 1px solid #ddd;
     background: white;
@@ -269,15 +285,37 @@ const Wrapper = styled.section`
     color: white;
   }
 
+  /* Tablet */
   @media (max-width: 992px) {
     .slide {
       flex-direction: column;
+      gap: 30px;
+    }
+
+    .right {
       text-align: left;
     }
 
     .left img {
-      width: 100%;
-      max-width: 450px;
+      max-width: 380px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    padding: 30px 15px 50px;
+
+    .right h3 {
+      font-size: 18px;
+    }
+
+    .section p,
+    .section li {
+      font-size: 12px;
+    }
+
+    .left img {
+      max-width: 100%;
     }
   }
 `;

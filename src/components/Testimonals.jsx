@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex justify-center lg:justify-end"
+          className="flex hidden md:block lg:justify-end"
         >
       <GlassImageCards />
         </motion.div>

@@ -223,12 +223,12 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="min-h-screen bg-white py-24 px-6">
+    <section className="min-h-screen bg-white py-24 px-3 md:px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT SIDE - SEO CONTENT */}
-        <div>
-          <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
+        <div className="hidden md:block">
+          <h1 className="text-4xl md:text-5xl font-semibold  text-gray-900 mb-6 leading-tight">
             Performance Marketing & Ecommerce Growth Experts
           </h1>
 
@@ -297,20 +297,16 @@ export default function ContactPage() {
               className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
             />
 
-            <select
+            <textarea
               name="service"
               value={formData.service}
+              placeholder="Description"
               required
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
+              className="w-full p-3 border border-gray-300 resize-none rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
             >
-              <option value="" className="text-gray-400">Select Service</option>
-              <option value="Performance Marketing">Performance Marketing</option>
-              <option value="Ecommerce Growth">Ecommerce Growth</option>
-              <option value="CRO Optimization">CRO Optimization</option>
-              <option value="SEO & Organic Growth">SEO & Organic Growth</option>
-              <option value="Analytics & Automation">Analytics & Automation</option>
-            </select>
+        
+            </textarea>
 
             {/* Success message */}
             {success && (

@@ -60,7 +60,7 @@ const services = [
 export default function ServicesCards() {
   return (
     <section className="w-full  px-0 md:px-5 ">
-     <div className="bg-white rounded-[70px] md:rounded-[100px] lg:rounded-[130px] py-20">
+     <div className="bg-white rounded-[60px] md:rounded-[90px] lg:rounded-[120px] py-20">
        <div className="max-w-7xl mx-auto px-6 lg:px-16 space-y-16">
 
          <div className="text-center space-y-4 max-w-3xl mx-auto">

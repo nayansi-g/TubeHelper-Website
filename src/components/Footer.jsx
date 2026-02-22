@@ -25,9 +25,8 @@ export default function Footer() {
           {/* Column 1 */}
           <div>
             <h3 className="text-lg font-semibold mb-4">TubeHelper</h3>
-            <p className="text-gray-400 mb-6">
-              We build secure, SEO-friendly, and high-performing
-              WordPress websites tailored to your goals.
+            <p className="text-gray-400 text-sm mb-6">
+              We are a performance-driven digital marketing and ecommerce growth agency helping Shopify and D2C brands scale profitably.
             </p>
 
             <h4 className="font-medium mb-2">Contact:</h4>
@@ -47,7 +46,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li><a href="about_us">About Us</a></li>
-              <li><a href="how_it_works">Our Work</a></li>
+              <li><a href="how_it_works">Case Studies</a></li>
               <li><a href="support">24/7 Support</a></li>              
               <li><a href="reviews">Reviews</a></li>
               <li>Pricing</li>
@@ -72,11 +71,11 @@ export default function Footer() {
            <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li><a href="services">Shopify Store Development</a></li>
-              <li><a href="services">WooCommerce Store Development</a></li>
-              <li><a href="services">Custom E-commerce Website</a></li>
-              <li><a href="services">Maintenance & Support</a></li>
-              <li><a href="services">Speed & Conversion Rate Optimization</a></li>
+              <li><a href="/services/performance_marketing">Performance Marketing</a></li>
+              <li><a href="/services/e-commerce_growth">E-commerce Growth</a></li>
+              <li><a href="/services/organic_growth">Organic Growth</a></li>
+              <li><a href="/services">Analytics & Operations</a></li>
+              <li><a href="/services">Speed & Conversion Rate Optimization</a></li>
             </ul>
           </div>
 
@@ -94,13 +93,13 @@ export default function Footer() {
 
         </div>
 
-           <div className="flex items-start w-[350px] mt-5 bg-white/5 border border-white/10 rounded-full p-1">
+           <div className="flex items-center w-[330px] mt-5 bg-white/5 border border-white/10 rounded-full p-1">
               <input
                 type="email"
                 placeholder="Enter you email address..."
-                className="bg-transparent outline-none px-4 py-2 text-sm flex-1 text-gray-300"
+                className="bg-transparent outline-none px-2 py-2 text-sm flex-1 text-gray-300"
               />
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 px-5 py-2 rounded-full text-sm hover:scale-105 transition">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 px-2 py-2 rounded-full text-sm hover:scale-105 transition">
                 Book a Demo
               </button>
             </div>

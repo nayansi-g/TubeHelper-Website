@@ -1,177 +1,228 @@
-import { Shield, Eye, Lock, Database, Users, FileText, ChevronDown, ChevronRight, Mail, Phone, MapPin } from "lucide-react"
-import Link from "next/link"
-
-
-export default function Terms() {
-  const privacySections = [
-    {
-      id: "information-collection",
-      title: "Information We Collect",
-      icon: Database,
-      content: `We collect information you provide directly to us, such as when you create an account, enroll in courses, or contact us. This includes:
-      • Personal information (name, email, phone number)
-      • Educational background and preferences
-      • Payment information (processed securely through third-party providers)
-      • Course progress and performance data
-      • Communication preferences and feedback`,
-    },
-    {
-      id: "information-use",
-      title: "How We Use Your Information",
-      icon: Eye,
-      content: `We use the information we collect to:
-      • Provide and improve our educational services
-      • Process enrollments and payments
-      • Send course updates and educational content
-      • Provide customer support
-      • Analyze usage patterns to enhance user experience
-      • Comply with legal obligations`,
-    },
-    {
-      id: "information-sharing",
-      title: "Information Sharing",
-      icon: Users,
-      content: `We do not sell, trade, or rent your personal information. We may share information in these limited circumstances:
-      • With service providers who assist in our operations
-      • When required by law or to protect our rights
-      • In connection with a business transfer or merger
-      • With your explicit consent
-      • For placement assistance with verified hiring partners`,
-    },
-    {
-      id: "data-security",
-      title: "Data Security",
-      icon: Lock,
-      content: `We implement appropriate security measures to protect your information:
-      • SSL encryption for data transmission
-      • Secure servers and databases
-      • Regular security audits and updates
-      • Access controls and authentication
-      • Employee training on data protection
-      • Incident response procedures`,
-    },
-    {
-      id: "your-rights",
-      title: "Your Rights",
-      icon: Shield,
-      content: `You have the right to:
-      • Access your personal information
-      • Correct inaccurate information
-      • Delete your account and data
-      • Opt-out of marketing communications
-      • Data portability
-      • Lodge complaints with supervisory authorities`,
-    },
-  ]
-
+export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-[#080B1A] text-white ">
+    <section className="bg-white text-gray-800">
       {/* Hero Section */}
-      <div className=" py-12 text-gray-600 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="mt-6 text-3xl font-bold text-white sm:text-4xl">
-  Terms & Conditions
-</h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      <div className="max-w-5xl mx-auto px-6 lg:px-8 py-20">
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+            Terms & Conditions
+          </h1>
+          <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+            Effective Date: [Insert Date] <br />
+            Last Updated: [Insert Date]
+          </p>
+        </div>
+
+        {/* Intro */}
+        <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
+          <p>
+            Welcome to <strong>[Your Company Name]</strong> ("Company", "we",
+            "our", or "us").
+          </p>
+          <p>
+            These Terms & Conditions govern your use of our website
+            <strong> [yourwebsite.com]</strong> and our digital marketing
+            services including Performance Marketing, Ecommerce Growth,
+            Shopify Strategy, CRO, and Funnel Optimization.
+          </p>
+          <p>
+            By accessing our website or services, you agree to comply with
+            these Terms.
+          </p>
+        </div>
+
+        {/* Sections */}
+        <div className="mt-16 space-y-14">
+
+          {/* Section 1 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              1. Use of Website
+            </h2>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>You must be at least 18 years old</li>
+              <li>Use the website for lawful purposes only</li>
+              <li>Do not misuse, disrupt, or damage the website</li>
+            </ul>
+            <p className="mt-4 text-gray-700">
+              We reserve the right to restrict access if these terms are violated.
             </p>
           </div>
 
-          <div className="prose prose-blue prose-lg mx-auto">
-           <section className="mb-12">
-  <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
-  <p>
-    Welcome to CoderCrafter ("we," "our," or "us"). These Terms & Conditions govern your use of our website and services. By accessing or enrolling in our courses, you agree to comply with these terms.
-  </p>
-  <p className="mt-4">
-    If you do not agree with any part of these terms, please do not use our services.
-  </p>
-</section>
-
-            <h2 className="text-2xl font-bold text-white mb-4">2. Use of Services</h2>
-<p>
-You agree to use our services only for lawful purposes. You must not:
-</p>
-<ul className="list-disc pl-6 mt-2">
-  <li>Violate any applicable laws or regulations</li>
-  <li>Attempt to gain unauthorized access to our systems</li>
-  <li>Copy or distribute course materials without permission</li>
-  <li>Use our services for fraudulent purposes</li>
-</ul>
-
-
-        <h2 className="text-2xl font-bold text-white mb-4">3. Payments & Refunds</h2>
-<p>
-All course fees must be paid in full before access is granted. Payments are processed securely through third-party providers.
-</p>
-<ul className="list-disc pl-6 mt-2">
-  <li>Fees are non-transferable</li>
-  <li>Refund eligibility depends on our refund policy</li>
-  <li>We reserve the right to update pricing at any time</li>
-</ul>
-
-
-            <h2 className="text-2xl font-bold text-white mb-4">4. Intellectual Property</h2>
-<p>
-All course materials, logos, designs, and content are the intellectual property of CoderCrafter. Unauthorized reproduction or redistribution is strictly prohibited.
-</p>
-
-            <h2 className="text-2xl font-bold text-white mb-4">5. User Responsibilities</h2>
-<p>
-You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account.
-</p>
-
-            <h2 className="text-2xl font-bold text-white mb-4">6. Limitation of Liability</h2>
-<p>
-We are not liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our services.
-</p>
-
-            <h2 className="text-2xl font-bold text-white mb-4">7. Termination</h2>
-<p>
-We reserve the right to suspend or terminate access to our services at any time if you violate these Terms & Conditions.
-</p>
-
-           <h2 className="text-2xl font-bold text-white mb-4">8. Changes to Terms</h2>
-<p>
-We may revise these Terms & Conditions at any time. Continued use of our services after changes are posted constitutes acceptance of the updated terms.
-</p>
-
-            <h2 className="text-2xl font-bold text-white mb-4">9. Contact Us</h2>
-
+          {/* Section 2 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              2. Services Overview
+            </h2>
+            <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
+              <li>Meta & Instagram Ads Management</li>
+              <li>Google Ads (Search & Shopping)</li>
+              <li>YouTube Ads</li>
+              <li>Shopify Growth Strategy</li>
+              <li>Conversion Rate Optimization (CRO)</li>
+              <li>Funnel Optimization</li>
+            </ul>
+            <p className="mt-4">
+              All services are subject to a separate written agreement defining
+              scope, pricing, and timelines.
+            </p>
           </div>
+
+          {/* Section 3 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              3. No Guaranteed Results
+            </h2>
+            <p className="text-gray-700">
+              We use data-driven strategies but do not guarantee specific
+              revenue, ROAS, sales volume, rankings, or conversion rates.
+              Results depend on market conditions, competition, and product
+              quality.
+            </p>
+          </div>
+
+          {/* Section 4 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              4. Client Responsibilities
+            </h2>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Provide accurate information</li>
+              <li>Grant required account access</li>
+              <li>Approve creatives in a timely manner</li>
+              <li>Comply with platform policies</li>
+            </ul>
+          </div>
+
+          {/* Section 5 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              5. Intellectual Property
+            </h2>
+            <p className="text-gray-700">
+              All website content including text, graphics, branding, and
+              design is the intellectual property of [Your Company Name].
+              Unauthorized reproduction is prohibited.
+            </p>
+          </div>
+
+          {/* Section 6 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              6. Payments & Fees
+            </h2>
+            <p className="text-gray-700">
+              Fees and billing schedules are defined in service agreements.
+              Late payments may result in suspension. Ad spend is separate from
+              service fees.
+            </p>
+          </div>
+
+          {/* Section 7 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              7. Limitation of Liability
+            </h2>
+            <p className="text-gray-700">
+              We are not liable for indirect losses, revenue loss, data loss,
+              or platform suspensions. Liability is limited to fees paid in the
+              previous 30 days.
+            </p>
+          </div>
+
+          {/* Section 8 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              8. Third-Party Platforms
+            </h2>
+            <p className="text-gray-700">
+              Our services involve third-party platforms such as Google Ads,
+              Meta, Shopify, and analytics tools. We are not responsible for
+              platform updates, bans, or outages.
+            </p>
+          </div>
+
+          {/* Section 9 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              9. Confidentiality
+            </h2>
+            <p className="text-gray-700">
+              Both parties agree to maintain confidentiality of business
+              information unless required by law.
+            </p>
+          </div>
+
+          {/* Section 10 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              10. Termination
+            </h2>
+            <p className="text-gray-700">
+              Services may be terminated according to agreement terms. We may
+              terminate immediately for violations or non-payment.
+            </p>
+          </div>
+
+          {/* Section 11 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              11. Disclaimer
+            </h2>
+            <p className="text-gray-700">
+              Website content is for informational purposes only and does not
+              constitute legal or financial advice.
+            </p>
+          </div>
+
+          {/* Section 12 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              12. Indemnification
+            </h2>
+            <p className="text-gray-700">
+              You agree to indemnify and hold harmless [Your Company Name] from
+              claims arising from misuse of services or violation of these
+              Terms.
+            </p>
+          </div>
+
+          {/* Section 13 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              13. Governing Law
+            </h2>
+            <p className="text-gray-700">
+              These Terms are governed by the laws of [Insert Country/State].
+            </p>
+          </div>
+
+          {/* Section 14 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              14. Changes to Terms
+            </h2>
+            <p className="text-gray-700">
+              We may update these Terms at any time. Continued use of the
+              website constitutes acceptance of updates.
+            </p>
+          </div>
+
+          {/* Section 15 */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              15. Contact Information
+            </h2>
+            <p className="text-gray-700">
+              [Your Company Name] <br />
+              Email: [your@email.com] <br />
+              Website: [yourwebsite.com] <br />
+              Address: [Optional Business Address]
+            </p>
+          </div>
+
         </div>
       </div>
-
-      {/* Detailed Sections - Static version without interactivity */}
-      <section className="pb-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Privacy Policy Details</h2>
-
-          <div className="space-y-6">
-            {privacySections.map((section) => {
-              const Icon = section.icon
-              return (
-                <div key={section.id} className="overflow-hidden border border-gray-400 rounded-2xl p-4">
-                  <div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-10 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <p className="text-xl">{section.title}</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="pl-14">
-                      <p className="text-gray-600 whitespace-pre-line leading-relaxed">{section.content}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-    </div>
-  )
+    </section>
+  );
 }

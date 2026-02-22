@@ -48,7 +48,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium relative">
 
-          <a href="#" className="hover:text-purple-600">Home</a>
+          <a href="/" className="hover:text-purple-600">Home</a>
 
           {/* Services Dropdown */}
           <div className="relative" ref={solutionsRef}>
@@ -63,49 +63,51 @@ export default function Navbar() {
             </button>
 
             {isSolutionsOpen && (
-              <div className="absolute top-12 w-[95vw] max-w-[900px] bg-white shadow-xl rounded-2xl p-8 grid lg:grid-cols-3 gap-10">
+              <div className="absolute top-12 left-30 -translate-x-1/2 w-[900px] max-w-[92vw] bg-white shadow-xl rounded-2xl p-8 grid lg:grid-cols-3 gap-10 z-50">
 
                 {/* Column 1 */}
                 <div>
                   <h4 className="text-gray-400 mb-4 text-sm">Our Services</h4>
                   <div className="space-y-4">
                     <div>
-                      <h3 className="font-semibold flex items-center gap-1">
-                        <ChartNoAxesCombined className="w-5 h-5" />
+                      <a href="/services/performance_marketing">
+                      <h3 className="font-semibold cursor-pointer flex items-center justify-start gap-1">
+                        <ChartNoAxesCombined className="w-4 h-4" />
                         Performance Marketing
                       </h3>
                       <p className="text-sm text-gray-500">Meta & Instagram Ads</p>
                       <p className="text-sm text-gray-500">Google Ads (Search & Shopping)</p>
-                      <p className="text-sm text-gray-500">YouTube Ads</p>
+                      <p className="text-sm text-gray-500">YouTube Ads</p></a>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold flex items-center gap-1">
-                        <ShoppingCart className="w-5 h-5" />
+                     <a href="/services/e-commerce_growth"><h3 className="font-semibold cursor-pointer flex items-center gap-1">
+                        <ShoppingCart className="w-4 h-4" />
                         Ecommerce Growth
                       </h3>
                       <p className="text-sm text-gray-500">Shopify Growth Strategy</p>
                       <p className="text-sm text-gray-500">Conversion Rate Optimization (CRO)</p>
-                      <p className="text-sm text-gray-500">Funnel Optimization</p>
+                      <p className="text-sm text-gray-500">Funnel Optimization</p></a> 
                     </div>
 
                     <div>
-                      <h3 className="font-semibold flex items-center gap-1">
-                        <Sprout className="w-5 h-5" />
+                      <a href="/services/organic_growth"><h3 className="font-semibold flex cursor-pointer items-center gap-1">
+                        <Sprout className="w-4 h-4" />
                         Organic Growth
                       </h3>
                       <p className="text-sm text-gray-500">SEO</p>
-                      <p className="text-sm text-gray-500">Content Marketing</p>
+                      <p className="text-sm text-gray-500">Content Marketing</p></a>
                     </div>
                   </div>
                 </div>
 
                 {/* Column 2 */}
                 <div>
+                  <h4 className="text-gray-400 mb-4 text-sm invisible">Our Services</h4>
                   <div className="space-y-4">
-                    <div>
+                    <div className="cursor-pointer">
                       <h3 className="font-semibold flex items-center gap-1">
-                        <Cpu className="w-5 h-5" />
+                        <Cpu className="w-4 h-4" />
                         Analytics & Automation
                       </h3>
                       <p className="text-sm text-gray-500">Tracking & GA4 Setup</p>
@@ -114,8 +116,8 @@ export default function Navbar() {
                       <p className="text-sm text-gray-500">Landing Page Strategy</p>
                     </div>
 
-                    <div>
-                      <h3 className="font-semibold flex items-center gap-1">
+                    <div className="cursor-pointer">
+                      <h3 className="font-semibold flex items-center justify-start gap-1">
                         <Megaphone className="w-5 h-5" />
                         Amplify brand awareness
                       </h3>
@@ -196,7 +198,7 @@ export default function Navbar() {
       {isMobileOpen && (
         <div className="lg:hidden bg-white px-6 pb-6 space-y-4 shadow-md">
 
-          <a href="#" className="block">Home</a>
+          <a href="/" className="block">Home</a>
 
           <div>
             <button
@@ -208,8 +210,8 @@ export default function Navbar() {
 
             {isMobileServicesOpen && (
               <div className="mt-3 space-y-3 text-sm text-gray-600">
-                <p>Performance Marketing</p>
-                <p>Ecommerce Growth</p>
+               <p><a href="/services/performance_marketing">Performance Marketing</a> </p>
+               <p><a href="/services/e-commerce_growth"> Ecommerce Growth</a></p>
                 <p>Organic Growth</p>
                 <p>Analytics & Automation</p>
                 <p>Amplify brand awareness</p>
