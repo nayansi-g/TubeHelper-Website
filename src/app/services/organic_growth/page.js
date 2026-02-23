@@ -170,9 +170,9 @@ We help brands grow sustainably through strategic SEO and high-converting conten
         >
           {/* Heading */}
           <h1 className="text-3xl md:text-4xl max-w-2xl mx-auto text-gray-900 font-bold leading-tight mb-2">
-            Growth Isn’t Just More Traffic — It’s {""} 
+            Traffic That Doesn’t Depend on {""}
             <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-              Better Conversion
+              Ads
             </span>
           </h1>
 

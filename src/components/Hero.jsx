@@ -84,7 +84,7 @@ export default function Hero() {
     <section className="relative pt-28 min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
 
       {/* Container */}
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className=" w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* ================= LEFT CONTENT ================= */}
         <div className="relative flex flex-col justify-center items-start z-10 text-center lg:text-left px-4 sm:px-6 lg:px-12">
