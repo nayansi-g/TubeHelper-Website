@@ -184,7 +184,7 @@ export default function FAQPage() {
 
   return (
     <main className="bg-white text-gray-900">
-      <section className="rounded-b-[50px] bg-gray-300 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+      <section className="rounded-b-[50px] bg-gray-100 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
         <div className="mx-auto max-w-5xl">
           <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
             Frequently Asked Questions About Our Digital Marketing Services

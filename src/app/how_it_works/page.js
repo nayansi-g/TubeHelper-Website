@@ -1,242 +1,243 @@
-"use client"
+import Link from "next/link"
+import { MoveUpRight } from "lucide-react"
 
-import { motion } from "framer-motion"
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+const caseStudies = [
+  {
+    id: "Case Study #1",
+    title: "D2C Skincare Brand (Shopify)",
+    challenge:
+      "The brand was generating traffic but struggling with low ROAS (2.1x) and high customer acquisition costs. Their funnel lacked structure and creatives were not optimized for performance.",
+    actions: [
+      "Rebuilt full-funnel ad structure (TOF / MOF / BOF)",
+      "Launched creative testing framework (10+ hooks per week)",
+      "Implemented server-side tracking",
+      "Optimized product pages and checkout flow",
+    ],
+    results: [
+      "ROAS increased from 2.1x to 4.8x",
+      "Revenue increased by 162%",
+      "CAC reduced by 37%",
+      "Conversion rate improved from 1.9% to 3.3%",
+    ],
+    impact:
+      "The brand scaled ad spend confidently while increasing profitability, not just revenue.",
   },
-}
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
+  {
+    id: "Case Study #2",
+    title: "Fitness Supplement Brand",
+    challenge:
+      "High ad spend but unstable profitability, poor retention, and heavy dependence on cold traffic.",
+    actions: [
+      "Restructured Meta and Google campaigns",
+      "Built lifecycle email and SMS automation",
+      "Implemented upsell and subscription offers",
+      "Optimized landing page messaging",
+    ],
+    results: [
+      "Revenue grew from $120K to $310K per month",
+      "Repeat purchase rate increased by 38%",
+      "AOV increased by 22%",
+      "Blended ROAS improved to 5.1x",
+    ],
+    impact:
+      "The brand transitioned from aggressive scaling to sustainable growth with stronger margins.",
   },
-}
+  {
+    id: "Case Study #3",
+    title: "Fashion Ecommerce Brand",
+    challenge:
+      "Strong social presence but poor conversion rates and inconsistent tracking.",
+    actions: [
+      "Fixed GA4 and pixel attribution",
+      "Ran A/B testing on product pages",
+      "Launched retargeting segmentation strategy",
+      "Improved creative messaging and hooks",
+    ],
+    results: [
+      "Conversion rate doubled from 1.5% to 3.1%",
+      "Cost per purchase reduced by 41%",
+      "Tracking accuracy improved by 90%",
+      "Monthly profit increased by 74%",
+    ],
+    impact:
+      "The brand unlocked profitable scaling by fixing growth fundamentals first.",
+  },
+]
 
-export default function OurWorkPage() {
+const faqs = [
+  {
+    q: "What do your case studies show?",
+    a: "Our case studies show how strategy, tracking, and funnel optimization impact revenue, ROAS, CAC, and conversion rates. Each project highlights the challenge, implementation, and measurable business outcomes.",
+  },
+  {
+    q: "Are these results typical for every business?",
+    a: "No. Results vary by niche, pricing, demand, offer strength, budget, and execution speed. We use each case study to show proven frameworks and realistic optimization paths, not guaranteed outcomes.",
+  },
+  {
+    q: "How long does it take to see measurable growth?",
+    a: "Paid media and conversion optimization usually show early data in a few weeks, while stronger trend improvements often appear within 30 to 90 days. SEO and organic channels usually take longer.",
+  },
+  {
+    q: "Do you work only with ecommerce brands?",
+    a: "We primarily work with ecommerce and D2C brands, but our full-funnel approach can also support growth-focused service businesses with clear offers and conversion goals.",
+  },
+  {
+    q: "Can you audit my brand before engagement?",
+    a: "Yes. We start with a strategy call and growth audit to identify performance gaps, tracking issues, and the highest-impact optimization opportunities.",
+  },
+]
+
+const proofPoints = [
+  "ROAS improved up to 5.1x",
+  "Revenue growth up to 162%",
+  "CAC reduced by up to 41%",
+  "Conversion rates scaled up to 2x",
+]
+
+export default function CaseStudiesPage() {
   return (
-    <div className="bg-[#070816] text-white overflow-hidden">
-
-      {/* HERO */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-4xl  md:text-5xl  font-semibold mb-6"
-        >
-          Our Work Speaks Through Results
-        </motion.h1>
-
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="max-w-3xl text-gray-400 text-md"
-        >
-          We design and develop powerful Shopify & WooCommerce stores that
-          increase conversions, improve user experience, and help businesses scale profitably.
-        </motion.p>
+    <main className="bg-white text-gray-900">
+      <section className="rounded-b-[50px] bg-gray-300 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Digital Marketing Case Studies for Ecommerce and D2C Growth
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-gray-700">
+            Explore how we help brands improve ROAS, increase conversion rates, reduce customer acquisition costs, and scale revenue with structured full-funnel marketing systems.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
+          >
+            Book a Strategy Call
+            <MoveUpRight className="h-4 w-4" />
+          </Link>
+        </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="px-6 py-20 bg-[#080B1A]">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-center"
-        >
-          {[
-            { title: "50+", desc: "Stores Delivered" },
-            { title: "3X", desc: "Average Conversion Growth" },
-            { title: "99%", desc: "Client Satisfaction" },
-            { title: "24/7", desc: "Support Availability" },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              className="p-8 rounded-xl bg-white/5 border border-white/10"
+      <section className="mx-auto max-w-6xl px-4 pb-8 pt-12 sm:px-6 md:pt-14">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {proofPoints.map((item) => (
+            <div
+              key={item}
+              className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-4 text-sm font-medium text-gray-800 md:text-base"
             >
-              <h3 className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-                {item.title}
-              </h3>
-              <p className="text-gray-400">{item.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* FEATURED CASE STUDY */}
-      <section className="px-6 py-24 max-w-6xl mx-auto">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl font-semibold mb-8">
-            Featured Case Study
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white/5 border border-white/10 rounded-xl h-[350px] flex items-center justify-center text-gray-500">
-              Store Screenshot
+              {item}
             </div>
-
-            <div>
-              <h3 className="text-2xl font-semibold mb-4">
-                Fashion Brand – Shopify Store
-              </h3>
-
-              <p className="text-gray-400 mb-6">
-                We redesigned a fashion brand’s Shopify store focusing on
-                modern UI, faster checkout flow, optimized product pages,
-                and advanced conversion strategies.
-              </p>
-
-              <ul className="space-y-3 text-gray-300 mb-6">
-                <li>✔ Complete UX Redesign</li>
-                <li>✔ Custom Product Filtering</li>
-                <li>✔ Speed Optimization (90+ PageSpeed)</li>
-                <li>✔ Advanced Cart & Upsell Integration</li>
-              </ul>
-
-              <div className="text-purple-400 font-semibold">
-                Result: 2.8X Increase in Sales in 60 Days
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* PROJECT GRID */}
-      <section className="px-6 py-24 bg-[#080B1A]">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto"
-        >
-          <h2 className="text-4xl font-semibold text-center mb-16">
-            More Projects
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              "Electronics Store – WooCommerce",
-              "Luxury Watch Brand – Shopify",
-              "Skincare Brand – Shopify",
-              "Home Decor Store – WooCommerce",
-              "Fitness Brand – Shopify",
-              "Digital Product Store – WooCommerce",
-            ].map((project, index) => (
-              <motion.div
-                key={index}
-                variants={fadeUp}
-                className="p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-purple-500 transition"
-              >
-                <div className="h-[180px] bg-[#0F1224] rounded-lg mb-6 flex items-center justify-center text-gray-500">
-                  Preview Image
-                </div>
-
-                <h3 className="text-xl font-semibold mb-3">
-                  {project}
-                </h3>
-
-                <p className="text-gray-400 text-sm mb-4">
-                  Custom designed e-commerce store with optimized
-                  performance, mobile-first design, and integrated payment gateways.
-                </p>
-
-                <button className="text-purple-400 hover:text-pink-400 transition">
-                  View Case Study →
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="px-6 py-24 max-w-6xl mx-auto">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-4xl font-semibold text-center mb-16"
-        >
-          What Clients Say
-        </motion.h2>
-
-        <div className="grid md:grid-cols-2 gap-10">
-          {[
-            "They completely transformed our Shopify store. Sales increased within weeks.",
-            "Highly professional team. The WooCommerce store they built exceeded expectations.",
-          ].map((review, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="p-8 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <p className="text-gray-300 mb-4">“{review}”</p>
-              <p className="text-purple-400 font-semibold">
-                — Verified Client
-              </p>
-            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="px-6 py-32 text-center">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6"
-        >
-          Let’s Build Your Next High-Converting Store
-        </motion.h2>
+      <section className="mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 md:pb-24">
+        <div className="space-y-8">
+          {caseStudies.map((study) => (
+            <article key={study.id} className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+              <p className="text-sm font-medium text-gray-600">{study.id}</p>
+              <h2 className="mt-1 text-2xl font-semibold text-gray-900 md:text-3xl">{study.title}</h2>
 
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-gray-400 mb-8 max-w-2xl mx-auto"
-        >
-          Whether you need a brand-new Shopify store or want to upgrade your WooCommerce website,
-          we’re ready to help you scale.
-        </motion.p>
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                  <h3 className="text-base font-semibold text-gray-900">The Challenge</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{study.challenge}</p>
+                </div>
 
-        <motion.button
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="px-10 py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 transition text-lg"
-        >
-          Start Your Project →
-        </motion.button>
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                  <h3 className="text-base font-semibold text-gray-900">What We Did</h3>
+                  <ul className="mt-2 space-y-2 text-sm text-gray-700 md:text-base">
+                    {study.actions.map((item) => (
+                      <li key={item}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                  <h3 className="text-base font-semibold text-gray-900">Results</h3>
+                  <ul className="mt-2 space-y-2 text-sm text-gray-700 md:text-base">
+                    {study.results.map((item) => (
+                      <li key={item}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                  <h3 className="text-base font-semibold text-gray-900">Business Impact</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{study.impact}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+            How We Approach Case Study Execution
+          </h2>
+          <p className="mt-4 text-gray-700">
+            We begin with audit-driven diagnostics across paid media, tracking, creative, landing pages, and retention systems. Then we prioritize the highest-impact changes first, track outcomes through structured dashboards, and scale only what improves profitability.
+          </p>
+          <p className="mt-3 text-gray-700">
+            This process helps us avoid vanity metrics and focus on revenue, margin quality, customer acquisition cost, and long-term growth stability.
+          </p>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+            Industries and Brands We Commonly Support
+          </h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+              Ecommerce and Shopify brands
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+              D2C consumer products
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+              Health, wellness, and supplements
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+              Beauty and skincare
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+              Fashion and lifestyle products
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+              Growth-stage brands scaling multi-channel acquisition
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+            Case Study FAQs
+          </h2>
+          <div className="mt-5 space-y-3">
+            {faqs.map((item) => (
+              <details key={item.q} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                <summary className="cursor-pointer list-none pr-6 font-medium text-gray-900">
+                  {item.q}
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-gray-700 md:text-base">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
       </section>
 
-    </div>
+      <section className="bg-gradient-to-br from-gray-300 via-white to-gray-300 px-4 py-16 text-center sm:px-6 md:py-20">
+        <h2 className="text-3xl font-semibold">Ready to Become Our Next Case Study?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-gray-700">
+          If you want a structured growth system built around performance, conversion, and profitability, let&apos;s map your next 90-day strategy.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
+        >
+          Book Your Free Strategy Call
+          <MoveUpRight className="h-4 w-4" />
+        </Link>
+      </section>
+    </main>
   )
 }

@@ -1,202 +1,332 @@
-"use client"
+import Link from "next/link"
+import { MoveUpRight } from "lucide-react"
 
-import { motion } from "framer-motion"
+const introPoints = [
+  "High-converting traffic",
+  "Optimized product pages",
+  "Accurate tracking",
+  "Smart paid advertising",
+  "Email automation",
+  "Conversion rate optimization",
+]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 }
-  }
-}
+const tips = [
+  {
+    title: "High-Converting Product Page Optimization",
+    description:
+      "Your product page is your most important sales asset. To increase ecommerce conversion rate, optimize every element for clarity, trust, and purchase intent.",
+    bullets: [
+      "Use benefit-driven product descriptions",
+      "Add high-resolution product images",
+      "Include lifestyle visuals",
+      "Display customer reviews",
+      "Highlight guarantees and return policies",
+      "Add urgency elements (limited stock, offers)",
+      "Optimize page speed",
+    ],
+    keywords: [
+      "Ecommerce product page optimization",
+      "Increase ecommerce conversion rate",
+      "High-converting product pages",
+    ],
+    link: { href: "/services/e-commerce_growth", label: "Conversion Optimization Services" },
+  },
+  {
+    title: "Scale with Performance Marketing Campaigns",
+    description:
+      "Paid ads are one of the fastest ways to grow ecommerce revenue when tracking, audience targeting, and creative testing are handled correctly.",
+    bullets: [
+      "Meta and Instagram Ads",
+      "Google Search Ads",
+      "Google Shopping",
+      "YouTube Ads",
+      "Install proper conversion tracking",
+      "Optimize for purchase events",
+      "Use lookalike audiences",
+      "Continuously test creatives",
+      "Monitor ROAS and CAC",
+    ],
+    keywords: [
+      "Ecommerce paid ads strategy",
+      "Performance marketing for ecommerce",
+      "Increase ROAS ecommerce",
+    ],
+  },
+  {
+    title: "Conversion Rate Optimization (CRO) Strategies",
+    description:
+      "Small improvements in your funnel can create significant revenue impact. CRO reduces wasted traffic and improves profitability.",
+    bullets: [
+      "Clear call-to-action buttons",
+      "Mobile-first design",
+      "Faster checkout process",
+      "Exit-intent offers",
+      "Simplified navigation",
+      "Trust badges and secure payment icons",
+    ],
+    monitor: [
+      "Add-to-cart rate",
+      "Checkout completion rate",
+      "Bounce rate",
+    ],
+    keywords: [
+      "Ecommerce conversion rate optimization",
+      "Improve Shopify conversion rate",
+      "Reduce cart abandonment",
+    ],
+  },
+  {
+    title: "Recover Lost Revenue with Automation",
+    description:
+      "Most ecommerce stores leave revenue on the table through cart abandonment and weak retention. Automation helps recover this predictably.",
+    bullets: [
+      "Abandoned cart email flows",
+      "Post-purchase sequences",
+      "Cross-sell and upsell emails",
+      "Win-back campaigns",
+      "SMS reminders",
+    ],
+    extra:
+      "Automation increases customer lifetime value (LTV) and improves retention.",
+    keywords: [
+      "Ecommerce email marketing automation",
+      "Abandoned cart recovery strategy",
+      "Increase customer lifetime value",
+    ],
+  },
+  {
+    title: "Make Decisions Based on Data",
+    description:
+      "Without accurate tracking, scaling becomes risky. Data quality determines how confidently you can optimize spend and performance.",
+    bullets: [
+      "GA4 tracking setup",
+      "Conversion tracking",
+      "Revenue attribution dashboards",
+      "Event tracking",
+      "Customer behavior analytics",
+    ],
+    monitor: [
+      "Return on ad spend (ROAS)",
+      "Customer acquisition cost (CAC)",
+      "Lifetime value (LTV)",
+      "Conversion rate",
+    ],
+    keywords: [
+      "GA4 setup for ecommerce",
+      "Ecommerce analytics tracking",
+      "Conversion tracking setup",
+    ],
+    link: { href: "/services/analytics_&_automation", label: "Analytics and Automation Services" },
+  },
+  {
+    title: "Ecommerce SEO for Sustainable Traffic",
+    description:
+      "Paid ads create immediate demand. SEO builds long-term authority and lower-cost acquisition over time.",
+    bullets: [
+      "Product page titles and meta descriptions",
+      "Category pages",
+      "Blog content",
+      "Internal linking",
+      "Technical SEO",
+      "Page speed",
+      "Target high-intent product keywords",
+    ],
+    keywords: [
+      "Ecommerce SEO strategy",
+      "SEO for online stores",
+      "Increase organic traffic ecommerce",
+    ],
+    link: { href: "/services/organic_growth", label: "Organic Growth Services" },
+  },
+  {
+    title: "Increase Repeat Purchases",
+    description:
+      "Customer acquisition is expensive. Retention improves margins and compounds revenue over time.",
+    bullets: [
+      "Loyalty programs",
+      "Referral programs",
+      "Personalized offers",
+      "Retargeting campaigns",
+      "Exclusive member discounts",
+    ],
+    extra:
+      "Improving retention directly increases lifetime value.",
+    keywords: [
+      "Ecommerce customer retention strategy",
+      "Increase repeat purchases",
+      "Ecommerce loyalty program tips",
+    ],
+  },
+  {
+    title: "Mobile-First Ecommerce Optimization",
+    description:
+      "Most ecommerce traffic is mobile. Mobile performance directly affects conversion rate and cart completion.",
+    bullets: [
+      "Fast loading speed",
+      "Mobile-optimized checkout",
+      "Easy navigation",
+      "Thumb-friendly CTA buttons",
+      "Simplified forms",
+    ],
+    keywords: [
+      "Mobile ecommerce optimization",
+      "Improve mobile conversion rate",
+      "Mobile-friendly online store",
+    ],
+  },
+  {
+    title: "A/B Testing for Ecommerce Growth",
+    description:
+      "Never assume and always test. Continuous experimentation is the fastest path to steady revenue gains.",
+    bullets: [
+      "Headlines",
+      "Product images",
+      "Pricing strategies",
+      "Offers",
+      "Ad creatives",
+      "Landing pages",
+    ],
+    extra: "Growth is driven by continuous experimentation.",
+    keywords: [
+      "Ecommerce A/B testing strategy",
+      "Optimize ecommerce funnel",
+      "Increase ecommerce revenue",
+    ],
+  },
+]
+
+const audience = [
+  "Shopify store owners",
+  "D2C brands",
+  "Scaling ecommerce startups",
+  "Founders running paid ads",
+  "Growth-focused online businesses",
+]
 
 export default function EcommerceTipsPage() {
   return (
-    <div className="bg-[#070816] text-white min-h-screen overflow-hidden">
-
-      {/* HERO */}
-      <section className="text-center py-28 px-6">
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="text-4xl md:text-5xl font-semibold mb-6"
-        >
-          E-Commerce Growth Tips
-        </motion.h1>
-
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="max-w-2xl mx-auto text-gray-400 text-lg"
-        >
-          Proven strategies to build, optimize, and scale high-converting Shopify and WooCommerce stores.
-        </motion.p>
+    <main className="bg-white text-gray-900">
+      <section className="rounded-b-[50px] bg-gray-300 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            E-commerce Growth Tips to Scale Your Online Store Profitably
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-gray-700">
+            Actionable, data-driven ecommerce strategies to increase traffic, improve conversion rates, and maximize revenue.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
+          >
+            Book a Free Growth Strategy Call
+            <MoveUpRight className="h-4 w-4" />
+          </Link>
+        </div>
       </section>
 
-      {/* CONTENT */}
-      <section className="max-w-5xl mx-auto px-6 pb-32 space-y-24">
-
-        {/* 1 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            1. Focus on Conversion-Driven Design
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Your store design should not just look beautiful — it should convert visitors into customers.
-            Use clear call-to-action buttons, strong product imagery, trust badges, reviews, and clean layouts.
-            Remove distractions. Make checkout simple. Speed matters.
+      <section className="mx-auto max-w-6xl px-4 pb-8 pt-12 sm:px-6 md:pt-14">
+        <article className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">Introduction</h2>
+          <p className="mt-4 text-gray-700">
+            Running a successful ecommerce business requires more than launching a store.
           </p>
-        </motion.div>
-
-        {/* 2 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            2. Optimize Store Speed
-          </h2>
-          <p className="text-gray-400 leading-8">
-            A 1-second delay in load time can reduce conversions significantly.
-            Compress images, enable caching, minimize scripts, and use high-quality hosting.
-            Shopify users should avoid excessive apps. WooCommerce users should optimize plugins.
+          <p className="mt-3 text-gray-700">To scale profitably, you need:</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {introPoints.map((item) => (
+              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-gray-700">
+            On this page, we share proven ecommerce tips used by growth-focused brands to increase revenue and build sustainable online businesses.
           </p>
-        </motion.div>
-
-        {/* 3 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            3. Master Product Pages
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Product pages are where buying decisions happen.
-            Use high-resolution images, benefits-focused descriptions,
-            customer reviews, FAQs, shipping details, and urgency elements.
-            Show value, not just features.
-          </p>
-        </motion.div>
-
-        {/* 4 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            4. Use Email Marketing Strategically
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Build your email list from day one.
-            Set up abandoned cart emails, welcome sequences, promotional campaigns,
-            and re-engagement flows. Email marketing gives the highest ROI in e-commerce.
-          </p>
-        </motion.div>
-
-        {/* 5 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            5. Invest in SEO Early
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Optimize product titles, meta descriptions, URLs, and content.
-            Create blogs targeting buyer intent keywords.
-            SEO builds long-term organic traffic and reduces ad dependency.
-          </p>
-        </motion.div>
-
-        {/* 6 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            6. Leverage Social Proof
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Add reviews, testimonials, case studies, and UGC content.
-            Customers trust other customers more than brands.
-            Display trust badges, secure checkout icons, and real-time purchase notifications.
-          </p>
-        </motion.div>
-
-        {/* 7 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            7. Use Paid Ads Smartly
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Don’t burn money blindly.
-            Test creatives, target the right audience, and track performance metrics.
-            Combine Facebook Ads, Google Ads, and retargeting strategies for best results.
-          </p>
-        </motion.div>
-
-        {/* 8 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            8. Improve Checkout Experience
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Simplify checkout. Reduce form fields.
-            Offer multiple payment methods.
-            Show shipping cost clearly.
-            Reduce friction — friction kills conversions.
-          </p>
-        </motion.div>
-
-        {/* 9 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            9. Track Analytics & Data
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Use Google Analytics, heatmaps, and conversion tracking.
-            Monitor bounce rate, cart abandonment rate, AOV, and conversion rate.
-            Data-driven decisions outperform guesswork.
-          </p>
-        </motion.div>
-
-        {/* 10 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            10. Focus on Long-Term Branding
-          </h2>
-          <p className="text-gray-400 leading-8">
-            Build a brand, not just a store.
-            Maintain consistent design, tone, and messaging.
-            Build community through social media and content marketing.
-            Brands win in the long run.
-          </p>
-        </motion.div>
-
+        </article>
       </section>
 
-      {/* CTA */}
-      <section className="text-center py-24 px-6 bg-[#080B1A]">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-4xl font-semibold mb-6"
-        >
-          Want Help Growing Your Store?
-        </motion.h2>
+      <section className="mx-auto max-w-6xl px-4 pb-20 pt-4 sm:px-6 md:pb-24">
+        <div className="space-y-8">
+          {tips.map((tip, index) => (
+            <article key={tip.title} className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+              <p className="text-sm font-medium text-gray-600">Tip #{index + 1}</p>
+              <h2 className="mt-1 text-2xl font-semibold text-gray-900 md:text-3xl">{tip.title}</h2>
+              <p className="mt-4 text-gray-700">{tip.description}</p>
 
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-gray-400 mb-8"
-        >
-          Let’s build a high-converting Shopify or WooCommerce store tailored to your business.
-        </motion.p>
+              <div className="mt-5 grid gap-6 md:grid-cols-2">
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                  <h3 className="text-base font-semibold text-gray-900">Action Points</h3>
+                  <ul className="mt-3 space-y-2 text-sm text-gray-700 md:text-base">
+                    {tip.bullets.map((item) => (
+                      <li key={item}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
 
-        <motion.button
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="px-10 py-4 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 transition text-lg"
-        >
-          Start Your Project →
-        </motion.button>
+                <div className="space-y-4">
+                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                    <h3 className="text-base font-semibold text-gray-900">SEO Keywords</h3>
+                    <ul className="mt-3 space-y-2 text-sm text-gray-700 md:text-base">
+                      {tip.keywords.map((item) => (
+                        <li key={item}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {tip.monitor && (
+                    <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                      <h3 className="text-base font-semibold text-gray-900">Track These Metrics</h3>
+                      <ul className="mt-3 space-y-2 text-sm text-gray-700 md:text-base">
+                        {tip.monitor.map((item) => (
+                          <li key={item}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {tip.extra && <p className="mt-5 text-gray-700">{tip.extra}</p>}
+
+              {tip.link && (
+                <Link
+                  href={tip.link.href}
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-900 transition hover:bg-gray-50"
+                >
+                  {tip.link.label}
+                  <MoveUpRight className="h-4 w-4" />
+                </Link>
+              )}
+            </article>
+          ))}
+        </div>
+
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+            Who Should Follow These Ecommerce Tips?
+          </h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {audience.map((item) => (
+              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
       </section>
 
-    </div>
+      <section className="bg-gradient-to-br from-gray-300 via-white to-gray-300 px-4 py-16 text-center sm:px-6 md:py-20">
+        <h2 className="text-3xl font-semibold">Want Help Scaling Your Ecommerce Store?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-gray-700">
+          If you want expert help implementing these ecommerce growth strategies, our team specializes in performance marketing, conversion optimization, analytics and tracking, automation systems, and full-funnel ecommerce growth.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
+        >
+          Book Your Free Ecommerce Growth Consultation
+          <MoveUpRight className="h-4 w-4" />
+        </Link>
+      </section>
+    </main>
   )
 }
