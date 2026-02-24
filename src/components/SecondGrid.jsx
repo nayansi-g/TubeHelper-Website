@@ -88,7 +88,7 @@ export default function ServicesCards() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="h-60 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-72"
+                    className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-78"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60"></div>
                 </div>

@@ -32,7 +32,7 @@ const faqs = [
 ]
 
 export default function Faq() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
 

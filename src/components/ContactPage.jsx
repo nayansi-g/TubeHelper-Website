@@ -189,14 +189,14 @@ export default function ContactPage() {
 
       // Using a hidden iframe approach to avoid redirect
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwVtTfwqC2KMo1VkOBKnmSrcY-yuGJmw6bHY8R-Cf7a5DbDar5Sirh1eLIU_cg5CSJT/exec",
+        "https://script.google.com/macros/s/AKfycbzzNRZNUeBEgyVyRduvJYogJG3PBXFz9N4unaP2NgK4HdiOGgjsKqxFR-Y45OFua0cu/exec",
         {
           method: "POST",
           mode: "no-cors", // Keep this to avoid CORS issues
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: formBody.toString(),
+          body: JSON.stringify(formData),
         }
       );
 

@@ -77,7 +77,7 @@ const faqs = [
 ]
 
 export default function OrganicGrowthPage() {
-  const [activeFaq, setActiveFaq] = useState(0)
+  const [activeFaq, setActiveFaq] = useState(-1)
 
   return (
     <main className="bg-white text-gray-900">

@@ -13,7 +13,7 @@ export default function Hero() {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="mx-auto max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl lg:mx-0 lg:text-6xl"
+            className="mx-auto max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl lg:mx-0 lg:text-5xl"
           >
             Scaling Your Business Shouldn&apos;t Feel Like Guesswork.
           </motion.h1>

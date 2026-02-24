@@ -51,7 +51,7 @@ const faqs = [
 ]
 
 export default function ContactPage() {
-  const [activeFaq, setActiveFaq] = useState(0)
+  const [activeFaq, setActiveFaq] = useState(-1)
   const [status, setStatus] = useState("")
   const [formData, setFormData] = useState({
     fullName: "",

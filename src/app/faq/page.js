@@ -176,7 +176,7 @@ const faqSections = [
 ]
 
 export default function FAQPage() {
-  const [activeId, setActiveId] = useState("0-0")
+  const [activeId, setActiveId] = useState(null)
 
   const toggleFAQ = (id) => {
     setActiveId((prev) => (prev === id ? null : id))
