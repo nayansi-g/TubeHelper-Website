@@ -1,224 +1,252 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 }
-  }
-}
-
-const faqData = [
+const faqSections = [
   {
-    category: "General Questions",
+    title: "General Questions",
     questions: [
       {
-        q: "What services do you provide?",
-        a: "We design and develop high-converting Shopify and WooCommerce stores for businesses. Our services include store setup, custom design, theme development, speed optimization, SEO setup, and ongoing maintenance."
+        q: "What services does your digital marketing agency offer?",
+        a: "We provide comprehensive digital marketing services including performance marketing (Meta, Google & YouTube Ads), ecommerce growth strategy, conversion rate optimization (CRO), SEO, content marketing, analytics & automation setup, and brand awareness campaigns. Our approach focuses on measurable growth and long-term scalability.",
       },
       {
-        q: "Do you work with startups?",
-        a: "Yes. We work with startups, small businesses, and established brands looking to scale their e-commerce presence."
+        q: "Who do you work with?",
+        a: "We work with ecommerce brands, D2C businesses, startups, and service-based companies looking to scale their online presence. Most of our clients are growth-focused brands ready to invest in data-driven marketing strategies.",
       },
       {
-        q: "How long does it take to build a store?",
-        a: "A basic Shopify or WooCommerce store typically takes 7–14 days. Custom projects may take 3–6 weeks depending on complexity."
-      }
-    ]
+        q: "Do you work with international clients?",
+        a: "Yes. We serve clients globally and manage campaigns across multiple regions and time zones.",
+      },
+      {
+        q: "How do I get started?",
+        a: "You can book a strategy call through our website. We begin with an audit to understand your current marketing performance and identify growth opportunities.",
+      },
+    ],
   },
   {
-    category: "Shopify Services",
+    title: "Performance Marketing FAQs",
     questions: [
       {
-        q: "Can you redesign my existing Shopify store?",
-        a: "Absolutely. We can completely redesign your store with improved UX, modern UI, better product presentation, and optimized checkout flow."
+        q: "What is performance marketing?",
+        a: "Performance marketing is a results-driven approach to digital advertising where campaigns are optimized for measurable outcomes such as sales, leads, or return on ad spend (ROAS).",
       },
       {
-        q: "Do you provide custom Shopify theme development?",
-        a: "Yes. We build fully customized Shopify themes tailored to your brand identity and business goals."
+        q: "Which platforms do you manage?",
+        bullets: [
+          "Meta (Facebook & Instagram Ads)",
+          "Google Ads (Search & Shopping)",
+          "YouTube Ads",
+        ],
       },
       {
-        q: "Will my Shopify store be mobile responsive?",
-        a: "100%. All our stores are built mobile-first to ensure seamless experience across devices."
-      }
-    ]
+        q: "Do you guarantee ROAS or revenue results?",
+        a: "No ethical agency guarantees specific results. Campaign performance depends on product-market fit, competition, pricing, budget, and customer demand. We focus on optimization and data-driven decision making.",
+      },
+      {
+        q: "How long does it take to see results from paid ads?",
+        a: "Most campaigns begin generating performance data within the first few weeks. Scaling and optimization typically occur within 30–90 days.",
+      },
+    ],
   },
   {
-    category: "WooCommerce Services",
+    title: "Ecommerce Growth & CRO FAQs",
     questions: [
       {
-        q: "Do you build WooCommerce stores from scratch?",
-        a: "Yes. We set up WordPress + WooCommerce, configure hosting, payment gateways, shipping settings, and custom themes."
+        q: "What is ecommerce growth optimization?",
+        a: "Ecommerce growth optimization involves improving store performance through CRO, funnel optimization, retention strategy, and revenue analysis to increase profitability without simply increasing ad spend.",
       },
       {
-        q: "Can you migrate my store to WooCommerce?",
-        a: "Yes. We handle full migration from Shopify, Wix, or other platforms while preserving SEO and customer data."
+        q: "What is Conversion Rate Optimization (CRO)?",
+        a: "CRO is the process of improving website elements such as product pages, checkout flow, and messaging to increase the percentage of visitors who convert into customers.",
       },
       {
-        q: "Do you optimize WooCommerce speed?",
-        a: "Yes. We optimize images, caching, plugins, and hosting configurations to improve performance."
-      }
-    ]
+        q: "How long does CRO take to show results?",
+        a: "Initial insights may appear within 2–4 weeks. Significant improvements typically occur within 60–90 days depending on traffic volume and testing cycles.",
+      },
+      {
+        q: "Do you only work with Shopify?",
+        a: "While we specialize in Shopify growth strategies, we can also support other ecommerce platforms.",
+      },
+    ],
   },
   {
-    category: "Pricing & Payments",
+    title: "Organic Growth & SEO FAQs",
     questions: [
       {
-        q: "What is your starting price?",
-        a: "Our Shopify store packages start from $599. Custom projects vary depending on requirements."
+        q: "What is SEO and why is it important?",
+        a: "Search Engine Optimization (SEO) is the process of improving your website’s visibility in search engine results. Strong SEO drives organic traffic, reduces ad dependency, and builds long-term brand authority.",
       },
       {
-        q: "Do you offer installment payments?",
-        a: "Yes. We offer milestone-based payments depending on project scope."
+        q: "How long does SEO take to work?",
+        a: "SEO is a long-term strategy. Noticeable improvements usually appear within 3–6 months depending on competition and website authority.",
       },
       {
-        q: "Are there any hidden charges?",
-        a: "No. We maintain full transparency in pricing before starting the project."
-      }
-    ]
+        q: "Do you guarantee first-page rankings?",
+        a: "No legitimate SEO agency can guarantee specific rankings. We focus on sustainable optimization strategies that improve visibility and conversions.",
+      },
+      {
+        q: "What is content marketing?",
+        a: "Content marketing involves creating high-quality, SEO-optimized content that attracts, educates, and converts your target audience.",
+      },
+    ],
   },
   {
-    category: "Support & Maintenance",
+    title: "Analytics & Automation FAQs",
     questions: [
       {
-        q: "Do you provide post-launch support?",
-        a: "Yes. We provide 7–30 days free support after launch depending on the package."
+        q: "Why is proper tracking important?",
+        a: "Without accurate tracking, marketing decisions are based on incomplete or incorrect data. Proper tracking ensures reliable attribution and smarter budget allocation.",
       },
       {
-        q: "Can you manage my store monthly?",
-        a: "Yes. We offer monthly maintenance packages including updates, backups, performance checks, and minor changes."
+        q: "What is GA4 setup?",
+        a: "GA4 (Google Analytics 4) is the latest analytics platform from Google. It provides advanced event-based tracking and improved cross-platform attribution.",
       },
       {
-        q: "What if I face technical issues later?",
-        a: "You can contact our support team anytime. We respond within 24 hours."
-      }
-    ]
-  }
+        q: "What is marketing automation?",
+        a: "Marketing automation uses workflows, triggers, and behavioral data to automatically nurture leads, recover abandoned carts, and improve retention.",
+      },
+      {
+        q: "Do I need custom dashboards?",
+        a: "Yes. Centralized reporting dashboards provide clearer insights across ad platforms, ecommerce stores, and analytics tools in one place.",
+      },
+    ],
+  },
+  {
+    title: "Brand Awareness FAQs",
+    questions: [
+      {
+        q: "What is brand awareness marketing?",
+        a: "Brand awareness marketing focuses on increasing visibility, recognition, and engagement among your target audience.",
+      },
+      {
+        q: "Does brand awareness generate revenue?",
+        a: "While awareness campaigns focus on reach and engagement, they reduce long-term acquisition costs and improve overall conversion performance.",
+      },
+      {
+        q: "How do you measure brand awareness success?",
+        a: "We measure reach, impressions, engagement rate, video completion rate, assisted conversions, and audience growth.",
+      },
+    ],
+  },
+  {
+    title: "Pricing & Process FAQs",
+    questions: [
+      {
+        q: "How much do your services cost?",
+        a: "Pricing depends on the scope of work, ad spend, and service type. We provide customized proposals after conducting a strategy call.",
+      },
+      {
+        q: "Do you offer monthly retainers?",
+        a: "Yes. Most of our services operate on a monthly retainer basis to allow proper optimization and scaling.",
+      },
+      {
+        q: "Is there a minimum commitment?",
+        a: "Many of our services require a minimum commitment period to ensure adequate time for testing and optimization.",
+      },
+      {
+        q: "Do you require long-term contracts?",
+        a: "We offer flexible engagement options depending on the service scope and growth stage.",
+      },
+    ],
+  },
+  {
+    title: "Technical & Support FAQs",
+    questions: [
+      {
+        q: "Will I have access to my accounts?",
+        a: "Yes. Clients retain full ownership of ad accounts, analytics, and platforms.",
+      },
+      {
+        q: "How do you report performance?",
+        a: "We provide structured performance reporting through dashboards and regular review calls.",
+      },
+      {
+        q: "What makes your agency different?",
+        bullets: [
+          "Data-driven decision making",
+          "Full-funnel optimization",
+          "Profitability over vanity metrics",
+          "Transparent reporting",
+          "Long-term growth systems",
+        ],
+      },
+    ],
+  },
 ]
 
 export default function FAQPage() {
-  const [activeIndex, setActiveIndex] = useState(null)
+  const [activeId, setActiveId] = useState("0-0")
 
   const toggleFAQ = (id) => {
-    setActiveIndex(activeIndex === id ? null : id)
+    setActiveId((prev) => (prev === id ? null : id))
   }
 
   return (
-    <div className="bg-[#070816] text-white min-h-screen overflow-hidden">
-
-      {/* HERO */}
-      <section className="text-center py-28 px-6">
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="text-4xl md:text-6xl font-semibold mb-6"
-        >
-          Frequently Asked Questions
-        </motion.h1>
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="max-w-3xl mx-auto text-gray-400 text-lg"
-        >
-          Everything you need to know about building, scaling, and optimizing your Shopify & WooCommerce store.
-        </motion.p>
+    <main className="bg-white text-gray-900">
+      <section className="rounded-b-[50px] bg-gray-300 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Frequently Asked Questions About Our Digital Marketing Services
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-gray-700">
+            Welcome to our FAQ page. Here you&apos;ll find answers to common questions about our performance marketing, ecommerce growth, SEO, analytics, and brand awareness services.
+          </p>
+        </div>
       </section>
 
-      {/* FAQ SECTIONS */}
-      <section className="max-w-5xl mx-auto px-6 pb-32">
-        {faqData.map((section, sectionIndex) => (
-          <motion.div
-            key={sectionIndex}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-2xl font-semibold mb-8 text-purple-400">
-              {section.category}
-            </h2>
+      <section className="mx-auto max-w-6xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
+        <div className="space-y-8">
+          {faqSections.map((section, sectionIndex) => (
+            <section key={section.title} className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+              <h2 className="mb-4 text-2xl font-semibold text-gray-900">{section.title}</h2>
+              <div className="space-y-3">
+                {section.questions.map((item, itemIndex) => {
+                  const id = `${sectionIndex}-${itemIndex}`
+                  const isOpen = activeId === id
+                  return (
+                    <article key={id} className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50/70">
+                      <button
+                        onClick={() => toggleFAQ(id)}
+                        className="flex w-full items-center justify-between px-4 py-4 text-left sm:px-5"
+                      >
+                        <span className="pr-4 font-medium">{item.q}</span>
+                        <span className="text-xl text-gray-600">{isOpen ? "−" : "+"}</span>
+                      </button>
 
-            <div className="space-y-4">
-              {section.questions.map((item, index) => {
-                const id = `${sectionIndex}-${index}`
-                const isOpen = activeIndex === id
-
-                return (
-                  <div
-                    key={id}
-                    className="border border-white/10 rounded-xl bg-white/5 backdrop-blur-md"
-                  >
-                    <button
-                      onClick={() => toggleFAQ(id)}
-                      className="w-full text-left p-6 flex justify-between items-center"
-                    >
-                      <span className="font-medium">{item.q}</span>
-                      <span className="text-purple-400 text-xl">
-                        {isOpen ? "−" : "+"}
-                      </span>
-                    </button>
-
-                    <AnimatePresence>
                       {isOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="px-6 pb-6 text-gray-400"
-                        >
-                          {item.a}
-                        </motion.div>
+                        <div className="px-4 pb-5 sm:px-5">
+                          {item.a && <p className="text-sm leading-relaxed text-gray-700 sm:text-base">{item.a}</p>}
+                          {item.bullets && (
+                            <ul className="mt-3 space-y-2 text-sm text-gray-700 sm:text-base">
+                              {item.bullets.map((bullet) => (
+                                <li key={bullet}>• {bullet}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
                       )}
-                    </AnimatePresence>
-                  </div>
-                )
-              })}
-            </div>
-          </motion.div>
-        ))}
+                    </article>
+                  )
+                })}
+              </div>
+            </section>
+          ))}
+        </div>
       </section>
 
-      {/* CTA */}
-      <section className="text-center py-24 px-6 bg-[#080B1A]">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-4xl font-semibold mb-6"
+      <section className="bg-gradient-to-br from-gray-300 via-white to-gray-300 px-4 py-16 text-center sm:px-6 md:py-20">
+        <h2 className="text-3xl font-semibold">Still Have Questions?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-gray-700">
+          Reach out to us at info@tubehelper.in or connect@tubehelper.in, or call +91 9897165137.
+        </p>
+        <a
+          href="/contact"
+          className="mt-7 inline-block rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
         >
-          Still Have Questions?
-        </motion.h2>
-
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-gray-400 mb-8"
-        >
-          Let’s discuss your project and find the best solution for your business.
-        </motion.p>
-
-        <motion.button
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="px-10 py-4 rounded-full cursor-pointer bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 transition text-lg"
-        ><a href="contact">
-          Contact Us →</a>
-        </motion.button>
+          Contact Us
+        </a>
       </section>
-
-    </div>
+    </main>
   )
 }

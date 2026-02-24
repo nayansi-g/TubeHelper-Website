@@ -1,272 +1,299 @@
 "use client"
 
 import { useState } from "react"
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-// import { Textarea } from "@/components/ui/textarea"
-
 import Link from "next/link"
-// import type { Metadata } from 'next'
-import Head from "next/head"
-import { Calendar, CheckCircleIcon, Clock, CreditCard, HeadphonesIcon, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
-// import GirlTeamwork from "../../../public/webimg/girlteamwork1.jpg"
+import { MoveUpRight } from "lucide-react"
+
+const services = [
+  "Performance Marketing",
+  "Ecommerce Growth & CRO",
+  "SEO & Content Marketing",
+  "Analytics & Automation Setup",
+  "Brand Awareness Campaigns",
+]
+
+const processSteps = [
+  {
+    title: "Initial Review",
+    description: "We analyze your website, funnel, and current marketing performance.",
+  },
+  {
+    title: "Strategy Call",
+    description: "We discuss your goals, challenges, and growth opportunities.",
+  },
+  {
+    title: "Custom Growth Plan",
+    description: "We present a structured roadmap tailored to your business.",
+  },
+  {
+    title: "Implementation & Scaling",
+    description: "We launch, optimize, and scale with performance tracking.",
+  },
+]
+
+const faqs = [
+  {
+    q: "How long does it take to receive a response?",
+    a: "We typically respond within 24–48 business hours.",
+  },
+  {
+    q: "Do you offer free consultations?",
+    a: "Yes. We offer a complimentary strategy call to evaluate your growth opportunities.",
+  },
+  {
+    q: "What information should I prepare before contacting you?",
+    a: "It helps to know your monthly revenue, current ad spend, marketing goals, and challenges.",
+  },
+  {
+    q: "Do you work with startups?",
+    a: "Yes, provided there is a clear growth plan and marketing budget.",
+  },
+]
 
 export default function ContactPage() {
+  const [activeFaq, setActiveFaq] = useState(0)
+  const [status, setStatus] = useState("")
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    phone: "",
-    subject: "",
-    inquiryType: "",
-    preferredContact: "",
-    message: "",
+    companyName: "",
+    websiteUrl: "",
+    monthlyRevenueRange: "",
+    marketingBudgetRange: "",
+    serviceInterestedIn: "",
+    goals: "",
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [error, setError] = useState("")
+  const onChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
-  const handleSubmit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.subject || !formData.message) {
-      setError("Please fill in all required fields")
-      return
-    };
-
-    const nameParts = formData.name.trim().split(/\s+/)
-    let firstName = ''
-    let lastName = ''
-    
-    if (nameParts.length === 1) {
-      firstName = nameParts[0]
-    } else if (nameParts.length > 1) {
-      firstName = nameParts.slice(0, -1).join(' ')
-      lastName = nameParts[nameParts.length - 1]
-    }
-
-    setIsSubmitting(true)
-    setError("")
+    setStatus("Sending...")
 
     try {
       const response = await fetch("/api/enquiries", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
           source: "ContactPage",
-          enquiryType: formData.inquiryType || "general",
-          fullName: formData.name
-        })
+          fullName: formData.fullName,
+          email: formData.email,
+          companyName: formData.companyName,
+          website: formData.websiteUrl,
+          monthlyRevenueRange: formData.monthlyRevenueRange,
+          marketingBudgetRange: formData.marketingBudgetRange,
+          serviceInterestedIn: formData.serviceInterestedIn,
+          message: formData.goals,
+        }),
       })
 
-      if (!response.ok) {
-        throw new Error('Failed to submit enquiry')
-      }
-
-      // Success case
-      setIsSubmitted(true)
-      
-      // Reset form after success
+      if (!response.ok) throw new Error("Failed")
+      setStatus("Your message has been sent successfully.")
       setFormData({
-        name: "",
+        fullName: "",
         email: "",
-        phone: "",
-        subject: "",
-        inquiryType: "",
-        preferredContact: "",
-        message: "",
+        companyName: "",
+        websiteUrl: "",
+        monthlyRevenueRange: "",
+        marketingBudgetRange: "",
+        serviceInterestedIn: "",
+        goals: "",
       })
-
-    } catch (err) {
-      console.error("Error submitting enquiry:", err)
-      setError("Failed to submit your message. Please try again.")
-    } finally {
-      setIsSubmitting(false)
+    } catch {
+      setStatus("Failed to send. Please try again.")
     }
   }
 
-  const handleChange = () => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-    if (error) setError("") // Clear error when user starts typing
-  }
-
-  if (isSubmitted) {
-    return (
-      <main className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
-        <div className="w-full max-w-md border-0 shadow-2xl">
-          <div className="p-8 text-center">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircleIcon className="w-10 h-10 text-green-600" />
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
-            <p className="text-xl text-gray-600 mb-6">
-              Your message has been received successfully.
-            </p>
-            <p className="text-lg text-gray-600 mb-8">
-              Our team will respond to your inquiry within 24 hours. We appreciate your interest in CoderCrafter!
-            </p>
-            <div className="space-y-3">
-              <div
-                onClick={() => setIsSubmitted(false)}
-                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
-              >
-                Send Another Message
-              </div>
-              <div
-                variant="outline"
-                className="w-full"
-                onClick={() => window.location.href = "/"}
-              >
-                Return to Homepage
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    )
-  }
-
-   return (
-  <main className="min-h-screen bg-[#070816] flex flex-col pt-20 justify-center text-white">
-
-    {/* Hero */}
-    <section className="py-20 text-center px-4">
-      <h1 className="text-4xl md:text-5xl font-semibold mb-4">
-        Get in Touch
-      </h1>
-      <p className="text-gray-400 max-w-2xl mx-auto">
-        Have questions about our services or need help with your project?
-        We’d love to hear from you.
-      </p>
-    </section>
-
-    <div className="max-w-7xl mx-auto px-4 pb-20 grid lg:grid-cols-3 gap-10">
-
-      {/* LEFT SIDE - FORM */}
-      <div className="lg:col-span-2">
-
-        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-8">
-
-          <h2 className="text-2xl font-semibold mb-6">
-            Send us a Message
-          </h2>
-
-          {error && (
-            <div className="bg-red-500/10 border border-red-500/30 p-4 rounded-lg mb-6 text-red-400">
-              {error}
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                placeholder="Full Name *"
-                value={formData.name}
-                onChange={(e) => handleChange("name", e.target.value)}
-                className="h-12 px-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address *"
-                value={formData.email}
-                onChange={(e) => handleChange("email", e.target.value)}
-                className="h-12 px-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500"
-              />
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <input
-                type="tel"
-                placeholder="Phone Number *"
-                value={formData.phone}
-                onChange={(e) => handleChange("phone", e.target.value)}
-                className="h-12 px-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500"
-              />
-
-              <input
-                type="text"
-                placeholder="Subject *"
-                value={formData.subject}
-                onChange={(e) => handleChange("subject", e.target.value)}
-                className="h-12 px-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500"
-              />
-            </div>
-
-            <textarea
-              placeholder="Your Message *"
-              value={formData.message}
-              onChange={(e) => handleChange("message", e.target.value)}
-              rows={5}
-              className="w-full p-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500 resize-none"
-            />
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full h-14 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 transition text-lg font-medium"
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
-
-          </form>
-        </div>
-      </div>
-
-      {/* RIGHT SIDE - CONTACT INFO */}
-      <div className="space-y-6">
-
-        {/* Call */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <Phone className="w-5 h-5 text-purple-400" />
-            <h3 className="text-lg font-semibold">Call Us</h3>
-          </div>
-          <p className="text-gray-400">+91 89203 19125</p>
-        </div>
-
-        {/* Email */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <Mail className="w-5 h-5 text-purple-400" />
-            <h3 className="text-lg font-semibold">Email Us</h3>
-          </div>
-          <p className="text-gray-400">info@codercrafter.in</p>
-        </div>
-
-        {/* Location */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <MapPin className="w-5 h-5 text-purple-400" />
-            <h3 className="text-lg font-semibold">Visit Us</h3>
-          </div>
-          <p className="text-gray-400">
-            Bangalore, Karnataka 560001 <br />
-            India
+  return (
+    <main className="bg-white text-gray-900">
+      <section className="rounded-b-[50px] bg-blue-100 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Contact Us – Let&apos;s Grow Your Business
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-gray-700">
+            Ready to scale with performance marketing, ecommerce growth, SEO, analytics, or brand awareness strategies? Let&apos;s build your growth system.
           </p>
+          <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+            Book a Strategy Call
+            <MoveUpRight className="h-4 w-4" />
+          </button>
         </div>
+      </section>
 
-        {/* Working Hours */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <Clock className="w-5 h-5 text-purple-400" />
-            <h3 className="text-lg font-semibold">Working Hours</h3>
-          </div>
-          <p className="text-gray-400">
-            Mon – Fri: 9AM – 8PM <br />
-            Sat: 10AM – 6PM <br />
-            Sun: Closed
+      <section className="mx-auto max-w-6xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
+        <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold md:text-3xl">Introduction</h2>
+          <p className="mt-4 text-gray-700">
+            At TubeHelper, we help brands grow through data-driven digital marketing strategies.
           </p>
+          <p className="mt-3 text-gray-700">Whether you&apos;re looking for:</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((item) => (
+              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-gray-700">
+            Our team is ready to create a custom growth plan tailored to your business.
+          </p>
+          <p className="mt-2 text-gray-700">
+            Fill out the form below and our team will get back to you within 24–48 hours.
+          </p>
+        </section>
+
+        <div className="mt-8 grid gap-8 lg:grid-cols-3">
+          <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm lg:col-span-2 md:p-7">
+            <h2 className="text-2xl font-semibold md:text-3xl">Tell Us About Your Business</h2>
+
+            <form onSubmit={onSubmit} className="mt-6 space-y-4">
+              <div className="grid gap-4 md:grid-cols-2">
+                <input name="fullName" value={formData.fullName} onChange={onChange} placeholder="Full Name" required className="h-12 rounded-lg border border-gray-300 px-4 outline-none focus:border-black" />
+                <input name="email" value={formData.email} onChange={onChange} placeholder="Email Address" type="email" required className="h-12 rounded-lg border border-gray-300 px-4 outline-none focus:border-black" />
+                <input name="companyName" value={formData.companyName} onChange={onChange} placeholder="Company Name" className="h-12 rounded-lg border border-gray-300 px-4 outline-none focus:border-black" />
+                <input name="websiteUrl" value={formData.websiteUrl} onChange={onChange} placeholder="Website URL" type="url" className="h-12 rounded-lg border border-gray-300 px-4 outline-none focus:border-black" />
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <select name="monthlyRevenueRange" value={formData.monthlyRevenueRange} onChange={onChange} className="h-12 rounded-lg border border-gray-300 px-4 outline-none focus:border-black">
+                  <option value="">Monthly Revenue Range</option>
+                  <option>Below $10K</option>
+                  <option>$10K – $50K</option>
+                  <option>$50K – $100K</option>
+                  <option>$100K+</option>
+                </select>
+                <select name="marketingBudgetRange" value={formData.marketingBudgetRange} onChange={onChange} className="h-12 rounded-lg border border-gray-300 px-4 outline-none focus:border-black">
+                  <option value="">Marketing Budget Range</option>
+                  <option>Below $2K / month</option>
+                  <option>$2K – $5K / month</option>
+                  <option>$5K – $15K / month</option>
+                  <option>$15K+ / month</option>
+                </select>
+              </div>
+
+              <select name="serviceInterestedIn" value={formData.serviceInterestedIn} onChange={onChange} className="h-12 w-full rounded-lg border border-gray-300 px-4 outline-none focus:border-black">
+                <option value="">Services Interested In</option>
+                {services.map((item) => (
+                  <option key={item}>{item}</option>
+                ))}
+              </select>
+
+              <textarea
+                name="goals"
+                value={formData.goals}
+                onChange={onChange}
+                placeholder="Brief Description of Goals"
+                rows={6}
+                className="w-full rounded-lg border border-gray-300 p-4 outline-none focus:border-black"
+              />
+
+              <p className="text-sm text-gray-600">
+                Your information is secure and will never be shared. Read our{" "}
+                <Link href="/privacy_policy" className="underline">
+                  Privacy Policy
+                </Link>
+                .
+              </p>
+
+              <button type="submit" className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:opacity-90">
+                Submit Inquiry
+              </button>
+              {status && <p className="text-sm text-gray-700">{status}</p>}
+            </form>
+          </section>
+
+          <section className="space-y-4">
+            <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h3 className="text-xl font-semibold">Prefer to Reach Us Directly?</h3>
+              <div className="mt-4 space-y-2 text-gray-700">
+                <p>📧 info@tubehelper.in</p>
+                <p>📧 connect@tubehelper.in</p>
+                <p>📞 +91 9897165137</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h3 className="text-xl font-semibold">Business Hours</h3>
+              <p className="mt-3 text-gray-700">
+                Monday – Friday
+                <br />
+                9:00 AM – 6:00 PM
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+              <h3 className="text-xl font-semibold">Location</h3>
+              <p className="mt-3 text-gray-700">Serving clients globally</p>
+            </div>
+          </section>
         </div>
 
-      </div>
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold md:text-3xl">Why Brands Partner With Us</h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Data-driven growth strategies",
+              "Full-funnel optimization",
+              "Transparent reporting",
+              "ROI-focused campaigns",
+              "Scalable marketing systems",
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-gray-700">We don&apos;t just run campaigns, we build long-term growth engines.</p>
+        </section>
 
-    </div>
-  </main>
-)
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold md:text-3xl">Our Process After You Contact Us</h2>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {processSteps.map((step, index) => (
+              <div key={step.title} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                <p className="text-sm font-semibold text-gray-500">0{index + 1}</p>
+                <h3 className="mt-1 font-semibold">{step.title}</h3>
+                <p className="mt-2 text-sm text-gray-700">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold md:text-3xl">FAQ</h2>
+          <div className="mt-5 space-y-3">
+            {faqs.map((faq, index) => (
+              <article key={faq.q} className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
+                <button
+                  onClick={() => setActiveFaq(activeFaq === index ? -1 : index)}
+                  className="flex w-full items-center justify-between px-4 py-4 text-left"
+                >
+                  <span className="pr-4 font-medium">{faq.q}</span>
+                  <span className="text-xl text-gray-600">{activeFaq === index ? "−" : "+"}</span>
+                </button>
+                {activeFaq === index && (
+                  <p className="px-4 pb-4 text-sm text-gray-700">{faq.a}</p>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      </section>
+
+      <section className="bg-gradient-to-br from-[#e6efff] via-white to-[#edf3ff] px-4 py-16 text-center sm:px-6 md:py-20">
+        <h2 className="text-3xl font-semibold">Ready to Scale Smarter?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-gray-700">
+          Let&apos;s build a marketing strategy focused on profitability, scalability, and long-term growth.
+        </p>
+        <button className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          Book Your Free Strategy Call
+          <MoveUpRight className="h-4 w-4" />
+        </button>
+      </section>
+    </main>
+  )
 }

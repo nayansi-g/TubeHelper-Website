@@ -1,204 +1,222 @@
 "use client"
 
-import { motion } from "framer-motion"
+import Link from "next/link"
+import { MoveUpRight } from "lucide-react"
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 }
-  }
+const performanceGuides = [
+  "The Complete Guide to Meta & Instagram Ads for Ecommerce Brands",
+  "How to Optimize Google Ads for Higher ROAS",
+  "YouTube Ads Strategy for Brand & Performance Growth",
+  "How to Scale Paid Ads Without Increasing Wasted Spend",
+  "Retargeting Strategies That Increase Conversion Rates",
+]
+
+const ecommerceGuides = [
+  "The Ultimate Guide to Conversion Rate Optimization (CRO)",
+  "Shopify Growth Strategy: From Traffic to Revenue",
+  "How to Reduce Cart Abandonment & Increase AOV",
+  "Ecommerce Funnel Optimization Explained",
+  "Product Page Optimization Best Practices",
+]
+
+const seoGuides = [
+  "SEO for Ecommerce: A Complete Beginner-to-Advanced Guide",
+  "How to Build a Content Strategy That Drives Organic Traffic",
+  "Technical SEO Checklist for Growing Brands",
+  "Keyword Research Strategy for High-Intent Traffic",
+  "How Long Does SEO Take? Realistic Expectations Explained",
+]
+
+const analyticsGuides = [
+  "GA4 Setup Guide for Ecommerce Brands",
+  "How to Set Up Conversion Tracking Correctly",
+  "Marketing Automation for Lead Nurturing",
+  "Building a Real-Time Marketing Dashboard",
+  "Attribution Models Explained for Growing Businesses",
+]
+
+const awarenessGuides = [
+  "How to Build Brand Awareness in Competitive Markets",
+  "Multi-Channel Marketing Strategy Guide",
+  "Creative Strategy for Higher Engagement",
+  "Awareness to Conversion Funnel Explained",
+  "Scaling Visibility Without Losing Profitability",
+]
+
+const whyRead = [
+  "Data-driven strategies",
+  "Real-world ecommerce experience",
+  "Actionable frameworks",
+  "Full-funnel insights",
+  "Updated with current platform changes",
+  "Built for scalability",
+]
+
+const guideAudience = [
+  "Ecommerce founders",
+  "Shopify store owners",
+  "Marketing managers",
+  "Startup founders",
+  "D2C brands",
+  "Businesses preparing to scale",
+]
+
+function GuideSection({ title, intro, guides, linkHref, linkLabel, note }) {
+  return (
+    <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+      <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">{title}</h2>
+      <p className="mt-4 text-gray-700">{intro}</p>
+      <div className="mt-6 grid gap-3">
+        {guides.map((guide) => (
+          <div key={guide} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+            {guide}
+          </div>
+        ))}
+      </div>
+      {note && <p className="mt-5 text-gray-700">{note}</p>}
+      <Link
+        href={linkHref}
+        className="mt-6 inline-flex items-center gap-2 rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition hover:opacity-90"
+      >
+        {linkLabel}
+        <MoveUpRight className="h-4 w-4" />
+      </Link>
+    </section>
+  )
 }
 
 export default function GuidesPage() {
   return (
-    <div className="bg-[#070816] text-white min-h-screen overflow-hidden">
-
-      {/* HERO SECTION */}
-      <section className="text-center py-28 px-6">
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="text-4xl md:text-5xl font-semibold mb-6"
-        >
-          Ultimate E-Commerce Guides
-        </motion.h1>
-
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="max-w-3xl mx-auto text-gray-400 text-lg"
-        >
-          In-depth, step-by-step guides to help you build, optimize,
-          and scale profitable Shopify & WooCommerce stores.
-        </motion.p>
+    <main className="bg-white text-gray-900">
+      <section className="rounded-b-[50px] bg-purple-100 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Digital Marketing Guides & Growth Resources
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-gray-700">
+            Actionable guides, proven strategies, and expert insights to help you scale traffic, increase conversions, and grow your brand sustainably.
+          </p>
+          <button className="mt-8 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+            Explore Our Growth Guides
+          </button>
+        </div>
       </section>
 
-      {/* GUIDES SECTION */}
-      <section className="max-w-6xl mx-auto px-6 pb-32 space-y-28">
-
-        {/* GUIDE 1 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            Complete Shopify Store Setup Guide
-          </h2>
-          <div className="space-y-6 text-gray-300 leading-relaxed">
-            <p>
-              This guide walks you through the entire process of launching
-              a high-converting Shopify store — from domain purchase to live checkout.
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Choosing a profitable niche</li>
-              <li>Registering domain & connecting hosting</li>
-              <li>Theme selection & customization</li>
-              <li>Product upload & collection structure</li>
-              <li>Payment gateway integration</li>
-              <li>Shipping & tax configuration</li>
-              <li>Essential apps installation</li>
-              <li>Pre-launch checklist</li>
-            </ul>
-            <button className="mt-4 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition">
-              Read Full Guide →
-            </button>
+      <section className="mx-auto max-w-6xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
+        <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">Introduction</h2>
+          <p className="mt-4 text-gray-700">
+            Our digital marketing guides are designed for ecommerce brands, D2C businesses, and growth-focused companies looking to scale profitably.
+          </p>
+          <p className="mt-3 text-gray-700">
+            Whether you&apos;re optimizing paid ads, improving conversion rates, implementing SEO, or building analytics systems, our expert resources provide practical, data-driven strategies.
+          </p>
+          <p className="mt-4 font-medium text-gray-900">We cover:</p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">Performance marketing strategies</div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">Ecommerce growth optimization</div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">SEO & content marketing</div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">GA4 & tracking setup</div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">Marketing automation</div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm">Brand awareness scaling</div>
           </div>
-        </motion.div>
+          <p className="mt-5 text-gray-700">
+            Each guide is written to deliver actionable insights you can implement immediately.
+          </p>
+        </section>
 
-        {/* GUIDE 2 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            WooCommerce Beginner to Advanced Guide
-          </h2>
-          <div className="space-y-6 text-gray-300 leading-relaxed">
-            <p>
-              Learn how to build and optimize a WooCommerce store using WordPress.
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Hosting selection for WooCommerce</li>
-              <li>Installing WordPress & WooCommerce</li>
-              <li>Theme setup & customization</li>
-              <li>Product types & variations</li>
-              <li>Payment & shipping setup</li>
-              <li>Security & performance optimization</li>
-              <li>SEO configuration</li>
-              <li>Speed optimization tips</li>
-            </ul>
-            <button className="mt-4 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition">
-              Explore Guide →
-            </button>
+        <div className="mt-8 space-y-8">
+          <GuideSection
+            title="Performance Marketing & Paid Ads Guides"
+            intro="Learn how to run profitable Meta, Google, and YouTube ad campaigns with structured optimization strategies."
+            guides={performanceGuides}
+            note="Each guide focuses on improving ad efficiency, reducing CPA, and maximizing return on ad spend."
+            linkHref="/services/performance_marketing"
+            linkLabel="Performance Marketing Services"
+          />
+
+          <GuideSection
+            title="Ecommerce Growth & Conversion Optimization Guides"
+            intro="Improve your Shopify store performance with structured CRO and funnel optimization strategies."
+            guides={ecommerceGuides}
+            note="These guides help brands increase revenue without relying solely on additional ad spend."
+            linkHref="/services/e-commerce_growth"
+            linkLabel="Ecommerce Growth Services"
+          />
+
+          <GuideSection
+            title="SEO & Content Marketing Guides"
+            intro="Build long-term organic traffic through strategic SEO and content marketing systems."
+            guides={seoGuides}
+            note="These guides focus on search engine visibility, authority building, and sustainable growth."
+            linkHref="/services/organic_growth"
+            linkLabel="Organic Growth Services"
+          />
+
+          <GuideSection
+            title="Tracking, GA4 & Marketing Automation Guides"
+            intro="Learn how to implement advanced tracking systems and automation workflows for data-driven decisions."
+            guides={analyticsGuides}
+            note="These guides help businesses eliminate data guesswork and improve campaign accuracy."
+            linkHref="/services/analytics_&_automation"
+            linkLabel="Analytics & Automation Services"
+          />
+
+          <GuideSection
+            title="Brand Awareness & Audience Growth Guides"
+            intro="Expand your reach and strengthen brand positioning with structured visibility strategies."
+            guides={awarenessGuides}
+            note="These guides help brands dominate attention while aligning awareness with revenue goals."
+            linkHref="/services/amplify_&_awareness"
+            linkLabel="Brand Awareness Services"
+          />
+        </div>
+
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">Featured Growth Guide</h2>
+          <div className="mt-4 rounded-xl border border-gray-200 bg-gray-50 px-4 py-4">
+            <p className="text-lg font-medium text-gray-900">The Complete Digital Growth Framework for Scaling Brands</p>
+            <p className="mt-2 text-gray-700">A pillar guide that combines paid media, CRO, SEO, analytics, automation, and brand visibility into one strategic growth roadmap.</p>
           </div>
-        </motion.div>
+        </section>
 
-        {/* GUIDE 3 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            High-Converting Store Design Blueprint
-          </h2>
-          <div className="space-y-6 text-gray-300 leading-relaxed">
-            <p>
-              Understand how successful brands design their stores to maximize conversions.
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Psychology of color & layout</li>
-              <li>Homepage structure formula</li>
-              <li>Product page optimization</li>
-              <li>Trust badges & social proof</li>
-              <li>Checkout flow optimization</li>
-              <li>Mobile-first design strategy</li>
-              <li>Speed & UX improvements</li>
-            </ul>
-            <button className="mt-4 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition">
-              Read Blueprint →
-            </button>
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">Why Our Digital Marketing Guides Stand Out</h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {whyRead.map((item) => (
+              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+                {item}
+              </div>
+            ))}
           </div>
-        </motion.div>
+          <p className="mt-5 text-gray-700">We don&apos;t publish theory, we publish proven growth systems.</p>
+        </section>
 
-        {/* GUIDE 4 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            E-Commerce SEO Master Guide
-          </h2>
-          <div className="space-y-6 text-gray-300 leading-relaxed">
-            <p>
-              Rank your store on Google and drive organic traffic consistently.
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Keyword research strategy</li>
-              <li>On-page SEO for product pages</li>
-              <li>Technical SEO checklist</li>
-              <li>Blog strategy for traffic</li>
-              <li>Schema markup for products</li>
-              <li>Link building methods</li>
-              <li>Performance monitoring tools</li>
-            </ul>
-            <button className="mt-4 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition">
-              Master SEO →
-            </button>
+        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">Who These Guides Are For</h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {guideAudience.map((item) => (
+              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+                {item}
+              </div>
+            ))}
           </div>
-        </motion.div>
-
-        {/* GUIDE 5 */}
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <h2 className="text-3xl font-semibold mb-6 text-purple-400">
-            Scaling Your Store to 6 Figures
-          </h2>
-          <div className="space-y-6 text-gray-300 leading-relaxed">
-            <p>
-              Advanced growth strategies to scale revenue sustainably.
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Conversion rate optimization</li>
-              <li>Email marketing automation</li>
-              <li>Retargeting ad strategies</li>
-              <li>Upsell & cross-sell systems</li>
-              <li>Customer retention methods</li>
-              <li>Analytics & KPI tracking</li>
-              <li>Inventory scaling strategies</li>
-            </ul>
-            <button className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 transition">
-              Scale Now →
-            </button>
-          </div>
-        </motion.div>
-
+          <p className="mt-5 text-gray-700">If you&apos;re serious about predictable growth, these resources are for you.</p>
+        </section>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="text-center py-24 px-6 bg-[#080B1A]">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-4xl font-semibold mb-6"
-        >
-          Need Expert Help Instead?
-        </motion.h2>
-
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-gray-400 mb-8 max-w-2xl mx-auto"
-        >
-          If you'd rather skip the learning curve and get a professionally built,
-          high-converting store — we can handle everything for you.
-        </motion.p>
-
-        <motion.button
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="px-10 py-4 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 transition text-lg"
-        >
-          Start Your Store →
-        </motion.button>
+      <section className="bg-gradient-to-br from-purple-200  via-white to-purple-200 px-4 py-16 text-center sm:px-6 md:py-20">
+        <h2 className="text-3xl font-semibold">Ready to Apply These Strategies to Your Business?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-gray-700">
+          Reading is step one. Execution is where growth happens.
+        </p>
+        <p className="mx-auto mt-2 max-w-2xl text-gray-700">
+          Book a Strategy Call to implement these frameworks with expert guidance.
+        </p>
+        <button className="mt-7 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          Book Your Free Growth Consultation
+        </button>
       </section>
-
-    </div>
+    </main>
   )
 }

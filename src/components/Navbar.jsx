@@ -7,9 +7,11 @@ import {
   ChevronDown,
   Cpu,
   Megaphone,
+  Menu,
   PhoneOutgoing,
   ShoppingCart,
   Sprout,
+  SquareMenu,
   X,
 } from "lucide-react"
 
@@ -224,10 +226,10 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileOpen((v) => !v)}
-              className="rounded-md border px-3 py-2 text-sm lg:hidden"
+              className="rounded-md border px-2 py-2 text-sm lg:hidden"
               aria-label="Toggle menu"
             >
-              {isMobileOpen ? <X className="h-5 w-5" /> : "Menu"}
+              {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>

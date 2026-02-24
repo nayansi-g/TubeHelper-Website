@@ -58,7 +58,8 @@ export default function RefundPolicyPage() {
     {
       title: "10. Contact Details",
       contact: [
-        "Email: Connect@tubehelper.in",
+        "Email: info@tubehelper.in",
+        "Email: connect@tubehelper.in",
         "Phone: +91 9897165137",
         "Address: 1657 Bakra market, Mohalla Tihai, --,Mawana, Meerut, Uttar Pradesh, 250401",
       ],

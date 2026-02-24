@@ -8,14 +8,14 @@ const quickLinks = {
     { label: "About Us", href: "/about_us" },
     { label: "Case Studies", href: "/how_it_works" },
     { label: "24/7 Support", href: "/support" },
-    { label: "Reviews", href: "/reviews" },
-    { label: "Pricing", href: "/pricing" },
+    // { label: "Reviews", href: "/reviews" },
+    // { label: "Pricing", href: "/pricing" },
     { label: "Contact Us", href: "/contact" },
   ],
   resources: [
     { label: "Blogs", href: "/blog" },
     { label: "E-commerce Tips", href: "/e-commerce_tips" },
-    { label: "Free Resources", href: "/free_resources" },
+    // { label: "Free Resources", href: "/free_resources" },
     { label: "FAQs", href: "/faq" },
     { label: "Guides", href: "/guides" },
   ],
@@ -53,14 +53,15 @@ export default function Footer() {
             <div>
               <h4 className="mb-2 text-sm font-medium text-gray-200">Contact</h4>
               <p className="text-sm text-gray-400">info@tubehelper.in</p>
+              <p className="text-sm text-gray-400">connect@tubehelper.in</p>
               <p className="text-sm text-gray-400">+91 9897165137</p>
               <p className="text-sm text-gray-400">Address: 1657 Bakra market, Mohalla Tihai, --,Mawana, Meerut, Uttar Pradesh, 250401</p>
             </div>
           </div>
-
-          <FooterColumn title="Company" links={quickLinks.company} />
+            <FooterColumn title="Services" links={quickLinks.services} />
+         
           <FooterColumn title="Resources" links={quickLinks.resources} />
-          <FooterColumn title="Services" links={quickLinks.services} />
+         <FooterColumn title="Company" links={quickLinks.company} />
           <FooterColumn title="Legal" links={quickLinks.legal} />
         </div>
 
