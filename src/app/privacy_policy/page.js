@@ -1,239 +1,120 @@
 export default function PrivacyPolicyPage() {
-  return (
-    <main className="w-full bg-white text-gray-800 py-20 px-6 md:px-16">
-      <div className="max-w-4xl mx-auto">
+  const sections = [
+    {
+      title: "1. Information We Collect",
+      points: [
+        "Personal Identification Information: Name, email address, phone number, and billing/shipping addresses.",
+        "Business Information: Details regarding your e-commerce goals, store preferences, and niche interests.",
+        "Payment Data: While we do not store credit card numbers (these are handled by secure third-party processors), we collect transaction history related to your service plans.",
+        "Technical Data: IP address, browser type, device information, and usage patterns via cookies.",
+      ],
+      intro:
+        "We collect information that you provide directly to us and information generated automatically during your visit.",
+    },
+    {
+      title: "2. How We Use Your Information",
+      points: [
+        "Service Delivery: Setting up your online store, sourcing products, and managing logistics.",
+        "Communication: Sending updates about your store's progress, responding to inquiries, and sharing marketing tips.",
+        "Personalization: Tailoring product research and AI-driven marketing strategies to your specific niche.",
+        "Legal Compliance: Preventing fraud and meeting tax or regulatory requirements.",
+      ],
+      intro:
+        "We use the collected data to provide a seamless \"done-for-you\" experience:",
+    },
+    {
+      title: "3. Data Sharing and Disclosure",
+      points: [
+        "Third-Party Service Providers: Logistics partners, product suppliers, and web hosting services necessary to run your store.",
+        "Payment Processors: To securely facilitate service fees and revenue-sharing transactions.",
+        "Legal Authorities: If required by law or to protect our rights and the safety of our users.",
+      ],
+      intro:
+        "We do not sell your personal data. However, we may share information with:",
+    },
+    {
+      title: "4. Cookies and Tracking Technologies",
+      points: [
+        "Essential Cookies: Required for site functionality and security.",
+        "Analytical Cookies: Help us understand how users interact with TubeHelper.in so we can optimize our service offerings.",
+      ],
+      intro:
+        "We use cookies to improve your browsing experience and analyze website traffic.",
+      footer:
+        "You can manage your cookie preferences through your browser settings.",
+    },
+    {
+      title: "5. Data Security",
+      body: "We implement industry-standard security measures, including SSL encryption and secure servers, to protect your data from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.",
+    },
+    {
+      title: "6. Your Rights",
+      points: [
+        "Access: Request a copy of the personal data we hold about you.",
+        "Correction: Ask us to update or correct inaccurate information.",
+        "Deletion: Request that we delete your personal data (subject to legal or contractual obligations).",
+        "Opt-out: Unsubscribe from marketing emails at any time using the \"Unsubscribe\" link.",
+      ],
+      intro: "Depending on your location, you may have the following rights:",
+    },
+    {
+      title: "7. Third-Party Links",
+      body: "Our website may contain links to external sites (e.g., Shopify, Ali Express, or social media). We are not responsible for the privacy practices or content of these third-party websites.",
+    },
+    {
+      title: "8. Changes to This Policy",
+      body: "We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised \"Last Updated\" date.",
+    },
+    {
+      title: "9. Contact Us",
+      body: "If you have any questions about this Privacy Policy or how your data is handled, please reach out to us:",
+      contact: [
+        "Email: Connect@tubehelper.in",
+        "Phone: +91 9897165137",
+        "Address: 1657 Bakra market, Mohalla Tihai, --,Mawana, Meerut, Uttar Pradesh, 250401",
+      ],
+    },
+  ]
 
-        {/* ================= HEADER ================= */}
+  return (
+    <main className="w-full bg-white text-gray-800 px-6 py-20 md:px-16">
+      <div className="max-w-6xl mx-auto">
         <div className="mb-14">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Privacy Policy
           </h1>
-          <p className="text-gray-500">
-            Effective Date: [Insert Date] <br />
-            Last Updated: [Insert Date]
+          <p className="text-gray-700 leading-relaxed">
+            Welcome to TubeHelper.in. We value your privacy and are committed to protecting your personal data.
+            This Privacy Policy explains how we collect, use, and safeguard your information when you visit our
+            website or use our e-commerce automation and dropshipping services.
           </p>
         </div>
 
-        {/* ================= INTRO ================= */}
-        <section className="space-y-6 mb-12">
-          <p>
-            Welcome to <strong>[Your Company Name]</strong> ("Company", "we",
-            "our", or "us"). This Privacy Policy explains how we collect, use,
-            disclose, and safeguard your information when you visit our website{" "}
-            <strong>[yourwebsite.com]</strong>.
-          </p>
-          <p>
-            We are committed to protecting your personal data and your right to
-            privacy.
-          </p>
-        </section>
-
-        {/* ================= SECTION BLOCK STYLE ================= */}
         <div className="space-y-12">
-
-          {/* 1 */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              1. Information We Collect
-            </h2>
-
-            <h3 className="font-semibold mt-6 mb-2">Personal Information</h3>
-            <p className="mb-4">
-              When you fill out a contact form, book a strategy call,
-              subscribe to our newsletter, request a service, or communicate
-              with us, we may collect:
-            </p>
-
-            <ul className="list-disc pl-6 space-y-1 text-gray-600">
-              <li>Full name</li>
-              <li>Email address</li>
-              <li>Phone number</li>
-              <li>Business name</li>
-              <li>Website URL</li>
-              <li>Any other information voluntarily provided</li>
-            </ul>
-
-            <h3 className="font-semibold mt-6 mb-2">
-              Automatically Collected Information
-            </h3>
-            <ul className="list-disc pl-6 space-y-1 text-gray-600">
-              <li>IP address</li>
-              <li>Browser type</li>
-              <li>Device information</li>
-              <li>Operating system</li>
-              <li>Pages visited</li>
-              <li>Time spent on site</li>
-              <li>Referral source</li>
-            </ul>
-          </section>
-
-          {/* 2 */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              2. How We Use Your Information
-            </h2>
-            <ul className="list-disc pl-6 space-y-1 text-gray-600">
-              <li>Respond to inquiries</li>
-              <li>Provide our services</li>
-              <li>Improve website functionality</li>
-              <li>Analyze traffic and marketing performance</li>
-              <li>Send updates (if opted-in)</li>
-              <li>Comply with legal obligations</li>
-            </ul>
-            <p className="mt-4 font-medium text-gray-900">
-              We do not sell your personal information.
-            </p>
-          </section>
-
-          {/* 3 */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              3. Cookies & Tracking Technologies
-            </h2>
-            <p className="mb-4">
-              Our website uses cookies and tracking tools including:
-            </p>
-            <ul className="list-disc pl-6 space-y-1 text-gray-600">
-              <li>Google Analytics</li>
-              <li>Meta Pixel</li>
-              <li>Google Ads tracking</li>
-              <li>Server-side tracking tools</li>
-            </ul>
-            <p className="mt-4">
-              You can disable cookies through your browser settings.
-            </p>
-          </section>
-
-          {/* 4 */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              4. Third-Party Services
-            </h2>
-            <p className="mb-4">
-              We may use trusted third-party services including:
-            </p>
-            <ul className="list-disc pl-6 space-y-1 text-gray-600">
-              <li>Google Analytics</li>
-              <li>Meta (Facebook & Instagram Ads)</li>
-              <li>Google Ads</li>
-              <li>Email marketing platforms</li>
-              <li>CRM systems</li>
-              <li>Scheduling tools</li>
-            </ul>
-          </section>
-
-          {/* 5 */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              5. Data Security
-            </h2>
-            <p>
-              We implement appropriate technical and organizational security
-              measures to protect your personal data. However, no internet
-              transmission is 100% secure.
-            </p>
-          </section>
-
-          {/* 6 */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              6. Data Retention
-            </h2>
-            <p>
-              We retain your information only as long as necessary to fulfill
-              service obligations, comply with legal requirements, or resolve
-              disputes.
-            </p>
-          </section>
-
-          {/* 7 */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              7. Your Privacy Rights
-            </h2>
-            <p className="mb-4">
-              Depending on your location, you may have rights such as:
-            </p>
-            <ul className="list-disc pl-6 space-y-1 text-gray-600">
-              <li>Right to access your data</li>
-              <li>Right to correct inaccurate information</li>
-              <li>Right to request deletion</li>
-              <li>Right to withdraw consent</li>
-              <li>Right to restrict processing</li>
-              <li>Right to data portability</li>
-            </ul>
-            <p className="mt-4">
-              Contact us at: 📧 [your@email.com]
-            </p>
-          </section>
-
-          {/* 8–13 simplified structured sections */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              8. GDPR Compliance
-            </h2>
-            <p>
-              If located in the EEA, we process data under lawful bases such as
-              consent, contractual necessity, legal compliance, and legitimate
-              interest.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              9. CCPA Compliance
-            </h2>
-            <p>
-              California residents may request disclosure or deletion of
-              personal data. We do not sell personal information.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              10. Children’s Privacy
-            </h2>
-            <p>
-              Our services are not directed to individuals under 18. We do not
-              knowingly collect personal data from children.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              11. External Links
-            </h2>
-            <p>
-              We are not responsible for the privacy practices of third-party
-              websites.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              12. Changes to This Policy
-            </h2>
-            <p>
-              Updates will be posted on this page with a revised “Last Updated”
-              date.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              13. Contact Us
-            </h2>
-            <p>
-              <strong>[Your Company Name]</strong><br />
-              Email: [your@email.com] <br />
-              Website: [yourwebsite.com] <br />
-              Address: [Optional Business Address]
-            </p>
-          </section>
-
+          {sections.map((section) => (
+            <section key={section.title}>
+              <h2 className="mb-4 text-2xl font-semibold text-gray-900">{section.title}</h2>
+              {section.intro && <p className="mb-4 text-gray-700">{section.intro}</p>}
+              {section.body && <p className="text-gray-700">{section.body}</p>}
+              {section.points && (
+                <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                  {section.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              )}
+              {section.footer && <p className="mt-4 text-gray-700">{section.footer}</p>}
+              {section.contact && (
+                <div className="mt-4 space-y-1 text-gray-700">
+                  {section.contact.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+              )}
+            </section>
+          ))}
         </div>
-
       </div>
     </main>
-  );
+  )
 }

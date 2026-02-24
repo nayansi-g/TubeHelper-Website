@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 import {
   ChartNoAxesCombined,
   ChevronDown,
@@ -8,62 +9,98 @@ import {
   Megaphone,
   PhoneOutgoing,
   ShoppingCart,
-  Sprout
+  Sprout,
+  X,
 } from "lucide-react"
 
+const serviceItems = [
+  {
+    href: "/services/performance_marketing",
+    icon: ChartNoAxesCombined,
+    title: "Performance Marketing",
+    lines: ["Meta & Instagram Ads", "Google Ads (Search & Shopping)", "YouTube Ads"],
+  },
+  {
+    href: "/services/e-commerce_growth",
+    icon: ShoppingCart,
+    title: "Ecommerce Growth",
+    lines: ["Shopify Growth Strategy", "Conversion Rate Optimization (CRO)", "Funnel Optimization"],
+  },
+  {
+    href: "/services/organic_growth",
+    icon: Sprout,
+    title: "Organic Growth",
+    lines: ["SEO", "Content Marketing"],
+  },
+  {
+    href: "/services/analytics_&_automation",
+    icon: Cpu,
+    title: "Analytics & Automation",
+    lines: ["Tracking & GA4 Setup", "Marketing Automation", "Reporting & Dashboard Setup", "Landing Page Strategy"],
+  },
+  {
+    href: "/services/amplify_&_awareness",
+    icon: Megaphone,
+    title: "Amplify Brand Awareness",
+    lines: ["Maximize reach and business results"],
+  },
+]
+
+const resources = [
+  { href: "/contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
+  { href: "/how_it_works", label: "Case Studies" },
+  { href: "/guides", label: "Guides" },
+  { href: "/faq", label: "FAQ" },
+]
+
 export default function Navbar() {
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false)
 
-  const solutionsRef = useRef(null)
+  const servicesRef = useRef(null)
   const resourcesRef = useRef(null)
+  const mobileRef = useRef(null)
 
   useEffect(() => {
     function handleClickOutside(e) {
-      if (solutionsRef.current && !solutionsRef.current.contains(e.target)) {
-        setIsSolutionsOpen(false)
-      }
-      if (resourcesRef.current && !resourcesRef.current.contains(e.target)) {
-        setIsResourcesOpen(false)
-      }
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) setIsServicesOpen(false)
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target)) setIsResourcesOpen(false)
+      if (mobileRef.current && !mobileRef.current.contains(e.target)) setIsMobileOpen(false)
     }
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
   return (
-    <header className="w-full bg-white rounded-b-[25px] text-black fixed top-0 left-0 z-50 shadow-sm">
+    <header className="fixed left-0 top-0 z-50 w-full text-black">
+      <div className="mx-auto w-full max-w-[95rem] px-3 pt-3 sm:px-4 md:px-6 lg:px-10">
+        <div className="rounded-full bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+          <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-4 sm:px-6">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-black text-base font-semibold text-white">TH</div>
+              <span className="text-xl font-semibold">TubeHelper</span>
+            </Link>
 
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <nav className="relative hidden items-center gap-8 text-sm font-medium lg:flex">
+              <Link href="/" className="transition hover:text-purple-600">Home</Link>
 
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-black flex justify-center items-center text-white rounded-md">TH</div>
-          <span className="text-xl font-semibold">TubeHelper</span>
-        </div>
+              <div ref={servicesRef} className="relative">
+                <button
+                  onClick={() => {
+                    setIsServicesOpen((v) => !v)
+                    setIsResourcesOpen(false)
+                  }}
+                  className="flex items-center gap-1 transition hover:text-purple-600"
+                >
+                  Services <ChevronDown size={16} className={isServicesOpen ? "rotate-180 transition" : "transition"} />
+                </button>
 
-        {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium relative">
-
-          <a href="/" className="hover:text-purple-600">Home</a>
-
-          {/* Services Dropdown */}
-          <div className="relative" ref={solutionsRef}>
-            <button
-              onClick={() => {
-                setIsSolutionsOpen(!isSolutionsOpen)
-                setIsResourcesOpen(false)
-              }}
-              className="flex items-center gap-1 hover:text-purple-600"
-            >
-              Services <ChevronDown size={16} />
-            </button>
-
-            {isSolutionsOpen && (
-              <div className="absolute top-12 left-30 -translate-x-1/2 w-[900px] max-w-[92vw] bg-white shadow-xl rounded-2xl p-8 grid lg:grid-cols-3 gap-10 z-50">
+                {isServicesOpen && (
+                  <div className="absolute top-13 left-30 -translate-x-1/2 w-[900px] max-w-[92vw] bg-white shadow-xl rounded-2xl p-8 grid lg:grid-cols-3 gap-10 z-50">
 
                 {/* Column 1 */}
                 <div>
@@ -103,7 +140,7 @@ export default function Navbar() {
 
                 {/* Column 2 */}
                 <div>
-                  <h4 className="text-gray-400 mb-4 text-sm invisible">Our Services</h4>
+                  <a href="/services/analytics_&_automation"><h4 className="text-gray-400 mb-4 text-sm invisible">Our Services</h4>
                   <div className="space-y-4">
                     <div className="cursor-pointer">
                       <h3 className="font-semibold flex items-center gap-1">
@@ -117,15 +154,15 @@ export default function Navbar() {
                     </div>
 
                     <div className="cursor-pointer">
-                      <h3 className="font-semibold flex items-center justify-start gap-1">
+                      <a href="/services/amplify_&_awareness"><h3 className="font-semibold flex items-center justify-start gap-1">
                         <Megaphone className="w-5 h-5" />
                         Amplify brand awareness
                       </h3>
                       <p className="text-sm text-gray-500">
                         Maximize reach and business results
-                      </p>
+                      </p></a>
                     </div>
-                  </div>
+                  </div></a>
                 </div>
 
                 {/* Column 3 */}
@@ -145,106 +182,102 @@ export default function Navbar() {
                 </div>
 
               </div>
-            )}
-          </div>
-
-          <a href="#" className="hover:text-purple-600">Case Studies</a>
-          <a href="#" className="hover:text-purple-600">About Us</a>
-
-          {/* Resources Dropdown */}
-          <div className="relative" ref={resourcesRef}>
-            <button
-              onClick={() => {
-                setIsResourcesOpen(!isResourcesOpen)
-                setIsSolutionsOpen(false)
-              }}
-              className="flex items-center gap-1 hover:text-purple-600"
-            >
-              Resources <ChevronDown size={16} />
-            </button>
-
-            {isResourcesOpen && (
-              <div className="absolute top-12 w-44 bg-white shadow-xl border border-gray-300 rounded-xl p-6 space-y-3">
-                <p className="hover:text-purple-600 cursor-pointer">Contact</p>
-                <p className="hover:text-purple-600 cursor-pointer">Blog</p>
-                <p className="hover:text-purple-600 cursor-pointer">Case Studies</p>
-                <p className="hover:text-purple-600 cursor-pointer">Guides</p>
-                <p className="hover:text-purple-600 cursor-pointer">FAQ</p>
+                )}
               </div>
-            )}
+
+              <Link href="/how_it_works" className="transition hover:text-purple-600">Case Studies</Link>
+              <Link href="/about_us" className="transition hover:text-purple-600">About Us</Link>
+
+              <div ref={resourcesRef} className="relative">
+                <button
+                  onClick={() => {
+                    setIsResourcesOpen((v) => !v)
+                    setIsServicesOpen(false)
+                  }}
+                  className="flex items-center gap-1 transition hover:text-purple-600"
+                >
+                  Resources <ChevronDown size={16} className={isResourcesOpen ? "rotate-180 transition" : "transition"} />
+                </button>
+
+                {isResourcesOpen && (
+                  <div className="absolute left-0 top-13 z-50 w-52 rounded-xl border border-gray-200 bg-white p-4 shadow-xl">
+                    <div className="space-y-2 text-sm">
+                      {resources.map((item) => (
+                        <Link key={item.href} href={item.href} className="block rounded-md px-2 py-1 text-gray-700 transition hover:bg-purple-50 hover:text-purple-600">
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </nav>
+
+            <div className="hidden items-center gap-3 lg:flex">
+              <button className="rounded-lg border p-2 text-sm transition hover:bg-gray-50">
+                <PhoneOutgoing className="h-5 w-5" />
+              </button>
+              <button className="rounded-lg bg-black px-4 py-2 text-sm text-white transition hover:opacity-90">
+                Get Started
+              </button>
+            </div>
+
+            <button
+              onClick={() => setIsMobileOpen((v) => !v)}
+              className="rounded-md border px-3 py-2 text-sm lg:hidden"
+              aria-label="Toggle menu"
+            >
+              {isMobileOpen ? <X className="h-5 w-5" /> : "Menu"}
+            </button>
           </div>
-        </nav>
-
-        {/* Desktop Buttons */}
-        <div className="hidden lg:flex items-center gap-4">
-          <button className="border px-2 py-2 rounded-lg text-sm">
-            <PhoneOutgoing className="text-black w-5 h-5" />
-          </button>
-          <button className="bg-black text-white px-4 py-2 rounded-lg text-sm">
-            Get Started
-          </button>
         </div>
-
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="lg:hidden text-2xl"
-        >
-          ☰
-        </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileOpen && (
-        <div className="lg:hidden bg-white px-6 pb-6 space-y-4 shadow-md">
+        <div className="px-3 pt-2 sm:px-4 md:px-6 lg:hidden">
+          <div ref={mobileRef} className="mx-auto w-full max-w-[95rem] rounded-2xl border border-gray-200 bg-white p-4 shadow-lg">
+            <div className="space-y-3 text-sm">
+              <Link href="/" className="block rounded-md px-2 py-2">Home</Link>
+              <Link href="/how_it_works" className="block rounded-md px-2 py-2">Case Studies</Link>
+              <Link href="/about_us" className="block rounded-md px-2 py-2">About Us</Link>
 
-          <a href="/" className="block">Home</a>
+              <button
+                onClick={() => setIsMobileServicesOpen((v) => !v)}
+                className="flex w-full items-center justify-between rounded-md px-2 py-2"
+              >
+                Services <ChevronDown size={16} className={isMobileServicesOpen ? "rotate-180 transition" : "transition"} />
+              </button>
+              {isMobileServicesOpen && (
+                <div className="space-y-2 rounded-lg bg-gray-50 p-3">
+                  {serviceItems.map((item) => (
+                    <Link key={item.href} href={item.href} className="block rounded-md px-2 py-1 text-gray-700">
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
 
-          <div>
-            <button
-              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="flex justify-between w-full"
-            >
-              Services <ChevronDown size={16} />
-            </button>
+              <button
+                onClick={() => setIsMobileResourcesOpen((v) => !v)}
+                className="flex w-full items-center justify-between rounded-md px-2 py-2"
+              >
+                Resources <ChevronDown size={16} className={isMobileResourcesOpen ? "rotate-180 transition" : "transition"} />
+              </button>
+              {isMobileResourcesOpen && (
+                <div className="space-y-2 rounded-lg bg-gray-50 p-3">
+                  {resources.map((item) => (
+                    <Link key={item.href} href={item.href} className="block rounded-md px-2 py-1 text-gray-700">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
 
-            {isMobileServicesOpen && (
-              <div className="mt-3 space-y-3 text-sm text-gray-600">
-               <p><a href="/services/performance_marketing">Performance Marketing</a> </p>
-               <p><a href="/services/e-commerce_growth"> Ecommerce Growth</a></p>
-                <p>Organic Growth</p>
-                <p>Analytics & Automation</p>
-                <p>Amplify brand awareness</p>
-              </div>
-            )}
+              <button className="mt-2 w-full rounded-lg bg-black py-3 text-sm text-white">
+                Get Started
+              </button>
+            </div>
           </div>
-
-          <a href="#" className="block">Case Studies</a>
-          <a href="#" className="block">About Us</a>
-
-          <div>
-            <button
-              onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)}
-              className="flex justify-between w-full"
-            >
-              Resources <ChevronDown size={16} />
-            </button>
-
-            {isMobileResourcesOpen && (
-              <div className="mt-3 space-y-2 text-sm text-gray-600">
-                <p>Contact</p>
-                <p>Blog</p>
-                <p>Case Studies</p>
-                <p>Guides</p>
-                <p>FAQ</p>
-              </div>
-            )}
-          </div>
-
-          <button className="w-full bg-black text-white py-3 rounded-lg mt-4">
-            Get Started
-          </button>
-
         </div>
       )}
     </header>

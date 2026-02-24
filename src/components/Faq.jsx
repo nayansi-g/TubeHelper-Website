@@ -67,12 +67,6 @@ export default function Faq() {
       className={`relative z-10 max-w-4xl mx-auto text-center transition-all duration-1000 ease-out
       ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
-      {/* Badge */}
-      <div className="mb-6">
-        <span className="px-4 py-1 text-sm rounded-full bg-purple-50 text-purple-600 border border-purple-200">
-          ✨ FAQs
-        </span>
-      </div>
 
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-16 text-gray-900">

@@ -107,13 +107,10 @@ export default function ClientSlider() {
   return (
     <div className="bg-white">
         <div className="text-center py-2">
-        <span className="px-4 py-1 text-sm rounded-full bg-purple-50 text-purple-600 border border-purple-200">
-          ✨ Business Case Studies
-        </span>
       </div>
         <Wrapper>
       <div className=" bg-white text-center pb-5  md:pb-10">
-        <h2 className="text-gray-900 text-3xl md:text-5xl font-semibold">Proof Over Promises</h2>
+        <h2 className="text-gray-900 text-3xl md:text-5xl font-semibold mb-2">Proof Over Promises</h2>
         <p className="text-gray-600">We don’t just talk about growth — we deliver it.</p>
       </div>
 

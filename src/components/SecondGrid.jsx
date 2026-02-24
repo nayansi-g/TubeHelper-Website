@@ -59,69 +59,63 @@ const services = [
 
 export default function ServicesCards() {
   return (
-    <section className="w-full  px-0 md:px-5 ">
-     <div className="bg-white rounded-[60px] md:rounded-[90px] lg:rounded-[120px] py-20">
-       <div className="max-w-7xl mx-auto px-6 lg:px-16 space-y-16">
+    <section className="w-full px-0 md:px-5">
+      <div className="rounded-[56px] bg-white py-16 md:rounded-[90px] md:py-20 lg:rounded-[120px]">
+        <div className="mx-auto max-w-7xl space-y-14 px-5 md:px-8 lg:px-14">
 
-         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <h2 className="text-4xl  font-semibold tracking-tight">
-            <span className="text-black">
+          <div className="mx-auto max-w-3xl space-y-4 text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-black md:text-4xl">
               Our Services
-            </span>
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Performance-driven growth systems built to scale modern ecommerce brands.
-          </p>
-        </div>
+            </h2>
+            <p className="text-base text-gray-600 md:text-lg">
+              Performance-driven growth systems built to scale modern ecommerce brands.
+            </p>
+          </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="relative bg-white rounded-3xl p-4 shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] transition-all duration-500 group overflow-hidden"
-            >
-              {/* Subtle Gradient Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-transparent to-blue-100 opacity-0 group-hover:opacity-100 transition duration-500 rounded-3xl"></div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 36 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-3xl bg-white p-4 shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
+              >
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-100 via-transparent to-blue-100 opacity-0 transition duration-500 group-hover:opacity-100"></div>
 
-              {/* Image */}
-              <div className="relative mb-6 overflow-hidden rounded-2xl">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-68 md:78 object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60"></div>
-              </div>
+                <div className="relative mb-6 overflow-hidden rounded-2xl">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-60 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-72"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60"></div>
+                </div>
 
-              {/* Content */}
-              <div className="relative z-10 space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {service.title}
-                </h3>
+                <div className="relative z-10 space-y-4">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {service.title}
+                  </h3>
 
-                <p className="text-gray-600 text-sm">
-                  {service.description}
-                </p>
+                  <p className="text-sm text-gray-600">
+                    {service.description}
+                  </p>
 
-                <ul className="space-y-2 text-gray-700 text-sm pt-2">
-                  {service.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-purple-600 font-bold">✓</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
+                  <ul className="space-y-2 pt-2 text-sm text-gray-700">
+                    {service.points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="font-bold text-purple-600">✓</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
-     </div>
     </section>
   )
 }

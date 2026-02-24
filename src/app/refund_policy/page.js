@@ -1,194 +1,113 @@
 export default function RefundPolicyPage() {
+  const sections = [
+    {
+      title: "1. Scope of This Policy",
+      body: "This Refund Policy applies to all TubeHelper services, including performance marketing, e-commerce growth support, store setup/automation support, strategy consultation, and related digital service plans.",
+    },
+    {
+      title: "2. Nature of Services",
+      body: "TubeHelper provides digital and consulting services that involve planning, research, campaign setup, optimization, and execution time. Because these are effort-based services, refunds are limited and subject to the terms below.",
+    },
+    {
+      title: "3. Non-Refundable Fees",
+      points: [
+        "Onboarding or setup fees",
+        "Strategy and consultation fees",
+        "Monthly service retainers once work has started",
+        "Audit, research, and implementation charges",
+      ],
+      footer: "Once service delivery has begun, payments already made for completed work are non-refundable.",
+    },
+    {
+      title: "4. Ad Spend and Third-Party Charges",
+      body: "Budgets paid to third-party platforms (such as Meta, Google, YouTube, Shopify apps, or other tools) are not controlled by TubeHelper and are non-refundable through us. Any refund for platform/media charges must be requested directly from the relevant provider.",
+    },
+    {
+      title: "5. Cancellation and Billing Cycle",
+      body: "You may cancel future services by giving written notice before your next billing cycle. Cancellation stops upcoming billing only and does not reverse charges for the current/previous cycle or work already delivered.",
+    },
+    {
+      title: "6. Refunds in Exceptional Cases",
+      intro: "A refund may be reviewed only in limited situations such as:",
+      points: [
+        "Duplicate payment",
+        "Incorrect billing amount due to technical error",
+        "Service not delivered at all after confirmed payment",
+      ],
+      footer: "Approved refunds, if any, are processed to the original payment method within 7-14 business days.",
+    },
+    {
+      title: "7. Performance Disclaimer",
+      body: "Marketing and e-commerce results depend on multiple external factors, including market conditions, competition, pricing, product quality, ad budget, and customer behavior. Therefore, TubeHelper does not provide refunds solely due to unmet expected business outcomes.",
+    },
+    {
+      title: "8. Chargebacks",
+      body: "If you face any billing concern, contact us first for resolution. Unjustified chargebacks may lead to service suspension or termination and may be contested with supporting service records.",
+    },
+    {
+      title: "9. How to Request a Refund Review",
+      intro: "To request a refund review, email us with the subject line \"Refund Request\" and include:",
+      points: [
+        "Full name and registered email",
+        "Invoice/payment reference",
+        "Service plan details",
+        "Reason for request",
+      ],
+      footer: "We usually respond within 5-7 business days.",
+    },
+    {
+      title: "10. Contact Details",
+      contact: [
+        "Email: Connect@tubehelper.in",
+        "Phone: +91 9897165137",
+        "Address: 1657 Bakra market, Mohalla Tihai, --,Mawana, Meerut, Uttar Pradesh, 250401",
+      ],
+    },
+    {
+      title: "11. Policy Updates",
+      body: "TubeHelper may revise this Refund Policy at any time. Updated versions will be posted on this page.",
+    },
+  ]
+
   return (
     <section className="bg-white text-gray-800">
-      <div className="max-w-5xl mx-auto px-6 lg:px-8 py-20">
-        
-        {/* Header */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold">
             Refund Policy
           </h1>
-          <p className="mt-6 text-gray-600">
-            Effective Date: [Insert Date] <br />
-            Last Updated: [Insert Date]
+          <p className="mt-6 text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            At TubeHelper, we are committed to transparency and fair billing.
+            This policy explains when refunds may or may not apply for services
+            purchased through TubeHelper.in.
           </p>
         </div>
 
-        {/* Introduction */}
-        <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-          <p>
-            This Refund Policy outlines the terms under which refunds may be
-            issued by <strong>[Your Company Name]</strong> (“Company”, “we”,
-            “our”, or “us”) for our digital marketing and ecommerce growth
-            services.
-          </p>
-          <p>
-            By purchasing or subscribing to our services, you agree to this
-            Refund Policy.
-          </p>
-        </div>
-
-        {/* Policy Sections */}
         <div className="mt-16 space-y-14">
-
-          {/* 1 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              1. Overview of Services
-            </h2>
-            <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
-              <li>Performance Marketing (Meta, Instagram, Google & YouTube Ads)</li>
-              <li>Shopify Growth Strategy</li>
-              <li>Conversion Rate Optimization (CRO)</li>
-              <li>Funnel Optimization</li>
-              <li>Ecommerce Revenue Scaling Strategy</li>
-            </ul>
-            <p className="mt-4 text-gray-700">
-              Results depend on multiple factors including market conditions,
-              competition, ad spend, pricing, and customer demand.
-            </p>
-          </div>
-
-          {/* 2 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              2. Service Fees Are Non-Refundable
-            </h2>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Monthly retainers</li>
-              <li>Strategy fees</li>
-              <li>Setup fees</li>
-              <li>Audit fees</li>
-              <li>Consulting fees</li>
-            </ul>
-            <p className="mt-4 text-gray-700">
-              Once work has commenced, refunds will not be issued for time,
-              strategy development, or allocated resources.
-            </p>
-          </div>
-
-          {/* 3 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              3. Ad Spend Is Non-Refundable
-            </h2>
-            <p className="text-gray-700">
-              Advertising budgets paid to third-party platforms such as
-              Google Ads, Meta (Facebook & Instagram), and YouTube Ads are
-              non-refundable through our company. Refunds must be requested
-              directly from the respective advertising platform.
-            </p>
-          </div>
-
-          {/* 4 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              4. Early Termination
-            </h2>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>No refund for the current billing cycle</li>
-              <li>Completed work remains billable</li>
-              <li>Outstanding payments must be cleared</li>
-            </ul>
-            <p className="mt-4 text-gray-700">
-              Terms may vary based on your signed service agreement.
-            </p>
-          </div>
-
-          {/* 5 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              5. Exceptional Circumstances
-            </h2>
-            <p className="text-gray-700">
-              Refunds may be considered in cases such as duplicate payments,
-              billing errors, or failure to deliver agreed services.
-            </p>
-            <p className="mt-4 text-gray-700">
-              Refund requests must be submitted in writing within 7 days of
-              billing. Approval is at the sole discretion of [Your Company Name].
-            </p>
-          </div>
-
-          {/* 6 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              6. No Guarantee of Results
-            </h2>
-            <p className="text-gray-700">
-              We do not guarantee specific revenue results, ROAS, lead volume,
-              or conversion rate improvements. Dissatisfaction with results
-              alone does not qualify for refunds.
-            </p>
-          </div>
-
-          {/* 7 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              7. Digital Products (If Applicable)
-            </h2>
-            <p className="text-gray-700">
-              Due to the instant access nature of digital products, all
-              purchases are final and non-refundable unless otherwise stated.
-            </p>
-          </div>
-
-          {/* 8 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              8. Chargebacks & Payment Disputes
-            </h2>
-            <p className="text-gray-700">
-              Initiating a chargeback without contacting us first may result
-              in service termination, suspension of access, or legal action.
-            </p>
-          </div>
-
-          {/* 9 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              9. How to Request a Refund
-            </h2>
-            <p className="text-gray-700">
-              To request a refund review, please contact:
-            </p>
-            <div className="mt-4 bg-gray-50 p-6 rounded-lg border border-gray-200">
-              <p><strong>[Your Company Name]</strong></p>
-              <p>Email: [your@email.com]</p>
-              <p>Subject Line: Refund Request</p>
+          {sections.map((section) => (
+            <div key={section.title}>
+              <h2 className="text-2xl font-semibold mb-4">{section.title}</h2>
+              {section.intro && <p className="text-gray-700 mb-4">{section.intro}</p>}
+              {section.body && <p className="text-gray-700">{section.body}</p>}
+              {section.points && (
+                <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                  {section.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              )}
+              {section.footer && <p className="text-gray-700 mt-4">{section.footer}</p>}
+              {section.contact && (
+                <div className="space-y-1 text-gray-700">
+                  {section.contact.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+              )}
             </div>
-            <p className="mt-4 text-gray-700">
-              Please include your full name, company name, invoice number, and
-              reason for the request. We respond within 5–7 business days.
-            </p>
-          </div>
-
-          {/* 10 */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              10. Policy Updates
-            </h2>
-            <p className="text-gray-700">
-              We reserve the right to update this Refund Policy at any time.
-              Updates will be reflected with a revised “Last Updated” date.
-            </p>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              Contact Information
-            </h2>
-            <p className="text-gray-700">
-              [Your Company Name] <br />
-              Email: [your@email.com] <br />
-              Website: [yourwebsite.com] <br />
-              Address: [Optional Business Address]
-            </p>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>
-  );
+  )
 }

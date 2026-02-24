@@ -1,666 +1,319 @@
 "use client"
 
-import { AnimatePresence, motion } from "framer-motion"
+import Image from "next/image"
 import { MoveUpRight, PhoneIncoming } from "lucide-react"
-import { FaWhatsapp } from "react-icons/fa"
+import { useState } from "react"
 
-import Image from "next/image";
-import { useState } from "react";
-import {
-  TrendingUp,
-  Target,
-  ShoppingCart,
-  Users,
-  DollarSign,
-  BarChart3,
-  CheckCircle,
-  Rocket,
-  LineChart,
-} from "lucide-react";
+const seoPoints = [
+  "Comprehensive SEO audit",
+  "Keyword research & search intent mapping",
+  "On-page SEO optimization",
+  "Technical SEO improvements",
+  "Internal linking strategy",
+  "Competitor analysis",
+  "Local SEO (if applicable)",
+  "Performance tracking & reporting",
+]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-}
+const contentPoints = [
+  "SEO blog strategy",
+  "Topic cluster & pillar page strategy",
+  "Landing page content",
+  "Website copy optimization",
+  "Product page content",
+  "Long-form authority content",
+  "Content calendar planning",
+]
 
+
+
+const results = [
+  "Higher search engine rankings",
+  "Increased organic traffic",
+  "Lower customer acquisition cost (CAC)",
+  "Stronger brand authority",
+  "Consistent inbound leads",
+  "Long-term revenue growth",
+]
+
+const audience = [
+  "Ecommerce brands",
+  "Service-based businesses",
+  "D2C brands",
+  "SaaS companies",
+  "Founders building long-term brand equity",
+  "Businesses wanting to reduce ad dependency",
+]
+
+const whyChooseUs = [
+  "Data-driven keyword research",
+  "Conversion-focused content",
+  "Technical SEO expertise",
+  "Transparent reporting",
+  "Long-term scalable strategies",
+]
 
 const faqs = [
   {
-    question: "What is ecommerce growth optimization?",
-    answer:"It is a structured process of improving store performance, conversion rate, and funnel efficiency to increase revenue and profitability."
+    question: "How long does SEO take to show results?",
+    answer:
+      "SEO typically shows measurable improvements within 3–6 months depending on competition and website authority.",
   },
   {
-    question: "How long does CRO take to show results?",
-    answer:"Initial test data appears within 2–4 weeks. Significant improvements typically occur within 60–90 days."
+    question: "Is content marketing necessary for SEO?",
+    answer:
+      "Yes. High-quality, optimized content is essential for ranking and building authority.",
   },
   {
-    question: "Do you only work with Shopify?",
-    answer:"Our primary expertise is Shopify, but we can support other ecommerce platforms as well."
+    question: "Do you guarantee rankings?",
+    answer:
+      "No ethical SEO agency guarantees rankings. We focus on sustainable strategies that improve visibility and revenue.",
   },
   {
-    question: "Is funnel optimization different from paid ads?",
-    answer:"Yes. Paid ads bring traffic. Funnel optimization converts that traffic efficiently."
+    question: "Can SEO reduce ad spend?",
+    answer:
+      "Yes. Strong organic traffic reduces reliance on paid advertising over time.",
   },
-];
+]
 
-
-const steps = [
-    {
-      title: "Audit & Data Analysis",
-      desc: "We identify bottlenecks in your store performance and customer journey.",
-    },
-    {
-      title: "Conversion Optimization",
-      desc: "We optimize product pages, checkout, and messaging for maximum impact.",
-    },
-    {
-      title: "Funnel Structuring",
-      desc: "We build a scalable funnel aligned with acquisition and retention.",
-    },
-    {
-      title: "Testing & Scaling",
-      desc: "We continuously test and refine to maximize revenue growth.",
-    },
-  ];
-
-export default function OrganicGrowth() {
-     const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+export default function OrganicGrowthPage() {
+  const [activeFaq, setActiveFaq] = useState(0)
 
   return (
-    <div className=" bg-white  text-gray-900 overflow-hidden">
-
-      <section className="relative min-h-screen flex items-center justify-center bg-[#A1C2F8] rounded-b-[60px] md:rounded-b-[90px] lg:rounded-b-[120px]  text-gray-900 overflow-hidden ">
-     
-           {/* Container */}
-           <div className="max-w-7xl mx-auto w-full pt-28 grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-6 lg:px-12 gap-12 items-center">
-     
-             {/* ================= LEFT CONTENT ================= */}
-             <div className="relative flex flex-col justify-center items-start z-10 text-center lg:text-left ">
-     
-               {/* Heading */}
-               <motion.h1
-                 initial={{ y: 50, opacity: 0 }}
-                 animate={{ y: 0, opacity: 1 }}
-                 transition={{ duration: 0.9, delay: 0.2 }}
-                 className="text-3xl md:text-4xl lg:text-5xl  lg:mt-0 max-w-2xl font-semibold leading-tight mx-auto lg:mx-0"
-               >
-                Organic Growth That Drive Long-Term Traffic & Revenue
-               </motion.h1>
-     
-               {/* Subtext */}
-               <motion.p
-                 initial={{ opacity: 0 }}
-                 animate={{ opacity: 1 }}
-                 transition={{ duration: 1, delay: 0.4 }}
-                 className="mt-4 text-gray-700 max-w-xl mx-auto lg:mx-0"
-               >
-We help brands grow sustainably through strategic SEO and high-converting content marketing that attracts, ranks, and converts.</motion.p>
-     
-               {/* Buttons */}
-               <motion.div
-                 initial={{ y: 40, opacity: 0 }}
-                 animate={{ y: 0, opacity: 1 }}
-                 transition={{ duration: 0.8, delay: 0.6 }}
-                 className="mt-10 flex flex-wrap gap-6 justify-center md:justify-center items-center  lg:justify-start"
-               >
-                 {/* Chat Button */}
-                 <motion.button
-                   whileHover={{ scale: 1.05 }}
-                   whileTap={{ scale: 0.95 }}
-                   className="flex items-center px-2 py-1 rounded-full border border-white/60 bg-white/50 backdrop-blur-md hover:bg-white/20 transition"
-                 >
-                   <motion.div
-                     animate={{ rotate: [0, -10, 10, 0] }}
-                     transition={{ repeat: Infinity, duration: 2 }}
-                     className="w-10 h-10 flex items-center cursor-pointer justify-center rounded-full bg-white/50 border border-white/60"
-                   >
-                     <PhoneIncoming className="text-black w-5 h-5" />
-                   </motion.div>
-                   <div className="px-3 text-black text-sm">
-                     Get a Free SEO Audit
-                   </div>
-                 </motion.button>
-     
-                 {/* Gradient Button */}
-                 <motion.button
-                   whileHover={{ scale: 1.08 }}
-                   whileTap={{ scale: 0.95 }}
-                   className="px-6 py-3 rounded-full flex items-center text-white gap-2 bg-black cursor-pointer shadow-lg"
-                 >
-                   Book a Strategy Call
-                   <MoveUpRight className="w-4 h-4" />
-                 </motion.button>
-               </motion.div>
-     
-             </div>
-     
-             {/* ================= RIGHT IMAGE ================= */}
-             <motion.div
-               initial={{ opacity: 0, x: 80 }}
-               animate={{ opacity: 1, x: 0 }}
-               transition={{ duration: 1 }}
-               className="relative  flex justify-center px-2 py-8 md:py-4 lg:py-0  overflow-hidden lg:justify-end"
-             >
-               <img
-                 src="/e-commerce1.jpg"
-                 alt="Hero"
-                 className="w-full max-w-md sm:max-w-lg opacity-80 rounded-tl-[100px] md:rounded-tl-[150px] lg:rounded-tl-[200px] border border-gray-300 rounded-br-[100px] md:rounded-br-[150px] lg:rounded-br-[200px]  lg:max-w-xl h-auto object-contain rounded-xl"
-               />
-             </motion.div>
-     
-           </div>
-         </section>
-
-      <section className="w-full  py-20 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto text-center">
-
-        {/* LEFT CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Heading */}
-          <h1 className="text-3xl md:text-4xl max-w-2xl mx-auto text-gray-900 font-bold leading-tight mb-2">
-            Traffic That Doesn’t Depend on {""}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-              Ads
-            </span>
-          </h1>
-
-          {/* Description */}
-          <p className="text-gray-500 text-md max-w-4xl mx-auto leading-relaxed mb-2">
-            We help ecommerce and D2C brands scale profitably using
-            performance-driven paid media strategies. Our approach focuses on
-            measurable ROI, structured testing, and full-funnel optimization —
-            not vanity metrics.
-          </p>
-
-          <p className="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed mb-10">
-            From startups to scaling brands, we build advertising systems that
-            generate consistent revenue growth.
-          </p>
-
-          {/* CTA */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <button className="px-6 py-3 bg-gradient-to-r text-white from-purple-500 to-pink-500 rounded-lg font-semibold hover:scale-105 transition">
-              Get Free Strategy Call
-            </button>
-            <button className="px-6 py-3 border border-black/20 text-gray-800  rounded-lg hover:bg-black/10 transition">
-              Contact Us
-            </button>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-
-    <section className="w-full bg-white  px-6 md:px-16">
-      <div className="max-w-7xl mx-auto space-y-28">
-
-        {/* ============================= */}
-        {/* 5️⃣ RESULTS SECTION */}
-        {/* ============================= */}
-        <div>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              What Ecommerce Growth Looks Like
-            </h2>
-            <p className="mt-6 text-gray-600 text-lg max-w-2xl mx-auto">
-              We focus on profitability — not just revenue spikes.
+    <main className="bg-white text-gray-900">
+      <section className="bg-[#FFB180] pt-24 pb-14 md:pt-28 md:pb-20 rounded-b-[50px] md:rounded-b-[80px]">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
+          <div className="text-center lg:text-left">
+            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+              Organic Growth Services That Drive Long-Term Traffic & Revenue
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base text-gray-700 sm:text-lg lg:mx-0">
+              We help brands grow sustainably through strategic SEO and high-converting content marketing that attracts, ranks, and converts.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Box 1 */}
-            <div className="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition duration-300">
-              <TrendingUp className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                Higher Conversion Rate
-              </h3>
-              <p className="text-gray-600">
-                Turn more visitors into paying customers with data-backed CRO strategies.
-              </p>
-            </div>
-
-            {/* Box 2 */}
-            <div className="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition duration-300">
-              <DollarSign className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                Increased AOV & LTV
-              </h3>
-              <p className="text-gray-600">
-                Boost average order value and customer lifetime value through
-                structured upsell and retention systems.
-              </p>
-            </div>
-
-            {/* Box 3 */}
-            <div className="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition duration-300">
-              <ShoppingCart className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                Lower Cart Abandonment
-              </h3>
-              <p className="text-gray-600">
-                Optimize checkout flow and reduce drop-offs with full-funnel analysis.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* ============================= */}
-        {/* 6️⃣ WHO THIS IS FOR */}
-        {/* ============================= */}
-        <div>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Who We Work With
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-gray-50 border border-gray-300 hover:bg-gray-100 transition">
-              <Rocket className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                Shopify Brands
-              </h3>
-              <p className="text-gray-600">
-                Ecommerce stores built on Shopify looking to scale profitably.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-gray-50 border border-gray-300 hover:bg-gray-100 transition">
-              <Users className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                D2C Ecommerce Businesses
-              </h3>
-              <p className="text-gray-600">
-                Direct-to-consumer brands ready to optimize performance marketing.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-gray-50 border border-gray-300 hover:bg-gray-100 transition">
-              <BarChart3 className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                $20K–$500K/Month Brands
-              </h3>
-              <p className="text-gray-600">
-                Scaling brands preparing their systems before aggressive growth.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* ============================= */}
-        {/* 7️⃣ WHY CHOOSE US */}
-        {/* ============================= */}
-        <div className="pb-10">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-3xl font-bold text-gray-900">
-              Why Brands Choose Our Ecommerce Growth Team
-            </h2>
-            <p className="mt-6 text-gray-600 text-lg max-w-2xl mx-auto">
-              We don’t guess. We test, optimize, and scale.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition">
-              <Target className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                Data-First CRO Strategy
-              </h3>
-              <p className="text-gray-600">
-                Every decision is backed by analytics and structured testing.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition">
-              <LineChart className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                Full-Funnel Optimization
-              </h3>
-              <p className="text-gray-600">
-                We optimize awareness, consideration, and conversion stages together.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition">
-              <CheckCircle className="w-10 h-10 text-black mb-6" />
-              <h3 className="text-xl font-semibold mb-4">
-                Transparent Tracking
-              </h3>
-              <p className="text-gray-600">
-                Clear reporting, measurable KPIs, and profit-focused experimentation.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-   <section className="w-full bg-black rounded-[60px] md:rounded-[90px] lg:rounded-[120px] text-white py-28 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto">
-
-         <div className="mb-6 text-center">
-        <span className="px-4 py-1 text-sm rounded-full bg-purple-50 text-purple-600 border border-purple-200">
-          ✨ Growth Services
-        </span>
-      </div>
-
-        {/* ================= HEADER ================= */}
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Our Ecommerce Growth Services
-          </h2>
-        </div>
-
-        {/* ================= ROW 1 ================= */}
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-28">
-
-          {/* IMAGE LEFT */}
-          <div className="relative">
-            <Image
-              src="/e-commerceGrowth1.jpg"
-              alt="Shopify ecommerce backend analytics dashboard"
-              width={700}
-              height={500}
-              className="rounded-2xl border border-white/10 shadow-2xl"
-            />
-          </div>
-
-          {/* CONTENT RIGHT */}
-          <div>
-            <p className="text-sm uppercase tracking-wider text-gray-400 mb-4">
-              Shopify Growth Strategy
-            </p>
-
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6">
-              Shopify Growth Strategy & Revenue Optimization
-            </h3>
-
-            <p className="text-gray-400 leading-relaxed mb-6">
-              We create data-backed growth strategies tailored for Shopify brands looking to scale profitably. Our approach aligns acquisition, retention, and optimization into a single growth roadmap.
-            </p>
-
-            <p className="text-gray-400 leading-relaxed mb-8">
-              We analyze your store performance, customer journey, and backend data to identify revenue leaks and scaling opportunities.
-            </p>
-
-            <ul className="space-y-3 text-gray-300">
-              <li>• Store performance audit</li>
-              <li>• Revenue opportunity mapping</li>
-              <li>• Customer journey analysis</li>
-              <li>• Offer & pricing optimization</li>
-              <li>• Retention & LTV strategy</li>
-              <li>• Analytics & tracking review</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* ================= ROW 2 ================= */}
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-28">
-
-          {/* CONTENT LEFT */}
-          <div className="order-2 md:order-1">
-            <p className="text-sm uppercase tracking-wider text-gray-400 mb-4">
-              Conversion Rate Optimization (CRO)
-            </p>
-
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6">
-              Conversion Rate Optimization (CRO) for Ecommerce Stores
-            </h3>
-
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Increasing traffic without improving conversion rates leads to wasted ad spend. Our CRO strategies focus on improving user experience, trust signals, messaging clarity, and checkout flow.
-            </p>
-
-            <p className="text-gray-400 leading-relaxed mb-8">
-              We use structured A/B testing, behavioral analysis, and data-driven experimentation to increase revenue without increasing ad spend.
-            </p>
-
-            <ul className="space-y-3 text-gray-300">
-              <li>• A/B testing strategy</li>
-              <li>• Heatmap & user behavior analysis</li>
-              <li>• Landing page optimization</li>
-              <li>• Product page optimization</li>
-              <li>• Checkout flow improvement</li>
-              <li>• Trust signal & social proof optimization</li>
-            </ul>
-          </div>
-
-          {/* IMAGE RIGHT */}
-          <div className="order-1 md:order-2 relative">
-            <Image
-              src="/e-commerceGrowth2.jpg"
-              alt="Ecommerce A/B testing dashboard"
-              width={700}
-              height={500}
-              className="rounded-2xl border border-white/10 shadow-2xl"
-            />
-          </div>
-        </div>
-
-        {/* ================= ROW 3 ================= */}
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-
-          {/* IMAGE LEFT */}
-          <div className="relative">
-            <Image
-              src="/e-commerceGrowth3.jpg"
-              alt="Ecommerce sales funnel diagram"
-              width={700}
-              height={500}
-              className="rounded-2xl border border-white/10 shadow-2xl"
-            />
-          </div>
-
-          {/* CONTENT RIGHT */}
-          <div>
-            <p className="text-sm uppercase tracking-wider text-gray-400 mb-4">
-              Funnel Optimization
-            </p>
-
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6">
-              Full-Funnel Optimization for Higher Profit Margins
-            </h3>
-
-            <p className="text-gray-400 leading-relaxed mb-6">
-              A profitable ecommerce brand is built on a structured funnel — not isolated campaigns. We optimize every stage of the customer journey from awareness to repeat purchase.
-            </p>
-
-            <p className="text-gray-400 leading-relaxed mb-8">
-              Our funnel strategies reduce drop-offs, improve engagement, and increase lifetime value.
-            </p>
-
-            <ul className="space-y-3 text-gray-300">
-              <li>• Funnel mapping & segmentation</li>
-              <li>• Upsell & cross-sell optimization</li>
-              <li>• Post-purchase flows</li>
-              <li>• Email & SMS lifecycle integration</li>
-              <li>• Retargeting alignment</li>
-              <li>• Subscription & repeat purchase strategy</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-     <section className="relative w-full bg-white text-gray-900 pt-20  px-6 md:px-16 overflow-hidden">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    
-            {/* ================= LEFT CONTENT ================= */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-                 <div className="text-start mb-5">
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-            Our 4-Step Growth Process
-          </h2>
-          <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
-            A structured system designed to improve profitability at every stage.
-          </p>
-        </div>
-     <div className=" grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-8 relative">
-
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="group relative p-2 md:p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition duration-300"
-            >
-              {/* Step Number */}
-              <div className="flex items-center justify-center w-6 h-6 rounded-full bg-black text-white font-semibold mb-3 group-hover:scale-110 transition">
-                {index + 1}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                {step.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-600 leading-normal">
-                {step.desc}
-              </p>
-            </div>
-          ))}
-
-        </div>
-            </motion.div>
-    
-            {/* ================= RIGHT IMAGE DESIGN ================= */}
-            <div className="relative h-[500px] w-full flex items-center justify-center">
-    
-              {/* Background Soft Shape */}
-              <div className="absolute w-[350px] h-[350px] bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-    
-              {/* Main Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                className="relative z-20"
-              >
-                <Image
-                  src="/e-commerceProcess.jpg"
-                  alt="Marketing Team Main"
-                  width={380}
-                  height={480}
-                  className="rounded-2xl shadow-xl"
-                />
-              </motion.div>
-    
-            </div>
-          </div>
-        </section>
-
-    <section className="w-full bg-white py-24 px-6 md:px-16">
-      <div className="max-w-4xl mx-auto">
-           <div className="mb-6 text-center">
-        <span className="px-4 py-1 text-sm rounded-full bg-purple-50 text-purple-600 border border-purple-200">
-          ✨ FAQs
-        </span>
-      </div>
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
-         Ecommerce Growth FAQs
-          
-        </h2>
-
-        {/* FAQ Items */}
-        <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex justify-between items-center p-6 text-left"
-              >
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {faq.question}
-                </h3>
-
-                <span className="text-purple-600 text-2xl cursor-pointer">
-                  {activeIndex === index ? "−" : "+"}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <button className="inline-flex items-center cursor-pointer gap-3 rounded-full border border-black/15 bg-white px-5 py-2 text-sm font-medium shadow-sm transition hover:bg-gray-50">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
+                  <PhoneIncoming className="h-4 w-4" />
                 </span>
+                Get a Free SEO Audit
               </button>
-
-              <AnimatePresence>
-                {activeIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-6 text-gray-600 text-sm leading-relaxed"
-                  >
-                    {faq.answer}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <button className="inline-flex items-center gap-2 cursor-pointer rounded-full bg-black px-6 py-4 text-sm font-medium text-white transition hover:opacity-90">
+                Book a Strategy Call
+                <MoveUpRight className="h-4 w-4" />
+              </button>
             </div>
-          ))}
+          </div>
+          <div className="mx-auto w-full max-w-xl">
+            <Image
+              src="/organicHero.jpg"
+              alt="Organic growth hero visual"
+              width={880}
+              height={640}
+              className="w-full rounded-tr-[100px] rounded-bl-[100px] md:rounded-tr-[130px] md:rounded-bl-[130px] lg:rounded-tr-[150px] lg:rounded-bl-[150px] rounded-xl border border-white/60 object-cover shadow-xl"
+            />
+          </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <section className="px-4 py-16 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-semibold sm:text-4xl">
+            Traffic That Doesn&apos;t Depend on Ads
+          </h2>
+          <p className="mt-6 text-gray-700">
+            Paid ads stop when you stop paying.
+          </p>
+          <p className="mt-3 text-gray-700">
+            Organic growth builds long-term assets that generate consistent traffic, leads, and sales without ongoing ad spend dependency.
+          </p>
+          <p className="mt-6 text-gray-700">
+            Our SEO and content marketing strategies are built to:
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Increase search visibility</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Rank for high-intent keywords</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Build authority in your niche</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Convert organic traffic into revenue</div>
+          </div>
+          <p className="mt-6 text-lg font-medium text-gray-900">
+            We focus on sustainable digital growth, not short-term spikes.
+          </p>
+        </div>
+      </section>
 
-     <section className="relative w-full py-20 md:py-16 lg:py-20 px-6 md:px-16 overflow-hidden">
+      <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-center text-3xl font-semibold sm:text-4xl">
+            Our Organic Growth Services
+          </h2>
 
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="/CTAimg.jpg"
-          alt="Entrepreneur reviewing marketing data"
-          className="w-full h-full object-cover"
-        />
-        {/* White Overlay */}
-        <div className="absolute inset-0 bg-white/15 backdrop-blur-sm"></div>
-      </div>
+          <div className="mt-14 grid items-center gap-10 lg:grid-cols-2">
+            <div className="order-2 lg:order-1">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-gray-400">
+                Search Engine Optimization (SEO)
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
+                SEO Services That Increase Rankings & Revenue
+              </h3>
+              <p className="mt-5 text-gray-300">
+                Our SEO strategies are designed to help your business rank higher on search engines like Google for high-intent keywords related to your products and services.
+              </p>
+              <p className="mt-3 text-gray-300">
+                We combine technical SEO, on-page optimization, and strategic keyword research to drive targeted organic traffic.
+              </p>
+              <p className="mt-6 font-medium text-white">What We Do:</p>
+              <ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
+                {seoPoints.map((point) => (
+                  <li key={point}>• {point}</li>
+                ))}
+              </ul>
+              <p className="mt-5 text-gray-200">
+                We focus on ranking for keywords that actually convert, not just vanity traffic.
+              </p>
+            </div>
+            <div className="order-1 lg:order-2">
+              <Image
+                src="/organic1.jpg"
+                alt="SEO service visual"
+                width={860}
+                height={620}
+                className="w-full rounded-3xl border border-white/15 object-cover shadow-xl"
+              />
+            </div>
+          </div>
 
-      {/* Content */}
-      <div className="relative max-w-4xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className=" text-2xl md:text-3xl md:text-4xl font-semibold text-gray-900 leading-tight mb-4"
-        >
-         Ready to Unlock Higher Revenue Without Increasing Ad Spend?
-        </motion.h2>
+          <div className="mt-16 grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <Image
+                src="/organic2.jpg"
+                alt="Content marketing visual"
+                width={860}
+                height={620}
+                className="w-full rounded-3xl border border-white/15 object-cover shadow-xl"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-gray-400">
+                Content Marketing
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
+                Content Marketing That Attracts, Engages & Converts
+              </h3>
+              <p className="mt-5 text-gray-300">
+                Content marketing is the foundation of sustainable organic growth.
+              </p>
+              <p className="mt-3 text-gray-300">
+                We create high-quality, SEO-optimized content that ranks on search engines, educates your audience, builds trust & authority, supports your funnel, and drives qualified leads.
+              </p>
+              <p className="mt-3 text-gray-300">
+                From blog strategies to high-converting landing pages, we align content with business objectives.
+              </p>
+              <p className="mt-6 font-medium text-white">What We Do:</p>
+              <ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
+                {contentPoints.map((point) => (
+                  <li key={point}>• {point}</li>
+                ))}
+              </ul>
+              <p className="mt-5 text-gray-200">
+                Our content is built around search intent, conversion psychology, and brand positioning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-gray-800 text-md md:text-lg max-w-3xl mx-auto text-center leading-relaxed mb-10"
-        >
-         If you're driving traffic but not maximizing revenue, it's time to optimize your growth engine.
-        </motion.p>
+   
 
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="px-8 py-4 bg-[#A1C2F8] text-gray-900 font-semibold rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition duration-300"
-        >
-          Book Your Ecommerce Growth Audit
-        </motion.button>
-      </div>
-    </section>
-    </div>
+      <section className="bg-gray-50 px-4 py-16 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center text-3xl font-semibold sm:text-4xl">
+            What Organic Growth Delivers
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {results.map((item) => (
+              <div key={item} className="rounded-2xl border border-gray-200 bg-white p-5">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-gray-700">
+            Unlike paid ads, organic traffic compounds over time.
+          </p>
+        </div>
+      </section>
+
+      <section className="px-4 py-16 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center text-3xl font-semibold sm:text-4xl">
+            Who Benefits From Organic Growth
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {audience.map((item) => (
+              <div key={item} className="rounded-2xl border border-gray-200 px-5 py-4">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center text-3xl font-semibold sm:text-4xl">
+            Why Brands Trust Our SEO & Content Strategies
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {whyChooseUs.map((item) => (
+              <div key={item} className="rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-gray-100">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-lg text-gray-200">We don&apos;t chase algorithms. We build authority that lasts.</p>
+          
+        </div>
+      </section>
+
+      <section className="px-4 py-16 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-3xl font-semibold sm:text-4xl">
+            Organic Growth FAQs
+          </h2>
+          <div className="mt-10 space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={faq.question} className="rounded-2xl border border-gray-200 bg-white">
+                <button
+                  onClick={() => setActiveFaq(activeFaq === index ? -1 : index)}
+                  className="flex w-full items-center justify-between px-5 py-4 text-left"
+                >
+                  <span className="font-medium text-gray-900">{faq.question}</span>
+                  <span className="text-2xl text-gray-500">{activeFaq === index ? "−" : "+"}</span>
+                </button>
+                {activeFaq === index && (
+                  <p className="px-5 pb-5 text-sm leading-relaxed text-gray-700">
+                    {faq.answer}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-[#dbe8ff] via-white to-[#e8f0ff] px-4 py-16 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+            Ready to Build Sustainable Organic Growth?
+          </h2>
+          <p className="mx-auto mt-5 max-w-3xl text-gray-700">
+            If you want long-term traffic, authority, and consistent inbound leads, it&apos;s time to invest in SEO and content marketing.
+          </p>
+          <button className="mt-8 inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
+            Get Your Free SEO Strategy Call
+            <MoveUpRight className="h-4 w-4" />
+          </button>
+        </div>
+      </section>
+    </main>
   )
 }

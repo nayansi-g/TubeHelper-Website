@@ -1,134 +1,101 @@
-    "use client"
+"use client"
 
 import Link from "next/link"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes } from "react-icons/fa"
 
+const quickLinks = {
+  company: [
+    { label: "About Us", href: "/about_us" },
+    { label: "Case Studies", href: "/how_it_works" },
+    { label: "24/7 Support", href: "/support" },
+    { label: "Reviews", href: "/reviews" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Contact Us", href: "/contact" },
+  ],
+  resources: [
+    { label: "Blogs", href: "/blog" },
+    { label: "E-commerce Tips", href: "/e-commerce_tips" },
+    { label: "Free Resources", href: "/free_resources" },
+    { label: "FAQs", href: "/faq" },
+    { label: "Guides", href: "/guides" },
+  ],
+  services: [
+    { label: "Performance Marketing", href: "/services/performance_marketing" },
+    { label: "E-commerce Growth", href: "/services/e-commerce_growth" },
+    { label: "Organic Growth", href: "/services/organic_growth" },
+    { label: "Analytics & Automation", href: "/services/analytics_&_automation" },
+    { label: "Amplify Brand Awareness", href: "/services/amplify_&_awareness" },
+  ],
+  legal: [
+    { label: "Privacy Policy", href: "/privacy_policy" },
+    { label: "Terms & Conditions", href: "/terms_of_use" },
+    { label: "Refund Policy", href: "/refund_policy" },
+  ],
+}
+
 export default function Footer() {
   return (
-    <footer className="relative bg-black text-white pt-10 md:pt-24 pb-5 md:pb-10 px-6 overflow-hidden">
+    <footer className="relative overflow-hidden bg-black px-4 pb-6 pt-12 text-white sm:px-6 md:px-8 md:pb-8 md:pt-20">
+      <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-600 opacity-20 blur-[200px]" />
+      <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-pink-500 opacity-20 blur-[150px]" />
 
-      {/* Glow Effects */}
-      <div className="absolute right-0 bottom-0 w-[400px] h-[400px] bg-purple-600 opacity-20 blur-[200px] rounded-full"></div>
-      <div className="absolute left-0 bottom-0 w-[300px] h-[300px] bg-pink-500 opacity-20 blur-[150px] rounded-full"></div>
-
-  
-          <div className="relative z-10 mx-1 md:mx-1 lg:mx-2 xl:mx-4 2xl:mx-10">
-              <div >
-
-        {/* Top Heading */}
-        <h2 className="text-3xl md:text-4xl font-semibold mb-10">
-          Let’s Connect with us
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <h2 className="mb-8 text-2xl font-semibold sm:text-3xl md:mb-10 md:text-4xl">
+          Let&apos;s Connect with us
         </h2>
 
-        <div className="border-t border-white/10 pt-12 grid md:grid-cols-5   gap-10">
-
-          {/* Column 1 */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">TubeHelper</h3>
-            <p className="text-gray-400 text-sm mb-6">
+        <div className="grid gap-8 border-t border-white/10 pt-8 sm:pt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">TubeHelper</h3>
+            <p className="max-w-sm text-sm text-gray-400">
               We are a performance-driven digital marketing and ecommerce growth agency helping Shopify and D2C brands scale profitably.
             </p>
-
-            <h4 className="font-medium mb-2">Contact:</h4>
-            <p className="text-gray-400 text-sm">
-              hello@nichegeeky@gmail.com
-            </p>
-            <p className="text-gray-400 text-sm mb-6">
-              +8807683674747
-            </p>
-
-            {/* Email Input + Button */}
-
+            <div>
+              <h4 className="mb-2 text-sm font-medium text-gray-200">Contact</h4>
+              <p className="text-sm text-gray-400">info@tubehelper.in</p>
+              <p className="text-sm text-gray-400">+91 9897165137</p>
+              <p className="text-sm text-gray-400">Address: 1657 Bakra market, Mohalla Tihai, --,Mawana, Meerut, Uttar Pradesh, 250401</p>
+            </div>
           </div>
 
-          {/* Column 2 */}
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li><a href="about_us">About Us</a></li>
-              <li><a href="how_it_works">Case Studies</a></li>
-              <li><a href="support">24/7 Support</a></li>              
-              <li><a href="reviews">Reviews</a></li>
-              <li>Pricing</li>
-              <li><a href="contact">Contact Us</a></li>
-              
-            </ul>
-          </div>
-
-          {/* Column 3 */}
-
-              <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li><a href="blog">Blogs</a></li>
-              <li><a href="e-commerce_tips">E-commerce Tips</a></li>
-              <li><a href="free_resources">Free Resources</a></li>
-              <li><a href="faq">FAQs</a></li>
-              <li><a href="guides">Guides</a></li>
-            </ul>
-          </div>
-
-           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li><a href="/services/performance_marketing">Performance Marketing</a></li>
-              <li><a href="/services/e-commerce_growth">E-commerce Growth</a></li>
-              <li><a href="/services/organic_growth">Organic Growth</a></li>
-              <li><a href="/services">Analytics & Operations</a></li>
-              <li><a href="/services">Speed & Conversion Rate Optimization</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4 */}
-          <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li><a href="/privacy_policy">Privacy Policy</a></li>
-              <li><a href="/terms_of_use">Terms & Conditions </a></li>
-              <li><a href="/refund_policy">Refund Policy</a></li>
-            </ul>
-          </div>
-
-          
-
+          <FooterColumn title="Company" links={quickLinks.company} />
+          <FooterColumn title="Resources" links={quickLinks.resources} />
+          <FooterColumn title="Services" links={quickLinks.services} />
+          <FooterColumn title="Legal" links={quickLinks.legal} />
         </div>
 
-           <div className="flex items-center w-[330px] mt-5 bg-white/5 border border-white/10 rounded-full p-1">
-              <input
-                type="email"
-                placeholder="Enter you email address..."
-                className="bg-transparent outline-none px-2 py-2 text-sm flex-1 text-gray-300"
-              />
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 px-2 py-2 rounded-full text-sm hover:scale-105 transition">
-                Book a Demo
-              </button>
-            </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
-
-          <p className="text-gray-500 text-sm">
-            Niche Geeky © 2025 all rights reserved.
-          </p>
-
-          {/* Social Icons */}
-          <div className="flex gap-4">
+        <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 sm:mt-12 md:flex-row md:items-center">
+          <p className="text-sm text-gray-500">TubeHelper © 2026 all rights reserved.</p>
+          <div className="flex gap-3 sm:gap-4">
             {[FaFacebookF, FaInstagram, FaTimes, FaLinkedinIn].map((Icon, i) => (
-              <div
+              <button
                 key={i}
-                className="w-10 h-10 flex items-center justify-center 
-                rounded-full border border-white/20 bg-white/5 
-                hover:bg-white/10 transition cursor-pointer"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 transition hover:bg-white/10 sm:h-10 sm:w-10"
+                aria-label="social link"
               >
                 <Icon className="text-sm" />
-              </div>
+              </button>
             ))}
           </div>
-
         </div>
-
       </div>
-    </div>
     </footer>
+  )
+}
+
+function FooterColumn({ title, links }) {
+  return (
+    <div>
+      <h4 className="mb-4 font-semibold">{title}</h4>
+      <ul className="space-y-3 text-sm text-gray-400">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link className="transition hover:text-white" href={link.href}>
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
