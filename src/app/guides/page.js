@@ -1,7 +1,14 @@
-"use client"
-
 import Link from "next/link"
 import { MoveUpRight } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Digital Marketing Guides and Resources",
+  description:
+    "Actionable guides for performance marketing, ecommerce growth, SEO, analytics, and automation.",
+  path: "/guides",
+  keywords: ["digital marketing guides", "ecommerce growth resources", "seo guide"],
+})
 
 const performanceGuides = [
   "The Complete Guide to Meta & Instagram Ads for Ecommerce Brands",

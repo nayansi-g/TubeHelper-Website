@@ -1,7 +1,14 @@
-"use client"
-
 import Image from "next/image"
 import { MoveUpRight } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "About Us - Data-Driven Growth Partners",
+  description:
+    "Learn how TubeHelper helps ecommerce and growth-focused brands scale through performance marketing, SEO, analytics, and CRO.",
+  path: "/about_us",
+  keywords: ["about TubeHelper", "digital growth agency", "data-driven marketing team"],
+})
 
 const missionPillars = ["Measurable", "Profitable", "Sustainable", "System-driven"]
 

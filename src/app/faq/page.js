@@ -1,6 +1,4 @@
-"use client"
-
-import { useState } from "react"
+import { buildMetadata } from "@/lib/seo"
 
 const faqSections = [
   {
@@ -175,13 +173,15 @@ const faqSections = [
   },
 ]
 
+export const metadata = buildMetadata({
+  title: "Digital Marketing FAQ",
+  description:
+    "Answers to common questions about TubeHelper services including performance marketing, ecommerce growth, SEO, analytics, and automation.",
+  path: "/faq",
+  keywords: ["digital marketing faq", "ecommerce marketing questions", "seo agency faq"],
+})
+
 export default function FAQPage() {
-  const [activeId, setActiveId] = useState(null)
-
-  const toggleFAQ = (id) => {
-    setActiveId((prev) => (prev === id ? null : id))
-  }
-
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px] bg-gray-100 px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
@@ -201,34 +201,23 @@ export default function FAQPage() {
             <section key={section.title} className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
               <h2 className="mb-4 text-2xl font-semibold text-gray-900">{section.title}</h2>
               <div className="space-y-3">
-                {section.questions.map((item, itemIndex) => {
-                  const id = `${sectionIndex}-${itemIndex}`
-                  const isOpen = activeId === id
-                  return (
-                    <article key={id} className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50/70">
-                      <button
-                        onClick={() => toggleFAQ(id)}
-                        className="flex w-full items-center justify-between px-4 py-4 text-left sm:px-5"
-                      >
-                        <span className="pr-4 font-medium">{item.q}</span>
-                        <span className="text-xl text-gray-600">{isOpen ? "−" : "+"}</span>
-                      </button>
-
-                      {isOpen && (
-                        <div className="px-4 pb-5 sm:px-5">
-                          {item.a && <p className="text-sm leading-relaxed text-gray-700 sm:text-base">{item.a}</p>}
-                          {item.bullets && (
-                            <ul className="mt-3 space-y-2 text-sm text-gray-700 sm:text-base">
-                              {item.bullets.map((bullet) => (
-                                <li key={bullet}>• {bullet}</li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
+                {section.questions.map((item, itemIndex) => (
+                  <details key={`${sectionIndex}-${itemIndex}`} className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50/70">
+                    <summary className="flex cursor-pointer items-center justify-between px-4 py-4 pr-12 text-left font-medium sm:px-5">
+                      {item.q}
+                    </summary>
+                    <div className="px-4 pb-5 sm:px-5">
+                      {item.a && <p className="text-sm leading-relaxed text-gray-700 sm:text-base">{item.a}</p>}
+                      {item.bullets && (
+                        <ul className="mt-3 space-y-2 text-sm text-gray-700 sm:text-base">
+                          {item.bullets.map((bullet) => (
+                            <li key={bullet}>• {bullet}</li>
+                          ))}
+                        </ul>
                       )}
-                    </article>
-                  )
-                })}
+                    </div>
+                  </details>
+                ))}
               </div>
             </section>
           ))}

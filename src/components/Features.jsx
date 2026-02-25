@@ -75,7 +75,7 @@ export default function Features() {
             <motion.div
               key={i}
               variants={fadeUp}
-              whileHover={{ y: -10 }}
+             
               whileTap={{ scale: 0.98 }}
               className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-purple-500/20 via-white/5 to-blue-500/20"
             >

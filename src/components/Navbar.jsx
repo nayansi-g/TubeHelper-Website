@@ -109,60 +109,74 @@ export default function Navbar() {
                   <h4 className="text-gray-400 mb-4 text-sm">Our Services</h4>
                   <div className="space-y-4">
                     <div>
-                      <a href="/services/performance_marketing">
-                      <h3 className="font-semibold cursor-pointer flex items-center justify-start gap-1">
+                      <a className="flex justify-start gap-1" href="/services/performance_marketing">
+                      <h3 className="font-semibold cursor-pointer ">
                         <ChartNoAxesCombined className="w-4 h-4" />
+                        {/* Performance Marketing */}
+                      </h3>
+
+                      <div> <h3 className="font-semibold cursor-pointer flex items-center justify-start gap-1">
                         Performance Marketing
                       </h3>
                       <p className="text-sm text-gray-500">Meta & Instagram Ads</p>
                       <p className="text-sm text-gray-500">Google Ads (Search & Shopping)</p>
-                      <p className="text-sm text-gray-500">YouTube Ads</p></a>
+                      <p className="text-sm text-gray-500">YouTube Ads</p></div></a>
                     </div>
 
                     <div>
-                     <a href="/services/e-commerce_growth"><h3 className="font-semibold cursor-pointer flex items-center gap-1">
+                     <a className="flex justify-start gap-1" href="/services/e-commerce_growth">
+                     <h3 className="font-semibold cursor-pointer ">
                         <ShoppingCart className="w-4 h-4" />
+                      </h3>
+                      <div>
+                         <h3 className="font-semibold cursor-pointer ">
+                       
                         Ecommerce Growth
                       </h3>
-                      <p className="text-sm text-gray-500">Shopify Growth Strategy</p>
+                        <p className="text-sm text-gray-500">Shopify Growth Strategy</p>
                       <p className="text-sm text-gray-500">Conversion Rate Optimization (CRO)</p>
-                      <p className="text-sm text-gray-500">Funnel Optimization</p></a> 
+                      <p className="text-sm text-gray-500">Funnel Optimization</p></div></a> 
                     </div>
 
                     <div>
-                      <a href="/services/organic_growth"><h3 className="font-semibold flex cursor-pointer items-center gap-1">
-                        <Sprout className="w-4 h-4" />
-                        Organic Growth
+                      <a className="flex justify-start gap-1" href="/services/organic_growth"><h3 className="font-semibold ">
+                        <Sprout className="w-4 h-4" />                      
                       </h3>
-                      <p className="text-sm text-gray-500">SEO</p>
-                      <p className="text-sm text-gray-500">Content Marketing</p></a>
+                      <div><h3 className="font-semibold ">                       
+                        Organic Growth
+                      </h3><p className="text-sm text-gray-500">SEO</p>
+                      <p className="text-sm text-gray-500">Content Marketing</p></div></a>
                     </div>
                   </div>
                 </div>
 
                 {/* Column 2 */}
                 <div>
-                  <a href="/services/analytics_&_automation"><h4 className="text-gray-400 mb-4 text-sm invisible">Our Services</h4>
+                  <a className="" href="/services/analytics_&_automation">
+                  <h4 className="text-gray-400 mb-4 text-sm invisible">Our Services</h4>
                   <div className="space-y-4">
-                    <div className="cursor-pointer">
-                      <h3 className="font-semibold flex items-center gap-1">
-                        <Cpu className="w-4 h-4" />
-                        Analytics & Automation
+                    <div className=" flex justify-start gap-1 cursor-pointer">
+                      <h3 className="font-semibold ">
+                        <Cpu className="w-4 h-4" />                       
                       </h3>
-                      <p className="text-sm text-gray-500">Tracking & GA4 Setup</p>
+
+                      <div><h3 className="font-semibold ">
+                        Analytics & Automation
+                      </h3><p className="text-sm text-gray-500">Tracking & GA4 Setup</p>
                       <p className="text-sm text-gray-500">Marketing Automation</p>
                       <p className="text-sm text-gray-500">Reporting & Dashboard Setup</p>
-                      <p className="text-sm text-gray-500">Landing Page Strategy</p>
+                      <p className="text-sm text-gray-500">Landing Page Strategy</p></div>
                     </div>
 
-                    <div className="cursor-pointer">
-                      <a href="/services/amplify_&_awareness"><h3 className="font-semibold flex items-center justify-start gap-1">
-                        <Megaphone className="w-5 h-5" />
-                        Amplify brand awareness
+                    <div  className="cursor-pointer">
+                      <a className="flex justify-start gap-1" href="/services/amplify_&_awareness"><h3 className="font-semibold">
+                        <Megaphone className="w-5 h-5" />                       
                       </h3>
-                      <p className="text-sm text-gray-500">
+                      <div><h3 className="font-semibold">                       
+                        Amplify brand awareness
+                      </h3><p className="text-sm text-gray-500">
                         Maximize reach and business results
-                      </p></a>
+                      </p></div></a>
                     </div>
                   </div></a>
                 </div>
@@ -216,10 +230,10 @@ export default function Navbar() {
             </nav>
 
             <div className="hidden items-center gap-3 lg:flex">
-              <button className="rounded-lg border p-2 text-sm transition hover:bg-gray-50">
-                <PhoneOutgoing className="h-5 w-5" />
+              <button className="rounded-full border cursor-pointer p-2 text-sm transition hover:bg-gray-50">
+                <PhoneOutgoing className="h-4 w-4" />
               </button>
-              <button className="rounded-lg bg-black px-4 py-2 text-sm text-white transition hover:opacity-90">
+              <button className="rounded-full bg-black px-5 cursor-pointer py-2 text-sm text-white transition hover:opacity-90">
                 Get Started
               </button>
             </div>

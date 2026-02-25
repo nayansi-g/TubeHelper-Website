@@ -1,5 +1,14 @@
 import Link from "next/link"
 import { MoveUpRight } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Case Studies",
+  description:
+    "Explore TubeHelper case studies showing measurable ecommerce growth, ROAS improvements, and conversion gains.",
+  path: "/how_it_works",
+  keywords: ["digital marketing case studies", "ecommerce case studies", "ROAS growth examples"],
+})
 
 const caseStudies = [
   {

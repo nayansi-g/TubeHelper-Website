@@ -1,5 +1,14 @@
 import Link from "next/link"
 import { MoveUpRight } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "E-commerce Growth Tips",
+  description:
+    "Data-driven ecommerce tips to increase conversion rates, improve retention, and scale online store revenue.",
+  path: "/e-commerce_tips",
+  keywords: ["ecommerce tips", "shopify conversion optimization", "ecommerce growth strategy"],
+})
 
 const introPoints = [
   "High-converting traffic",

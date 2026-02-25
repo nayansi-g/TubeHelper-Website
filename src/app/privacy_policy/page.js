@@ -1,3 +1,12 @@
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Privacy Policy",
+  description: "Read TubeHelper's privacy policy for how we collect, process, and protect your information.",
+  path: "/privacy_policy",
+  keywords: ["privacy policy", "data protection", "tubehelper privacy"],
+})
+
 export default function PrivacyPolicyPage() {
   const sections = [
     {

@@ -1,8 +1,15 @@
-"use client"
-
 import Image from "next/image"
 import { MoveUpRight, PhoneIncoming } from "lucide-react"
-import { useState } from "react"
+import FAQAccordionClient from "@/components/FAQAccordionClient"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Performance Marketing Services",
+  description:
+    "Scale profitably with TubeHelper performance marketing services across Meta, Google, and YouTube.",
+  path: "/services/performance_marketing",
+  keywords: ["performance marketing services", "meta ads agency", "google ads ecommerce"],
+})
 
 const trustPoints = [
   "Data-first paid media strategy",
@@ -105,8 +112,6 @@ const faqs = [
 ]
 
 export default function PerformanceMarketingPage() {
-  const [activeFaq, setActiveFaq] = useState(-1)
-
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px] bg-[#dff3ef] pb-14 pt-24 md:rounded-b-[80px] md:pb-20 md:pt-28">
@@ -227,7 +232,7 @@ export default function PerformanceMarketingPage() {
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {results.map((result) => (
-              <div key={result} className="rounded-xl bg-gray-50 px-4 py-3 text-center text-sm text-gray-700">
+              <div key={result} className="rounded-xl bg-gray-50  py-2 text-center text-sm  text-gray-800">
                 {result}
               </div>
             ))}
@@ -240,22 +245,7 @@ export default function PerformanceMarketingPage() {
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <div className="mt-10 space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={faq.question} className="rounded-2xl border border-gray-200 bg-white">
-                <button
-                  onClick={() => setActiveFaq(activeFaq === index ? -1 : index)}
-                  className="flex w-full items-center justify-between px-5 py-4 text-left"
-                >
-                  <span className="font-medium text-gray-900">{faq.question}</span>
-                  <span className="text-2xl text-gray-500">{activeFaq === index ? "−" : "+"}</span>
-                </button>
-                {activeFaq === index && (
-                  <p className="px-5 pb-5 text-sm leading-relaxed text-gray-700">{faq.answer}</p>
-                )}
-              </div>
-            ))}
-          </div>
+          <FAQAccordionClient faqs={faqs} />
         </div>
       </section>
 

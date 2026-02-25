@@ -22,7 +22,7 @@ export default function ContactPopup() {
   });
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 1000);
+    const timer = setTimeout(() => setIsOpen(true), 4000);
     return () => clearTimeout(timer);
   }, []);
 

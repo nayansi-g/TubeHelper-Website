@@ -1,3 +1,12 @@
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Refund Policy",
+  description: "Understand TubeHelper's refund policy for service fees, billing cycles, and cancellation terms.",
+  path: "/refund_policy",
+  keywords: ["refund policy", "service refunds", "tubehelper refund terms"],
+})
+
 export default function RefundPolicyPage() {
   const sections = [
     {

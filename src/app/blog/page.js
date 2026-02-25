@@ -1,6 +1,15 @@
 import Link from "next/link"
 import { MoveUpRight } from "lucide-react"
 import blogData from "../../../Blog.json"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Digital Marketing Blog",
+  description:
+    "Read TubeHelper blogs on ecommerce growth, performance marketing, SEO, analytics, and conversion optimization.",
+  path: "/blog",
+  keywords: ["digital marketing blog", "ecommerce blog", "performance marketing blog"],
+})
 
 const formatDate = (dateString) =>
   new Intl.DateTimeFormat("en-US", {

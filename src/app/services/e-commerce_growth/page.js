@@ -1,8 +1,15 @@
-"use client"
-
 import Image from "next/image"
 import { MoveUpRight, PhoneIncoming } from "lucide-react"
-import { useState } from "react"
+import FAQAccordionClient from "@/components/FAQAccordionClient"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Ecommerce Growth Services",
+  description:
+    "Improve conversion rates, optimize funnels, and scale ecommerce profitability with TubeHelper growth systems.",
+  path: "/services/e-commerce_growth",
+  keywords: ["ecommerce growth services", "shopify cro", "funnel optimization ecommerce"],
+})
 
 const growthPillars = [
   "Higher Conversion Rate",
@@ -114,8 +121,6 @@ const faqs = [
 ]
 
 export default function EcommerceGrowthPage() {
-  const [activeFaq, setActiveFaq] = useState(-1)
-
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px] bg-[#A1C2F8] pb-14 pt-24 md:rounded-b-[80px] md:pb-20 md:pt-28">
@@ -249,22 +254,7 @@ export default function EcommerceGrowthPage() {
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
             Ecommerce Growth FAQs
           </h2>
-          <div className="mt-10 space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={faq.question} className="rounded-2xl border border-gray-200 bg-white">
-                <button
-                  onClick={() => setActiveFaq(activeFaq === index ? -1 : index)}
-                  className="flex w-full items-center justify-between px-5 py-4 text-left"
-                >
-                  <span className="font-medium text-gray-900">{faq.question}</span>
-                  <span className="text-2xl text-gray-500">{activeFaq === index ? "−" : "+"}</span>
-                </button>
-                {activeFaq === index && (
-                  <p className="px-5 pb-5 text-sm leading-relaxed text-gray-700">{faq.answer}</p>
-                )}
-              </div>
-            ))}
-          </div>
+          <FAQAccordionClient faqs={faqs} />
         </div>
       </section>
 

@@ -1,3 +1,5 @@
+ "use client";
+
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -57,7 +59,7 @@ const Card = () => {
           {duplicated.map((item, index) => (
             <div className="card" key={index}>
               <div className="stars">★★★★★</div>
-              <p className="review">"{item.review}"</p>
+              <p className="review">&quot;{item.review}&quot;</p>
               <div className="client">
                 <strong>{item.name}</strong>
                 <span>{item.company}</span>

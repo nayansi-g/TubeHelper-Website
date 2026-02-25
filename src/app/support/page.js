@@ -1,7 +1,14 @@
-"use client"
-
-import { useState } from "react"
 import { MoveUpRight } from "lucide-react"
+import FAQAccordionClient from "@/components/FAQAccordionClient"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "24/7 Marketing Support",
+  description:
+    "Get 24/7 digital marketing support for paid ads, tracking, automation, and ecommerce growth systems.",
+  path: "/support",
+  keywords: ["24/7 marketing support", "GA4 support", "ad campaign troubleshooting"],
+})
 
 const supportCovers = [
   "Performance marketing campaign monitoring",
@@ -121,8 +128,6 @@ function CardList({ items }) {
 }
 
 export default function SupportPage() {
-  const [activeFaq, setActiveFaq] = useState(-1)
-
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px] bg-[#E6E6FA] px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
@@ -220,20 +225,9 @@ export default function SupportPage() {
 
           <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
             <h2 className="text-2xl font-semibold md:text-3xl">FAQ</h2>
-            <div className="mt-5 space-y-3">
-              {faqs.map((faq, index) => (
-                <article key={faq.q} className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
-                  <button
-                    onClick={() => setActiveFaq(activeFaq === index ? -1 : index)}
-                    className="flex w-full items-center justify-between px-4 py-4 text-left"
-                  >
-                    <span className="pr-4 font-medium">{faq.q}</span>
-                    <span className="text-xl text-gray-600">{activeFaq === index ? "−" : "+"}</span>
-                  </button>
-                  {activeFaq === index && <p className="px-4 pb-4 text-sm text-gray-700">{faq.a}</p>}
-                </article>
-              ))}
-            </div>
+            <FAQAccordionClient
+              faqs={faqs.map((faq) => ({ question: faq.q, answer: faq.a }))}
+            />
           </section>
         </div>
       </section>
