@@ -112,7 +112,8 @@ function VideoPlayer() {
         ref={videoRef}
         className="h-full w-full rounded-2xl object-cover"
         src="/heroVideo.mp4"
-        loop
+        
+        autoPlay
       />
 
       {/* Play/Pause Button */}
