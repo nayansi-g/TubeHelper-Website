@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 
 const features = [
   {
-    title: "Smarter Decisions, Backed by Real Data",
-    desc: "We don’t rely on assumptions. Every campaign is guided by analytics, user behavior insights, and performance metrics to maximize ROI and eliminate wasted spend.",
+    title: "Smarter Decisions, Backed by Data",
+    desc: "Every campaign is guided by performance metrics to eliminate wasted spend.",
   },
   {
     title: "From Click to Conversion — Optimized",
-    desc: "We optimize every stage of your customer journey — from ad creatives to landing pages and checkout — so no opportunity is lost.",
+    desc:"We improve every stage of the customer journey to increase revenue."
   },
   {
-    title: "Scroll-Stopping Creative That Sells",
-    desc: "Our creatives are built using proven hooks, audience psychology, and continuous testing to improve CTR, reduce CPA, and increase conversions.",
+    title: "Creative That Converts",
+    desc:"Structured creative testing designed to lower CPA and improve ROAS."
   },
   {
-    title: "No Guesswork. No Hidden Numbers.",
-    desc: "You get clear, honest reporting with insights that actually matter — revenue, customer acquisition cost, lifetime value — not vanity metrics.",
+    title: "No Hidden Numbers",
+    desc: "You see real business metrics — revenue, CAC, LTV, and profit."
   },
   {
     title: "Built to Scale With You",
-    desc: "We create repeatable growth systems that support your brand as it grows — ensuring stability while increasing ad spend and revenue.",
+    desc: "We create repeatable systems that support long-term growth."
   },
   {
     title: "More Than an Agency — A Growth Partner",
-    desc: "We work closely with your team, understand your margins and goals, and make proactive recommendations to help you grow sustainably.",
+    desc: "We work closely with your team to build sustainable, profitable scale"
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Features() {
           className="text-center text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-16"
         >
           <span className="bg-gradient-to-r from-purple-400 via-white to-blue-400 bg-clip-text text-transparent">
-            Built for Brands That Want to Scale
+            Built For Brands That Want To Scale
           </span>
         </motion.h2>
 

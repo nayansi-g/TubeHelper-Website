@@ -21,11 +21,10 @@ export default function WhyChooseUs() {
           {/* Section Title */}
           <div>
             <h2 className="bg-gradient-to-r from-purple-400 via-white to-blue-400 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl lg:text-5xl">
-              Why Choose Us?
+             WHY CHOOSE US?
             </h2>
             <p className="mt-4 max-w-xl text-gray-400">
-              We don’t just execute campaigns — we build growth systems designed for sustainable profitability.
-            </p>
+We don’t just run ads — we build profitable growth systems.            </p>
           </div>
 
           {/* Points */}
@@ -34,55 +33,50 @@ export default function WhyChooseUs() {
             {/* Point 1 */}
             <div>
               <h3 className="text-xl font-semibold text-gray-200">
-                We Care About Profit — Not Just Performance
+               Profit Over Vanity Metrics
               </h3>
               <p className="mt-2 text-gray-400">
-                Anyone can get you clicks. We focus on revenue, margins, and long-term growth — 
-                because traffic without profit is just noise.
+                We focus on revenue, margins, CAC, ROAS, and LTV — not impressions or clicks.
               </p>
             </div>
 
             {/* Point 2 */}
             <div>
               <h3 className="text-xl font-semibold text-gray-200">
-                No Guesswork. No Vanity Metrics.
+                Clear Data. Clear Decisions.
               </h3>
               <p className="mt-2 text-gray-400">
-                Every decision we make is backed by data, testing, and clear reporting. 
-                You’ll always know what’s working — and why.
+              Every strategy is backed by real performance data and structured testing.
               </p>
             </div>
 
             {/* Point 3 */}
             <div>
               <h3 className="text-xl font-semibold text-gray-200">
-                We Think Like Growth Partners
+                Systems, Not Campaigns
               </h3>
               <p className="mt-2 text-gray-400">
-                We don’t “run ads.” We understand your business model, your margins, 
-                your audience, and your bottlenecks — then build systems that scale sustainably.
+                We fix funnels, retention, and tracking — not just ad performance.
               </p>
             </div>
 
             {/* Point 4 */}
             <div>
               <h3 className="text-xl font-semibold text-gray-200">
-                Speed + Strategy
+                Strategy First. Then Scale.
               </h3>
               <p className="mt-2 text-gray-400">
-                Execution matters. But direction matters more. We move fast — 
-                without breaking what’s already working.
+               We build a solid foundation before increasing spend.
               </p>
             </div>
 
             {/* Point 5 */}
             <div>
               <h3 className="text-xl font-semibold text-gray-200">
-                Transparent Communication
+                Transparent Partnership
               </h3>
               <p className="mt-2 text-gray-400">
-                No jargon. No hidden tactics. Just clear updates, real conversations, and shared goals.
-              </p>
+Clear reporting. Honest communication. No hidden tactics.              </p>
             </div>
 
           </div>

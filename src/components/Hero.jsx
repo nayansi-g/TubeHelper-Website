@@ -15,7 +15,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="mx-auto max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl lg:mx-0 lg:text-5xl"
           >
-            Scaling Your Business Shouldn&apos;t Feel Like Guesswork.
+            Scaling Your Ecommerce Brand Shouldn’t Feel Like Guesswork.
+
           </motion.h1>
 
           <motion.p
@@ -24,7 +25,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mx-auto mt-5 max-w-xl text-base text-gray-300 sm:text-lg lg:mx-0"
           >
-            We combine performance marketing, creative strategy, and real analytics to help you grow faster without wasting budget.
+           We build data-driven marketing systems that increase revenue — without wasting ad spend.
           </motion.p>
 
           <motion.div
@@ -34,14 +35,14 @@ export default function Hero() {
             className="mt-9 flex flex-wrap justify-center gap-4 lg:justify-start"
           >
             <button className="inline-flex items-center rounded-full border border-white/20 bg-white/10 p-1 pr-4 text-sm backdrop-blur-md transition hover:bg-white/15">
-              <span className="mr-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10">
+              <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10">
                 <FaWhatsapp className="text-lg text-white" />
               </span>
-              Get Free Growth Audit
+              Chat Now
             </button>
 
             <button className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-sm font-medium text-white shadow-lg transition hover:opacity-90">
-              View Case Studies
+              Book Free Strategy Call
               <MoveUpRight className="h-4 w-4" />
             </button>
           </motion.div>

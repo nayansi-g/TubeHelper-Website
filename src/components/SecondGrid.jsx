@@ -4,42 +4,33 @@ import { motion } from "framer-motion"
 
 const services = [
   {
-    title: "Performance Marketing That Scales Profit — Not Just Spend",
-    description:
-      "We build full-funnel paid media systems designed to maximize ROAS and lower acquisition costs — across Meta, Google, and YouTube.",
+    title: "Acquire Profitably",
+    description:"Structured paid acquisition that increases ROAS and lowers CAC.",
     image: "/performance.jpg",
     points: [
-      "Paid Media Strategy & Funnel Mapping",
-      "Meta & Instagram Ads",
-      "Google Search, Shopping & Display",
-      "Budget Scaling & ROAS Optimization",
-      "Creative Testing Framework",
+      "Meta & Google ads",
+      "⁠Creative testing frameworks",
+      " ⁠Budget scaling with margin control",
     ],
   },
   {
-    title: "Turn More Visitors Into Paying Customers",
-    description:
-      "We analyze user behavior and optimize every touchpoint of your funnel to increase conversion rates and average order value.",
+    title: "Convert More",
+    description:"Optimize your funnel to turn traffic into higher revenue.",
     image: "/CRO.png",
     points: [
-      "Heatmaps & Behavior Analysis",
-      "Landing Page Optimization",
-      "A/B Testing",
-      "Funnel Drop-Off Analysis",
-      "Checkout Optimization",
+      "⁠Landing page & checkout optimization",
+      "⁠A/B testing",
+      "⁠AOV improvement systems"
     ],
   },
   {
-    title: "Built for Shopify Brands Ready to Scale",
-    description:
-      "We help D2C and ecommerce brands build sustainable growth engines using performance marketing, retention, and automation.",
+    title: "⁠ ⁠Retain & Scale",
+    description:"Build backend systems that increase LTV and stabilize growth.",
     image: "/Builtforshopify.jpg",
     points: [
-      "Shopify Store Audits",
-      "Retargeting & Lifecycle Campaigns",
-      "Upsell & Cross-Sell Optimization",
-      "Subscription & Repeat Purchase Strategy",
-      "Email & SMS Automation",
+      "Email & SMS automation",
+      "⁠Retargeting & lifecycle campaigns",
+      "⁠Tracking & performance dashboards",
     ],
   },
   {
@@ -65,10 +56,10 @@ export default function ServicesCards() {
 
           <div className="mx-auto max-w-3xl space-y-4 text-center">
             <h2 className="text-3xl font-semibold tracking-tight text-black md:text-4xl">
-              Our Services
+              OUR SERVICES
             </h2>
             <p className="text-base text-gray-600 md:text-lg">
-              Performance-driven growth systems built to scale modern ecommerce brands.
+              We build revenue systems for ecommerce brands ready to scale.
             </p>
           </div>
 
