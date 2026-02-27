@@ -6,7 +6,7 @@ const services = [
   {
     title: "Acquire Profitably",
     description:"Structured paid acquisition that increases ROAS and lowers CAC.",
-    image: "services1.jpg",
+    image: "/Services1.jpg",
     points: [
       "Meta & Google ads",
       "⁠Creative testing frameworks",
@@ -16,7 +16,7 @@ const services = [
   {
     title: "Convert More",
     description:"Optimize your funnel to turn traffic into higher revenue.",
-    image: "services2.jpg",
+    image: "/Services2.jpg",
     points: [
       "⁠Landing page & checkout optimization",
       "⁠A/B testing",
@@ -26,7 +26,7 @@ const services = [
   {
     title: "⁠ ⁠Retain & Scale",
     description:"Build backend systems that increase LTV and stabilize growth.",
-    image: "services3.jpg",
+    image: "/Services3.jpg",
     points: [
       "Email & SMS automation",
       "⁠Retargeting & lifecycle campaigns",
@@ -36,7 +36,7 @@ const services = [
   {
     title: "Track & Optimize",
     description:"Clear data infrastructure that supports confident scaling.",
-    image: "services4.jpg",
+    image: "/Services4.jpg",
     points: [
       "GA4 & conversion tracking ",
       "Server-side tracking",
