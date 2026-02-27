@@ -163,7 +163,7 @@ export default function ContactPage() {
                 className="w-full appearance-none rounded-xl border border-gray-300 bg-white p-3 pr-10 text-gray-900 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
               >
                 <option value="" disabled>
-                  Select Service
+                  Select Budget
                 </option>
                 {serviceOptions.map((option) => (
                   <option key={option} value={option}>
