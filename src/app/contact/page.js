@@ -114,7 +114,6 @@ export default function ContactPage() {
             <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
               <h3 className="text-xl font-semibold">Prefer to Reach Us Directly?</h3>
               <div className="mt-4 space-y-2 text-gray-700">
-                <p>📧 info@tubehelper.in</p>
                 <p>📧 connect@tubehelper.in</p>
                 <p>📞 +91 9897165137</p>
               </div>
@@ -131,7 +130,11 @@ export default function ContactPage() {
 
             <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
               <h3 className="text-xl font-semibold">Location</h3>
-              <p className="mt-3 text-gray-700">Serving clients globally</p>
+              <p className="mt-3 text-gray-700">
+                A-83, First Floor, Sector 63, Noida
+                <br />
+                Nearest metro station is Sector 62
+              </p>
             </div>
           </section>
         </div>

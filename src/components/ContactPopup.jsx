@@ -11,7 +11,7 @@ const SCRIPT_URL =
   const serviceOptions = [
   "$1000 - $2000",
   "$2000 - $3000",
-  "$3000 - $3000",
+  "$3000 - $4000",
   "$4000 - $5000",
 ]
 
@@ -92,6 +92,9 @@ export default function ContactPopup() {
             </h2>
             <p className="mt-1 text-sm text-gray-600">
               Fill this quick form and our team will connect with you.
+            </p>
+            <p className="mt-2 text-xs text-gray-600">
+              contact@tubehelper.in | +91 9897165137
             </p>
           </div>
           <button

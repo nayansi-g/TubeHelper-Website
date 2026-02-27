@@ -106,7 +106,7 @@ function TagGrid({ items }) {
   return (
     <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
-        <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+        <div key={item} className=" bg-gray-50 px-2 flex justify-center items-center text-sm text-gray-800 md:text-base">
           {item}
         </div>
       ))}
@@ -117,7 +117,7 @@ function TagGrid({ items }) {
 export default function AboutPage() {
   return (
     <main className="bg-white text-gray-900">
-      <section className="rounded-b-[50px] bg-[#FFE0F0] px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+      <section className="rounded-b-[50px]  px-4 bg-black py-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
          <div className="relative mx-auto max-w-4xl">
 
     {/* Small Label */}
@@ -126,13 +126,13 @@ export default function AboutPage() {
     </p> */}
 
     {/* Main Headline */}
-    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-200">
       Revenue System Partners for{" "}
-      <span className="text-black">Scaling Ecommerce Brands</span>
+      <span className="text-gray-200">Scaling Ecommerce Brands</span>
     </h1>
 
     {/* Description */}
-    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-700 leading-relaxed">
+    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500 leading-relaxed">
       TubeHelper helps established ecommerce and D2C brands build predictable,
       profitable growth systems. We don’t just run ads. We build the infrastructure that allows brands
       to scale without breaking their margins.
@@ -140,7 +140,7 @@ export default function AboutPage() {
 
     {/* CTA */}
     <div className="mt-8">
-      <button className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+      <button className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-800 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
         Book a Strategy Call
         <MoveUpRight className="h-4 w-4" />
       </button>
@@ -151,9 +151,19 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
         <div className="space-y-8">
+
           <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
             <div className="grid items-center gap-8 lg:grid-cols-2">
-              <div>
+               <div>
+                <Image
+                  src="/about_us1.jpg"
+                  alt="Marketing team discussing performance dashboards"
+                  width={900}
+                  height={620}
+                  className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
+                />
+              </div>
+              <div className="">
                 <h2 className="text-2xl font-semibold md:text-3xl">OUR MISSION</h2>
                 <p className="mt-4 text-gray-700">
                   Our mission is simple: Replace guesswork with structured, system-driven growth.</p>
@@ -164,43 +174,7 @@ Too many brands scale revenue but lose control of profitability. Rising CAC, wea
                 <p className="mt-5 text-gray-700">
 Growth should not depend on aggressive ad spend.It should depend on strong systems. </p>
               </div>
-              <div>
-                <Image
-                  src="/About1.jpg"
-                  alt="Marketing team discussing performance dashboards"
-                  width={900}
-                  height={620}
-                  className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
-                />
-              </div>
-            </div>
-          </section>
-
-          <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
-            <div className="grid items-center gap-8 lg:grid-cols-2">
-              <div className="order-2 lg:order-1">
-                <Image
-                  src="/About2.jpg"
-                  alt="Growth strategy planning session"
-                  width={900}
-                  height={620}
-                  className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
-                />
-              </div>
-              <div className="order-1 lg:order-2">
-                <h2 className="text-2xl font-semibold md:text-3xl">WHAT MAKES US DIFFERENT</h2>
-                <p className="mt-2 text-lg text-gray-700">
-                  Most agencies focus on execution. We focus on infrastructure.
-                </p>
-                <p className="mt-4 text-gray-700">
-                  Instead of isolated campaigns, we build:
-                </p>
-                <TagGrid items={specializations} />
-                {/* <p className="mt-5 text-gray-700">
-                  Unlike traditional agencies, we focus on the entire customer journey from first impression to repeat purchase.
-                </p> */}
-                <p className="mt-2 text-gray-700 font-medium">We don’t chase clicks. We engineer revenue systems</p>
-              </div>
+             
             </div>
           </section>
 
@@ -227,6 +201,34 @@ Every decision is backed by data, performance analysis, and long-term profitabil
                   height={620}
                   className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
                 />
+              </div>
+            </div>
+          </section>
+
+           <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+            <div className="grid items-center gap-8 lg:grid-cols-2">
+              <div className="order-2 lg:order-1">
+                <Image
+                  src="/About2.jpg"
+                  alt="Growth strategy planning session"
+                  width={900}
+                  height={620}
+                  className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
+                />
+              </div>
+              <div className="order-1 lg:order-2">
+                <h2 className="text-2xl font-semibold md:text-3xl">WHAT MAKES US DIFFERENT</h2>
+                <p className="mt-2 text-lg text-gray-700">
+                  Most agencies focus on execution. We focus on infrastructure.
+                </p>
+                <p className="mt-4 text-gray-700">
+                  Instead of isolated campaigns, we build:
+                </p>
+                <TagGrid items={specializations} />
+                {/* <p className="mt-5 text-gray-700">
+                  Unlike traditional agencies, we focus on the entire customer journey from first impression to repeat purchase.
+                </p> */}
+                <p className="mt-2 text-gray-700 font-medium">We don’t chase clicks. We engineer revenue systems</p>
               </div>
             </div>
           </section>

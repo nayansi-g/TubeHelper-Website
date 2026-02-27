@@ -59,11 +59,11 @@ export default function CTASection() {
           {/* Shine Effect */}
           <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></span>
 
-          <div className="w-full px-5 py-2 rounded-full 
+         <a href="tel:+919897165137"> <div className="w-full px-5 py-2 rounded-full 
                 bg-gradient-to-r from-purple-600 to-pink-600 
                 text-white text-sm font-medium flex items-center ">
-                  Book Your Free Strategy Call <MoveUpRight className="w-4 h-4 ml-2" />
-                </div>
+                 Book Your Free Strategy Call <MoveUpRight className="w-4 h-4 ml-2" />
+                </div></a>
         </button>
       </div>
 

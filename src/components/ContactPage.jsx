@@ -6,7 +6,7 @@ import { useState } from "react";
 const serviceOptions = [
   "$1000 - $2000",
   "$2000 - $3000",
-  "$3000 - $3000",
+  "$3000 - $4000",
   "$4000 - $5000",
 ]
 
@@ -104,6 +104,13 @@ export default function ContactPage() {
             Fill out the form and our growth team will get back to you
             within 24 hours.
           </p>
+
+          <div className="mt-4 text-sm text-gray-600 space-y-1">
+            <p>Email: contact@tubehelper.in</p>
+            <p>Phone: +91 9897165137</p>
+            <p>Address: A-83, First Floor, Sector 63, Noida</p>
+            <p>Nearest metro station is Sector 62</p>
+          </div>
         </div>
 
         {/* RIGHT SIDE - FORM */}

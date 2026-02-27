@@ -227,13 +227,13 @@ export default function FAQPage() {
       <section className="bg-gradient-to-br from-gray-300 via-white to-gray-300 px-4 py-16 text-center sm:px-6 md:py-20">
         <h2 className="text-3xl font-semibold">Still Have Questions?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
-          Reach out to us at info@tubehelper.in or connect@tubehelper.in, or call +91 9897165137.
+          Reach out to us at contact@tubehelper.in, call +91 9897165137, or visit A-83, First Floor, Sector 63, Noida (Nearest metro station is Sector 62).
         </p>
         <a
-          href="/contact"
+           href="tel:+919897165137"
           className="mt-7 inline-block rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
         >
-          Contact Us
+          Call Now
         </a>
       </section>
     </main>

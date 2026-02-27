@@ -67,10 +67,10 @@ export default function RefundPolicyPage() {
     {
       title: "10. Contact Details",
       contact: [
-        "Email: info@tubehelper.in",
-        "Email: connect@tubehelper.in",
+        "Email: contact@tubehelper.in",
         "Phone: +91 9897165137",
-        "Address: 1657 Bakra market, Mohalla Tihai, --,Mawana, Meerut, Uttar Pradesh, 250401",
+        "Address: A-83, First Floor, Sector 63, Noida",
+        "Nearest metro station is Sector 62",
       ],
     },
     {

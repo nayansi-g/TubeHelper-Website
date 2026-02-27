@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import {
   ChartNoAxesCombined,
   ChevronDown,
@@ -11,7 +12,6 @@ import {
   PhoneOutgoing,
   ShoppingCart,
   Sprout,
-  SquareMenu,
   X,
 } from "lucide-react"
 
@@ -51,12 +51,13 @@ const serviceItems = [
 const resources = [
   { href: "/contact", label: "Contact" },
   { href: "/blog", label: "Blog" },
-  { href: "/how_it_works", label: "Case Studies" },
+  // { href: "/how_it_works", label: "Case Studies" },
   { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },
 ]
 
 export default function Navbar() {
+  const pathname = usePathname()
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
@@ -66,6 +67,18 @@ export default function Navbar() {
   const servicesRef = useRef(null)
   const resourcesRef = useRef(null)
   const mobileRef = useRef(null)
+
+  const closeAllMenus = () => {
+    setIsServicesOpen(false)
+    setIsResourcesOpen(false)
+    setIsMobileOpen(false)
+    setIsMobileServicesOpen(false)
+    setIsMobileResourcesOpen(false)
+  }
+
+  const isActive = (href) => pathname === href
+  const isServicesActive = pathname.startsWith("/services")
+  const isResourcesActive = resources.some((item) => pathname === item.href)
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -88,7 +101,7 @@ export default function Navbar() {
             </Link>
 
             <nav className="relative hidden items-center gap-8 text-sm font-medium lg:flex">
-              <Link href="/" className="transition hover:text-purple-600">Home</Link>
+              <Link href="/" className={`transition hover:text-purple-600 ${isActive("/") ? "text-purple-600" : ""}`}>Home</Link>
 
               <div ref={servicesRef} className="relative">
                 <button
@@ -96,7 +109,7 @@ export default function Navbar() {
                     setIsServicesOpen((v) => !v)
                     setIsResourcesOpen(false)
                   }}
-                  className="flex items-center gap-1 transition hover:text-purple-600"
+                  className={`flex items-center gap-1 transition hover:text-purple-600 ${isServicesActive ? "text-purple-600" : ""}`}
                 >
                   Services <ChevronDown size={16} className={isServicesOpen ? "rotate-180 transition" : "transition"} />
                 </button>
@@ -109,7 +122,7 @@ export default function Navbar() {
                   <h4 className="text-gray-400 mb-4 text-sm">Our Services</h4>
                   <div className="space-y-4">
                     <div>
-                      <a className="flex justify-start gap-1" href="/services/performance_marketing">
+                      <Link onClick={closeAllMenus} className="flex justify-start gap-1" href="/services/performance_marketing">
                       <h3 className="font-semibold cursor-pointer ">
                         <ChartNoAxesCombined className="w-4 h-4" />
                         {/* Performance Marketing */}
@@ -120,11 +133,11 @@ export default function Navbar() {
                       </h3>
                       <p className="text-sm text-gray-500">Meta & Instagram Ads</p>
                       <p className="text-sm text-gray-500">Google Ads (Search & Shopping)</p>
-                      <p className="text-sm text-gray-500">YouTube Ads</p></div></a>
+                      <p className="text-sm text-gray-500">YouTube Ads</p></div></Link>
                     </div>
 
                     <div>
-                     <a className="flex justify-start gap-1" href="/services/e-commerce_growth">
+                     <Link onClick={closeAllMenus} className="flex justify-start gap-1" href="/services/e-commerce_growth">
                      <h3 className="font-semibold cursor-pointer ">
                         <ShoppingCart className="w-4 h-4" />
                       </h3>
@@ -135,27 +148,26 @@ export default function Navbar() {
                       </h3>
                         <p className="text-sm text-gray-500">Shopify Growth Strategy</p>
                       <p className="text-sm text-gray-500">Conversion Rate Optimization (CRO)</p>
-                      <p className="text-sm text-gray-500">Funnel Optimization</p></div></a> 
+                      <p className="text-sm text-gray-500">Funnel Optimization</p></div></Link> 
                     </div>
 
                     <div>
-                      <a className="flex justify-start gap-1" href="/services/organic_growth"><h3 className="font-semibold ">
+                      <Link onClick={closeAllMenus} className="flex justify-start gap-1" href="/services/organic_growth"><h3 className="font-semibold ">
                         <Sprout className="w-4 h-4" />                      
                       </h3>
                       <div><h3 className="font-semibold ">                       
                         Organic Growth
                       </h3><p className="text-sm text-gray-500">SEO</p>
-                      <p className="text-sm text-gray-500">Content Marketing</p></div></a>
+                      <p className="text-sm text-gray-500">Content Marketing</p></div></Link>
                     </div>
                   </div>
                 </div>
 
                 {/* Column 2 */}
                 <div>
-                  <a className="" href="/services/analytics_&_automation">
                   <h4 className="text-gray-400 mb-4 text-sm invisible">Our Services</h4>
                   <div className="space-y-4">
-                    <div className=" flex justify-start gap-1 cursor-pointer">
+                    <Link onClick={closeAllMenus} className="flex justify-start gap-1 cursor-pointer" href="/services/analytics_&_automation">
                       <h3 className="font-semibold ">
                         <Cpu className="w-4 h-4" />                       
                       </h3>
@@ -166,19 +178,19 @@ export default function Navbar() {
                       <p className="text-sm text-gray-500">Marketing Automation</p>
                       <p className="text-sm text-gray-500">Reporting & Dashboard Setup</p>
                       <p className="text-sm text-gray-500">Landing Page Strategy</p></div>
-                    </div>
+                    </Link>
 
                     <div  className="cursor-pointer">
-                      <a className="flex justify-start gap-1" href="/services/amplify_&_awareness"><h3 className="font-semibold">
+                      <Link onClick={closeAllMenus} className="flex justify-start gap-1" href="/services/amplify_&_awareness"><h3 className="font-semibold">
                         <Megaphone className="w-5 h-5" />                       
                       </h3>
                       <div><h3 className="font-semibold">                       
                         Amplify brand awareness
                       </h3><p className="text-sm text-gray-500">
                         Maximize reach and business results
-                      </p></div></a>
+                      </p></div></Link>
                     </div>
-                  </div></a>
+                  </div>
                 </div>
 
                 {/* Column 3 */}
@@ -201,8 +213,8 @@ export default function Navbar() {
                 )}
               </div>
 
-              <Link href="/how_it_works" className="transition hover:text-purple-600">Case Studies</Link>
-              <Link href="/about_us" className="transition hover:text-purple-600">About Us</Link>
+              <Link href="/how_it_works" className={`transition hover:text-purple-600 ${isActive("/how_it_works") ? "text-purple-600" : ""}`}>Case Studies</Link>
+              <Link href="/about_us" className={`transition hover:text-purple-600 ${isActive("/about_us") ? "text-purple-600" : ""}`}>About Us</Link>
 
               <div ref={resourcesRef} className="relative">
                 <button
@@ -210,7 +222,7 @@ export default function Navbar() {
                     setIsResourcesOpen((v) => !v)
                     setIsServicesOpen(false)
                   }}
-                  className="flex items-center gap-1 transition hover:text-purple-600"
+                  className={`flex items-center gap-1 transition hover:text-purple-600 ${isResourcesActive ? "text-purple-600" : ""}`}
                 >
                   Resources <ChevronDown size={16} className={isResourcesOpen ? "rotate-180 transition" : "transition"} />
                 </button>
@@ -219,7 +231,12 @@ export default function Navbar() {
                   <div className="absolute left-0 top-13 z-50 w-52 rounded-xl border border-gray-200 bg-white p-4 shadow-xl">
                     <div className="space-y-2 text-sm">
                       {resources.map((item) => (
-                        <Link key={item.href} href={item.href} className="block rounded-md px-2 py-1 text-gray-700 transition hover:bg-purple-50 hover:text-purple-600">
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={closeAllMenus}
+                          className={`block rounded-md px-2 py-1 text-gray-700 transition hover:bg-purple-50 hover:text-purple-600 ${isActive(item.href) ? "bg-purple-50 text-purple-600" : ""}`}
+                        >
                           {item.label}
                         </Link>
                       ))}
@@ -230,12 +247,12 @@ export default function Navbar() {
             </nav>
 
             <div className="hidden items-center gap-3 lg:flex">
-              <button className="rounded-full border cursor-pointer p-2 text-sm transition hover:bg-gray-50">
+             <a href="tel:+919897165137"><button className="rounded-full border cursor-pointer p-2 text-sm transition hover:bg-gray-50">
                 <PhoneOutgoing className="h-4 w-4" />
-              </button>
-              <button className="rounded-full bg-black px-5 cursor-pointer py-2 text-sm text-white transition hover:opacity-90">
+              </button></a> 
+             <a href="/contact"> <button className="rounded-full bg-black px-5 cursor-pointer py-2 text-sm text-white transition hover:opacity-90">
                 Get Started
-              </button>
+              </button></a>
             </div>
 
             <button
@@ -253,9 +270,9 @@ export default function Navbar() {
         <div className="px-3 pt-2 sm:px-4 md:px-6 lg:hidden">
           <div ref={mobileRef} className="mx-auto w-full max-w-[95rem] rounded-2xl border border-gray-200 bg-white p-4 shadow-lg">
             <div className="space-y-3 text-sm">
-              <Link href="/" className="block rounded-md px-2 py-2">Home</Link>
-              <Link href="/how_it_works" className="block rounded-md px-2 py-2">Case Studies</Link>
-              <Link href="/about_us" className="block rounded-md px-2 py-2">About Us</Link>
+              <Link href="/" onClick={closeAllMenus} className={`block rounded-md px-2 py-2 ${isActive("/") ? "bg-purple-50 text-purple-600" : ""}`}>Home</Link>
+              <Link href="/how_it_works" onClick={closeAllMenus} className={`block rounded-md px-2 py-2 ${isActive("/how_it_works") ? "bg-purple-50 text-purple-600" : ""}`}>Case Studies</Link>
+              <Link href="/about_us" onClick={closeAllMenus} className={`block rounded-md px-2 py-2 ${isActive("/about_us") ? "bg-purple-50 text-purple-600" : ""}`}>About Us</Link>
 
               <button
                 onClick={() => setIsMobileServicesOpen((v) => !v)}
@@ -266,7 +283,12 @@ export default function Navbar() {
               {isMobileServicesOpen && (
                 <div className="space-y-2 rounded-lg bg-gray-50 p-3">
                   {serviceItems.map((item) => (
-                    <Link key={item.href} href={item.href} className="block rounded-md px-2 py-1 text-gray-700">
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeAllMenus}
+                      className={`block rounded-md px-2 py-1 text-gray-700 ${isActive(item.href) ? "bg-purple-50 text-purple-600" : ""}`}
+                    >
                       {item.title}
                     </Link>
                   ))}
@@ -282,16 +304,26 @@ export default function Navbar() {
               {isMobileResourcesOpen && (
                 <div className="space-y-2 rounded-lg bg-gray-50 p-3">
                   {resources.map((item) => (
-                    <Link key={item.href} href={item.href} className="block rounded-md px-2 py-1 text-gray-700">
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeAllMenus}
+                      className={`block rounded-md px-2 py-1 text-gray-700 ${isActive(item.href) ? "bg-purple-50 text-purple-600" : ""}`}
+                    >
                       {item.label}
                     </Link>
                   ))}
                 </div>
               )}
 
-              <button className="mt-2 w-full rounded-lg bg-black py-3 text-sm text-white">
+              <div className=" items-center gap-3 flex w-full">
+             <a href="tel:+919897165137"><button className="rounded-full border cursor-pointer p-2 text-sm transition hover:bg-gray-50">
+                <PhoneOutgoing className="h-4 w-4" />
+              </button></a> 
+             <a href="/contact"> <button className="rounded-md w-full bg-black px-5 cursor-pointer py-2 text-sm text-white transition hover:opacity-90">
                 Get Started
-              </button>
+              </button></a>
+            </div>
             </div>
           </div>
         </div>

@@ -52,10 +52,10 @@ export default function Footer() {
             </p>
             <div>
               <h4 className="mb-2 text-sm font-medium text-gray-200">Contact</h4>
-              <p className="text-sm text-gray-400">info@tubehelper.in</p>
-              <p className="text-sm text-gray-400">connect@tubehelper.in</p>
+              <p className="text-sm text-gray-400">contact@tubehelper.in</p>
               <p className="text-sm text-gray-400">+91 9897165137</p>
-              <p className="text-sm text-gray-400">Address: 1657 Bakra market, Mohalla Tihai, --,Mawana, Meerut, Uttar Pradesh, 250401</p>
+              <p className="text-sm text-gray-400">Address: A-83, First Floor, Sector 63, Noida</p>
+              <p className="text-sm text-gray-400">Nearest metro station is Sector 62</p>
             </div>
           </div>
             <FooterColumn title="Services" links={quickLinks.services} />
