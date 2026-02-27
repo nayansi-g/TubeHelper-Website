@@ -121,9 +121,9 @@ export default function AboutPage() {
          <div className="relative mx-auto max-w-4xl">
 
     {/* Small Label */}
-    <p className="text-sm font-medium uppercase tracking-widest text-gray-600 mb-4">
+    {/* <p className="text-sm font-medium uppercase tracking-widest text-gray-600 mb-4">
       About Us
-    </p>
+    </p> */}
 
     {/* Main Headline */}
     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-900">
@@ -134,16 +134,12 @@ export default function AboutPage() {
     {/* Description */}
     <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-700 leading-relaxed">
       TubeHelper helps established ecommerce and D2C brands build predictable,
-      profitable growth systems.
-    </p>
-
-    <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 leading-relaxed">
-      We don’t just run ads. We build the infrastructure that allows brands
+      profitable growth systems. We don’t just run ads. We build the infrastructure that allows brands
       to scale without breaking their margins.
     </p>
 
     {/* CTA */}
-    <div className="mt-10">
+    <div className="mt-8">
       <button className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
         Book a Strategy Call
         <MoveUpRight className="h-4 w-4" />

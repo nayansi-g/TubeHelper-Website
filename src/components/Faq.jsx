@@ -81,7 +81,7 @@ export default function Faq() {
           return (
             <div
               key={index}
-              className={`rounded-2xl border transition-all duration-300
+              className={`rounded-lg border hover:border-purple-500 cursor-pointer transition-all duration-300
               ${
                 isActive
                   ? "border-purple-500 bg-purple-50 shadow-md"

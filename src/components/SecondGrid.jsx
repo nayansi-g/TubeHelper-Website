@@ -6,7 +6,7 @@ const services = [
   {
     title: "Acquire Profitably",
     description:"Structured paid acquisition that increases ROAS and lowers CAC.",
-    image: "/performance.jpg",
+    image: "/services1.jpg",
     points: [
       "Meta & Google ads",
       "⁠Creative testing frameworks",
@@ -16,7 +16,7 @@ const services = [
   {
     title: "Convert More",
     description:"Optimize your funnel to turn traffic into higher revenue.",
-    image: "/CRO.png",
+    image: "/services2.jpg",
     points: [
       "⁠Landing page & checkout optimization",
       "⁠A/B testing",
@@ -26,7 +26,7 @@ const services = [
   {
     title: "⁠ ⁠Retain & Scale",
     description:"Build backend systems that increase LTV and stabilize growth.",
-    image: "/Builtforshopify.jpg",
+    image: "/services3.jpg",
     points: [
       "Email & SMS automation",
       "⁠Retargeting & lifecycle campaigns",
@@ -34,24 +34,21 @@ const services = [
     ],
   },
   {
-    title: "Data-Driven Decisions. Zero Guesswork.",
-    description:
-      "We implement advanced tracking and reporting systems so you always know what’s working — and why.",
-    image: "/data_Driven.jpg",
+    title: "Track & Optimize",
+    description:"Clear data infrastructure that supports confident scaling.",
+    image: "/service4new.jpg",
     points: [
-      "GA4 Setup",
-      "Conversion Tracking & Pixel Integration",
-      "Server-Side Tracking",
-      "Custom Reporting Dashboards",
-      "Marketing Automation Workflows",
+      "GA4 & conversion tracking ",
+      "Server-side tracking",
+      "Revenue dashboards & clarity",
     ],
   },
 ]
 
 export default function ServicesCards() {
   return (
-    <section className="w-full px-0 md:px-5">
-      <div className="rounded-[56px] bg-white py-16 md:rounded-[90px] md:py-20 lg:rounded-[120px]">
+    <section className="w-full ">
+      <div className="rounded-[56px] bg-white py-16 md:py-20 ">
         <div className="mx-auto max-w-7xl space-y-14 px-5 md:px-8 lg:px-14">
 
           <div className="mx-auto max-w-3xl space-y-4 text-center">
@@ -63,7 +60,7 @@ export default function ServicesCards() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -71,32 +68,32 @@ export default function ServicesCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-3xl bg-white p-4 shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
+                className="group relative  border border-gray-200 overflow-hidden rounded-xl bg-white p-2 hover:shadow-lg"
               >
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-100 via-transparent to-blue-100 opacity-0 transition duration-500 group-hover:opacity-100"></div>
+                {/* <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-100 via-transparent to-blue-100 opacity-0 transition duration-500 group-hover:opacity-100"></div> */}
 
-                <div className="relative mb-6 overflow-hidden rounded-2xl">
+                <div className="relative mb-6 overflow-hidden border  border-gray-300 text-center rounded-full">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-78"
+                    className="w-full object-cover transition-transform duration-700 "
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60"></div> */}
                 </div>
 
-                <div className="relative z-10 space-y-4">
+                <div className="relative z-10 pb-10  text-center space-y-3">
                   <h3 className="text-xl font-semibold text-gray-900">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-gray-600">
+                  <p className="text-md text-gray-600">
                     {service.description}
                   </p>
 
-                  <ul className="space-y-2 pt-2 text-sm text-gray-700">
+                  <ul className="space-y-2 pt-2 text-center text-sm text-gray-700">
                     {service.points.map((point, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="font-bold text-purple-600">✓</span>
+                      <li key={i} className="flex items-center justify-start gap-2">
+                        <span className="font-bold text-purple-600 bg-purple-700 rounded-full p-1"></span>
                         {point}
                       </li>
                     ))}
