@@ -36,7 +36,7 @@ const services = [
   {
     title: "Track & Optimize",
     description:"Clear data infrastructure that supports confident scaling.",
-    image: "/service4new.jpg",
+    image: "/services4.jpg",
     points: [
       "GA4 & conversion tracking ",
       "Server-side tracking",
