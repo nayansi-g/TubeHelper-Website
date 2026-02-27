@@ -1,11 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 
 const SCRIPT_URL =
   process.env.NEXT_PUBLIC_CONTACT_FORM_URL ||
   "https://script.google.com/macros/s/AKfycbyU6g5z4OOSF3-etayTrHtYfHFiVhp6l3lwUxM9sgAhIT1o8uRoAwJeQuppATYE864E/exec";
+
+
+  const serviceOptions = [
+  "$1000 - $2000",
+  "$2000 - $3000",
+  "$3000 - $3000",
+  "$4000 - $5000",
+]
 
 export default function ContactPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,73 +103,84 @@ export default function ContactPopup() {
           </button>
         </div>
 
-        <form
-          method="POST"
-          action={SCRIPT_URL}
-          target="popup-contact-submit-target"
-          onSubmit={handleSubmit}
-          className="space-y-3"
-        >
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            placeholder="Full Name"
-            required
-            className="h-11 w-full rounded-lg text-gray-800 border border-gray-300 px-3 text-sm outline-none focus:border-purple-600"
-          />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email Address"
-            required
-            className="h-11 w-full rounded-lg text-gray-800 border border-gray-300 px-3 text-sm outline-none focus:border-purple-600"
-          />
-          <input
-            type="tel"
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleChange}
-            placeholder="Mobile Number"
-            required
-            className="h-11 w-full rounded-lg text-gray-800 border border-gray-300 px-3 text-sm outline-none focus:border-purple-600"
-          />
-          <input
-            type="url"
-            name="website"
-            value={formData.website}
-            onChange={handleChange}
-            placeholder="Website Link"
-            className="h-11 w-full text-gray-800 rounded-lg text-gray-800 border border-gray-300 px-3 text-sm outline-none focus:border-purple-600"
-          />
-          <textarea
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            placeholder="Description"
-            required
-            rows={4}
-            className="w-full resize-none rounded-lg text-gray-800 border border-gray-300 p-3 text-sm outline-none focus:border-purple-600"
-          />
-          <input type="hidden" name="message" value={formData.service} readOnly />
+        <form onSubmit={handleSubmit} className="space-y-5">
 
-          {success && (
-            <p className="rounded-md bg-green-50 p-2 text-center text-sm text-green-600">
-              Submitted successfully.
-            </p>
-          )}
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              value={formData.fullName}
+              required
+              onChange={handleChange}
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
+            />
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="h-11 w-full rounded-lg bg-black text-sm font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
-          >
-            {loading ? "Submitting..." : "Submit Inquiry"}
-          </button>
-        </form>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              required
+              onChange={handleChange}
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
+            />
+
+            <input
+              type="tel"
+              name="mobile"
+              placeholder="Mobile Number"
+              value={formData.mobile}
+              required
+              onChange={handleChange}
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
+            />
+
+            <input
+              type="url"
+              name="website"
+              placeholder="Website Link"
+              value={formData.website}
+              onChange={handleChange}
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
+            />
+
+            <div className="relative">
+              <select
+                name="service"
+                value={formData.service}
+                required
+                onChange={handleChange}
+                className="w-full appearance-none rounded-xl border border-gray-300 bg-white p-3 pr-10 text-gray-900 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
+              >
+                <option value="" disabled>
+                  Select Service
+                </option>
+                {serviceOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+               <ChevronDown />
+              </span>
+            </div>
+
+            {/* Success message */}
+            {success && (
+              <div className="rounded-xl bg-green-50 p-3 text-center text-green-600">
+                Form submitted successfully!
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full rounded-xl bg-black py-3 font-medium text-white transition hover:bg-[#ef1f56] disabled:cursor-not-allowed disabled:bg-[#ff2e63]/70"
+            >
+              {loading ? "Submitting..." : "Submit Inquiry"}
+            </button>
+          </form>
       </div>
     </div>
   );

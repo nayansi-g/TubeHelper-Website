@@ -93,7 +93,7 @@ export default function ServicesCards() {
                   <ul className="space-y-2 pt-2 text-center text-sm text-gray-700">
                     {service.points.map((point, i) => (
                       <li key={i} className="flex items-center justify-start gap-2">
-                        <span className="font-bold text-purple-600 bg-purple-700 rounded-full p-1"></span>
+                        <span className="font-bold text-purple-600 bg-gray-700 rounded-full p-1"></span>
                         {point}
                       </li>
                     ))}

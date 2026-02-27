@@ -4,10 +4,10 @@ import CTASection from "@/components/CTA"
 import Faq from "@/components/Faq"
 import Features from "@/components/Features"
 import Hero from "@/components/Hero"
-import Pricing from "@/components/Pricing"
-import SecondGrid from "@/components/SecondGrid"
-import Testimonials from "@/components/Testimonals"
 import { buildMetadata } from "@/lib/seo"
+import ServicesPage from "./services/page"
+import Card from "@/components/Testimonals"
+import WhyChooseUs from "@/components/WhyChooseUs"
 
 export const metadata = buildMetadata({
   title: "Performance Marketing and Ecommerce Growth Agency",
@@ -37,10 +37,10 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <Hero />
-      <SecondGrid />
-      <Testimonials />
+      <ServicesPage />
+      <WhyChooseUs />
       <Features />
-      <Pricing />
+      <Card />
       <Faq />
       <ClientSlider />
       <ContactPage />

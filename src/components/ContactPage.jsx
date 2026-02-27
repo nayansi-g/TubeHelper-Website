@@ -1,6 +1,14 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+
+const serviceOptions = [
+  "$1000 - $2000",
+  "$2000 - $3000",
+  "$3000 - $3000",
+  "$4000 - $5000",
+]
 
 export default function ContactPage() {
    const [formData, setFormData] = useState({
@@ -72,8 +80,8 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="min-h-screen bg-white py-24 px-3 md:px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section className="min-h-screen bg-[linear-gradient(180deg,#f8f9ff_0%,#ffffff_50%,#f8f9ff_100%)] px-3 py-24 md:px-6">
+      <div className="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
 
         {/* LEFT SIDE - SEO CONTENT */}
         <div className="hidden md:block">
@@ -99,8 +107,8 @@ export default function ContactPage() {
         </div>
 
         {/* RIGHT SIDE - FORM */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+        <div className="rounded-3xl border border-[#d9dbf6] bg-white p-6 shadow-[0_20px_45px_rgba(15,29,86,0.1)] md:p-8">
+          <h2 className="mb-6 text-2xl font-semibold text-gray-900">
             Get a Free Growth Consultation
           </h2>
 
@@ -114,7 +122,7 @@ export default function ContactPage() {
               value={formData.fullName}
               required
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
             />
 
             <input
@@ -124,7 +132,7 @@ export default function ContactPage() {
               value={formData.email}
               required
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
             />
 
             <input
@@ -134,7 +142,7 @@ export default function ContactPage() {
               value={formData.mobile}
               required
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
             />
 
             <input
@@ -143,23 +151,34 @@ export default function ContactPage() {
               placeholder="Website Link"
               value={formData.website}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
+              className="w-full rounded-xl border border-gray-300 p-3 text-gray-900 placeholder-gray-400 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
             />
 
-            <textarea
-              name="service"
-              value={formData.service}
-              placeholder="Description"
-              required
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 resize-none rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
-            >
-        
-            </textarea>
+            <div className="relative">
+              <select
+                name="service"
+                value={formData.service}
+                required
+                onChange={handleChange}
+                className="w-full appearance-none rounded-xl border border-gray-300 bg-white p-3 pr-10 text-gray-900 transition focus:border-[#3760ff] focus:outline-none focus:ring-2 focus:ring-[#3760ff]/30"
+              >
+                <option value="" disabled>
+                  Select Service
+                </option>
+                {serviceOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+               <ChevronDown />
+              </span>
+            </div>
 
             {/* Success message */}
             {success && (
-              <div className="bg-green-50 text-green-600 p-3 rounded-lg text-center">
+              <div className="rounded-xl bg-green-50 p-3 text-center text-green-600">
                 Form submitted successfully!
               </div>
             )}
@@ -167,7 +186,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-purple-600 text-white py-3 rounded-lg font-medium hover:bg-purple-700 transition disabled:bg-purple-400 disabled:cursor-not-allowed"
+              className="w-full rounded-xl bg-black py-3 font-medium text-white transition hover:bg-[#ef1f56] disabled:cursor-not-allowed disabled:bg-[#ff2e63]/70"
             >
               {loading ? "Submitting..." : "Submit Inquiry"}
             </button>
