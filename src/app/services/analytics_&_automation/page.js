@@ -122,16 +122,18 @@ export default function AnalyticsAutomationPage() {
               We help brands implement advanced tracking, marketing automation, and real-time reporting systems to eliminate guesswork and maximize ROI.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <button className="inline-flex items-center gap-3 cursor-pointer rounded-full border border-black/15 bg-white px-5 py-2 text-sm font-medium shadow-sm transition hover:bg-gray-50">
+             <a  href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"><button className="inline-flex items-center gap-3 cursor-pointer rounded-full border border-black/15 bg-white px-5 py-2 text-sm font-medium shadow-sm transition hover:bg-gray-50">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
                   <PhoneIncoming className="h-4 w-4" />
                 </span>
                 Get a Free Tracking Audit
-              </button>
-              <button className="inline-flex items-center gap-2 cursor-pointer rounded-full bg-black px-6 py-4 text-sm font-medium text-white transition hover:opacity-90">
+              </button></a>
+              <a  href="tel:+919897165137"><button className="inline-flex items-center gap-2 cursor-pointer rounded-full bg-black px-6 py-4 text-sm font-medium text-white transition hover:opacity-90">
                 Book a Strategy Call
                 <MoveUpRight className="h-4 w-4" />
-              </button>
+              </button></a>
             </div>
           </div>
           <div className="mx-auto w-full max-w-xl">
@@ -408,10 +410,10 @@ export default function AnalyticsAutomationPage() {
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
             Stop guessing. Start scaling with accurate tracking, automation, and reporting.
           </p>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
+          <a href="tel:+919897165137"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
             Get Your Free Tracking Audit
             <MoveUpRight className="h-4 w-4" />
-          </button>
+          </button></a>
         </div>
       </section>
     </main>

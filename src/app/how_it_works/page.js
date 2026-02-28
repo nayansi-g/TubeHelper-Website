@@ -114,13 +114,15 @@ export default function CaseStudiesPage() {
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
             Explore how we help brands improve ROAS, increase conversion rates, reduce customer acquisition costs, and scale revenue with structured full-funnel marketing systems.
           </p>
-          <Link
-            href="/contact"
+          <a
+             href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
             Book a Strategy Call
             <MoveUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -239,13 +241,15 @@ export default function CaseStudiesPage() {
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           If you want a structured growth system built around performance, conversion, and profitability, let&apos;s map your next 90-day strategy.
         </p>
-        <Link
-          href="/contact"
+        <a
+           href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"
           className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
         >
           Book Your Free Strategy Call
           <MoveUpRight className="h-4 w-4" />
-        </Link>
+        </a>
       </section>
     </main>
   )

@@ -34,13 +34,14 @@ export default function BlogPage() {
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
             Explore actionable insights on ecommerce growth, performance marketing, SEO, conversion optimization, analytics, and automation.
           </p>
-          <Link
-            href="/contact"
+          <a   href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
-            Book a Free Growth Strategy Call
+            Book a Growth Strategy Call
             <MoveUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
 

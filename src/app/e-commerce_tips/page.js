@@ -223,13 +223,15 @@ export default function EcommerceTipsPage() {
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
             Actionable, data-driven ecommerce strategies to increase traffic, improve conversion rates, and maximize revenue.
           </p>
-          <Link
-            href="/contact"
+          <a
+           href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
-            Book a Free Growth Strategy Call
+            Book a Growth Strategy Call
             <MoveUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -328,13 +330,15 @@ export default function EcommerceTipsPage() {
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           If you want expert help implementing these ecommerce growth strategies, our team specializes in performance marketing, conversion optimization, analytics and tracking, automation systems, and full-funnel ecommerce growth.
         </p>
-        <Link
-          href="/contact"
+       <a
+           href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"
           className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
         >
           Book Your Free Ecommerce Growth Consultation
           <MoveUpRight className="h-4 w-4" />
-        </Link>
+        </a>
       </section>
     </main>
   )

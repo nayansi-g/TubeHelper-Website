@@ -192,6 +192,11 @@ export default function FAQPage() {
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
             Welcome to our FAQ page. Here you&apos;ll find answers to common questions about our performance marketing, ecommerce growth, SEO, analytics, and brand awareness services.
           </p>
+          <a  href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"><button className="mt-8 cursor-pointer rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+            Contact Us
+          </button></a>
         </div>
       </section>
 

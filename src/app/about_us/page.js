@@ -140,10 +140,12 @@ export default function AboutPage() {
 
     {/* CTA */}
     <div className="mt-8">
-      <button className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-800 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+      <a  href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"><button className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-800 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
         Book a Strategy Call
         <MoveUpRight className="h-4 w-4" />
-      </button>
+      </button></a>
     </div>
 
   </div>
@@ -292,10 +294,10 @@ Every decision is backed by data, performance analysis, and long-term profitabil
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           If you&apos;re ready to move from ad-dependent growth to system-driven scale, let’s build your revenue infrastructure.
         </p>
-        <button className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-          Book Your Strategy Call
+        <a href="tel:+919897165137"><button className="mt-7 inline-flex cursor-pointer items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          Call Now
           <MoveUpRight className="h-4 w-4" />
-        </button>
+        </button></a>
       </section>
     </main>
   )

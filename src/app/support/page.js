@@ -139,13 +139,15 @@ export default function SupportPage() {
             Reliable, responsive, and expert support to keep your marketing systems running smoothly anytime you need us.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className="rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+           <a href="/contact"><button className="rounded-full cursor-pointer bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
               Contact Support
-            </button>
-            <button className="inline-flex items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-sm font-medium text-black transition hover:bg-gray-50">
+            </button></a> 
+           <a  href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"><button className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-sm font-medium text-black transition hover:bg-gray-50">
               Book a Strategy Call
               <MoveUpRight className="h-4 w-4" />
-            </button>
+            </button></a> 
           </div>
         </div>
       </section>
@@ -238,13 +240,15 @@ export default function SupportPage() {
           Our team is ready to support your growth systems anytime.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <button className="rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-            Contact Support Now
-          </button>
-          <button className="inline-flex items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-sm font-medium text-black transition hover:bg-gray-50">
+          <a href="tel:+919897165137"><button className="rounded-full cursor-pointer bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+            Call Now
+          </button></a> 
+         <a  href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"><button className="inline-flex items-center cursor-pointer  gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-sm font-medium text-black transition hover:bg-gray-50">
             Book a Priority Strategy Call
             <MoveUpRight className="h-4 w-4" />
-          </button>
+          </button></a> 
         </div>
       </section>
     </main>

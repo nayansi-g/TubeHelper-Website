@@ -68,10 +68,12 @@ export default function ContactPage() {
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
             Ready to scale with performance marketing, ecommerce growth, SEO, analytics, or brand awareness strategies? Let&apos;s build your growth system.
           </p>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          <a   href="https://wa.me/919897165137"
+  target="_blank"
+  rel="noopener noreferrer"><button className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
             Book a Strategy Call
             <MoveUpRight className="h-4 w-4" />
-          </button>
+          </button></a>
         </div>
       </section>
 
@@ -188,10 +190,10 @@ export default function ContactPage() {
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           Let&apos;s build a marketing strategy focused on profitability, scalability, and long-term growth.
         </p>
-        <button className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-          Book Your Free Strategy Call
+       <a  href="tel:+919897165137"> <button className="mt-7 inline-flex items-center cursor-pointer gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          Book Your Strategy Call Now
           <MoveUpRight className="h-4 w-4" />
-        </button>
+        </button></a>
       </section>
     </main>
   )
