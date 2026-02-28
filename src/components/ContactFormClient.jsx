@@ -1,12 +1,11 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const SCRIPT_URL =
   process.env.NEXT_PUBLIC_CONTACT_FORM_URL ||
-  "https://script.google.com/macros/s/AKfycbyU6g5z4OOSF3-etayTrHtYfHFiVhp6l3lwUxM9sgAhIT1o8uRoAwJeQuppATYE864E/exec";
-
+"https://script.google.com/macros/s/AKfycbxWb33jkYVZDqGpN6GTj_KLoywIXbwA8RdzM-CncjNmhrAxwcQCENNfsK7xvZuvFMqeOQ/exec";
 
   const serviceOptions = [
   "$1000 - $2000",
@@ -50,17 +49,14 @@ export default function ContactFormClient() {
       formBody.append("service", formData.service);
 
       // Using a hidden iframe approach to avoid redirect
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzzNRZNUeBEgyVyRduvJYogJG3PBXFz9N4unaP2NgK4HdiOGgjsKqxFR-Y45OFua0cu/exec",
-        {
-          method: "POST",
-          mode: "no-cors", // Keep this to avoid CORS issues
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Keep this to avoid CORS issues
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: JSON.stringify(formData),
+      });
 
       // Since we're using no-cors, we can't check response
       // But we'll assume it worked

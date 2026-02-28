@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, X } from "lucide-react";
 
 const SCRIPT_URL =
   process.env.NEXT_PUBLIC_CONTACT_FORM_URL ||
-  "https://script.google.com/macros/s/AKfycbyU6g5z4OOSF3-etayTrHtYfHFiVhp6l3lwUxM9sgAhIT1o8uRoAwJeQuppATYE864E/exec";
-
+"https://script.google.com/macros/s/AKfycbxWb33jkYVZDqGpN6GTj_KLoywIXbwA8RdzM-CncjNmhrAxwcQCENNfsK7xvZuvFMqeOQ/exec";
 
   const serviceOptions = [
   "$1000 - $2000",
@@ -19,7 +18,7 @@ export default function ContactPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const submittedRef = useRef(false);
+  const [error, setError] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -48,42 +47,54 @@ export default function ContactPopup() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
-    submittedRef.current = true;
-  };
+    setError(false);
 
-  const handleIframeLoad = () => {
-    if (!submittedRef.current) return;
-    submittedRef.current = false;
-    setLoading(false);
-    setSuccess(true);
+    try {
+      const formBody = new URLSearchParams();
+      formBody.append("fullName", formData.fullName);
+      formBody.append("email", formData.email);
+      formBody.append("mobile", formData.mobile);
+      formBody.append("website", formData.website);
+      formBody.append("service", formData.service);
 
-    setFormData({
-      fullName: "",
-      email: "",
-      mobile: "",
-      website: "",
-      service: "",
-    });
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setTimeout(() => {
-      setSuccess(false);
-      setIsOpen(false);
-    }, 1200);
+      setSuccess(true);
+      setFormData({
+        fullName: "",
+        email: "",
+        mobile: "",
+        website: "",
+        service: "",
+      });
+
+      setTimeout(() => {
+        setSuccess(false);
+        setIsOpen(false);
+      }, 2000);
+    } catch (err) {
+      console.error("Error submitting popup form", err);
+      setError(true);
+      setTimeout(() => setError(false), 5000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/55 p-4">
-      <iframe
-        title="popup-contact-submit-target"
-        name="popup-contact-submit-target"
-        className="hidden"
-        onLoad={handleIframeLoad}
-      />
-
       <div className="w-full max-w-lg rounded-2xl border border-gray-200 bg-white p-5 shadow-2xl sm:p-6">
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
@@ -173,6 +184,11 @@ export default function ContactPopup() {
             {success && (
               <div className="rounded-xl bg-green-50 p-3 text-center text-green-600">
                 Form submitted successfully!
+              </div>
+            )}
+            {error && (
+              <div className="rounded-xl bg-red-50 p-3 text-center text-red-600">
+                Something went wrong. Please try again.
               </div>
             )}
 
