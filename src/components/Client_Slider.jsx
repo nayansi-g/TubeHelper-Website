@@ -133,15 +133,15 @@ export default function ClientSlider() {
         >
           {slides.map((slide, index) => (
             <div className="slide" key={index}>
-              <div className="left ">
-                <img src={slide.image} className="h-auto px-10 border border-gray-300 shadow-sm" alt={slide.subtitle} />
+              <div className="left bg-black  py-6">
+                <img src={slide.image} className="h-auto border border-gray-300 shadow-sm" alt={slide.subtitle} />
               </div>
 
               <div className="right">
-                <h3 className="text-gray-800 font-semibold">{slide.title}</h3>
-                <h4>{slide.subtitle}</h4>
+                <p className="text-gray-800 text-3xl font-semibold">{slide.title}</p>
+                <p className="text-xl mt-2 text-gray-600">{slide.subtitle}</p>
 
-                <div className="section text-gray-800">
+                <div className="section mt-5 text-gray-800">
                   <strong>The Challenge</strong>
                   <p className="text-gray-600">{slide.challenge}</p>
                 </div>
@@ -220,7 +220,7 @@ const Wrapper = styled.section`
     width: 100%;
     max-width: 420px;
     height: auto;
-    border-radius: 16px;
+    // border-radius: 16px;
     object-fit: cover;
   }
 
@@ -244,12 +244,12 @@ const Wrapper = styled.section`
   }
 
   .section strong {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .section p,
   .section li {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 1.5;
   }
 

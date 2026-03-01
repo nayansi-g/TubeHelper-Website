@@ -80,7 +80,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="min-h-screen bg-[linear-gradient(180deg,#f8f9ff_0%,#ffffff_50%,#f8f9ff_100%)] px-3 py-24 md:px-6">
+    <section className=" bg-[linear-gradient(180deg,#f8f9ff_0%,#ffffff_50%,#f8f9ff_100%)] px-3 py-20 md:px-6">
       <div className="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
 
         {/* LEFT SIDE - SEO CONTENT */}

@@ -9,7 +9,7 @@ import { Play, Pause } from "lucide-react"
 export default function Hero() {
   return (
     <section className="relative mt-[88px] min-h-[calc(100svh-88px)] bg-black text-white">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 md:py-14 lg:grid-cols-2 lg:gap-14 lg:px-12 lg:py-16">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-20 md:gap-10 px-4 py-12 sm:px-6 md:py-14 lg:grid-cols-2 lg:gap-14 lg:px-12 lg:py-16">
         <div className="text-center lg:text-left">
           <motion.h1
             initial={{ y: 40, opacity: 0 }}

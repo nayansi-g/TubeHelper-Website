@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { MoveUpRight } from "lucide-react"
 import { buildMetadata } from "@/lib/seo"
+import AboutSlider from "@/components/AboutUsSLider"
 
 export const metadata = buildMetadata({
   title: "About Us - Data-Driven Growth Partners",
@@ -104,10 +105,10 @@ const partnershipBenefits = [
 
 function TagGrid({ items }) {
   return (
-    <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mt-5 grid gap-1 ">
       {items.map((item) => (
-        <div key={item} className=" bg-gray-50 px-2 flex justify-center items-center text-sm text-gray-800 md:text-base">
-          {item}
+        <div key={item} className="  px-2 flex justify-start ml-2 items-center text-sm text-gray-800 md:text-base">
+          <li>{item}</li>
         </div>
       ))}
     </div>
@@ -118,51 +119,48 @@ export default function AboutPage() {
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px]  px-4 bg-black py-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
-         <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto max-w-4xl">
 
-    {/* Small Label */}
-    {/* <p className="text-sm font-medium uppercase tracking-widest text-gray-600 mb-4">
-      About Us
-    </p> */}
+          {/* Main Headline */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-200">
+            Revenue System Partners for{" "}
+            <span className="text-gray-200">Scaling Ecommerce Brands</span>
+          </h1>
 
-    {/* Main Headline */}
-    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-200">
-      Revenue System Partners for{" "}
-      <span className="text-gray-200">Scaling Ecommerce Brands</span>
-    </h1>
+          {/* Description */}
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500 leading-relaxed">
+            TubeHelper helps established ecommerce and D2C brands build predictable,
+            profitable growth systems. We don’t just run ads. We build the infrastructure that allows brands
+            to scale without breaking their margins.
+          </p>
 
-    {/* Description */}
-    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500 leading-relaxed">
-      TubeHelper helps established ecommerce and D2C brands build predictable,
-      profitable growth systems. We don’t just run ads. We build the infrastructure that allows brands
-      to scale without breaking their margins.
-    </p>
+          {/* CTA */}
+          <div className="mt-8">
+            <a href="https://wa.me/919897165137"
+              target="_blank"
+              rel="noopener noreferrer"><button className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-800 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                Book a Strategy Call
+                <MoveUpRight className="h-4 w-4" />
+              </button></a>
+          </div>
 
-    {/* CTA */}
-    <div className="mt-8">
-      <a  href="https://wa.me/919897165137"
-  target="_blank"
-  rel="noopener noreferrer"><button className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-800 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-        Book a Strategy Call
-        <MoveUpRight className="h-4 w-4" />
-      </button></a>
-    </div>
-
-  </div>
+        </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
-        <div className="space-y-8">
+      <AboutSlider />
 
-          <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
-            <div className="grid items-center gap-8 lg:grid-cols-2">
-               <div>
+      <section className="mx-auto max-w-6xl px-4  sm:px-6 ">
+        <div className="space-y-8">
+{/* 
+          <section className="rounded-2xl bg-[#dff3ef] border border-gray-200">
+            <div className="grid items-center lg:grid-cols-2">
+              <div className="flex justify-center py-10">
                 <Image
-                  src="/about_us1.jpg"
+                  src="/abouutUS1.jpg"
                   alt="Marketing team discussing performance dashboards"
-                  width={900}
-                  height={620}
-                  className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
+                  width={400}
+                  height={450}
+                  className="w-[400px] h-[450px] rounded-2xl border border-gray-200 object-cover shadow-lg"
                 />
               </div>
               <div className="">
@@ -170,52 +168,47 @@ export default function AboutPage() {
                 <p className="mt-4 text-gray-700">
                   Our mission is simple: Replace guesswork with structured, system-driven growth.</p>
                 <p className="mt-3 text-gray-700">
-Too many brands scale revenue but lose control of profitability. Rising CAC, weak tracking, poor retention, and disconnected strategies create unstable growth.                   </p>
+                  Too many brands scale revenue but lose control of profitability. Rising CAC, weak tracking, poor retention, and disconnected strategies create unstable growth.                   </p>
                 <p className="mt-3 text-gray-700">We build marketing systems designed to:</p>
                 <TagGrid items={missionPillars} />
                 <p className="mt-5 text-gray-700">
-Growth should not depend on aggressive ad spend.It should depend on strong systems. </p>
+                  Growth should not depend on aggressive ad spend.It should depend on strong systems. </p>
               </div>
-             
+
             </div>
           </section>
 
-          <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
-            <div className="grid items-center gap-8 lg:grid-cols-2">
+          <section className="rounded-2xl border border-gray-200 bg-[#D6E6FD] p-5 shadow-sm md:p-7">
+            <div className="grid items-center lg:grid-cols-2">
               <div>
                 <h2 className="text-2xl font-semibold md:text-3xl">STRATEGY FIRST. SCALE SECOND.</h2>
                 <p className="mt-2 text-lg text-gray-700">Scaling without structure leads to wasted spend and unstable growth.</p>
                 <p className="mt-4 text-gray-700">Our approach starts with:</p>
                 <TagGrid items={differentPoints} />
-                {/* <p className="mt-5 text-gray-700">
-                  Every decision we make is backed by data, performance insights, and strategic analysis.
-                </p>
-                <p className="mt-3 text-gray-700">We integrate:</p>
-                <TagGrid items={integratedSystems} /> */}
                 <p className="mt-5 text-gray-700">
-Every decision is backed by data, performance analysis, and long-term profitability goals.                </p>
+                  Every decision is backed by data, performance analysis, and long-term profitability goals.                </p>
               </div>
-              <div>
+              <div className="flex justify-center py-10">
                 <Image
-                  src="/About3.jpg"
-                  alt="Marketing dashboard showing revenue and conversion trends"
-                  width={900}
-                  height={620}
-                  className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
+                  src="/aboutUS2.jpg"
+                  alt="Marketing team discussing performance dashboards"
+                  width={400}
+                  height={450}
+                  className="w-[400px] h-[450px] rounded-2xl border border-gray-200 object-cover shadow-lg"
                 />
               </div>
             </div>
-          </section>
+          </section> */}
 
-           <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
-            <div className="grid items-center gap-8 lg:grid-cols-2">
-              <div className="order-2 lg:order-1">
+          {/* <section className="rounded-2xl border border-gray-200 bg-purple-200 ">
+            <div className="grid items-center lg:grid-cols-2">
+              <div className="order-2 lg:order-1 flex justify-center py-10">
                 <Image
-                  src="/About2.jpg"
-                  alt="Growth strategy planning session"
-                  width={900}
-                  height={620}
-                  className="w-full rounded-2xl border border-gray-200 object-cover shadow-lg"
+                  src="/about_us3.jpg"
+                  alt="Marketing team discussing performance dashboards"
+                  width={400}
+                  height={450}
+                  className="w-[400px] h-[450px] rounded-2xl border border-gray-200 object-cover shadow-lg"
                 />
               </div>
               <div className="order-1 lg:order-2">
@@ -227,13 +220,10 @@ Every decision is backed by data, performance analysis, and long-term profitabil
                   Instead of isolated campaigns, we build:
                 </p>
                 <TagGrid items={specializations} />
-                {/* <p className="mt-5 text-gray-700">
-                  Unlike traditional agencies, we focus on the entire customer journey from first impression to repeat purchase.
-                </p> */}
                 <p className="mt-2 text-gray-700 font-medium">We don’t chase clicks. We engineer revenue systems</p>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
             <h2 className="text-2xl font-semibold md:text-3xl">THE PRINCIPLES THAT GUIDE US</h2>
@@ -265,8 +255,8 @@ Every decision is backed by data, performance analysis, and long-term profitabil
           <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
             <h2 className="text-2xl font-semibold md:text-3xl">WHO WE WORK WITH</h2>
             <p className="mt-4 text-gray-700">
-                  We partner with:
-                </p>
+              We partner with:
+            </p>
             <TagGrid items={whoWeWorkWith} />
             <p className="mt-5 text-gray-700">We are not a fit for early-stage testing brands or businesses looking for quick wins without structure.</p>
           </section>
