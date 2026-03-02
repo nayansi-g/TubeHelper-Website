@@ -8,6 +8,7 @@ import { buildMetadata } from "@/lib/seo"
 import Card from "@/components/Testimonals"
 import WhyChooseUs from "@/components/WhyChooseUs"
 import ServicesCards from "@/components/Services"
+import WhoWeAreSection from "@/components/WhoWeAre"
 
 export const metadata = buildMetadata({
   title: "Performance Marketing and Ecommerce Growth Agency",
@@ -37,6 +38,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <Hero />
+      <WhoWeAreSection />
       <ServicesCards />
       <WhyChooseUs />
       <Features />

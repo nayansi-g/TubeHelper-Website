@@ -70,7 +70,7 @@ export default function ServicesCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="group relative  border border-gray-200 overflow-hidden rounded-xl bg-white p-2 hover:shadow-lg"
+                className="group relative  border border-gray-200 overflow-hidden rounded-xl bg-white p-2 shadow-b-sm hover:shadow-lg shadow-purple-300"
               >
                 {/* <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-100 via-transparent to-blue-100 opacity-0 transition duration-500 group-hover:opacity-100"></div> */}
 
