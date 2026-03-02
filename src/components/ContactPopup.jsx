@@ -29,7 +29,7 @@ export default function ContactPopup() {
   });
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 4000);
+    const timer = setTimeout(() => setIsOpen(true), 6000);
     return () => clearTimeout(timer);
   }, []);
 

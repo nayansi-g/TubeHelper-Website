@@ -109,10 +109,20 @@ export default function ClientSlider() {
         <div className="text-center py-2">
       </div>
         <Wrapper className="max-w-7xl">
-      <div className=" bg-white text-center pb-5  md:pb-10">
+
+           <div className="text-center">
+          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl tracking-tight">
+           PROOF OVER PROMISES
+          </h2>
+          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-purple-500" />
+          <p className="mx-auto mt-5 mb-8 max-w-2xl text-lg text-gray-600">
+           We don’t just talk about growth — we deliver it.
+          </p>
+        </div>
+      {/* <div className=" bg-white text-center pb-5  md:pb-10">
         <h2 className="text-gray-900 text-3xl md:text-5xl font-semibold mb-2">Proof Over Promises</h2>
         <p className="text-gray-600">We don’t just talk about growth — we deliver it.</p>
-      </div>
+      </div> */}
 
       <div
         className="slider"
