@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
           <div
             className="relative w-full h-[600px] max-w-3xl rounded-2xl bg-cover bg-center shadow-2xl"
             style={{
-              backgroundImage: "url('/about2.jpg')",
+              backgroundImage: "url('/About2.jpg')",
             }}
           >
             {/* Overlay for slight darkening */}
