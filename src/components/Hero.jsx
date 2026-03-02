@@ -112,7 +112,7 @@ function VideoPlayer() {
       <video
         ref={videoRef}
         className="h-full w-full object-cover"
-        src="/HeroVideo.mp4"
+        src="/heroVideo.mp4"
       />
 
       <button
