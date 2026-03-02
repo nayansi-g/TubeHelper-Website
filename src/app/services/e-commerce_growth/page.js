@@ -124,7 +124,7 @@ export default function EcommerceGrowthPage() {
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px] bg-[#A1C2F8] pb-14 pt-24 md:rounded-b-[80px] md:pb-20 md:pt-28">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
+        <div className="mx-auto grid w-full grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
               Ecommerce Growth Services That Turn Traffic Into Revenue
@@ -178,7 +178,7 @@ export default function EcommerceGrowthPage() {
       </section>
 
       <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl ">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
             Our Ecommerce Growth Services
           </h2>
@@ -211,7 +211,7 @@ export default function EcommerceGrowthPage() {
       </section>
 
       <section className="px-4 py-16 sm:px-6 md:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10">
+        <div className="mx-auto max-w-7xl  grid items-center gap-10">
           <div>
             <h2 className="text-3xl text-center font-semibold sm:text-4xl">Our 4-Step Growth Process</h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">

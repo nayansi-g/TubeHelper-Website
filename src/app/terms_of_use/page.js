@@ -33,7 +33,7 @@ export default function TermsPage() {
 
   return (
     <section className="bg-white text-gray-800">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-30">
         <div className="text-center mb-12 md:mb-16">
           <h1 className="text-3xl md:text-4xl font-bold leading-tight">
             Terms & Conditions

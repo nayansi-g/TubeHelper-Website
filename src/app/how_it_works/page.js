@@ -126,7 +126,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-8 pt-12 sm:px-6 md:pt-14">
+      <section className="mx-auto max-w-7xl px-4 pb-8 pt-12 sm:px-6 md:pt-14">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {proofPoints.map((item) => (
             <div
@@ -139,7 +139,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 md:pb-24">
+      <section className="mx-auto max-w-7xl px-4 pb-20 pt-6 sm:px-6 md:pb-24">
         <div className="space-y-8">
           {caseStudies.map((study) => (
             <article key={study.id} className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">

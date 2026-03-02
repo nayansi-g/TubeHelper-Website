@@ -92,9 +92,9 @@ export default function Navbar() {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full text-black">
-      <div className="mx-auto w-full max-w-[95rem] px-3 pt-3 sm:px-4 md:px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-[90rem] px-3 pt-3 sm:px-4 md:px-6 lg:px-10">
         <div className="rounded-full bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-          <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-4 sm:px-6">
+          <div className="mx-auto flex h-[72px] w-full items-center justify-between px-4 sm:px-6">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-md bg-black text-base font-semibold text-white">TH</div>
               <span className="text-xl font-semibold">TubeHelper</span>

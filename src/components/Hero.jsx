@@ -1,93 +1,95 @@
 "use client"
 
-import { MoveUpRight } from "lucide-react"
+import { MoveUpRight, Play, Pause } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
 import { motion } from "framer-motion"
 import { useRef, useState } from "react"
-import { Play, Pause } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="relative mt-[88px] min-h-[calc(100svh-88px)] bg-black text-white">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-20 md:gap-10 px-4 py-12 sm:px-6 md:py-14 lg:grid-cols-2 lg:gap-14 lg:px-12 lg:py-16">
-        <div className="text-center lg:text-left">
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="mx-auto max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl lg:mx-0 lg:text-5xl"
-          >
-            Scaling Your Ecommerce Brand Shouldn’t Feel Like Guesswork.
+    <section className="relative mt-[100px] min-h-[calc(100svh-100px)] bg-black text-white flex items-center">
+      <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:py-24">
+        <div className="grid items-center gap-14 lg:grid-cols-2">
 
-          </motion.h1>
+          {/* LEFT CONTENT */}
+          <div className="text-center lg:text-left">
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mx-auto mt-5 max-w-xl text-base text-gray-300 sm:text-lg lg:mx-0"
-          >
-            We build data-driven marketing systems that increase revenue — without wasting ad spend.
-          </motion.p>
+            <motion.h1
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl"
+            >
+              Scaling Your E-commerce Brand Shouldn't Feel Like Guesswork.
+            </motion.h1>
 
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mt-6 text-base text-gray-300 sm:text-lg"
+            >
+              We build data-driven marketing systems that increase revenue
+              without wasting ad spend.
+            </motion.p>
+
+            <motion.div
+              initial={{ y: 24, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
+            >
+              <a
+                href="https://wa.me/919897165137"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm backdrop-blur-md transition hover:bg-white/20 sm:w-auto sm:text-base"
+              >
+                <FaWhatsapp className="text-lg" />
+                Chat Now
+              </a>
+
+              <a
+                href="tel:+919897165137"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-sm font-medium shadow-lg transition hover:opacity-90 sm:w-auto sm:text-base"
+              >
+                Book Free Strategy Call
+                <MoveUpRight className="h-4 w-4" />
+              </a>
+            </motion.div>
+
+            <p className="mt-10 text-sm text-gray-500">
+              Revolutionizing Client Solutions with the Best Tools
+            </p>
+
+          </div>
+
+          {/* RIGHT VIDEO */}
           <motion.div
-            initial={{ y: 24, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
-            className="mt-9 flex flex-wrap justify-center gap-4 lg:justify-start"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            className="flex justify-center lg:justify-end"
           >
-            <a
-              href="https://wa.me/919897165137"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full border border-white/20 bg-white/10 p-1 pr-4 text-sm backdrop-blur-md transition hover:bg-white/15">
-              <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10">
-                <FaWhatsapp className="text-lg text-white" />
-              </span>
-              Chat Now
-            </a>
+            <div className="relative w-full max-w-lg lg:max-w-xl">
 
-            <a href="tel:+919897165137" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-sm font-medium text-white shadow-lg transition hover:opacity-90">
-              Book Free Strategy Call
-              <MoveUpRight className="h-4 w-4" />
-            </a>
+              {/* Glow Effect */}
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-2xl"></div>
+
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl">
+                <div className="aspect-video">
+                  <VideoPlayer />
+                </div>
+              </div>
+
+            </div>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 text-sm text-gray-400"
-          >
-            Revolutionizing Client Solutions with the Best Tools
-          </motion.p>
         </div>
-
-     <motion.div
-  initial={{ opacity: 0, x: 48 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.9 }}
-  className="flex items-center justify-center lg:justify-end"
->
-  <div className="relative w-full max-w-md overflow-hidden rounded-2xl shadow-xl shadow-gray-400 sm:max-w-lg lg:max-w-xl">
-
-    <div className="absolute inset-0 rounded-2xl bg-black blur-3xl opacity-40 translate-y-6 scale-95"></div>
-
-  {/* Video Container */}
-  <div className="relative overflow-hidden rounded-2xl ">
-    <div className="relative aspect-video">
-      <VideoPlayer />
-    </div>
-  </div>
-
-</div>
-  
-</motion.div>
       </div>
     </section>
   )
 }
-
 
 function VideoPlayer() {
   const videoRef = useRef(null)
@@ -107,17 +109,15 @@ function VideoPlayer() {
 
   return (
     <div className="relative h-full w-full">
-      
       <video
         ref={videoRef}
-        className="h-full w-full rounded-2xl object-cover"
+        className="h-full w-full object-cover"
         src="/HeroVideo.mp4"
       />
 
-      {/* Play/Pause Button */}
       <button
         onClick={togglePlay}
-        className="absolute bottom-4 right-4 flex items-center justify-center rounded-full bg-black/60 p-3 text-white backdrop-blur-md transition hover:bg-black/80"
+        className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 backdrop-blur-md transition hover:bg-black/80"
       >
         {isPlaying ? <Pause size={20} /> : <Play size={20} />}
       </button>

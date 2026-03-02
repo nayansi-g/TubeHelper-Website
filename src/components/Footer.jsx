@@ -39,7 +39,7 @@ export default function Footer() {
       <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-600 opacity-20 blur-[200px]" />
       <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-pink-500 opacity-20 blur-[150px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl">
+      <div className="relative z-10 mx-auto w-full ">
         <h2 className="mb-8 text-2xl font-semibold sm:text-3xl md:mb-10 md:text-4xl">
           Let&apos;s Connect with us
         </h2>

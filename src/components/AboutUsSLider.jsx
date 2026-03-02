@@ -50,7 +50,7 @@ export default function AboutSlider() {
               alt=""
               width={400}
               height={450}
-              className="w-full max-w-sm opacity-80 h-[350px] sm:h-[400px] object-cover rounded-2xl shadow-lg"
+              className="w-full max-w-md opacity-80 h-[350px] sm:h-[400px] object-cover rounded-2xl shadow-lg"
             />
           </div>
            <div className="">
@@ -77,7 +77,7 @@ export default function AboutSlider() {
               alt=""
               width={400}
               height={450}
-              className="w-full max-w-sm opacity-80 h-[350px] sm:h-[400px] object-cover rounded-2xl shadow-lg"
+              className="w-full max-w-md opacity-80 h-[350px] sm:h-[400px] object-cover rounded-2xl shadow-lg"
             />
           </div>
           <div>
@@ -102,7 +102,7 @@ export default function AboutSlider() {
               alt=""
               width={400}
               height={450}
-              className="w-full max-w-sm  h-[350px] sm:h-[400px] object-cover rounded-2xl shadow-lg"
+              className="w-full max-w-md  h-[350px] sm:h-[400px] object-cover rounded-2xl shadow-lg"
             />
           </div>
          <div className="">
@@ -133,7 +133,7 @@ export default function AboutSlider() {
   }
 
   return (
-    <section className="relative mx-auto max-w-6xl px-4 py-10 md:py-16 lg:py-20 sm:px-6 ">
+    <section className="relative mx-auto max-w-7xl px-4 py-10 md:py-16 lg:py-20 sm:px-6 ">
       
       <div className="relative overflow-hidden rounded-2xl border border-gray-200">
 

@@ -53,7 +53,7 @@ export default function Features() {
         whileInView="show"
         viewport={{ once: true, amount: 0.15 }}
         variants={container}
-        className="mx-auto max-w-7xl"
+        className="mx-auto "
       >
 
         {/* Heading */}
@@ -69,7 +69,7 @@ export default function Features() {
         {/* Feature Grid */}
         <motion.div
           variants={container}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto max-w-7xl"
         >
           {features.map((item, i) => (
             <motion.div

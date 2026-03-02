@@ -119,7 +119,7 @@ export default function AboutPage() {
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px]  px-4 bg-black py-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto max-w-4xl py-8">
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-200">
@@ -149,7 +149,7 @@ export default function AboutPage() {
 
       <AboutSlider />
 
-      <section className="mx-auto max-w-6xl px-4  sm:px-6 ">
+      <section className="mx-auto max-w-7xl px-4  sm:px-6 ">
         <div className="space-y-8">
 {/* 
           <section className="rounded-2xl bg-[#dff3ef] border border-gray-200">

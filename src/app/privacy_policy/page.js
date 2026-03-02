@@ -87,7 +87,7 @@ export default function PrivacyPolicyPage() {
   ]
 
   return (
-    <main className="w-full bg-white text-gray-800 px-6 py-20 md:px-16">
+    <main className="w-full bg-white text-gray-800 px-6 py-30 md:px-16">
       <div className="max-w-6xl mx-auto">
         <div className="mb-14">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">

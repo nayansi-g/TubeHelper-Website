@@ -152,7 +152,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
+      <section className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
         <section className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
           <h2 className="text-2xl font-semibold md:text-3xl">Introduction</h2>
           <p className="mt-4 text-gray-700">At TubeHelper, we understand that digital marketing never stops.</p>

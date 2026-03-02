@@ -49,18 +49,20 @@ export default function ServicesCards() {
   return (
     <section className="w-full ">
       <div className=" bg-white py-16 md:py-20 ">
-        <div className="mx-auto max-w-7xl space-y-14 px-5 md:px-8 lg:px-14">
+        <div className="mx-auto max-w-8xl space-y-14 px-6 md:px-10 lg:px-20">
 
-          <div className="mx-auto max-w-3xl space-y-4 text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-black md:text-4xl">
-              OUR SERVICES
-            </h2>
-            <p className="text-base text-gray-600 md:text-lg">
-              We build revenue systems for ecommerce brands ready to scale.
-            </p>
-          </div>
+          <div className="text-center">
+          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl tracking-tight">
+             OUR SERVICES
+          </h2>
+          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-purple-500" />
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+            We build revenue systems for ecommerce brands ready to scale.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mx-auto max-w-7xl">
             {services.map((service, index) => (
               <motion.div
                 key={index}
