@@ -41,9 +41,9 @@ export default function Home() {
       <WhyChooseUs />
       <Features />
       <Card />
-    
+     <ContactPage />
       <ClientSlider />
-      <ContactPage />
+     
         <Faq />
       <CTASection />
     </main>

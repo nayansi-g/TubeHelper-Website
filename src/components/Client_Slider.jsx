@@ -108,7 +108,7 @@ export default function ClientSlider() {
     <div className="bg-white">
         <div className="text-center py-2">
       </div>
-        <Wrapper>
+        <Wrapper className="max-w-7xl">
       <div className=" bg-white text-center pb-5  md:pb-10">
         <h2 className="text-gray-900 text-3xl md:text-5xl font-semibold mb-2">Proof Over Promises</h2>
         <p className="text-gray-600">We don’t just talk about growth — we deliver it.</p>
@@ -132,21 +132,21 @@ export default function ClientSlider() {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {slides.map((slide, index) => (
-            <div className="slide" key={index}>
-              <div className="left bg-black  py-6">
-                <img src={slide.image} className="h-auto border border-gray-300 shadow-sm" alt={slide.subtitle} />
+            <div className="slide bg-black rounded-2xl p-6" key={index}>
+              <div className="left">
+                <img src={slide.image} className="h-auto rounded-md  border border-gray-300 shadow-lg shadow-black" alt={slide.subtitle} />
               </div>
 
               <div className="right">
-                <p className="text-gray-800 text-3xl font-semibold">{slide.title}</p>
-                <p className="text-xl mt-2 text-gray-600">{slide.subtitle}</p>
+                <p className="text-gray-200 text-3xl font-semibold">{slide.title}</p>
+                <p className="text-xl mt-2 text-gray-300">{slide.subtitle}</p>
 
-                <div className="section mt-5 text-gray-800">
+                <div className="section mt-5 text-gray-200">
                   <strong>The Challenge</strong>
-                  <p className="text-gray-600">{slide.challenge}</p>
+                  <p className="text-gray-500">{slide.challenge}</p>
                 </div>
 
-                <div className="section text-gray-800">
+                <div className="section text-gray-200">
                   <strong>What We Did</strong>
                   <ul>
                     {slide.whatWeDid.map((item, i) => (
@@ -155,7 +155,7 @@ export default function ClientSlider() {
                   </ul>
                 </div>
 
-                <div className="section text-gray-800">
+                <div className="section text-gray-200">
                   <strong>Results</strong>
                   <ul>
                     {slide.results.map((item, i) => (
@@ -164,7 +164,7 @@ export default function ClientSlider() {
                   </ul>
                 </div>
 
-                <div className="section text-gray-800">
+                <div className="section text-gray-200">
                   <strong>Impact</strong>
                   <p className="text-gray-500">{slide.impact}</p>
                 </div>
@@ -190,7 +190,6 @@ export default function ClientSlider() {
 const Wrapper = styled.section`
   background: white;
   padding: 40px 20px 60px;
-  max-width: 1200px;
   margin: auto;
 
   .slider {
