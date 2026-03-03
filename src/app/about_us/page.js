@@ -279,7 +279,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#FFE0F0] via-white to-[#FFE0F0] px-4 py-16 text-center sm:px-6 md:py-20">
+     <div className="pt-10"> <section className="bg-gradient-to-br from-[#FFE0F0] via-white to-[#FFE0F0] px-4 py-10 text-center sm:px-6 md:py-20">
         <h2 className="text-3xl font-semibold">READY TO BUILD A PREDICTABLE REVENUE SYSTEM?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           If you&apos;re ready to move from ad-dependent growth to system-driven scale, let’s build your revenue infrastructure.
@@ -288,7 +288,7 @@ export default function AboutPage() {
           <PhoneOutgoing className="w-5 h-5" /> Call Now
           {/* <MoveUpRight className="h-4 w-4" /> */}
         </button></a>
-      </section>
+      </section></div>
     </main>
   )
 }

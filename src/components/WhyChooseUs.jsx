@@ -97,7 +97,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Mobile Layout (Stacked) */}
-        <div className="mt-16 space-y-6 lg:hidden">
+        <div className="mt-16 grid md:grid-cols-2 gap-5 lg:hidden">
           {points.map((point, index) => (
             <div
               key={index}

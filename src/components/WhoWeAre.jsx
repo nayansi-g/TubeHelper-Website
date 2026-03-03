@@ -34,9 +34,9 @@ export default function WhoWeAreSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-             <div className="flex items-center justify-between ">
+             <div className="flex items-center justify-between  ">
               <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl tracking-tight">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 md:text-4xl tracking-tight">
             WHO WE ARE?
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-purple-500" />

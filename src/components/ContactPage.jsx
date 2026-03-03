@@ -85,7 +85,7 @@ export default function ContactPage() {
 
         {/* LEFT SIDE - SEO CONTENT */}
         <div className="hidden md:block">
-          <h1 className="text-4xl md:text-5xl font-semibold  text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl lg:text-5xl font-semibold  text-gray-900 mb-6 leading-tight">
             Performance Marketing & Ecommerce Growth Experts
           </h1>
 
