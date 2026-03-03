@@ -80,7 +80,7 @@ export default function WhoWeAreSection() {
           </p>
 
           <h3 className="mt-3 text-3xl font-bold text-gray-900 md:text-4xl">
-            Trusted by Industry Leaders
+            Certified Partner With
           </h3>
 
           <div className="mx-auto mt-4 h-1 w-16 bg-purple-600" />
