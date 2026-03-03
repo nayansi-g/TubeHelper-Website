@@ -8,7 +8,7 @@ import { useRef, useState } from "react"
 export default function Hero() {
   return (
     <section className="relative mt-[100px] min-h-[calc(100svh-100px)] bg-black text-white flex items-center">
-      <div className="mx-auto w-full px-6 md:px-10 lg:px-20 py-20 lg:py-24">
+      <div className="mx-auto w-full px-4.5  md:px-10 lg:px-20 py-20 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
@@ -18,7 +18,7 @@ export default function Hero() {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl"
+              className="text-3xl font-semibold leading-tight tracking-tight md:text-4xl lg:text-5xl"
             >
               Scaling Your E-commerce Brand Shouldn't Feel Like Guesswork.
             </motion.h1>
