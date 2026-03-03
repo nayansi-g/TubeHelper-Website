@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="relative mt-[100px] min-h-[calc(100svh-100px)] bg-black text-white flex items-center">
       <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:py-24">
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">

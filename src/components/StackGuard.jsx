@@ -12,7 +12,7 @@ export default function StackCard() {
           
           <div className="relative aspect-square h-[350px] md:h-[500px] w-full border-4 border-gray-800 overflow-hidden">
             <Image
-              src="/marketing1.jpg" // put your image
+              src="/WHOWE.jpg" // put your image
               alt="Solar Worker"
               fill
               className="object-cover "

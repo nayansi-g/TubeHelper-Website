@@ -65,13 +65,13 @@ export default function WhyChooseUs() {
         <div className="relative mt-10 flex justify-center">
 
           <div
-            className="relative w-full h-[600px] max-w-3xl rounded-2xl bg-cover bg-center shadow-2xl"
+            className="relative w-full h-[600px] max-w-3xl rounded-2xl border border-gray-200 bg-cover bg-center shadow-2xl"
             style={{
-              backgroundImage: "url('/About2.jpg')",
+              backgroundImage: "url('/whychooseusimg.jpg')",
             }}
           >
             {/* Overlay for slight darkening */}
-            <div className="absolute inset-0 rounded-2xl bg-black/20"></div>
+            {/* <div className="absolute inset-0 rounded-2xl bg-black/20"></div> */}
 
             {/* Spacer to maintain height */}
             <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/4]"></div>
