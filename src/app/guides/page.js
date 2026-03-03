@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MoveUpRight } from "lucide-react"
+import { MoveUpRight, PhoneOutgoing } from "lucide-react"
 import { buildMetadata } from "@/lib/seo"
 
 export const metadata = buildMetadata({
