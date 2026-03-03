@@ -43,9 +43,9 @@ export default function Hero() {
                 href="https://wa.me/919897165137"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm backdrop-blur-md transition hover:bg-white/20 sm:w-auto sm:text-base"
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm backdrop-blur-md transition hover:bg-white/20 sm:w-auto sm:text-base"
               >
-                <FaWhatsapp className="text-lg" />
+                <FaWhatsapp className="text-2xl" />
                 Chat Now
               </a>
 
@@ -53,7 +53,7 @@ export default function Hero() {
                 href="tel:+919897165137"
                 className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-sm font-medium shadow-lg transition hover:opacity-90 sm:w-auto sm:text-base"
               >
-                Book Free Strategy Call
+                Book Your Free Strategy Call
                 <MoveUpRight className="h-4 w-4" />
               </a>
             </motion.div>

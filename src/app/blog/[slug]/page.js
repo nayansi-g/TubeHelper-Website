@@ -2,6 +2,7 @@ import Link from "next/link"
 import { MoveLeft, MoveUpRight } from "lucide-react"
 import blogData from "../../../../Blog.json"
 import { buildMetadata } from "@/lib/seo"
+import DOMPurify from 'isomorphic-dompurify';
 
 const formatDate = (dateString) =>
   new Intl.DateTimeFormat("en-US", {
@@ -14,13 +15,14 @@ export function generateStaticParams() {
   return (blogData.blogs || []).map((blog) => ({ slug: blog.slug }))
 }
 
-export function generateMetadata({ params }) {
-  const blog = (blogData.blogs || []).find((item) => item.slug === params.slug)
+export  async function generateMetadata({ params }) {
+  let {slug} = await params;
+  const blog = await (blogData.blogs || []).find((item) => item.slug === slug)
   if (!blog) {
     return buildMetadata({
       title: "Blog Not Found",
       description: "The requested article could not be found.",
-      path: `/blog/${params.slug}`,
+      path: `/blog/${slug}`,
     })
   }
 
@@ -33,8 +35,9 @@ export function generateMetadata({ params }) {
   })
 }
 
-export default function BlogDetailsPage({ params }) {
-  const blog = (blogData.blogs || []).find((item) => item.slug === params.slug)
+export default async function BlogDetailsPage({ params }) {
+  let {slug} = await params;
+  const blog = await (blogData.blogs || []).find((item) => item.slug === slug)
 
   if (!blog) {
     return (
@@ -114,13 +117,10 @@ export default function BlogDetailsPage({ params }) {
         </div>
 
         <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
-          <h2 className="text-2xl font-semibold">What You Will Learn</h2>
-          <ul className="mt-4 space-y-2 text-gray-700">
-            <li>• Practical frameworks you can apply to your store immediately</li>
-            <li>• Data-driven tactics to improve conversion quality and profitability</li>
-            <li>• Channel-specific optimization ideas for scalable growth</li>
-            <li>• Performance benchmarks and implementation priorities</li>
-          </ul>
+         <div 
+        className="blog-content"
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }}
+      />    
         </div>
 
         <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
@@ -132,7 +132,7 @@ export default function BlogDetailsPage({ params }) {
             href="/contact"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
-            Book Your Free Strategy Call
+            Book Your Strategy Call
             <MoveUpRight className="h-4 w-4" />
           </Link>
         </div>

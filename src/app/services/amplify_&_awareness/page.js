@@ -2,6 +2,7 @@ import Image from "next/image"
 import { MoveUpRight, PhoneIncoming } from "lucide-react"
 import FAQAccordionClient from "@/components/FAQAccordionClient"
 import { buildMetadata } from "@/lib/seo"
+import { FaWhatsapp } from "react-icons/fa"
 
 export const metadata = buildMetadata({
   title: "Brand Awareness and Reach Services",
@@ -100,18 +101,23 @@ export default function AmplifyBrandAwarenessPage() {
               We help brands expand visibility, dominate attention, and turn awareness into measurable business results.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <a  href="https://wa.me/919897165137"
-  target="_blank"
-  rel="noopener noreferrer"><button className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:opacity-90">
-                Book a Brand Strategy Call
-                <MoveUpRight className="h-4 w-4" />
-              </button></a>
-              <a href="tel:+919897165137"><button className="inline-flex items-center cursor-pointer gap-3 rounded-full border border-black/15 bg-white px-5 py-2 text-sm font-medium shadow-sm transition hover:bg-gray-50">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
-                  <PhoneIncoming className="h-4 w-4" />
-                </span>
-                Get a Visibility Audit
-              </button></a>
+             <a
+                                           href="https://wa.me/919897165137"
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           className="flex w-full items-center font-medium justify-center gap-2 rounded-full shadow-md border border-gray-200 bg-white px-6 py-3 text-sm backdrop-blur-md transition hover:bg-black hover:text-white sm:w-auto sm:text-base"
+                                         >
+                                           <FaWhatsapp className="text-2xl" />
+                                           Chat Now
+                                         </a>
+                           
+                                         <a
+                                           href="tel:+919897165137"
+                                           className="flex w-full items-center justify-center gap-2 rounded-full bg-black text-white px-6 py-3 text-sm font-medium shadow-lg transition hover:opacity-90 sm:w-auto sm:text-base"
+                                         >
+                                           Book Your Free Strategy Call
+                                           <MoveUpRight className="h-4 w-4" />
+                                         </a>
             </div>
           </div>
           <div className="mx-auto w-full max-w-xl">

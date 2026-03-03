@@ -39,7 +39,7 @@ export default function BlogPage() {
   rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
-            Book a Growth Strategy Call
+            Book Your Free Strategy Call
             <MoveUpRight className="h-4 w-4" />
           </a>
         </div>

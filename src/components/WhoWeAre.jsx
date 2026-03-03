@@ -43,9 +43,11 @@ export default function WhoWeAreSection() {
          
         </div>
 
-              <button className="rounded-full border border-purple-600 cursor-pointer px-5 py-2 text-sm font-medium text-purple-700 transition hover:bg-purple-600 hover:text-white">
+             <a href="https://wa.me/919897165137"
+                                           target="_blank"
+                                           rel="noopener noreferrer"> <button className="rounded-full border border-purple-600 cursor-pointer px-5 py-2 text-sm font-medium text-purple-700 transition hover:bg-purple-600 hover:text-white">
                 Book a meeting →
-              </button>
+              </button></a>
             </div>
 
             <div className="mt-6 space-y-5  text-gray-600 leading-relaxed">
@@ -93,7 +95,7 @@ export default function WhoWeAreSection() {
               "/MetaLogo.png",
               "/microsoft_certified.png",
             ].map((logo, index) => (
-              <div key={index} className="flex border border-gray-300 bg-white h-[78px] py-1 justify-center">
+              <div key={index} className="flex border border-gray-300 bg-white h-[78px] py-1+ justify-center">
                 <Image
                   src={logo}
                   alt="Partner Logo"

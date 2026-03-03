@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/seo"
+import { MoveUpRight, PhoneOutgoing } from "lucide-react"
 
 const faqSections = [
   {
@@ -193,9 +194,10 @@ export default function FAQPage() {
             Welcome to our FAQ page. Here you&apos;ll find answers to common questions about our performance marketing, ecommerce growth, SEO, analytics, and brand awareness services.
           </p>
           <a  href="https://wa.me/919897165137"
+          className="flex justify-center"
   target="_blank"
-  rel="noopener noreferrer"><button className="mt-8 cursor-pointer rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-            Contact Us
+  rel="noopener noreferrer"><button className="mt-8 cursor-pointer flex gap-1 justify-center items-center rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+            Contact Us <MoveUpRight className="h-4 w-4" />
           </button></a>
         </div>
       </section>
@@ -234,12 +236,10 @@ export default function FAQPage() {
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           Reach out to us at contact@tubehelper.in, call +91 9897165137, or visit A-83, First Floor, Sector 63, Noida (Nearest metro station is Sector 62).
         </p>
-        <a
-           href="tel:+919897165137"
-          className="mt-7 inline-block rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
-        >
-          Call Now
-        </a>
+        <a  href="tel:+919897165137"> <button className="mt-7 inline-flex items-center cursor-pointer gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          <PhoneOutgoing className="w-5 h-5" /> Call Now
+          {/* <MoveUpRight className="h-4 w-4" /> */}
+        </button></a>
       </section>
     </main>
   )

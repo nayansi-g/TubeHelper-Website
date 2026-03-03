@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MoveUpRight } from "lucide-react"
+import { MoveUpRight, PhoneOutgoing } from "lucide-react"
 import { buildMetadata } from "@/lib/seo"
 
 export const metadata = buildMetadata({
@@ -229,7 +229,7 @@ export default function EcommerceTipsPage() {
   rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
-            Book a Growth Strategy Call
+            Book Your Strategy Call Now
             <MoveUpRight className="h-4 w-4" />
           </a>
         </div>
@@ -330,15 +330,10 @@ export default function EcommerceTipsPage() {
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           If you want expert help implementing these ecommerce growth strategies, our team specializes in performance marketing, conversion optimization, analytics and tracking, automation systems, and full-funnel ecommerce growth.
         </p>
-       <a
-           href="https://wa.me/919897165137"
-  target="_blank"
-  rel="noopener noreferrer"
-          className="mt-7 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
-        >
-          Book Your Free Ecommerce Growth Consultation
-          <MoveUpRight className="h-4 w-4" />
-        </a>
+       <a  href="tel:+919897165137"> <button className="mt-7 inline-flex items-center cursor-pointer gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+                <PhoneOutgoing className="w-5 h-5" /> Call Now
+                {/* <MoveUpRight className="h-4 w-4" /> */}
+              </button></a>
       </section>
     </main>
   )

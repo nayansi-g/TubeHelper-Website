@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MoveUpRight } from "lucide-react"
+import { MoveUpRight, PhoneOutgoing } from "lucide-react"
 import ContactFormClient from "@/components/ContactFormClient"
 import { buildMetadata } from "@/lib/seo"
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
           <a   href="https://wa.me/919897165137"
   target="_blank"
   rel="noopener noreferrer"><button className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-            Book a Strategy Call
+            Book Your Free Strategy Call
             <MoveUpRight className="h-4 w-4" />
           </button></a>
         </div>
@@ -191,8 +191,8 @@ export default function ContactPage() {
           Let&apos;s build a marketing strategy focused on profitability, scalability, and long-term growth.
         </p>
        <a  href="tel:+919897165137"> <button className="mt-7 inline-flex items-center cursor-pointer gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-          Book Your Strategy Call Now
-          <MoveUpRight className="h-4 w-4" />
+          <PhoneOutgoing className="w-5 h-5" /> Call Now
+          {/* <MoveUpRight className="h-4 w-4" /> */}
         </button></a>
       </section>
     </main>

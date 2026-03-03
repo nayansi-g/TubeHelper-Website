@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { MoveUpRight } from "lucide-react"
+import { MoveUpRight, PhoneOutgoing } from "lucide-react"
 import { buildMetadata } from "@/lib/seo"
 import AboutSlider from "@/components/AboutUsSLider"
 
@@ -139,7 +139,7 @@ export default function AboutPage() {
             <a href="https://wa.me/919897165137"
               target="_blank"
               rel="noopener noreferrer"><button className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-800 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                Book a Strategy Call
+                Book Your Strategy Call
                 <MoveUpRight className="h-4 w-4" />
               </button></a>
           </div>
@@ -284,9 +284,9 @@ export default function AboutPage() {
         <p className="mx-auto mt-4 max-w-2xl text-gray-700">
           If you&apos;re ready to move from ad-dependent growth to system-driven scale, let’s build your revenue infrastructure.
         </p>
-        <a href="tel:+919897165137"><button className="mt-7 inline-flex cursor-pointer items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-          Call Now
-          <MoveUpRight className="h-4 w-4" />
+        <a  href="tel:+919897165137"> <button className="mt-7 inline-flex items-center cursor-pointer gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          <PhoneOutgoing className="w-5 h-5" /> Call Now
+          {/* <MoveUpRight className="h-4 w-4" /> */}
         </button></a>
       </section>
     </main>

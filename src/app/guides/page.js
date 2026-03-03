@@ -103,8 +103,10 @@ export default function GuidesPage() {
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
             Actionable guides, proven strategies, and expert insights to help you scale traffic, increase conversions, and grow your brand sustainably.
           </p>
-          <a  href="tel:+919897165137"><button className="mt-8 cursor-pointer rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-            Explore Our Growth Guides
+          <a   href="https://wa.me/919897165137"
+                                          target="_blank"
+                                          rel="noopener noreferrer"><button className="mt-8 cursor-pointer rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+            Book Your Strategy Call Now
           </button></a>
         </div>
       </section>
@@ -220,10 +222,9 @@ export default function GuidesPage() {
         <p className="mx-auto mt-2 max-w-2xl text-gray-700">
           Book a Strategy Call to implement these frameworks with expert guidance.
         </p>
-        <a  href="https://wa.me/919897165137"
-  target="_blank"
-  rel="noopener noreferrer"><button className="mt-7 rounded-full cursor-pointer bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-          Book Your Free Growth Consultation
+        <a  href="tel:+919897165137"> <button className="mt-7 inline-flex items-center cursor-pointer gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
+          <PhoneOutgoing className="w-5 h-5" /> Call Now
+          {/* <MoveUpRight className="h-4 w-4" /> */}
         </button></a>
       </section>
     </main>
