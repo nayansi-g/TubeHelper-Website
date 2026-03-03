@@ -87,7 +87,7 @@ const faqs = [
 export default function OrganicGrowthPage() {
   return (
     <main className="bg-white text-gray-900">
-      <section className="bg-[#FFB180] pt-24 pb-14 md:pt-28 md:pb-20 rounded-b-[50px] md:rounded-b-[80px]">
+      <section className="bg-[#FFB180]  pb-14 pt-32 md:pb-20 rounded-b-[50px] md:rounded-b-[80px]">
         <div className="mx-auto grid w-full grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">

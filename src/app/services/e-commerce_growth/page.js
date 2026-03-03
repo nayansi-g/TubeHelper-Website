@@ -124,7 +124,7 @@ const faqs = [
 export default function EcommerceGrowthPage() {
   return (
     <main className="bg-white text-gray-900">
-      <section className="rounded-b-[50px] bg-[#A1C2F8] pb-14 pt-24 md:rounded-b-[80px] md:pb-20 md:pt-28">
+      <section className="rounded-b-[50px] bg-[#A1C2F8] pb-14  md:rounded-b-[80px] md:pb-20 pt-32">
         <div className="mx-auto grid w-full grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">

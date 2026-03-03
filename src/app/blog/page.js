@@ -26,7 +26,7 @@ export default function BlogPage() {
 
   return (
     <main className="bg-white text-gray-900">
-      <section className="rounded-b-[50px] bg-[#B2E6E6] px-4 pb-12 pt-28 text-center sm:px-6 md:rounded-b-[80px] md:pb-16 md:pt-32">
+      <section className="rounded-b-[50px] bg-[#B2E6E6] px-4 pb-12  text-center sm:px-6 md:rounded-b-[80px] md:pb-16 pt-32">
         <div className="mx-auto max-w-5xl">
           <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
             Digital Marketing Blog for Ecommerce Growth and Performance
