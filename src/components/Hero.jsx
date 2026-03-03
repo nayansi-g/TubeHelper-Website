@@ -8,7 +8,7 @@ import { useRef, useState } from "react"
 export default function Hero() {
   return (
     <section className="relative mt-[100px] min-h-[calc(100svh-100px)] bg-black text-white flex items-center">
-      <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:py-24">
+      <div className="mx-auto w-full px-6 md:px-10 lg:px-20 py-20 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
@@ -71,7 +71,7 @@ export default function Hero() {
             transition={{ duration: 0.9 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-lg lg:max-w-xl">
+            <div className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl">
 
               {/* Glow Effect */}
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-2xl"></div>
@@ -117,7 +117,7 @@ function VideoPlayer() {
 
       <button
         onClick={togglePlay}
-        className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 backdrop-blur-md transition hover:bg-black/80"
+        className="absolute bottom-0 right-1 flex h-12 w-12 md:h-16 md:w-16  items-center justify-center rounded-full bg-black/60 backdrop-blur-md transition hover:bg-black/80"
       >
         {isPlaying ? <Pause size={20} /> : <Play size={20} />}
       </button>
