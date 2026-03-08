@@ -34,4 +34,9 @@ body {
   overflow-x: hidden;
 }
 
+iframe[title="chat widget"] {
+  transform: scale(0.6) !important;
+  transform-origin: bottom right;
+}
+
 
