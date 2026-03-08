@@ -1,6 +1,6 @@
 "use client";
 
-import { X } from "lucide-react";
+import { ArrowDownToLine, X } from "lucide-react";
 
 export default function ThankYouModal({
   open,
@@ -48,9 +48,9 @@ export default function ThankYouModal({
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+            className="mt-3 inline-flex w-full items-center gap-1 justify-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
           >
-            {pdfLabel}
+           <ArrowDownToLine className="w-5 h-5" /> {pdfLabel}
           </a>
         </div>
       </div>
