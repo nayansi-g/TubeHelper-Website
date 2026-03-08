@@ -106,7 +106,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-4 text-sm text-gray-600 space-y-1">
-            <p>Email: contact@tubehelper.in</p>
+            <p>Email: connect@tubehelper.in</p>
             <p>Phone: +91 9897165137</p>
             <p>Address: A-83, First Floor, Sector 63, Noida</p>
             <p>Nearest metro station is Sector 62</p>

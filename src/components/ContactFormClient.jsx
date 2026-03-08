@@ -162,7 +162,7 @@ export default function ContactFormClient() {
                  </button>
 
                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 text-sm text-gray-700">
-                   <p>Email: contact@tubehelper.in</p>
+                   <p>Email: connect@tubehelper.in</p>
                    <p>Phone: +91 9897165137</p>
                    <p>Address: A-83, First Floor, Sector 63, Noida</p>
                    <p>Nearest metro station is Sector 62</p>

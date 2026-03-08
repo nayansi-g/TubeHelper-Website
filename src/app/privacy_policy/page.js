@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
       title: "9. Contact Us",
       body: "If you have any questions about this Privacy Policy or how your data is handled, please reach out to us:",
       contact: [
-        "Email: contact@tubehelper.in",
+        "Email: connect@tubehelper.in",
         "Phone: +91 9897165137",
         "Address: A-83, First Floor, Sector 63, Noida",
         "Nearest metro station is Sector 62",

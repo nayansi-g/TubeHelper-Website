@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
     "@type": "Organization",
     name: "TubeHelper",
     url: siteConfig.url,
-    email: "contact@tubehelper.in",
+    email: "connect@tubehelper.in",
     telephone: "+91 9897165137",
     address: {
       "@type": "PostalAddress",

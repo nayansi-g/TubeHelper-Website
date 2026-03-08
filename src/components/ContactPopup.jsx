@@ -105,7 +105,7 @@ export default function ContactPopup() {
               Fill this quick form and our team will connect with you.
             </p>
             <p className="mt-2 text-xs text-gray-600">
-              contact@tubehelper.in | +91 9897165137
+              connect@tubehelper.in | +91 9897165137
             </p>
           </div>
           <button

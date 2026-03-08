@@ -48,6 +48,6 @@ export function buildMetadata({
 export const siteConfig = {
   name: "TubeHelper",
   url: SITE_URL,
-  email: "contact@tubehelper.in",
+  email: "connect@tubehelper.in",
   phone: "+91 9897165137",
 };
