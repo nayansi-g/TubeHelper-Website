@@ -36,7 +36,7 @@ const contentPoints = [
 
 
 const results = [
-  "Higher search engine rankings",
+  "Higher search rankings",
   "Increased organic traffic",
   "Lower customer acquisition cost (CAC)",
   "Stronger brand authority",
@@ -46,42 +46,43 @@ const results = [
 
 const audience = [
   "Ecommerce brands",
-  "Service-based businesses",
-  "D2C brands",
-  "SaaS companies",
+  "D2C businesses",
+  "Service-based companies",
+  "SaaS products",
   "Founders building long-term brand equity",
-  "Businesses wanting to reduce ad dependency",
+  "Businesses looking to reduce ad dependency",
 ]
 
 const whyChooseUs = [
-  "Data-driven keyword research",
-  "Conversion-focused content",
-  "Technical SEO expertise",
-  "Transparent reporting",
-  "Long-term scalable strategies",
+ { title:"Data-Driven Keyword Strategy",
+  desc:"We identify search opportunities based on intent and revenue potential."},
+  { title:"Conversion-Focused Content",
+   desc:"Our content is built to attract traffic and drive meaningful actions."},
+ { title: "Technical SEO Expertise",
+   desc:"Strong technical foundations support sustainable rankings."},
+ { title: "Transparent Reporting",
+   desc:"Clear visibility into rankings, traffic, and performance."},
+ {  title:"Long-Term Growth Systems",
+   desc:"We focus on building authority that compounds over time."}
 ]
 
 const faqs = [
   {
     question: "How long does SEO take to show results?",
     answer:
-      "SEO typically shows measurable improvements within 3–6 months depending on competition and website authority.",
-  },
+"SEO is a long-term strategy. Initial improvements may appear within a few months, while meaningful growth typically occurs over 4–6 months depending on competition and site authority."  },
   {
     question: "Is content marketing necessary for SEO?",
     answer:
-      "Yes. High-quality, optimized content is essential for ranking and building authority.",
-  },
+"Yes. High-quality content helps search engines understand your expertise and improves rankings for important keywords."  },
   {
     question: "Do you guarantee rankings?",
     answer:
-      "No ethical SEO agency guarantees rankings. We focus on sustainable strategies that improve visibility and revenue.",
-  },
+"No credible SEO provider guarantees rankings. Our focus is building strong SEO foundations that improve visibility and long-term performance."  },
   {
     question: "Can SEO reduce ad spend?",
     answer:
-      "Yes. Strong organic traffic reduces reliance on paid advertising over time.",
-  },
+"Yes. Strong organic visibility can reduce reliance on paid ads and lower overall customer acquisition costs."  },
 ]
 
 export default function OrganicGrowthPage() {
@@ -91,11 +92,10 @@ export default function OrganicGrowthPage() {
         <div className="mx-auto grid w-full grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              Organic Growth Services That Drive Long-Term Traffic & Revenue
+             Organic Growth Systems That Build Long-Term Traffic & Revenue
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base text-gray-700 sm:text-lg lg:mx-0">
-              We help brands grow sustainably through strategic SEO and high-converting content marketing that attracts, ranks, and converts.
-            </p>
+We help ecommerce and D2C brands grow sustainably through SEO and content systems that attract high-intent traffic and convert it into revenue.            </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
             <a
                                           href="https://wa.me/919897165137"
@@ -134,22 +134,22 @@ export default function OrganicGrowthPage() {
             Traffic That Doesn&apos;t Depend on Ads
           </h2>
           <p className="mt-6 text-gray-700">
-            Paid ads stop when you stop paying.
+            Paid ads generate traffic only while you’re spending.
           </p>
           <p className="mt-3 text-gray-700">
-            Organic growth builds long-term assets that generate consistent traffic, leads, and sales without ongoing ad spend dependency.
-          </p>
+Organic growth builds long-term digital assets that drive consistent traffic, leads, and sales.          </p>
           <p className="mt-6 text-gray-700">
-            Our SEO and content marketing strategies are built to:
+           Our SEO and content systems are designed to:
+
           </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             <div className="rounded-xl border border-gray-200 px-4 py-3">Increase search visibility</div>
             <div className="rounded-xl border border-gray-200 px-4 py-3">Rank for high-intent keywords</div>
             <div className="rounded-xl border border-gray-200 px-4 py-3">Build authority in your niche</div>
-            <div className="rounded-xl border border-gray-200 px-4 py-3">Convert organic traffic into revenue</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Convert organic traffic into customers</div>
           </div>
           <p className="mt-6 text-lg font-medium text-gray-900">
-            We focus on sustainable digital growth, not short-term spikes.
+            We focus on sustainable, compounding growth — not short-term spikes.
           </p>
         </div>
       </section>
@@ -166,14 +166,12 @@ export default function OrganicGrowthPage() {
                 Search Engine Optimization (SEO)
               </p>
               <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
-                SEO Services That Increase Rankings & Revenue
+                SEO Systems That Increase Rankings & Revenue
               </h3>
               <p className="mt-5 text-gray-300">
-                Our SEO strategies are designed to help your business rank higher on search engines like Google for high-intent keywords related to your products and services.
-              </p>
+Our SEO strategies focus on ranking for keywords that bring qualified traffic and real revenue.            </p>
               <p className="mt-3 text-gray-300">
-                We combine technical SEO, on-page optimization, and strategic keyword research to drive targeted organic traffic.
-              </p>
+We combine technical SEO, search intent research, and on-page optimization to improve visibility and capture demand from search engines.              </p>
               <p className="mt-6 font-medium text-white">What We Do:</p>
               <ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
                 {seoPoints.map((point) => (
@@ -181,7 +179,7 @@ export default function OrganicGrowthPage() {
                 ))}
               </ul>
               <p className="mt-5 text-gray-200">
-                We focus on ranking for keywords that actually convert, not just vanity traffic.
+Our focus is simple: rank for keywords that convert — not just generate traffic.
               </p>
             </div>
             <div className="order-1 lg:order-2">
@@ -210,16 +208,16 @@ export default function OrganicGrowthPage() {
                 Content Marketing
               </p>
               <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
-                Content Marketing That Attracts, Engages & Converts
+                Content That Attracts, Educates & Converts
               </h3>
               <p className="mt-5 text-gray-300">
-                Content marketing is the foundation of sustainable organic growth.
+Content is the foundation of long-term organic growth.
               </p>
               <p className="mt-3 text-gray-300">
-                We create high-quality, SEO-optimized content that ranks on search engines, educates your audience, builds trust & authority, supports your funnel, and drives qualified leads.
+We create SEO-optimized content that ranks in search engines, builds authority, and supports your entire marketing funnel.
               </p>
               <p className="mt-3 text-gray-300">
-                From blog strategies to high-converting landing pages, we align content with business objectives.
+From blog strategies to landing pages, our content aligns with business goals and customer intent.
               </p>
               <p className="mt-6 font-medium text-white">What We Do:</p>
               <ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
@@ -228,7 +226,7 @@ export default function OrganicGrowthPage() {
                 ))}
               </ul>
               <p className="mt-5 text-gray-200">
-                Our content is built around search intent, conversion psychology, and brand positioning.
+Our content strategy combines search intent, conversion psychology, and brand positioning.
               </p>
             </div>
           </div>
@@ -250,7 +248,7 @@ export default function OrganicGrowthPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-gray-700">
-            Unlike paid ads, organic traffic compounds over time.
+Unlike paid ads, organic growth compounds over time.
           </p>
         </div>
       </section>
@@ -273,16 +271,18 @@ export default function OrganicGrowthPage() {
       <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
-            Why Brands Trust Our SEO & Content Strategies
+            Why Brands Trust TubeHelper for Organic Growth
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item) => (
               <div key={item} className="rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-gray-100">
-                {item}
+                {item.title}
+                <p className="text-gray-500"> {item.desc}</p>
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-lg text-gray-200">We don&apos;t chase algorithms. We build authority that lasts.</p>
+          <p className="mt-8 text-center text-lg text-gray-200">We don&apos;t chase algorithms.
+We build organic growth systems that last.</p>
           
         </div>
       </section>
@@ -302,9 +302,9 @@ export default function OrganicGrowthPage() {
             Ready to Build Sustainable Organic Growth?
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
-            If you want long-term traffic, authority, and consistent inbound leads, it&apos;s time to invest in SEO and content marketing.
+If you want consistent traffic, stronger authority, and long-term revenue from search, it’s time to invest in SEO and content systems.
           </p>
-           <a  href="tel:+919897165137"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
+           <a  href="tel:+919897165137"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-full bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
             Get Your Free SEO Strategy Call
             <MoveUpRight className="h-4 w-4" />
           </button></a>

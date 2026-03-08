@@ -27,7 +27,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="mt-6 text-base text-gray-300 sm:text-lg"
+              className="mt-6 text-base text-gray-300 sm:text-lg pr-0 lg:pr-10"
             >
               We build data-driven marketing systems that increase revenue
               without wasting ad spend.

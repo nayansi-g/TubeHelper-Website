@@ -70,6 +70,16 @@ export default function BlogPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featuredBlogs.map((blog) => (
             <article key={blog.id} className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+              <div className="mb-4 overflow-hidden rounded-xl bg-gray-100">
+                <div className="aspect-[16/9] w-full">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
               <p className="text-xs font-medium text-gray-600">{blog.category}</p>
               <h3 className="mt-2 text-xl font-semibold leading-tight">{blog.title}</h3>
               <p className="mt-3 text-sm text-gray-700">{blog.excerpt}</p>
@@ -101,6 +111,16 @@ export default function BlogPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {latestBlogs.map((blog) => (
             <article key={blog.id} className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+              <div className="mb-4 overflow-hidden rounded-xl bg-gray-100">
+                <div className="aspect-[16/9] w-full">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
               <p className="text-xs font-medium text-gray-600">{blog.category}</p>
               <h3 className="mt-2 text-lg font-semibold leading-tight">{blog.title}</h3>
               <p className="mt-3 text-sm text-gray-700">{blog.excerpt}</p>

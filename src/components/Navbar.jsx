@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import {
   ChartNoAxesCombined,
@@ -50,11 +51,11 @@ const serviceItems = [
 
 const resources = [
   { href: "/contact", label: "Contact" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Blogs" },
   // { href: "/how_it_works", label: "Case Studies" },
   { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },
-]
+] 
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -96,7 +97,15 @@ export default function Navbar() {
         <div className="rounded-full bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
           <div className="mx-auto flex h-[72px] w-full items-center justify-between px-4 sm:px-6">
             <Link href="/" className="flex items-center gap-2">
-              <img src="newLogo.png" alt="" className="w-42 md:w-58 pt-3" />
+              <Image
+                src="/newLogo.png"
+                alt="TubeHelper"
+                width={232}
+                height={64}
+                priority
+                className="h-auto w-46 pt-2 md:w-58"
+                sizes="(min-width: 1024px) 224px, 144px"
+              />
             </Link>
 
             <nav className="relative hidden items-center gap-8 text-sm font-medium lg:flex">

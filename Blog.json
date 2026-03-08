@@ -12,7 +12,7 @@
       "excerpt": "Proven strategies to optimize product pages, checkout flow, and user experience to significantly boost ecommerce conversion rates.",
       "metaTitle": "Increase Ecommerce Conversion Rate | Proven CRO Strategies",
       "metaDescription": "Learn how to increase your ecommerce conversion rate using product page optimization, CRO techniques, and data-driven strategies.",
-      "image": "/images/blog/ecommerce-conversion-optimization.jpg",
+      "image": "/Blog1.png",
       "featured": true
     },
     {
@@ -27,7 +27,7 @@
       "excerpt": "Step-by-step GA4 setup guide for ecommerce businesses to ensure accurate conversion tracking and revenue attribution.",
       "metaTitle": "GA4 Setup for Ecommerce | Complete Tracking Guide",
       "metaDescription": "Master GA4 setup for ecommerce with proper event tracking, conversion setup, and revenue reporting.",
-      "image": "/images/blog/ga4-ecommerce-tracking.jpg",
+      "image": "/Blog2.jpg",
       "featured": true
     },
     {
@@ -42,7 +42,7 @@
       "excerpt": "Discover how to scale Meta Ads profitably using structured testing, audience segmentation, and creative optimization.",
       "metaTitle": "Meta Ads Scaling Strategy | Increase ROAS",
       "metaDescription": "Learn how D2C brands scale Meta Ads campaigns while maintaining high ROAS and controlled CAC.",
-      "image": "/images/blog/meta-ads-scaling.jpg",
+      "image": "/blog3.jpg",
       "featured": true
     },
     {
@@ -57,7 +57,7 @@
       "excerpt": "Optimize your Shopify product pages with this high-converting checklist to increase sales and improve customer experience.",
       "metaTitle": "Shopify Product Page Optimization Guide",
       "metaDescription": "Boost Shopify sales with optimized product descriptions, images, reviews, and trust signals.",
-      "image": "/images/blog/shopify-product-optimization.jpg",
+      "image": "/blog4.jpg",
       "featured": false
     },
     {
@@ -72,7 +72,7 @@
       "excerpt": "A structured Google Ads strategy including Search, Shopping, and Performance Max campaigns for ecommerce brands.",
       "metaTitle": "Google Ads for Ecommerce | Growth Strategy",
       "metaDescription": "Scale ecommerce revenue with high-performing Google Ads campaigns and optimized bidding strategies.",
-      "image": "/images/blog/google-ads-ecommerce.jpg",
+      "image": "/Blog5.jpg",
       "featured": false
     },
     {
@@ -87,7 +87,7 @@
       "excerpt": "Learn how to build a powerful ecommerce SEO strategy to increase organic traffic and long-term visibility.",
       "metaTitle": "Ecommerce SEO Strategy | Increase Organic Traffic",
       "metaDescription": "Drive sustainable traffic with keyword optimization, technical SEO, and content marketing strategies.",
-      "image": "/images/blog/ecommerce-seo-strategy.jpg",
+      "image": "/Blog6.jpg",
       "featured": false
     },
     {
@@ -102,7 +102,7 @@
       "excerpt": "Recover lost revenue with email and SMS automation flows designed to reduce cart abandonment.",
       "metaTitle": "Abandoned Cart Recovery Strategy | Increase Sales",
       "metaDescription": "Implement automated abandoned cart flows to recover lost ecommerce revenue and improve retention.",
-      "image": "/images/blog/abandoned-cart-recovery.jpg",
+      "image": "/Blog7.jpg",
       "featured": false
     },
     {
@@ -117,7 +117,7 @@
       "excerpt": "Strategies to increase repeat purchases, retention rates, and overall customer lifetime value in ecommerce.",
       "metaTitle": "Increase Customer Lifetime Value | Ecommerce Tips",
       "metaDescription": "Boost profitability by improving retention, loyalty programs, and post-purchase marketing.",
-      "image": "/images/blog/customer-lifetime-value.jpg",
+      "image": "/Blog8.jpg",
       "featured": false
     },
     {
@@ -132,7 +132,7 @@
       "excerpt": "A complete funnel optimization framework to improve awareness, consideration, and purchase conversion rates.",
       "metaTitle": "Ecommerce Funnel Optimization Guide",
       "metaDescription": "Optimize your ecommerce funnel to increase conversions, reduce drop-offs, and scale revenue efficiently.",
-      "image": "/images/blog/ecommerce-funnel-optimization.jpg",
+      "image": "/Blog9.jpg",
       "featured": false
     }
   ]

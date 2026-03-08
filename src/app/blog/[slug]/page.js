@@ -99,6 +99,7 @@ export default async function BlogDetailsPage({ params }) {
           <h1 className="mt-2 text-3xl font-semibold leading-tight sm:text-4xl">
             {blog.title}
           </h1>
+          
           <div className="mt-5 flex flex-wrap items-center gap-2 text-sm text-gray-700">
             <span>{formatDate(blog.date)}</span>
             <span>•</span>
@@ -111,6 +112,16 @@ export default async function BlogDetailsPage({ params }) {
 
       <article className="mx-auto max-w-4xl px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-14">
         <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+          <div className="mb-5 overflow-hidden rounded-2xl bg-gray-100">
+            <div className="aspect-[16/9] w-full">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
           <h2 className="text-2xl font-semibold md:text-3xl">{blog.metaTitle}</h2>
           <p className="mt-4 text-gray-700">{blog.metaDescription}</p>
           <p className="mt-4 text-gray-700">{blog.excerpt}</p>

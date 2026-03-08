@@ -19,15 +19,19 @@ const growthPillars = [
 ]
 
 const whoFor = [
-  "Shopify Brands",
-  "D2C Ecommerce Businesses",
-  "$20K–$500K/Month Brands",
+  "Shopify brands ready to scale",
+  "D2C ecommerce businesses",
+  "Brands generating $20K–$500K per month",
+  "Founders focused on profitability and long-term growth"
 ]
 
 const whyChoose = [
-  "Data-First CRO Strategy",
-  "Full-Funnel Optimization",
-  "Transparent Tracking",
+  "Data-Driven CRO Strategy",
+  "Every optimization decision is backed by real performance data.",
+  "Full-Funnel Growth Systems",
+  "We optimize acquisition, conversion, and retention together.",
+  "Transparent Tracking & Analytics",
+  "Clear attribution and reporting for confident scaling."
 ]
 
 const services = [
@@ -35,42 +39,42 @@ const services = [
     label: "Shopify Growth Strategy",
     title: "Shopify Growth Strategy & Revenue Optimization",
     image: "/e-commerceGrowth1.jpg",
-    body: "We create data-backed growth strategies tailored for Shopify brands looking to scale profitably. Our approach aligns acquisition, retention, and optimization into a single growth roadmap.",
+    body:"We design structured growth roadmaps for Shopify brands ready to scale profitably.Our approach connects acquisition, conversion, and retention into one unified system.",
     points: [
       "Store performance audit",
       "Revenue opportunity mapping",
       "Customer journey analysis",
       "Offer & pricing optimization",
       "Retention & LTV strategy",
-      "Analytics & tracking review",
+      "Tracking and analytics review",
     ],
   },
   {
     label: "Conversion Rate Optimization (CRO)",
     title: "Conversion Rate Optimization (CRO) for Ecommerce Stores",
     image: "/e-commerceGrowth2.jpg",
-    body: "Increasing traffic without improving conversion rates leads to wasted ad spend. Our CRO strategies focus on improving user experience, trust signals, messaging clarity, and checkout flow.",
+    body: "Driving traffic without improving conversion leads to wasted spend. Our CRO process focuses on improving user experience, trust, and purchase intent.",
     points: [
-      "A/B testing strategy",
-      "Heatmap & user behavior analysis",
+      "A/B testing frameworks",
+      "Heatmaps and user behavior analysis",
       "Landing page optimization",
       "Product page optimization",
-      "Checkout flow improvement",
-      "Trust signal & social proof optimization",
+      "Checkout flow improvements",
+      "Trust signals and social proof",
     ],
   },
   {
     label: "Funnel Optimization",
-    title: "Full-Funnel Optimization for Higher Profit Margins",
+    title: "Full-Funnel Optimization for Higher Profitability",
     image: "/e-commerceGrowth3.jpg",
-    body: "A profitable ecommerce brand is built on a structured funnel, not isolated campaigns. We optimize every stage of the customer journey from awareness to repeat purchase.",
-    points: [
-      "Funnel mapping & segmentation",
-      "Upsell & cross-sell optimization",
+    body: "Profitable ecommerce growth requires a structured funnel — not isolated campaigns.We optimize the entire customer journey from first visit to repeat purchase.", 
+       points: [
+      "Funnel mapping and segmentation",
+      "Upsell and cross-sell systems",
       "Post-purchase flows",
-      "Email & SMS lifecycle integration",
+      "Email and SMS lifecycle integration",
       "Retargeting alignment",
-      "Subscription & repeat purchase strategy",
+      "Subscription and repeat purchase strategy",
     ],
   },
 ]
@@ -79,52 +83,45 @@ const steps = [
   {
     title: "Audit & Data Analysis",
     description:
-      "We identify bottlenecks in your store performance and customer journey.",
+      "We analyze store performance, tracking accuracy, and customer journey gaps.",
   },
   {
     title: "Conversion Optimization",
     description:
-      "We optimize product pages, checkout, and messaging for maximum impact.",
-  },
+"We improve product pages, messaging, and checkout experience."  },
   {
-    title: "Funnel Structuring",
+    title: "Funnel Architecture",
     description:
-      "We build a scalable funnel aligned with acquisition and retention.",
-  },
+"We structure funnels aligned with acquisition and retention."  },
   {
-    title: "Testing & Scaling",
+    title: "Testing & Controlled Scaling",
     description:
-      "We continuously test and refine to maximize revenue growth.",
-  },
+"We test continuously and scale validated improvements."  },
 ]
 
 const faqs = [
   {
     question: "What is ecommerce growth optimization?",
     answer:
-      "It is a structured process of improving store performance, conversion rate, and funnel efficiency to increase revenue and profitability.",
-  },
+"Ecommerce growth optimization focuses on improving conversion rates, customer value, and funnel efficiency to generate more revenue from existing traffic."  },
   {
     question: "How long does CRO take to show results?",
     answer:
-      "Initial test data appears within 2–4 weeks. Significant improvements typically occur within 60–90 days.",
-  },
+"Initial insights typically appear within a few weeks, while meaningful revenue improvements usually occur within 60–90 days of structured testing."  },
   {
     question: "Do you only work with Shopify?",
     answer:
-      "Our primary expertise is Shopify, but we can support other ecommerce platforms as well.",
-  },
+"Shopify is our primary platform, but we also work with other ecommerce platforms depending on the business model."  },
   {
     question: "Is funnel optimization different from paid ads?",
     answer:
-      "Yes. Paid ads bring traffic. Funnel optimization converts that traffic efficiently.",
-  },
+"Yes. Paid ads drive traffic, while funnel optimization ensures that traffic converts into revenue and repeat customers."  },
 ]
 
 export default function EcommerceGrowthPage() {
   return (
     <main className="bg-white text-gray-900">
-      <section className="rounded-b-[50px] bg-[#A1C2F8] pb-14  md:rounded-b-[80px] md:pb-20 pt-32">
+      <section className="rounded-b-[50px] bg-[#B3CEF9] pb-14  md:rounded-b-[80px] md:pb-20 pt-32">
         <div className="mx-auto grid w-full grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
@@ -237,7 +234,7 @@ export default function EcommerceGrowthPage() {
       <section className="bg-gray-50 px-4 py-16 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">Who We Work With</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 justify-center lg:grid-cols-3">
             {whoFor.map((item) => (
               <div key={item} className="rounded-2xl border border-gray-200 bg-white p-5 text-center">
                 {item}
@@ -245,7 +242,7 @@ export default function EcommerceGrowthPage() {
             ))}
           </div>
           <h3 className="mt-14 text-center text-2xl font-semibold sm:text-3xl">
-            Why Brands Choose Our Ecommerce Growth Team
+            Why Brands Choose TubeHelper
           </h3>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {whyChoose.map((item) => (
@@ -269,12 +266,12 @@ export default function EcommerceGrowthPage() {
       <section className="bg-gradient-to-br from-[#e6efff] via-white to-[#edf3ff] px-4 py-16 sm:px-6 md:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-            Ready to Unlock Higher Revenue Without Increasing Ad Spend?
+           Ready to Unlock Higher Revenue Without Increasing Ad Spend?
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
-            If you&apos;re driving traffic but not maximizing revenue, it&apos;s time to optimize your growth engine.
+            If you&apos;re driving traffic but not maximizing revenue, it&apos;s time to optimize your ecommerce growth system.
           </p>
-         <a  href="tel:+919897165137"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
+         <a  href="tel:+919897165137"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-full bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
             Book Your Ecommerce Growth Audit
             <MoveUpRight className="h-4 w-4" />
           </button></a> 

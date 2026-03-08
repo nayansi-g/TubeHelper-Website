@@ -14,49 +14,46 @@ export const metadata = buildMetadata({
 
 const trustPoints = [
   "Data-first paid media strategy",
-  "Full-funnel campaign architecture",
-  "Advanced tracking & attribution setup",
-  "Creative testing frameworks",
+  "Full-funnel campaign architecture (TOF/MOF/BOF)",
+  "Advanced tracking & attribution",
+  "Structured creative testing",
   "Profit-focused scaling models",
 ]
 
 const services = [
   {
-    title: "Meta & Instagram Advertising for Scalable Growth",
+    title: "Meta & Instagram Advertising for Structured Scale",
     image: "/instagramAds.jpg",
-    description:
-      "We build and manage high-converting Meta and Instagram campaigns designed to attract, nurture, and convert your ideal audience using structured TOF, MOF, and BOF systems.",
-    points: [
-      "Full-funnel campaign setup",
-      "Creative testing frameworks",
+    description:"We build full-funnel Meta systems designed to attract, convert, and retain high-value customers.",
+     points: [
+      "TOF / MOF / BOF campaign structure",
+      "Ongoing creative testing",
       "Audience segmentation & scaling",
-      "Retargeting & dynamic ads",
-      "Conversion tracking setup",
+      "Retargeting systems",
+      "Conversion tracking integration",
     ],
   },
   {
     title: "Google Ads Management (Search & Shopping)",
     image: "/googleAds.jpg",
-    description:
-      "Capture high-intent customers searching for your products with structured bidding, keyword segmentation, and optimized product feeds.",
-    points: [
-      "Search campaign setup",
-      "Shopping campaign management",
+    description:"Capture high-intent demand with structured bidding, clean data, and optimized product feeds.",
+        points: [
+      "Search & Shopping campaign structure",
       "Performance Max strategy",
       "Product feed optimization",
+      "Keyword segmentation",
       "Landing page alignment",
     ],
   },
   {
-    title: "YouTube Advertising for Brand Awareness",
+    title: "YouTube Advertising for Demand Generation",
     image: "/youtubeAds.jpg",
-    description:
-      "We create structured video ad funnels that move users from awareness to purchase using targeting, retargeting, and creative testing.",
+    description:"Build video acquisition systems that move users from awareness to purchase.",
     points: [
-      "Video funnel strategy",
-      "Audience targeting",
-      "Conversion campaigns",
-      "Creative angle testing",
+      "Structured video funnel strategy",
+      "Targeting & retargeting systems",
+      "Conversion-focused campaigns",
+      "Creative testing frameworks",
       "YouTube remarketing",
     ],
   },
@@ -64,65 +61,60 @@ const services = [
 
 const frameworkSteps = [
   {
-    title: "Strategy & Audit",
-    description: "We analyze funnels, creatives, tracking, and data gaps.",
+    title: "Audit & Strategy",
+    description: "We analyze funnels, creatives, tracking accuracy, CAC, and profitability gaps.",
   },
   {
     title: "Funnel Architecture",
-    description: "Structured systems across Meta, Google, and YouTube.",
+    description: "We build structured systems across Meta, Google, and YouTube.",
   },
   {
-    title: "Creative Testing",
-    description: "Continuous testing to find scalable winning ads.",
+    title: "Creative Testing & Validation",
+    description: "We test messaging and creative angles to identify scalable winners.",
   },
   {
-    title: "Scaling & Optimization",
-    description: "Increase ad spend while maintaining strong ROAS.",
+    title: "Controlled Scaling",
+    description: "We increase ad spend only on validated segments while maintaining strong ROAS.",
   },
 ]
 
 const results = [
-  "Increased ROAS",
-  "Lower customer acquisition cost",
-  "Higher conversion rates",
+  "Higher ROAS",
+  "Lower CAC",
+  "Improved conversion rates",
   "Increased lifetime value",
-  "Sustainable scaling",
+  "* Stable, sustainable scaling",
 ]
 
 const faqs = [
   {
     question: "What is performance marketing?",
-    answer:
-      "Performance marketing is a digital advertising strategy where brands pay for measurable results such as clicks, conversions, or sales.",
+    answer:"Performance marketing is structured paid acquisition focused on measurable revenue outcomes — not impressions or vanity metrics."
   },
   {
     question: "How long does it take to see results?",
-    answer:
-      "Most campaigns begin generating actionable data within 2–4 weeks. Scalable results typically occur within 60–90 days.",
-  },
+    answer:"Initial performance signals appear within weeks. Stable, scalable growth typically takes 60–90 days of structured testing and optimization."  },
   {
     question: "Which platform is best, Meta or Google?",
     answer:
-      "It depends on your product and audience. We often combine both platforms for maximum reach and profitability.",
-  },
+"It depends on your product, margins, and audience intent. We build cross-channel systems aligned with your unit economics."  },
   {
     question: "Do you provide tracking setup?",
     answer:
-      "Yes. We implement advanced tracking systems including GA4, Meta Pixel, and server-side tracking.",
-  },
+"Yes. Accurate tracking and attribution are foundational to our approach."  },
 ]
 
 export default function PerformanceMarketingPage() {
   return (
     <main className="bg-white text-gray-900">
       <section className="rounded-b-[50px] bg-[#dff3ef] pb-14  md:rounded-b-[80px] md:pb-20 pt-32">
-        <div className="mx-auto grid w-full grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
+        <div className=" grid w-full grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              Performance Marketing Services That Drive Profitable Growth
+            <h1 className="text-3xl mx-auto max-w-2xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+              Performance Marketing Services That Drive Profitable Scale
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-gray-700 sm:text-lg lg:mx-0">
-              We don&apos;t just run ads. We build scalable, data-driven acquisition systems across Meta, Google, and YouTube.
+            <p className="mx-auto mt-5 max-w-xl text-base text-gray-700 sm:text-lg lg:mx-0">
+              We don&apos;t just run ads. We build structured acquisition systems designed to increase revenue while protecting margins.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
               <a
@@ -169,14 +161,13 @@ export default function PerformanceMarketingPage() {
           </div>
           <div>
             <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-              Trusted Performance Marketing for High-Growth Brands
+              TRUSTED PERFORMANCE MARKETING FOR SCALING ECOMMERCE BRANDS
             </h2>
             <p className="mt-5 text-gray-700">
-              We help ecommerce and D2C brands scale profitably using measurable ROI frameworks, structured testing, and full-funnel optimization.
-            </p>
+We help established ecommerce and D2C brands scale profitably through structured paid acquisition, full-funnel optimization, and accurate tracking.            </p>
             <p className="mt-3 text-gray-700">
-              From startups to scaling brands, we build advertising systems that generate consistent revenue growth.
-            </p>
+Our focus isn’t just traffic.
+It’s predictable, measurable revenue growth.            </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {trustPoints.map((point) => (
                 <div key={point} className="rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-700">
@@ -199,7 +190,7 @@ export default function PerformanceMarketingPage() {
       <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20">
         <div className="mx-auto mx-auto max-w-7xl ">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
-            Our Performance Marketing Services
+            OUR PERFORMANCE MARKETING SERVICES
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {services.map((service) => (
@@ -227,7 +218,7 @@ export default function PerformanceMarketingPage() {
       <section className="px-4 py-16 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
-            Our 4-Step Performance Marketing Framework
+        OUR 4-STEP PERFORMANCE MARKETING FRAMEWORK
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {frameworkSteps.map((step, index) => (
@@ -251,7 +242,7 @@ export default function PerformanceMarketingPage() {
       <section className="bg-gray-50 px-4 py-16 sm:px-6 md:py-20">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
-            Frequently Asked Questions
+            FREQUENTLY ASKED QUESTIONS
           </h2>
           <FAQAccordionClient faqs={faqs} />
         </div>
@@ -260,14 +251,14 @@ export default function PerformanceMarketingPage() {
       <section className="bg-gradient-to-br from-[#dff3ef] via-white to-[#eaf9f5] px-4 py-16 sm:px-6 md:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-            Ready to Scale Your Brand Profitably?
+            READY TO SCALE PROFITABLY?
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
-            If you&apos;re serious about growing your brand through structured performance marketing strategies, let&apos;s build your growth engine.
+            If you&apos;re serious about structured acquisition systems that drive predictable revenue, let&apos;s build your growth infrastructure.
           </p>
          <a href="https://wa.me/919897165137"
            target="_blank"
-           rel="noopener noreferrer"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
+           rel="noopener noreferrer"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-full bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
             Book Your Free Strategy Call
             <MoveUpRight className="h-4 w-4" />
           </button></a> 

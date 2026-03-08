@@ -14,100 +14,109 @@ export const metadata = buildMetadata({
 
 const trackingPoints = [
   "GA4 setup & configuration",
-  "Conversion tracking setup",
-  "Event tracking implementation",
-  "Google Tag Manager (GTM) setup",
+  "Conversion tracking implementation",
+  "Event tracking systems",
+  "Google Tag Manager setup",
   "Enhanced ecommerce tracking",
   "Cross-domain tracking",
-  "Pixel & conversion API integration",
-  "Attribution modeling setup",
+  "Pixel & Conversion API integration",
+  "Attribution model configuration",
 ]
 
 const automationPoints = [
   "Email automation workflows",
   "CRM integration",
-  "Abandoned cart flows",
+  "Abandoned cart recovery flows",
   "Lead nurturing sequences",
-  "Behavioral-based automation",
+  "Behavior-based automation",
   "SMS automation setup",
   "Retention campaign automation",
+]
+
+const reportingPoints=[
+"Revenue performance",
+"ROAS and CAC",
+"Conversion rates",
+"Funnel performance",
+"Campaign efficiency"
 ]
 
 const landingPagePoints = [
   "Landing page wireframe strategy",
   "Offer positioning",
-  "Conversion-focused copy strategy",
-  "Heatmap & behavior analysis",
-  "A/B testing strategy",
+  "Conversion-focused copy structure",
+  "Heatmap and behavior analysis",
+  "A/B testing frameworks",
   "Funnel-stage alignment",
 ]
 
 const frameworkSteps = [
   {
     title: "Step 1: Audit & Data Gap Analysis",
-    description: "We identify tracking inaccuracies and automation gaps.",
+    description: "We identify tracking issues, attribution gaps, and automation opportunities.",
   },
   {
     title: "Step 2: Technical Implementation",
-    description: "We implement structured tracking, pixels, and event systems.",
+    description: "We implement structured tracking systems, pixels, and event infrastructure.",
   },
   {
-    title: "Step 3: Dashboard & Automation Build",
-    description: "We build reporting dashboards and automation workflows.",
+    title: "Step 3: Dashboard & Automation Setup",
+    description: "We build reporting dashboards and automated workflows.",
   },
   {
     title: "Step 4: Optimization & Scaling",
-    description: "We refine attribution and automation for scalable growth.",
+    description: "We refine attribution, improve automation performance, and support scalable growth.",
   },
 ]
 
 const results = [
-  "Accurate attribution",
+  "Accurate attribution across channels",
   "Reduced wasted ad spend",
   "Higher campaign efficiency",
   "Better decision-making",
-  "Increased conversion rates",
-  "Improved customer retention",
+  "Improved conversion performance",
+  "Stronger customer retention",
   "Scalable growth systems",
 ]
 
 const audience = [
-  "Ecommerce brands scaling ads",
-  "Businesses with inconsistent tracking",
+  "Ecommerce brands scaling paid acquisition",
+  "Businesses with unreliable tracking data",
   "Brands struggling with attribution",
-  "Companies running multi-channel campaigns",
+  "Companies running multi-channel marketing",
   "Founders who want data-driven decisions",
 ]
 
 const trustPoints = [
-  "Advanced GA4 expertise",
-  "Cross-platform tracking implementation",
-  "Automation-first growth strategy",
-  "Clean dashboard reporting",
-  "Revenue-focused insights",
+{ title:"Advanced GA4 Expertise",
+  desc:"We build accurate analytics foundations for ecommerce growth."},
+  { title:"Cross-Platform Tracking",
+   desc:"Clean attribution across ads, ecommerce platforms, and CRM systems."},
+ { title: "Automation-Driven Growth",
+   desc:"Automated workflows improve retention and revenue."},
+ { title: "Clear Reporting Dashboards",
+   desc:"Performance data that’s easy to understand and act on."},
+ {  title:"Revenue-Focused Insights",
+   desc:"We prioritize metrics that impact profitability."}
 ]
 
 const faqs = [
   {
     question: "Why is GA4 setup important?",
     answer:
-      "GA4 provides advanced event-based tracking and better cross-platform attribution compared to older analytics systems.",
-  },
+"GA4 provides accurate tracking of user behavior, conversions, and customer journeys across devices and platforms."  },
   {
     question: "What is marketing automation?",
     answer:
-      "Marketing automation uses workflows and triggered actions to nurture leads and customers automatically.",
-  },
+"Marketing automation uses workflows to automatically nurture leads, recover abandoned carts, and retain customers through email, SMS, and CRM systems."  },
   {
     question: "Can you fix inaccurate tracking?",
     answer:
-      "Yes. We audit and correct tracking errors, pixel misfires, and attribution gaps.",
-  },
+"Yes. We audit existing tracking systems and rebuild them to ensure accurate attribution and reliable performance data."  },
   {
     question: "Do I need dashboards if I already use ad platforms?",
     answer:
-      "Yes. Centralized dashboards provide clearer business-level insights across all platforms.",
-  },
+"Yes. Dashboards combine data from multiple platforms to provide a complete view of revenue, CAC, and funnel performance."  },
 ]
 
 export default function AnalyticsAutomationPage() {
@@ -116,11 +125,11 @@ export default function AnalyticsAutomationPage() {
       <section className="rounded-b-[50px] bg-[#931847] pb-14  md:rounded-b-[80px] md:pb-20 pt-32">
         <div className="mx-auto grid w-full grid-cols-1  items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl text-gray-200 font-semibold leading-tight md:text-4xl lg:text-5xl">
-              Analytics & Automation Services for Scalable, Data-Driven Growth
+            <h1 className="text-3xl text-gray-100 font-semibold leading-tight md:text-4xl lg:text-5xl">
+              Analytics & Automation Systems for Scalable, Data-Driven Growth
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base text-gray-300 sm:text-lg lg:mx-0">
-              We help brands implement advanced tracking, marketing automation, and real-time reporting systems to eliminate guesswork and maximize ROI.
+We help ecommerce and D2C brands implement accurate tracking, marketing automation, and reporting systems that remove guesswork and support profitable scaling.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
             <a
@@ -160,17 +169,17 @@ export default function AnalyticsAutomationPage() {
             If You Can&apos;t Track It, You Can&apos;t Scale It
           </h2>
           <p className="mt-6 text-gray-700">
-            Most businesses waste ad spend and miss growth opportunities because their tracking is inaccurate or incomplete.
+Many brands waste ad spend because their tracking and attribution are incomplete.
           </p>
-          <p className="mt-6 text-gray-700">Without proper analytics and automation:</p>
+          <p className="mt-6 text-gray-700">Without proper analytics infrastructure:</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 px-4 py-3">Data is unreliable</div>
-            <div className="rounded-xl border border-gray-200 px-4 py-3">Campaign decisions are based on assumptions</div>
-            <div className="rounded-xl border border-gray-200 px-4 py-3">Funnels break without visibility</div>
-            <div className="rounded-xl border border-gray-200 px-4 py-3">Revenue attribution becomes unclear</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Data becomes unreliable</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Campaign decisions rely on assumptions</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Funnel performance becomes unclear</div>
+            <div className="rounded-xl border border-gray-200 px-4 py-3">Revenue attribution breaks across platforms</div>
           </div>
           <p className="mt-6 text-lg font-medium text-gray-900">
-            We build structured tracking and automation systems that give you complete clarity and control over your marketing performance.
+We implement structured tracking and automation systems that provide complete visibility into your marketing performance.
           </p>
         </div>
       </section>
@@ -187,16 +196,15 @@ export default function AnalyticsAutomationPage() {
                 Tracking & GA4 Setup
               </p>
               <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
-                Advanced Tracking & GA4 Implementation Services
-              </h3>
+Accurate Tracking Infrastructure for Reliable Data              </h3>
               <p className="mt-5 text-gray-300">
-                Accurate tracking is the foundation of scalable marketing.
+Clean data is the foundation of scalable marketing.
               </p>
               <p className="mt-3 text-gray-300">
-                We implement and configure Google Analytics 4 (GA4), conversion tracking, and event tracking to ensure you have reliable data across all platforms.
+We implement GA4, event tracking, and platform integrations so every marketing decision is backed by accurate data.
               </p>
               <p className="mt-3 text-gray-300">
-                Our tracking setup eliminates data gaps and improves attribution accuracy.
+Our tracking systems eliminate attribution gaps and ensure your analytics reflect real business performance.
               </p>
               <p className="mt-6 font-medium text-white">What We Do:</p>
               <ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
@@ -205,7 +213,7 @@ export default function AnalyticsAutomationPage() {
                 ))}
               </ul>
               <p className="mt-5 text-gray-200">
-                We ensure your analytics reflect real business performance, not inflated or incomplete metrics.
+Our goal is simple: clear data that supports confident growth decisions.
               </p>
             </div>
             <div className="order-1 lg:order-2">
@@ -234,16 +242,16 @@ export default function AnalyticsAutomationPage() {
                 Marketing Automation
               </p>
               <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
-                Marketing Automation for Lead Nurturing & Revenue Growth
+Automation Systems That Increase Revenue & Retention
               </h3>
               <p className="mt-5 text-gray-300">
-                Marketing automation allows businesses to convert leads and customers automatically through structured workflows.
+Marketing automation allows brands to convert and retain customers automatically through structured workflows.
               </p>
               <p className="mt-3 text-gray-300">
-                We build automation systems that nurture leads, recover abandoned carts, improve customer retention, and increase lifetime value (LTV).
+We design automation systems that nurture leads, recover abandoned carts, improve retention, and increase customer lifetime value.
               </p>
               <p className="mt-3 text-gray-300">
-                From email automation to CRM integrations, we design automated growth systems that work 24/7.
+These systems work continuously — generating revenue without manual effort.
               </p>
               <p className="mt-6 font-medium text-white">What We Do:</p>
               <ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
@@ -252,7 +260,7 @@ export default function AnalyticsAutomationPage() {
                 ))}
               </ul>
               <p className="mt-5 text-gray-200">
-                Automation reduces manual effort and increases revenue predictability.
+Automation reduces manual work while improving revenue predictability.
               </p>
             </div>
           </div>
@@ -263,19 +271,27 @@ export default function AnalyticsAutomationPage() {
                 Reporting & Dashboard Setup
               </p>
               <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
-                Custom Marketing Dashboards & Performance Reporting
+Clear Marketing Dashboards & Performance Reporting
               </h3>
               <p className="mt-5 text-gray-300">
-                Data is only powerful when it is clear and actionable.
+Data is valuable only when it is easy to understand.
               </p>
               <p className="mt-3 text-gray-300">
-                We build real-time marketing dashboards that centralize your data from Google Ads, Meta Ads, Shopify, GA4, and CRM systems.
+We build centralized dashboards that combine data from Google Ads, Meta Ads, Shopify, GA4, and CRM platforms.
               </p>
               <p className="mt-3 text-gray-300">
-                Our dashboards provide a clear view of revenue, ROAS, conversion rates, customer acquisition cost (CAC), and funnel performance.
+This gives your team a clear view of the metrics that actually drive growth.
               </p>
               <p className="mt-3 text-gray-300">
-                No more switching between platforms, everything in one structured dashboard.
+What You See:              </p>
+
+<ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
+                {reportingPoints.map((point) => (
+                  <li key={point}>• {point}</li>
+                ))}
+              </ul>
+              <p className="mt-5 text-gray-200">
+Instead of switching between tools, everything is visible in one structured reporting system.
               </p>
             </div>
             <div className="order-1 lg:order-2">
@@ -304,26 +320,27 @@ export default function AnalyticsAutomationPage() {
                 Landing Page Strategy
               </p>
               <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
-                High-Converting Landing Page Strategy & Optimization
+                Conversion-Focused Landing Page Strategy
               </h3>
               <p className="mt-5 text-gray-300">
-                Traffic without conversion optimization wastes budget.
+Traffic without conversion optimization leads to wasted spend.
               </p>
               <p className="mt-3 text-gray-300">
-                We design landing page strategies aligned with paid ads campaigns, funnel stages, user intent, and conversion psychology.
+We design landing page strategies aligned with paid campaigns, funnel stages, and user intent.
               </p>
               <p className="mt-3 text-gray-300">
-                Our landing page strategies focus on improving conversion rates, message clarity, offer positioning, and call-to-action performance.
+Our focus is improving conversion rates through clear messaging, strong offers, and optimized page structure.
               </p>
-              <p className="mt-3 text-gray-300">
-                We align tracking, analytics, and page structure to maximize measurable results.
-              </p>
+             
               <p className="mt-6 font-medium text-white">What We Do:</p>
               <ul className="mt-3 grid gap-2 text-sm text-gray-300 sm:grid-cols-2">
                 {landingPagePoints.map((point) => (
                   <li key={point}>• {point}</li>
                 ))}
               </ul>
+               <p className="mt-3 text-gray-300">
+Every page is designed to support measurable revenue growth.
+              </p>
             </div>
           </div>
         </div>
@@ -352,7 +369,7 @@ export default function AnalyticsAutomationPage() {
       <section className="bg-gray-50 px-4 py-16 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
-            What Proper Analytics & Automation Delivers
+           What Proper Analytics & Automation Delivers
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {results.map((item) => (
@@ -362,7 +379,7 @@ export default function AnalyticsAutomationPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-gray-700">
-            When your data is accurate, your growth becomes predictable.
+When your data is accurate, growth becomes predictable.
           </p>
         </div>
       </section>
@@ -385,17 +402,17 @@ export default function AnalyticsAutomationPage() {
       <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">
-            Why Businesses Trust Our Analytics Systems
+Why Brands Trust TubeHelper for Analytics Systems
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {trustPoints.map((item) => (
               <div key={item} className="rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-gray-100">
-                {item}
+                {item.title}
+                <p className="text-gray-500">{item.desc}</p>
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-lg text-gray-200">We don&apos;t just set up tools.</p>
-          <p className="mt-1 text-center text-lg text-gray-200">We build growth infrastructure.</p>
+          <p className="mt-8 text-center text-lg text-gray-200">We don&apos;t just configure tools. We build growth infrastructure.</p>
         </div>
       </section>
 
@@ -414,9 +431,8 @@ export default function AnalyticsAutomationPage() {
             Ready to Build a Scalable Data-Driven Growth System?
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-gray-700">
-            Stop guessing. Start scaling with accurate tracking, automation, and reporting.
-          </p>
-          <a href="tel:+919897165137"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
+Stop guessing and start scaling with accurate tracking, automation, and performance reporting.          </p>
+          <a href="tel:+919897165137"><button className="mt-8 cursor-pointer inline-flex items-center gap-2 rounded-full bg-black px-7 py-4 text-sm font-medium text-white transition hover:opacity-90">
             Get Your Free Tracking Audit
             <MoveUpRight className="h-4 w-4" />
           </button></a>
