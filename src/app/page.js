@@ -4,11 +4,11 @@ import CTASection from "@/components/CTA"
 import Faq from "@/components/Faq"
 import Features from "@/components/Features"
 import Hero from "@/components/Hero"
-import { buildMetadata } from "@/lib/seo"
+import { buildMetadata } from "../lib/seo"
 import Card from "@/components/Testimonals"
-import WhyChooseUs from "@/components/WhyChooseUs"
-import ServicesCards from "@/components/Services"
-import WhoWeAreSection from "@/components/WhoWeAre"
+import WhyChooseUs from "../components/WhyChooseUs"
+import ServicesCards from "@/components/Services";
+import WhoWeAreSection from "../components/WhoWeAre"
 
 export const metadata = buildMetadata({
   title: "Performance Marketing and Ecommerce Growth Agency",

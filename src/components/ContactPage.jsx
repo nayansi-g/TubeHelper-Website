@@ -12,6 +12,17 @@ const serviceOptions = [
 ]
 
 export default function ContactPage() {
+  const sendThankYouEmail = async (payload) => {
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (emailError) {
+      console.error("Email send failed", emailError);
+    }
+  };
    const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -61,6 +72,10 @@ export default function ContactPage() {
       // Since we're using no-cors, we can't check response
       // But we'll assume it worked
       setSuccess(true);
+      sendThankYouEmail({
+        email: formData.email,
+        name: formData.fullName,
+      });
       setFormData({
         fullName: "",
         email: "",

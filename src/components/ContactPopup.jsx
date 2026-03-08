@@ -29,6 +29,18 @@ export default function ContactPopup() {
     service: "",
   });
 
+  const sendThankYouEmail = async (payload) => {
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (emailError) {
+      console.error("Email send failed", emailError);
+    }
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => setIsOpen(true), 6000);
     return () => clearTimeout(timer);
@@ -71,6 +83,10 @@ export default function ContactPopup() {
       });
 
       setSuccess(true);
+      sendThankYouEmail({
+        email: formData.email,
+        name: formData.fullName,
+      });
       setFormData({
         fullName: "",
         email: "",

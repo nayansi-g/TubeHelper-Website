@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactPopup from "@/components/ContactPopup";
-import { siteConfig } from "@/lib/seo";
+import { siteConfig } from "../lib/seo";
 import Script from "next/script";
 import ContactButtons from "@/components/ContactButtons";
 
