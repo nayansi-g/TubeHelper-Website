@@ -17,7 +17,7 @@ export default function ContactButtons() {
       {/* WhatsApp Button */}
       <a
         href="https://wa.me/919897165137"
-        className="group flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+        className="group flex h-12 w-12 mb-3 items-center justify-center rounded-full bg-green-500 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
         aria-label="Chat on WhatsApp"
         target="_blank"
         rel="noopener noreferrer"
