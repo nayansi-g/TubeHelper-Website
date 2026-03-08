@@ -67,7 +67,7 @@ export default function RefundPolicyPage() {
     {
       title: "10. Contact Details",
       contact: [
-        "Email: connect@tubehelper.in",
+        "Email: contact@tubehelper.in",
         "Phone: +91 9897165137",
         "Address: A-83, First Floor, Sector 63, Noida",
         "Nearest metro station is Sector 62",

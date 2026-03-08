@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactPopup from "@/components/ContactPopup";
 import { siteConfig } from "@/lib/seo";
+import Script from "next/script";
+import ContactButtons from "@/components/ContactButtons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,7 +72,7 @@ export default function RootLayout({ children }) {
     "@type": "Organization",
     name: "TubeHelper",
     url: siteConfig.url,
-    email: "connect@tubehelper.in",
+    email: "contact@tubehelper.in",
     telephone: "+91 9897165137",
     address: {
       "@type": "PostalAddress",
@@ -83,6 +85,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -94,6 +97,21 @@ export default function RootLayout({ children }) {
         <ContactPopup />
         {children}
         <Footer />
+        <ContactButtons />
+
+        <Script id="tawk-chat" strategy="afterInteractive">
+{`
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69ad37d9ddd7fc1c34852a91/1jj6a4ajq';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+`}
+</Script>
       </body>
     </html>
   );
