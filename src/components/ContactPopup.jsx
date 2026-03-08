@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown, X } from "lucide-react";
+import ThankYouModal from "@/components/ThankYouModal";
 
 const SCRIPT_URL =
   process.env.NEXT_PUBLIC_CONTACT_FORM_URL ||
@@ -78,10 +79,6 @@ export default function ContactPopup() {
         service: "",
       });
 
-      setTimeout(() => {
-        setSuccess(false);
-        setIsOpen(false);
-      }, 2000);
     } catch (err) {
       console.error("Error submitting popup form", err);
       setError(true);
@@ -180,12 +177,13 @@ export default function ContactPopup() {
               </span>
             </div>
 
-            {/* Success message */}
-            {success && (
-              <div className="rounded-xl bg-green-50 p-3 text-center text-green-600">
-                Form submitted successfully!
-              </div>
-            )}
+            <ThankYouModal
+              open={success}
+              onClose={() => {
+                setSuccess(false);
+                setIsOpen(false);
+              }}
+            />
             {error && (
               <div className="rounded-xl bg-red-50 p-3 text-center text-red-600">
                 Something went wrong. Please try again.

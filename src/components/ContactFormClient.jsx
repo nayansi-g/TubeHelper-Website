@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import ThankYouModal from "@/components/ThankYouModal";
 
 const SCRIPT_URL =
   process.env.NEXT_PUBLIC_CONTACT_FORM_URL ||
@@ -69,8 +70,6 @@ export default function ContactFormClient() {
         service: "",
       });
 
-      // Hide success message after 5 seconds
-      setTimeout(() => setSuccess(false), 5000);
     } catch (err) {
       console.error("Error submitting form", err);
       setError(true);
@@ -146,12 +145,10 @@ export default function ContactFormClient() {
                    </span>
                  </div>
      
-                 {/* Success message */}
-                 {success && (
-                   <div className="rounded-xl bg-green-50 p-3 text-center text-green-600">
-                     Form submitted successfully!
-                   </div>
-                 )}
+                 <ThankYouModal
+                   open={success}
+                   onClose={() => setSuccess(false)}
+                 />
      
                  <button
                    type="submit"
