@@ -98,12 +98,12 @@ export default function Navbar() {
           <div className="mx-auto flex h-[72px] w-full items-center justify-between px-4 sm:px-6">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/newLogo.png"
+                src="/TubeHelperLogo.png"
                 alt="TubeHelper"
                 width={232}
                 height={64}
                 priority
-                className="h-auto w-46 pt-2 md:w-58"
+                className="h-auto w-46 pt-3 md:w-62"
                 sizes="(min-width: 1024px) 224px, 144px"
               />
             </Link>
