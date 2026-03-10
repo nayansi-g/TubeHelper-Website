@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes } from "react-icons/fa"
 
@@ -44,9 +45,21 @@ export default function Footer() {
           Let&apos;s Connect with us
         </h2>
 
-        <div className="grid gap-8 border-t border-white/10 pt-8 sm:pt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">TubeHelper</h3>
+        <div className="grid gap-8 border-t border-white/10 pt-4 sm:pt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+             <div className="space-y-2">
+             <Link href="/" className="flex items-center">
+                          <Image
+                            src="/onlyLogo.png"
+                            alt="TubeHelper"
+                            width={200}
+                            height={44}
+                            priority
+                            className=" w-9 md:w-12"
+                            // sizes="(min-width: 1024px) 224px, 144px"
+                          />
+                          <i className="text-xl text-gray-100 font-bold">TUBEHELPER</i>
+                        </Link>
+                     
             <p className="max-w-sm text-sm text-gray-400">
               We are a performance-driven digital marketing and ecommerce growth agency helping Shopify and D2C brands scale profitably.
             </p>
@@ -58,7 +71,7 @@ export default function Footer() {
               <p className="text-sm text-gray-400">Nearest metro station is Sector 62</p>
             </div>
           </div>
-            <FooterColumn title="Services" links={quickLinks.services} />
+            <FooterColumn title="Services" className="mt-10" links={quickLinks.services} />
          
           <FooterColumn title="Resources" links={quickLinks.resources} />
          <FooterColumn title="Company" links={quickLinks.company} />
