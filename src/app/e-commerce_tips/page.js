@@ -1,21 +1,20 @@
-import Link from "next/link"
-import { MoveUpRight, PhoneOutgoing } from "lucide-react"
 import { buildMetadata } from "@/lib/seo"
+import { MoveUpRight, PhoneOutgoing } from "lucide-react"
 
 export const metadata = buildMetadata({
-  title: "E-commerce Growth Tips",
+  title: "Ecommerce Growth Tips",
   description:
-    "Data-driven ecommerce tips to increase conversion rates, improve retention, and scale online store revenue.",
+    "Practical, data-driven strategies to help ecommerce and D2C brands increase traffic, improve conversion rates, and grow revenue sustainably.",
   path: "/e-commerce_tips",
-  keywords: ["ecommerce tips", "shopify conversion optimization", "ecommerce growth strategy"],
+  keywords: ["ecommerce growth tips", "D2C growth strategy", "increase ecommerce conversions"],
 })
 
 const introPoints = [
-  "High-converting traffic",
+  "High-intent traffic",
   "Optimized product pages",
-  "Accurate tracking",
-  "Smart paid advertising",
-  "Email automation",
+  "Accurate tracking and analytics",
+  "Structured paid acquisition",
+  "Email and retention automation",
   "Conversion rate optimization",
 ]
 
@@ -23,184 +22,141 @@ const tips = [
   {
     title: "High-Converting Product Page Optimization",
     description:
-      "Your product page is your most important sales asset. To increase ecommerce conversion rate, optimize every element for clarity, trust, and purchase intent.",
+      "Your product page is your most important sales asset. A well-optimized page builds trust, answers objections, and makes purchasing easy.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "Use benefit-driven product descriptions",
-      "Add high-resolution product images",
-      "Include lifestyle visuals",
-      "Display customer reviews",
+      "Write clear, benefit-focused product descriptions",
+      "Use high-quality product images",
+      "Add lifestyle visuals showing the product in use",
+      "Display customer reviews and ratings",
       "Highlight guarantees and return policies",
-      "Add urgency elements (limited stock, offers)",
-      "Optimize page speed",
+      "Use urgency elements when appropriate",
+      "Optimize page loading speed",
     ],
-    keywords: [
-      "Ecommerce product page optimization",
-      "Increase ecommerce conversion rate",
-      "High-converting product pages",
-    ],
-    link: { href: "/services/e-commerce_growth", label: "Conversion Optimization Services" },
+    note: "Strong product pages improve both conversion rate and paid ad performance.",
   },
   {
-    title: "Scale with Performance Marketing Campaigns",
+    title: "Scale with Structured Performance Marketing",
     description:
-      "Paid ads are one of the fastest ways to grow ecommerce revenue when tracking, audience targeting, and creative testing are handled correctly.",
+      "Paid acquisition is one of the fastest ways to grow ecommerce revenue when campaigns are structured and optimized correctly.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "Meta and Instagram Ads",
-      "Google Search Ads",
-      "Google Shopping",
-      "YouTube Ads",
-      "Install proper conversion tracking",
-      "Optimize for purchase events",
-      "Use lookalike audiences",
-      "Continuously test creatives",
-      "Monitor ROAS and CAC",
+      "Run Meta and Instagram ad campaigns",
+      "Use Google Search and Shopping ads",
+      "Test YouTube ads for broader reach",
+      "Implement accurate conversion tracking",
+      "Optimize campaigns for purchase events",
+      "Use lookalike and interest audiences",
+      "Continuously test new creatives",
+      "Monitor ROAS and CAC closely",
     ],
-    keywords: [
-      "Ecommerce paid ads strategy",
-      "Performance marketing for ecommerce",
-      "Increase ROAS ecommerce",
-    ],
+    note: "Paid ads work best when integrated into a full-funnel growth system.",
   },
   {
-    title: "Conversion Rate Optimization (CRO) Strategies",
+    title: "Conversion Rate Optimization (CRO)",
     description:
-      "Small improvements in your funnel can create significant revenue impact. CRO reduces wasted traffic and improves profitability.",
+      "Small improvements in your website can significantly increase revenue without increasing traffic.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "Clear call-to-action buttons",
-      "Mobile-first design",
-      "Faster checkout process",
-      "Exit-intent offers",
-      "Simplified navigation",
-      "Trust badges and secure payment icons",
+      "Use clear call-to-action buttons",
+      "Design for mobile first",
+      "Simplify the checkout process",
+      "Add exit-intent offers",
+      "Improve site navigation",
+      "Use trust badges and secure payment indicators",
     ],
-    monitor: [
-      "Add-to-cart rate",
-      "Checkout completion rate",
-      "Bounce rate",
-    ],
-    keywords: [
-      "Ecommerce conversion rate optimization",
-      "Improve Shopify conversion rate",
-      "Reduce cart abandonment",
-    ],
+    metricsTitle: "Track These Metrics",
+    metrics: ["Add-to-cart rate", "Checkout completion rate", "Bounce rate"],
+    note: "Optimizing conversions ensures that your traffic generates maximum revenue.",
   },
   {
     title: "Recover Lost Revenue with Automation",
     description:
-      "Most ecommerce stores leave revenue on the table through cart abandonment and weak retention. Automation helps recover this predictably.",
+      "Many ecommerce stores lose revenue through cart abandonment and weak retention systems. Automation helps recover and grow that revenue.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "Abandoned cart email flows",
-      "Post-purchase sequences",
-      "Cross-sell and upsell emails",
-      "Win-back campaigns",
+      "Abandoned cart email sequences",
+      "Post-purchase follow-ups",
+      "Cross-sell and upsell campaigns",
+      "Win-back email flows",
       "SMS reminders",
     ],
-    extra:
-      "Automation increases customer lifetime value (LTV) and improves retention.",
-    keywords: [
-      "Ecommerce email marketing automation",
-      "Abandoned cart recovery strategy",
-      "Increase customer lifetime value",
-    ],
+    note: "Automation increases customer lifetime value (LTV) and improves retention.",
   },
   {
     title: "Make Decisions Based on Data",
     description:
-      "Without accurate tracking, scaling becomes risky. Data quality determines how confidently you can optimize spend and performance.",
+      "Without accurate tracking, scaling your marketing becomes risky. Reliable analytics allow you to understand what is working and where to optimize.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "GA4 tracking setup",
-      "Conversion tracking",
-      "Revenue attribution dashboards",
-      "Event tracking",
-      "Customer behavior analytics",
+      "Implement GA4 tracking",
+      "Configure conversion tracking",
+      "Build revenue attribution dashboards",
+      "Track key user events",
+      "Analyze customer behavior",
     ],
-    monitor: [
-      "Return on ad spend (ROAS)",
-      "Customer acquisition cost (CAC)",
-      "Lifetime value (LTV)",
-      "Conversion rate",
-    ],
-    keywords: [
-      "GA4 setup for ecommerce",
-      "Ecommerce analytics tracking",
-      "Conversion tracking setup",
-    ],
-    link: { href: "/services/analytics_&_automation", label: "Analytics and Automation Services" },
+    metricsTitle: "Track These Metrics",
+    metrics: ["Return on Ad Spend (ROAS)", "Customer Acquisition Cost (CAC)", "Lifetime Value (LTV)", "Conversion rate"],
+    note: "Good data leads to better marketing decisions.",
   },
   {
-    title: "Ecommerce SEO for Sustainable Traffic",
+    title: "Ecommerce SEO for Long-Term Traffic",
     description:
-      "Paid ads create immediate demand. SEO builds long-term authority and lower-cost acquisition over time.",
+      "Paid ads generate demand quickly. SEO builds long-term traffic and reduces reliance on ad spend.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "Product page titles and meta descriptions",
-      "Category pages",
-      "Blog content",
-      "Internal linking",
-      "Technical SEO",
-      "Page speed",
+      "Optimize product titles and meta descriptions",
+      "Improve category page SEO",
+      "Publish helpful blog content",
+      "Build strong internal linking",
+      "Fix technical SEO issues",
+      "Improve page speed",
       "Target high-intent product keywords",
     ],
-    keywords: [
-      "Ecommerce SEO strategy",
-      "SEO for online stores",
-      "Increase organic traffic ecommerce",
-    ],
-    link: { href: "/services/organic_growth", label: "Organic Growth Services" },
+    note: "Strong SEO creates sustainable traffic and lower acquisition costs over time.",
   },
   {
     title: "Increase Repeat Purchases",
     description:
-      "Customer acquisition is expensive. Retention improves margins and compounds revenue over time.",
+      "Customer acquisition is expensive. Retention improves profitability and compounds growth.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "Loyalty programs",
-      "Referral programs",
-      "Personalized offers",
-      "Retargeting campaigns",
-      "Exclusive member discounts",
+      "Implement loyalty programs",
+      "Launch referral programs",
+      "Send personalized offers",
+      "Run retargeting campaigns",
+      "Provide exclusive member discounts",
     ],
-    extra:
-      "Improving retention directly increases lifetime value.",
-    keywords: [
-      "Ecommerce customer retention strategy",
-      "Increase repeat purchases",
-      "Ecommerce loyalty program tips",
-    ],
+    note: "Increasing repeat purchases directly increases customer lifetime value.",
   },
   {
     title: "Mobile-First Ecommerce Optimization",
     description:
-      "Most ecommerce traffic is mobile. Mobile performance directly affects conversion rate and cart completion.",
+      "Most ecommerce traffic now comes from mobile devices. A poor mobile experience significantly reduces conversions.",
+    bulletsTitle: "Action Points",
     bullets: [
-      "Fast loading speed",
-      "Mobile-optimized checkout",
-      "Easy navigation",
-      "Thumb-friendly CTA buttons",
-      "Simplified forms",
+      "Improve page loading speed",
+      "Simplify mobile checkout",
+      "Use clear navigation",
+      "Add thumb-friendly call-to-action buttons",
+      "Reduce form complexity",
     ],
-    keywords: [
-      "Mobile ecommerce optimization",
-      "Improve mobile conversion rate",
-      "Mobile-friendly online store",
-    ],
+    note: "A smooth mobile experience improves both conversion rate and cart completion.",
   },
   {
-    title: "A/B Testing for Ecommerce Growth",
+    title: "A/B Testing for Continuous Growth",
     description:
-      "Never assume and always test. Continuous experimentation is the fastest path to steady revenue gains.",
+      "Successful ecommerce brands constantly test and improve. Small experiments often lead to meaningful revenue gains.",
+    bulletsTitle: "Test Elements Like",
     bullets: [
       "Headlines",
       "Product images",
       "Pricing strategies",
-      "Offers",
+      "Promotional offers",
       "Ad creatives",
       "Landing pages",
     ],
-    extra: "Growth is driven by continuous experimentation.",
-    keywords: [
-      "Ecommerce A/B testing strategy",
-      "Optimize ecommerce funnel",
-      "Increase ecommerce revenue",
-    ],
+    note: "Growth comes from continuous experimentation and data-driven decisions.",
   },
 ]
 
@@ -208,49 +164,58 @@ const audience = [
   "Shopify store owners",
   "D2C brands",
   "Scaling ecommerce startups",
-  "Founders running paid ads",
+  "Founders running paid acquisition",
   "Growth-focused online businesses",
 ]
 
 export default function EcommerceTipsPage() {
   return (
     <main className="bg-white text-gray-900">
-      <section className="rounded-b-[50px] bg-gray-300 px-4 pb-12  text-center sm:px-6 md:rounded-b-[80px] md:pb-16 pt-32">
-        <div className="mx-auto max-w-5xl">
+      <section className="relative overflow-hidden rounded-b-[50px] bg-[#dff3ef] px-4 pb-14 pt-32 text-center sm:px-6 md:rounded-b-[80px] md:pb-20">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/50 blur-2xl" />
+          <div className="absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-white/50 blur-2xl" />
+        </div>
+        <div className="relative mx-auto max-w-5xl">
           <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-            E-commerce Growth Tips to Scale Your Online Store Profitably
+            Ecommerce Growth Tips to Scale Your Online Store Profitably
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-gray-700">
-            Actionable, data-driven ecommerce strategies to increase traffic, improve conversion rates, and maximize revenue.
+          <p className="mx-auto mt-5 max-w-3xl text-gray-700 sm:text-lg">
+            Practical, data-driven strategies to help ecommerce and D2C brands increase traffic, improve conversion rates, and grow revenue sustainably.
           </p>
           <a
-           href="https://wa.me/919897165137"
-  target="_blank"
-  rel="noopener noreferrer"
+            href="https://wa.me/919897165137"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
-            Book Your Strategy Call Now
+            Book Your Strategy Call
             <MoveUpRight className="h-4 w-4" />
           </a>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-8 pt-12 sm:px-6 md:pt-14">
-        <article className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+        <article className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
           <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">Introduction</h2>
-          <p className="mt-4 text-gray-700">
-            Running a successful ecommerce business requires more than launching a store.
+          <p className="mt-4 text-gray-700">Launching an ecommerce store is only the first step.</p>
+          <p className="mt-3 text-gray-700">
+            Scaling profitably requires a complete growth system that connects traffic, conversion, retention, and data.
           </p>
-          <p className="mt-3 text-gray-700">To scale profitably, you need:</p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <p className="mt-3 text-gray-700">To grow consistently, your store needs:</p>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {introPoints.map((item) => (
-              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
-                {item}
-              </div>
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base"
+              >
+                <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-gray-900" />
+                <span>{item}</span>
+              </li>
             ))}
-          </div>
-          <p className="mt-5 text-gray-700">
-            On this page, we share proven ecommerce tips used by growth-focused brands to increase revenue and build sustainable online businesses.
+          </ul>
+          <p className="mt-6 text-gray-700">
+            Below are proven ecommerce growth strategies used by brands that scale successfully.
           </p>
         </article>
       </section>
@@ -258,82 +223,82 @@ export default function EcommerceTipsPage() {
       <section className="mx-auto max-w-6xl px-4 pb-20 pt-4 sm:px-6 md:pb-24">
         <div className="space-y-8">
           {tips.map((tip, index) => (
-            <article key={tip.title} className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
+            <article key={tip.title} className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
               <p className="text-sm font-medium text-gray-600">Tip #{index + 1}</p>
               <h2 className="mt-1 text-2xl font-semibold text-gray-900 md:text-3xl">{tip.title}</h2>
               <p className="mt-4 text-gray-700">{tip.description}</p>
 
-              <div className="mt-5 grid gap-6 md:grid-cols-2">
-                <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                  <h3 className="text-base font-semibold text-gray-900">Action Points</h3>
-                  <ul className="mt-3 space-y-2 text-sm text-gray-700 md:text-base">
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5">
+                  <h3 className="text-base font-semibold text-gray-900">{tip.bulletsTitle ?? "Action Points"}</h3>
+                  <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 md:text-base">
                     {tip.bullets.map((item) => (
-                      <li key={item}>• {item}</li>
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <h3 className="text-base font-semibold text-gray-900">SEO Keywords</h3>
-                    <ul className="mt-3 space-y-2 text-sm text-gray-700 md:text-base">
-                      {tip.keywords.map((item) => (
-                        <li key={item}>• {item}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {tip.monitor && (
-                    <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                      <h3 className="text-base font-semibold text-gray-900">Track These Metrics</h3>
-                      <ul className="mt-3 space-y-2 text-sm text-gray-700 md:text-base">
-                        {tip.monitor.map((item) => (
-                          <li key={item}>• {item}</li>
+                  {tip.metrics && (
+                    <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5">
+                      <h3 className="text-base font-semibold text-gray-900">{tip.metricsTitle ?? "Track These Metrics"}</h3>
+                      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-700 md:text-base">
+                        {tip.metrics.map((item) => (
+                          <li key={item}>{item}</li>
                         ))}
                       </ul>
                     </div>
                   )}
+
+                  {tip.note && (
+                    <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5">
+                      <h3 className="text-base font-semibold text-gray-900">Key Takeaway</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-gray-700 md:text-base">{tip.note}</p>
+                    </div>
+                  )}
                 </div>
               </div>
-
-              {tip.extra && <p className="mt-5 text-gray-700">{tip.extra}</p>}
-
-              {tip.link && (
-                <Link
-                  href={tip.link.href}
-                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-900 transition hover:bg-gray-50"
-                >
-                  {tip.link.label}
-                  <MoveUpRight className="h-4 w-4" />
-                </Link>
-              )}
             </article>
           ))}
         </div>
 
-        <section className="mt-8 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:p-7">
-          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
-            Who Should Follow These Ecommerce Tips?
-          </h2>
+        <section className="mt-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+          <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">Who Should Follow These Ecommerce Tips?</h2>
+          <p className="mt-4 text-gray-700">These strategies are useful for:</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {audience.map((item) => (
-              <div key={item} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base">
+              <div
+                key={item}
+                className="rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800 md:text-base"
+              >
                 {item}
               </div>
             ))}
           </div>
+          <p className="mt-6 text-gray-700">
+            If your goal is predictable, profitable growth, these practices form the foundation.
+          </p>
         </section>
       </section>
 
-      <section className="bg-gradient-to-br from-gray-300 via-white to-gray-300 px-4 py-16 text-center sm:px-6 md:py-20">
+      <section className="bg-gradient-to-br from-[#dff3ef] via-white to-[#eaf9f5] px-4 py-16 text-center sm:px-6 md:py-20">
         <h2 className="text-3xl font-semibold">Want Help Scaling Your Ecommerce Store?</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-gray-700">
-          If you want expert help implementing these ecommerce growth strategies, our team specializes in performance marketing, conversion optimization, analytics and tracking, automation systems, and full-funnel ecommerce growth.
+        <p className="mx-auto mt-4 max-w-3xl text-gray-700">
+          If you&apos;d like expert support implementing these strategies, TubeHelper helps brands grow through:
         </p>
-       <a  href="tel:+919897165137"> <button className="mt-7 inline-flex items-center cursor-pointer gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90">
-                <PhoneOutgoing className="w-5 h-5" /> Call Now
-                {/* <MoveUpRight className="h-4 w-4" /> */}
-              </button></a>
+        <ul className="mx-auto mt-6 max-w-5xl list-disc space-y-2 pl-5 text-left text-sm text-gray-700 sm:text-base">
+          <div className="flex flex-wrap gap-2 md:gap-6 justify-start md:justify-center items-center"><li>Performance marketing systems</li>
+          <li>Conversion optimization</li>
+          <li>Analytics and tracking infrastructure</li>
+          <li>Marketing automation</li>
+          <li>Full-funnel ecommerce growth strategies</li></div>
+        </ul>
+        <a
+          href="tel:+919897165137"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-medium text-white transition hover:opacity-90"
+        >
+          <PhoneOutgoing className="h-5 w-5" /> Call Now
+        </a>
       </section>
     </main>
   )
