@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes, FaYoutube } from "react-icons/fa"
 
 const quickLinks = {
   company: [
@@ -80,11 +80,11 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 sm:mt-12 md:flex-row md:items-center">
           
-          <div className="flex gap-3 sm:gap-4">
-            {[FaFacebookF, FaInstagram, FaTimes, FaLinkedinIn].map((Icon, i) => (
+          <div className="flex gap-2 sm:gap-3">
+            {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaTimes].map((Icon, i) => (
               <button
                 key={i}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 transition hover:bg-white/10 sm:h-10 sm:w-10"
+                className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/5 transition hover:bg-white/10 sm:h-9 sm:w-9"
                 aria-label="social link"
               >
                 <Icon className="text-sm" />
