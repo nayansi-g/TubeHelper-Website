@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 sm:mt-12 md:flex-row md:items-center">
-          <p className="text-sm text-gray-500">TubeHelper © 2026 all rights reserved.</p>
+          
           <div className="flex gap-3 sm:gap-4">
             {[FaFacebookF, FaInstagram, FaTimes, FaLinkedinIn].map((Icon, i) => (
               <button
@@ -91,6 +91,7 @@ export default function Footer() {
               </button>
             ))}
           </div>
+          <p className="text-sm text-gray-500">TubeHelper © 2026 all rights reserved.</p>
         </div>
       </div>
     </footer>

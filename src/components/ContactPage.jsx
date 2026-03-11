@@ -1,125 +1,114 @@
-"use client";
+"use client"
 
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
-import ThankYouModal from "@/components/ThankYouModal";
+import { ChevronDown } from "lucide-react"
+import { useState } from "react"
+import ThankYouModal from "@/components/ThankYouModal"
 
-const serviceOptions = [
-  "$1000 - $2000",
-  "$2000 - $3000",
-  "$3000 - $4000",
-  "$4000 - $5000",
-]
+const SCRIPT_URL =
+  process.env.NEXT_PUBLIC_CONTACT_FORM_URL ||
+  "https://script.google.com/macros/s/AKfycbxWb33jkYVZDqGpN6GTj_KLoywIXbwA8RdzM-CncjNmhrAxwcQCENNfsK7xvZuvFMqeOQ/exec"
+
+const serviceOptions = ["$1000 - $2000", "$2000 - $3000", "$3000 - $4000", "$4000 - $5000"]
+
+async function sendThankYouEmail(payload) {
+  const res = await fetch("/api/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  })
+
+  const data = await res.json().catch(() => null)
+  if (!res.ok || !data?.success) {
+    throw new Error(data?.error || "Failed to send confirmation email.")
+  }
+
+  return data
+}
 
 export default function ContactPage() {
-  const sendThankYouEmail = async (payload) => {
-    try {
-      await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-    } catch (emailError) {
-      console.error("Email send failed", emailError);
-    }
-  };
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     mobile: "",
     website: "",
     service: "",
-  });
+  })
 
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // 🔥 THIS PREVENTS REDIRECT
-    setLoading(true);
-    setError(false);
+    e.preventDefault()
+    setLoading(true)
+    setError("")
 
     try {
-      // Create form data (this works better with Google Apps Script)
-      const formBody = new URLSearchParams();
-      formBody.append("fullName", formData.fullName);
-      formBody.append("email", formData.email);
-      formBody.append("mobile", formData.mobile);
-      formBody.append("website", formData.website);
-      formBody.append("service", formData.service);
+      const formBody = new URLSearchParams()
+      formBody.append("fullName", formData.fullName)
+      formBody.append("email", formData.email)
+      formBody.append("mobile", formData.mobile)
+      formBody.append("website", formData.website)
+      formBody.append("service", formData.service)
 
-      // Using a hidden iframe approach to avoid redirect
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxWb33jkYVZDqGpN6GTj_KLoywIXbwA8RdzM-CncjNmhrAxwcQCENNfsK7xvZuvFMqeOQ/exec",
-        {
-          method: "POST",
-          mode: "no-cors", // Keep this to avoid CORS issues
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formBody.toString(),
+      })
 
-      // Since we're using no-cors, we can't check response
-      // But we'll assume it worked
-      setSuccess(true);
-      sendThankYouEmail({
+      await sendThankYouEmail({
         email: formData.email,
         name: formData.fullName,
-      });
+        mobile: formData.mobile,
+        website: formData.website,
+        service: formData.service,
+      })
+
+      setSuccess(true)
       setFormData({
         fullName: "",
         email: "",
         mobile: "",
         website: "",
         service: "",
-      });
-
+      })
     } catch (err) {
-      console.error("Error submitting form", err);
-      setError(true);
-      setTimeout(() => setError(false), 5000);
+      console.error("Error submitting form", err)
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <section className=" bg-[linear-gradient(180deg,#f8f9ff_0%,#ffffff_50%,#f8f9ff_100%)] px-3 py-20 md:px-6">
       <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
-
-        {/* LEFT SIDE - SEO CONTENT */}
         <div className="hidden md:block">
-          <h1 className="text-3xl lg:text-5xl font-semibold  text-gray-900 mb-6 leading-tight">
+          <h1 className="mb-6 text-3xl font-semibold leading-tight text-gray-900 lg:text-5xl">
             Performance Marketing & Ecommerce Growth Experts
           </h1>
 
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            We help Shopify and ecommerce brands scale revenue using
-            performance marketing, CRO, and data-driven growth strategies.
+          <p className="mb-4 leading-relaxed text-gray-600">
+            We help Shopify and ecommerce brands scale revenue using performance marketing, CRO, and data-driven growth
+            strategies.
           </p>
 
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            Whether you&apos;re looking to improve ROAS, reduce customer
-            acquisition costs, or build a scalable marketing system,
-            our team is ready to help.
+          <p className="mb-4 leading-relaxed text-gray-600">
+            Whether you&apos;re looking to improve ROAS, reduce customer acquisition costs, or build a scalable marketing
+            system, our team is ready to help.
           </p>
 
-          <p className="text-gray-500 leading-relaxed">
-            Fill out the form and our growth team will get back to you
-            within 24 hours.
+          <p className="leading-relaxed text-gray-500">
+            Fill out the form and our growth team will get back to you within 24 hours.
           </p>
 
-          <div className="mt-4 text-sm text-gray-600 space-y-1">
+          <div className="mt-4 space-y-1 text-sm text-gray-600">
             <p>Email: contact@tubehelper.in</p>
             <p>Phone: +91 9897165137</p>
             <p>Address: A-83, First Floor, Sector 63, Noida</p>
@@ -127,15 +116,10 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* RIGHT SIDE - FORM */}
         <div className="rounded-3xl border border-[#d9dbf6] bg-white p-6 shadow-[0_20px_45px_rgba(15,29,86,0.1)] md:p-8">
-          <h2 className="mb-6 text-2xl font-semibold text-gray-900">
-            Get a Free Growth Consultation
-          </h2>
+          <h2 className="mb-6 text-2xl font-semibold text-gray-900">Get a Free Growth Consultation</h2>
 
-          {/* REMOVED method and action attributes - now using onSubmit only */}
           <form onSubmit={handleSubmit} className="space-y-5">
-
             <input
               type="text"
               name="fullName"
@@ -193,14 +177,15 @@ export default function ContactPage() {
                 ))}
               </select>
               <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
-               <ChevronDown />
+                <ChevronDown />
               </span>
             </div>
 
-            <ThankYouModal
-              open={success}
-              onClose={() => setSuccess(false)}
-            />
+            {error ? (
+              <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700">{error}</div>
+            ) : null}
+
+            <ThankYouModal open={success} onClose={() => setSuccess(false)} />
 
             <button
               type="submit"
@@ -211,8 +196,7 @@ export default function ContactPage() {
             </button>
           </form>
         </div>
-
       </div>
     </section>
-  );
+  )
 }
