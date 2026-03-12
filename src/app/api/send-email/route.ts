@@ -61,7 +61,7 @@ export async function POST(req: Request) {
       )
     }
 
-    const subject = `Thanks for contacting TubeHelper${name ? `, ${String(name)}` : ""}`
+    const subject = "We’ve Received Your Growth Consultation Request"
     const html = buildThankYouEmail(typeof name === "string" ? name : undefined)
 
     const result = await sendEmail(email, subject, html, { replyTo: "contact@tubehelper.in" })
